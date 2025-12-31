@@ -1,0 +1,1398 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Cookie Crumble — LutzCode</title>
+
+    <!-- deine bestehende stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- icons falls du sie brauchst -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+    <style>
+        /* Project page specific styles */
+        .project-page .project-wrapper {
+            max-width: 1800px;
+            margin: 40px auto 80px; /* oben etwas Platz, unten genug Abstand zum Footer */
+            padding: 0 24px;
+            box-sizing: border-box;
+        }
+
+        /* hero image (zentriert) */
+        .project-hero {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
+
+            .project-hero img {
+                width: 100%;
+                max-width: 760px;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+                object-fit: cover;
+            }
+
+        /* Title + meta area */
+        .project-head {
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .project-title {
+            font-size: 36px;
+            margin: 6px 0 10px 0;
+            color: #ffffff;
+            font-weight: 800;
+            text-align: left; /* linksbündig */
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            color: #BFC8FF;
+            font-size: 14px;
+            margin-bottom: 22px;
+            text-align: left;
+        }
+
+            .project-meta .meta-item {
+                background: rgba(255,255,255,0.03);
+                padding: 6px 10px;
+                border-radius: 8px;
+            }
+
+        /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+        .project-content {
+            background: #041b16; /* <- hier gewünschte Farbe auswählen */
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.04);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+            padding: 22px;
+            color: #E6EAF6; /* helle Textfarbe */
+            line-height: 1.6;
+            -webkit-backdrop-filter: none; /* entfernt glassy blur */
+            backdrop-filter: none;
+            position: relative; /* damit z-index greift */
+            z-index: 5; /* über eventuell darunterliegenden Elementen */
+        }
+
+            .project-content h2 {
+                margin-top: 0;
+            }
+
+        /* back link */
+        .project-back {
+            display: inline-block;
+            margin-top: 18px;
+            color: #DDE8FF;
+            text-decoration: none;
+            background: rgba(255,255,255,0.04);
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .project-title {
+                font-size: 26px;
+            }
+
+            .project-hero img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Experimental</span>
+        </nav>
+        <div id="multiplayer" style="height:1px;"></div>
+        <!-- MAIN CONTENT -->
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/ultimatemultiplayer4.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">My First Online Multiplayer</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Jump&Run / Party-Game / Casual Game</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo Projekt</strong></div>
+                </div>
+            </div>
+
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Stark von "Ultimate Chicken Horse" inspiriert, in diesem Prototyp versucht jeder Spieler das Ziel des Levels zu erreichen indem sie zwischen den Runden neue Blöcke dem Level hinzufügen und so neue Wege errichten oder Mitspieler sabotieren.
+                    Hauptfokus dieses Projektes ist es zu lernen stabile Multiplayer-Systeme zu erschaffen.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Viele Spiele die mir gefallen sind vor allem deshalb so gut, weil sie im Multiplayer spielbar sind. Von Spielen wie "Ultimate Chicken Horse" und "R.V. There Yet?", die aus genau diesem Grund sehr spaßig sind, inspiriert, entschied ich mich dazu
+                    zu lernen wie Multiplayer-Systeme in Unreal Engine 5 eingerichtet werden. Ich nahm an dass ein Spiel wie "Ultimate Chicken Horse" recht einfach umzusetzen sein sollte. Ich konnte bereits in sehr wenigen Wochen Entwicklung
+                    sehr aufregende Ergebnisse erreichen. Der Game-Loop (Lauf-Runde:Jeder Spieler 1 Versuch ins Ziel zu kommen -> Dann Bau-Runde -> Lauf-Runde -> usw.) funktioniert bereits problemlos.
+                    Die online-Spiele Verbindung funktioniert auch bereits. Spieler können über Steam dem Spiel des anderen Spielers beitreten.
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Lauf-Runde: Jeder Spieler versucht das Ziel des Levels zu erreichen. Erreicht ein Spieler das Ziel, erhält dieser Spieler Punkte.
+                                Wird ein Spieler besiegt (z.B. durch das Fallen in Stacheln), erhält dieser Spieler keine Punkte, wenn die Runde endet.
+                                Sind alle Spieler im Ziel oder besiegt, endet die Lauf-Runde und der Runden-Rückbklick Bildschirm erscheint.
+                            </li>
+                            <li>
+                                Bau-Runde: Jeder Spieler muss in dieser Runde einen neuen Block dem Level hinzufügen. Aktuell hat noch jeder Spieler die Auswahl über alle aktuell verfügbaren Blöcke,
+                                dies steht in Planung bald geändert zu werden. Hat jeder Spieler seinen Block platziert, beginnt die nächste Lauf-Runde.
+                            </li>
+                            <li>
+                                Der Spieler der zu erst X-Punkte erreicht hat, gewinnt das Spiel. Die Anzahl der benötigten Punkte soll vor dem Start des Spieles einstellbar sein,
+                                Standard-Anzahl der Runden sollte wahrscheinlich bei ~8 liegen. Punkte-Zählung und Limit ist noch nicht implementiert.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/ultimatemultiplayer4.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <section class="pickups-section">
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Lauf-Runde</h3>
+                                <p class="pickup-desc">Jeder Spieler hat einen Versuch das Ziel des Levels zu erreichen!</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer2.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Runden-Rückblick Bildschirm</h3>
+                                <p class="pickup-desc">Hier wird der neue Punktestand angezeigt und welcher Spieler wie viel Punkte in dieser Runde gesammelt hat. Jeder Spieler muss auf "Ready" klicken damit die Bau-Runde beginnt.</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Bau-Runde</h3>
+                                <p class="pickup-desc">Jeder Spieler platziert einen neuen Block im Level! Sobald alle Spieler ihren Block platziert haben, beginnt die nächsteLauf-Runde</p>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer4.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Beispiel: Level-Veränderung bei Runde 4</h3>
+                                <p class="pickup-desc">Hier ist das Ausmaß der Level-Veränderungen bei Runde 4 zu sehen. Aus einem simplen Level können sehr komplexe und schwere Level entstehen!</p>
+                            </div>
+                        </article>
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Entwicklungszeit: 3 Wochen
+                    </li>
+                    <li>
+                        Solo Projekt
+                    </li>
+                    <li>
+                        Online Verbindungs-Service: Steam
+                    </li>
+                </ul>
+
+                <h3 class="project-subheading center-large">Implementierte Blöcke</h3>
+
+                <section class="pickups-section">
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock1x1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x1-Block</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock1x2.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x2-Block</h3>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock3x3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">3x3-Block</h3>
+
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock_L.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">L-Block</h3>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock_spike.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x1-Block mit Stachel</h3>
+                                <p class="pickup-desc">Hat ein Spieler Kontakt mit dem Stachel dieses Blockes, wird er für die aktuelle Lauf-Runde besiegt!</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock_move.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x2-Block mit Bewegung</h3>
+                                <p class="pickup-desc">Dieser Block bewegt sich zwischen den Endpunkten der Linie hin und her.</p>
+                            </div>
+                        </article>
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: Keine vorherige Multiplayer-Programmier Erfahrung.
+                    </li>
+                    <li>
+                        ->Lösung: Youtube Tutorials(Steam Setup: https://www.youtube.com/watch?v=5nMKEKV0acI&t=434s ; Replication-Basics: https://www.youtube.com/watch?v=bBK8A-mFH-s&t=1589s)
+                    </li>
+
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Online-Verbindung über Steam einzurichten geling mir sehr einfach.
+                    </li>
+                    <li>
+                        Grundbasis der Replikation verstanden (Welche Funktionen müssen auf dem Server ausgeführt werden, welche können auf dem Client ausgeführt werden, usw.)
+                    </li>
+                    <li>
+                        Ein Multiplayer Spiel zu programmieren ist zwar etwas anspruchsvoller, aber auch deutlich spaßiger. Bereits nach kurzer Zeit hat sich dieser Prototyp, im Vergleich zu meinen anderen Projekten, wie etwas komplett anderes angefühlt und mir viel Spaß gemacht.
+                    </li>
+
+                </ul>
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    Keine Downloads/Links vorhanden. Kommt vielleicht bald!
+                </p>
+                <a class="project-back" href="art.html#multiplayer" aria-label="Mehr zu Praise Hinode">MORE</a>
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <div id="projectilesystem" style="height:1px;"></div>
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/NoitaProjectiles12.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Komplexes Projektil System</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Roguelike / Vampire Survivors-like</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Dieses Projektil-System ist stark von dem Spiel "Noita" inspiriert. Primär war die Implementierung dieses Systems eine Herausforderung für mich selbst, um zu sehen ob ich in der Lage bin etwas derart komplexes vernünftig und sauber zu programmieren.
+                    Ziel war es außerdem dass dieses System sehr modular ist und sich möglichst einfach in neue Projekte, z.B. für zukünftige GameJams, einbauen lässt. Dieses Ziel konnte ich erfolgreich erreichen.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Ich hatte zu diesem Zeitpunkt schon viel Erfahrung in Unreal Engine gesammelt und wollte mein Können auf die Probe stellen. Außerdem bin ich ein großer Fan von dem Spiel "Noita", Ich wollte ein solches Projektil-System schon lange mal nachbauen.
+                    Zu der Zeit als ich dieses System bzw. dieses Projekt erstellt habe, war auch "Megabonk" gerade weltweit ein Hit, daher habe ich auch nach der Implementierung des Projektil-Systems angefangen Elemente von "Vampire-Survivors" einzubauen (Gegner in Wellen-Spawnen, EXP -> Level Up -> Projektile upgrade, usw.).
+                    Kurz darauf habe ich aber Lust bekommen zu lernen wie Multiplayer in Unreal Engine 5 funktioniert. Daraufhin habe ich dann das Multiplayer Projekt gestartet.
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>System-Ablauf</h2>
+                        <ul>
+                            <li>
+                                Der Spieler hat 2 Zeilen mit Zaubern(Projektile, Modifier, Multiplier): Eine Zeile stellt sein Inventar dar, und die andere Zeile stellt die ausgerüsteten Zauber dar. Durch Klicken auf einen Zauber im Inventar, wird dieser ausgerüstet.
+                            </li>
+                            <li>
+                                Zauber_Projektil: Können von Zauber_Modifiern modifiziert werden(z.B. mehr Projektilgeschwindigkeit, größeres Projektil, usw.). Ein Projektil welches geschossen wird mit eigenen Projektil-Geschwindigkeiten und Projektil-Schaden. (Beispiel: Rote kugel fliegt schnell, verursacht wenig Schaden; Blauer Würfel fliegt langsam, verursacht viel Schaden)
+                            </li>
+                            <li>
+                                Zauber_Modifier: Modifiziert den nächsten Zauber_Projektil oder Zauber_Multiplier in der ausgerüsteten Zauber-Zeile nach dem Modifier. Wirkt z.B. schnellere Projektilgeschwindigkeit, größere Projektile, usw.
+                            </li>
+                            <li>
+                                Zauber_Multiplier: Dieser Zauber feuert mehrere Projektile gleichzeitig ab, z.B. feuert ein Zauber_Multiplier_2 die nächsten 2 Projektile auf einmal ab, statt beide nacheinander. Außerdem können Zauber_Multiplier von Zauber_Modifiern modifiziert werden, und den Modifier an alle nachfolgenden Projektile übertragen!
+                            </li>
+                            <li>
+                                Sobald der Spieler schießt, wird das nächste Projektil zum schießen aktuallisiert, indem die ausgerüstete Zauber-Zeile ausgelesen wird. Nach jedem Schuss wird das nächste Zauber_Projektil, bzw. Zauber_Multiplier geschossen, bis die Zeile durch ist und es wieder von vorne beginnt.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/NoitaProjectiles7.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Projektile</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectiles_sphere.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Projektil: Kugel</h3>
+                                <p class="pickup-desc">Hohe Projektilgeschwindigkeit, geringer Schaden.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectilescube.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Projektil: Würfel</h3>
+                                <p class="pickup-desc">Geringe Projektilgeschwindigkeit, hoher Schaden.</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectiles_hitdraw.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Projektil&Multiplier: Kugel(M)</h3>
+                                <p class="pickup-desc">Dieses Projektil hat einen eingebauten Multiplier und schießt das nächste Projektil von seiner eigenen Position aus ab, wenn es mit etwas(Gegner/Wand) kollidiert.</p>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Modifier</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectilesmodifier.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Modifier: Größe</h3>
+                                <p class="pickup-desc">Vergrößert das nächste ausgerüstete Projektil(oder Multiplier).</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectilesmodifierspeed.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Modifier: Geschwindigkeit</h3>
+                                <p class="pickup-desc">Erhöht die Projektilgeschwindigkeit des nächsten ausgerüstete Projektils(oder Multipliers).</p>
+                                <div class="pickup-meta">Rarity: Common</div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Multiplier</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectilesdraw.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Multiplier: 2</h3>
+                                <p class="pickup-desc">Statt einem Projektil, werden die nächsten 2 Projektile gleichzeitig abgeschossen.</p>
+                                <div class="pickup-meta">Zauber_Modifiers, die auf Zauber_Multipliers wirken, beeinflussen alle Projektile, die der jeweilige Zauber_Multiplier beinhaltet(als nächstes abfeuert)!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectiles_splitdraw.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Multiplier: 2(Split)</h3>
+                                <p class="pickup-desc">Statt einem Projektil, werden die nächsten 2 Projektile in einer V-Formation gleichzeitig abgeschossen.</p>
+                                <div class="pickup-meta">Zauber_Modifiers, die auf Zauber_Multipliers wirken, beeinflussen alle Projektile, die der jeweilige Zauber_Multiplier beinhaltet(als nächstes abfeuert)!</div>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectiles_tripledraw.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Multiplier: 3</h3>
+                                <p class="pickup-desc">Statt einem Projektil, werden die nächsten 3 Projektile gleichzeitig abgeschossen.</p>
+                                <div class="pickup-meta">Zauber_Modifiers, die auf Zauber_Multipliers wirken, beeinflussen alle Projektile, die der jeweilige Zauber_Multiplier beinhaltet(als nächstes abfeuert)!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/projectiles_triplesplitdraw.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Multiplier: 3(Split)</h3>
+                                <p class="pickup-desc">Statt einem Projektil, werden die nächsten 3 Projektile in einer V-Formation(ein Projektil in der Mitte, zwischen den beiden anderen Projektilen) gleichzeitig abgeschossen.</p>
+                                <div class="pickup-meta">Zauber_Modifiers, die auf Zauber_Multipliers wirken, beeinflussen alle Projektile, die der jeweilige Zauber_Multiplier beinhaltet(als nächstes abfeuert)!</div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Setup-Beispiele</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NoitaProjectiles2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Nur Zauber_Projektil: Kugel</h3>
+                                <p class="pickup-desc">Feuert ein schnelles Projektil mit wenig Schaden</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NoitaProjectiles4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Multiplier: 2(S) + 2x Zauber_Projektil: Kugel</h3>
+                                <p class="pickup-desc">Feuert 2 Projektile gleichzeitig in einer V-Formation ab.</p>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NoitaProjectiles6.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Projektil+Multiplier: Kugel(M) + Zauber_Projektil: Kugel</h3>
+                                <p class="pickup-desc">Sobald das erste Projektil (Zauber_Projektil+Multiplier: Kugel(M)) einen Gegner trifft, verschießt es von seiner Position aus das nächste Projektil (Zauber_Projektil: Kugel).</p>
+                                <div class="pickup-meta">Rarity: Common · Collected: 0/5</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NoitaProjectiles8.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Zauber_Projektil&Multiplier: Kugel(M) + Zauber_Multiplier: 3(Split) + 2xZauber_Projektil: Kugel + 1x Zauber_Projektil: Würfel</h3>
+                                <p class="pickup-desc">Sobald das erste Projektil (Zauber_Projektil&Multiplier: Kugel(M)) einen Gegner trifft, feuert es von seiner Position die nächsten 3 Projektile gesplittet ab.</p>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Solo-Projekt
+                    </li>
+                </ul>
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: Die größte Herausforderung war dafür zu sorgen, dass sich alle Zauber genau so verhalten wie sie es tun während ich alles möglichst dynamisch und in Komponenten gestalte.
+                    </li>
+                    <li>
+                        ->Lösung: Statt Variablen und Funktionen auf den Spieler zu legen habe ich stattdessen größten Teils Data Assets, Komponenten und Interfaces verwendet. Dies ermöglicht mir das vollständige System sehr einfach in neue Projekte zu übertragen,
+                        ohne großartig etwas ändern zu müssen, außer der Schuss-Richtung in die geschossen werden soll, und den Schuss-Input zu erstellen.
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Die "Data Asset"-Klasse kann sehr dynamisch eingesetzt werden.
+                    </li>
+                    <li>
+                        Funktionen in Komponenten zu legen ermöglicht mir die gewünschte Logik einfach auf neue Objekte übertragen zu können.
+                    </li>
+
+                </ul>
+
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    Nicht vorhanden. Vielleicht gibt es das System bald in einer Game Jam zu sehen!
+                </p>
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <div id="carprototype" style="height:1px;"></div>
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/cargame1.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Shader Tutorial / Fahrzeug-Prototyp</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Primär ist dieses Projekt eine Testumgebung für meinen outline-shader, den ich mit Hilfe eines Tutorials erstellt habe. Dies ist mein erster Ansatz eigene Shader zu erstellen. Der Fahrzeug-Prototyp ist spontan dazu entstanden.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Einen eigenen Shader zu erstellen lag für mich noch auf meiner To-Do-Liste für 2025. Der standard Unreal Engine-Look störte mich nach so vielen Projekten. Der hier erstellte Outline-Shader hat mir so sehr gefallen,
+                    dass ich unbedint etwas World-Building machen wollte, um zu prüfen ob der Shader wirklich voll einsatzbereit ist oder noch Probleme aufweist. Außerdem wollte ich mit der Kanone auf dem Auto mein Animations-Können auf die Probe stellen:
+                    Ziel war es eine Kanone zu animieren, die aus dem Auto "ausfährt" und sich in Richtung der Mauszeiger-Position sinnvoll mitdreht. Dies funktionierte auch ziemlich problemlos. Zu dieser Zeit habe ich auch Substance Painter getestet.
+                    Das Ergebnis in Substance Painter hat mir so sehr gefallen, dass ich unbedingt einen voll animierten Gegner für diesen Prototyp erstellen wollte.
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf (Idee - noch nicht umgesetzt)</h2>
+                        <ul>
+                            <li>
+                                Spieler startet in Nachbarschaft(Basis). Dort gibt es Aufgaben für Anwohner zu erledigen. Mit Ressourcen kann der Spieler Gebäude upgraden und so neue Upgrades für das Auto freischalten.
+
+                            </li>
+                            <li>
+                                Hat sich der Spieler fertig vorbereitet, verlässt er die Stadt (im Auto) und erkundet die Umgebung("Erkundungs-Phase" beginnt). Die Tank-Ladung ds Autos beschränkt die Reichweite in der sich der Spieler bewegen kann, der Spieler muss mit seiner Tank-Ladung auch wieder zurück in die Nachbarschaft kommen.
+
+                            </li>
+                            <li>
+                                In der Erkundungs-Phase trifft der Spieler auf Gegner, welche er mit seinen Waffen ausschalten kann um Ressourcen zu erhalten. Außerdem lässt sich je nach Ausstattung des Autos mit gewissen Dingen in der Spielwelt interagieren
+                                (Beispiel: Spieler nimmt "Feuerlöscher-Aufsatz" mit -> In der Erkundungs-Phase kann er auf ein brennendes Auto mit einem NPC treffen, wenn er das Auto löscht erscheint der NPC in der Nachbarschaft und neue Upgrades werden freigeschaltet)
+                            </li>
+                            <li>
+                                Wichtig: Dies ist nur die grobe Planung/Idee für dieses Projekt. Bisher implementiert ist Folgendes: Aus- und Einsteigen in das Auto ; Kanone + Schuss-Mechanik (noch keine Schaden-Logik) ;
+                                ein Gegner samt Animationen (Animationen: patroullieren, Spieler entdecken, zum Spieler laufen, (am Spieler angekommen) auf den Spieler zu-springen, Spieler angreifen) und Angriff-/Sprung-Logik des Gegners
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/cargame4.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/cargame2.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+
+                </div>
+
+
+
+
+
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        3D-Models: Blender + Substance Painter
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Solo-Projekt
+                    </li>
+                    <li>
+                        Status: Prototyp, unveröffentlicht.
+                    </li>
+                </ul>
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: Kanone zur Mauszeiger-Position drehen ("LookAt-Node" ließ die Kanone merkwürdig aussehen)
+                    </li>
+                    <li>
+                        ->Lösung: Rotation der Kanone beschränken: Die Rotation der unteren Platte, auf der die Kanone befestigt ist, nur auf die Z-Achse beschränken. Die Rotation für die Kanone selbst wurde auf die Z- und Y-Achse
+                        beschränkt, dadurch bewegt sich die Kanone nun vertikal und horizontal entsprechend des Mauszeigers mit, ohne durch die Halterung der Kanone zu clippen.
+                    </li>
+                    <li>
+                        Herausforderung: Outline-Shader hat teilweise sehr große schwarze Flächen erstellt (dort, wo der Winkel in dem auf die Objekte geschaut wird, zu schmal wird) und an einigen Stellen geflackert.
+                    </li>
+                    <li>
+                        ->Lösung: Viele Änderungen an den Variablen des Outline-Shaders, und zusätzliche Variablen erstellt, die sowohl das Flackern als auch die großen schwarzen Flächen reduziert haben. Sehr wenige Stellen flackern immer noch, dafür brauche ich noch weitere Lösungen.
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Substance Painter ist sehr hilfreich um schnell schönere Texturen zu erstellen.
+                    </li>
+                    <li>
+                        Shader-Basics verstanden.
+                    </li>
+
+                </ul>
+
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    Nicht vorhanden. Steht aktuell nicht in der Planung fortgeführt zu werden, auch wenn mir die Idee und der Style des Spieles sehr gefällt.
+                </p>
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+                <a class="project-back" href="art.html#carprototype" aria-label="Mehr zu Praise Hinode">MORE</a>
+            </article>
+        </main>
+
+        <div id="fishingprototype" style="height:1px;"></div>
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/islandgame6.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Fishing/Harpooning Prototype</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    In diesem Harpunier-Prototyp fängt der Spieler Fische, um diese zu verkaufen und bessere Upgrades zu erhalten. Fische die schwerer zu fangen sind,
+                    bringen beim Verkauf mehr Geld ein. Je mehr upgrades, desto weiter kann der Spieler aufs Meer hinaus schwimmen und exotischere Fische fangen.
+                    Mit Fisch-Fallen und (geplant) später Anglern oder Angeln können Fische passiv gefangen werden, während der Spieler aktiv Fische harpuniert.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Die Idee dieses Projektes war es mich mit dem Wasser-/BuoyancySystem von Unreal Engine vertraut zu machen. Es ist schon lange ein Wunsch von mir ein Projekt
+                    im Meeres-Setting zu erstellen, dieser Prototyp war der erste Schritt in diese Richtung. Außerdem musste ich eine eigene AI-Bewegungs-Logik erstellen, da
+                    die Standard Unreal Engine-AI-Pfadfindungslogik nur funktioniert, wenn sich die AI am Boden befindet.
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Der Spieler startet mit einem Speer und einem Ruder-Boot an einem Steg. Am Ende des Steges befinden sich
+                                Shops bei denen der Spieler neue Upgrades kaufen, und Fische verkaufen kann.
+                            </li>
+                            <li>
+                                Der Spieler springt ins Wasser und fängt seinen ersten Fisch. Jeder erste Fang einer Fischart erlaubt dem Spieler
+                                neue Upgrades zu kaufen (z.B.: Flunder gefangen: Ruder-Boot Speed-Upgrade Stufe 1 freigeschaltet)
+                            </li>
+                            <li>
+                                Hat der Spieler genug Geld angesammelt kann eine Harpune gekauft werden. Mit der Harpune lassen sich Fische fangen, die vorher
+                                entkommen sind, wenn der Spieler zu nah kam. Die Harpune kann durch den Fang neuer Fische viele Upgrades erhalten
+                                (Stärke, Schuss-Geschwindigkeit, Einhol-Geschwindigkeit, Nachlade-Geschwindigkeit, usw.).
+                            </li>
+                            <li>
+                                Mit genug Geld kann der Spieler ein neues Boot kaufen und neue Gebiete erkunden.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/islandgame5.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/islandgame3.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Boote</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Ruder-Boot</h3>
+                                <p class="pickup-desc">Standard-Boot des Spielers. Kann sich nur im Tutorial-Bereich fortbewegen (in anderen Bereichen werden Wellen zu stark für das Ruder-Boot).</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame6.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kleines Fischer Boot</h3>
+                                <p class="pickup-desc">Das erste "richtige" Boot des Spielers um den Tutorial-Bereich zu verlassen und neue Gebiete zu erkunden. </p>
+                                <div class="pickup-meta">
+                                    Geplant: An diesem Boot sollen Angeln
+                                    für passives fischen befestigt werden können.
+                                </div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Fisch-Werkzeuge</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Speer</h3>
+                                <p class="pickup-desc">Anfangs-/Standard-Fisch-Werkzeug des Spielers. Hat eine sehr kurze Reichweite, reicht nur um Flunder, Seeigel und Krabben zu fangen.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame5.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Harpune</h3>
+                                <p class="pickup-desc">Ermöglicht das Fangen von exotischeren Fischen.</p>
+                                <div class="pickup-meta">Die Harpune ist das Hauptwerkzeug des Spielers! Alle neuen Fische(nach Tutorial) müssen zu erst mit der Harpune gefangen werden.</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/fishinggametrap.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Fisch-Falle</h3>
+                                <p class="pickup-desc">Eine Falle die passiv Fische fängt. Anfangs nur Krabben und Flunder, kann Upgrades erhalten um bessere Fische zu fangen.</p>
+                                <div class="pickup-meta">
+                                    Upgrades für die Fisch-Falle um bessere Fische zu fangen erhält der Spieler erst, wenn er den jeweiligen Fisch zuvor mit der
+                                    Harpune gfangen hat!
+                                </div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Upgrade Shop</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame4.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Shop</h3>
+                                <p class="pickup-desc">Hier kann der Spieler neue Upgrades kaufen und seine Fische verkaufen.</p>
+                            </div>
+                        </article>
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Solo-Projekt
+                    </li>
+                </ul>
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: Schiffe lagen nicht stabil auf dem Wasser.
+                    </li>
+                    <li>
+                        ->Lösung: Buoyancy-Settings überarbeitet. Eine vernünftige Verteilung von Buoyancy-Punkten und das Einstellen der wirkenden Kräfte ist essenziell, damit sich das Objekt wie gewünscht verhält
+                    </li>
+                    <li>
+                        Herausforderung: Nav-Mesh-Pfadfindung ist für eine Bewegung in alle Richtungen ohne Kontakt mit dem Nav-Mesh ungenügend.
+                    </li>
+                    <li>
+                        ->Lösung: Mein eigenes AI-Pfadfindungs-System erstellen. Jeder Fisch hat eine gewissen Bereich zugewiesen (z.B. Tutorial-Bereich unterteilt in: Tutorial-oben und Tutorial-unten). Zum Fortbewegen
+                        nimmt der Fisch einen zufälligen Punkt in diesem Bereich, feuert einen Line Trace in die Richtung des Punktes. Wenn der Line Trace etwas trifft bewegt sich der Fisch zum Treffpunkt des Line Traces.
+                        Wenn der Line Trace nichts trifft, bewegt sich der Fisch zum Ende des Line Traces. So konnte ich eine Bewegung der Fische in alle Richtungen gleichzeitig erzeugen, und gleichzeitig erzwingen dass die Fische in ihrem zugewiesenen Bereich bleiben.
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Masken erlauben mir das Wasser innerhalb gewisser Kollision-Zonen auszublenden.
+                        Dies erlaubte mir das Wasser aus den Schiffen zu entfernen und die Schiffe somit optisch realistischer zu gestalten.
+                    </li>
+                    <li>
+                        Wasser-Plugin Basics verstanden.
+                    </li>
+                    <li>
+                        Eigenes leicht erweiterbares AI-Pfadfindungs-System erstellt.
+                    </li>
+
+                </ul>
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    Nicht vorhanden. Steht aktuell nicht in der Planung fortgeführt zu werden. Ich werde das hier gelernte Wissen für ein neues, Meer/Boot bezogenes Projekt nutzen.
+                </p>
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+        
+        <div id="praisehinode" style="height:1px;"></div>
+        
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/praisehinode1.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">PRAISE HINODE (Komplexes Dialog System)</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Simulation / Puzzle / Adventure</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    PRAISE HINODE (stark inspiriert von "Papers, Please") findet in einem Post-Apokalyptischen Setting statt. Der Protagonist erhält Zuflucht in einer der letzten Bastionen der Menschheit - Hinode.
+                    Hinode wird von einem korrupten und moralisch fragwürdigen Regime geführt. Der Protagonist erhält die Aufgabe einen neuen Posten von Hinode zu besetzen:
+                    Die Ausgabe-Station von Hinode die Kontakt mit den im Umland lebenden Menschen aufnehmen und diese mit Vorräten versorgen soll. Der Spieler muss strengen Anweisungen
+                    folgen, um genug Geld zu sammeln und seine Familie versorgen zu können.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Im Hauptfokus dieses Projektes stand die Herausforderung ein komplexes Dialog-System zu erstellen. Bis zu diesem Projekt hatte ich oft Schwierigkeiten dynamische UI-Elemente zu erstellen,
+                    also dachte ich mir ein sehr Dialog-lastiges Spiel könnte mich aus meiner Komfort-Zone von sehr einfachen UI Elementen locken und mir mit meinen UI-Problemen in Zukunft helfen.
+                    Außerdem wollte ich unbedingt noch vor dem 01.03.2025 ein fertiges Projekt für mein Portfolio haben. Ich habe mir einen sehr eindeutigen Zeitplan gesetzt: 01.01.2025 - 31.01.2025 Implementierung
+                    aller wichtigen Funktionen ; 01.02.2025 - 28.02.2025 Art/Design + Polishing
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Am Anfang jedes Tages (von Tag 1 bis 4) geht ein Security-Personal-NPC
+                                zum Spieler und erklärt die neuen Regeln, die es zu beachten gilt.
+                                Missachtet der Spieler die Regeln (Beispiel: NPC der um Essen bittet darf nur nach Dekontaminations-Dusche in den Essen-Vorratsraum, Spieler
+                                schickt NPC trotz hoher Kontamination ohne Dekontaminations-Dusche in den Essen-Vorratsraum -> Regel missachtet) verliert der Spieler Geld, welches er braucht um seine Familie am Leben zu halten.
+                                Entdeckt der Spieler ein Problem/Diskrepanz mit den Werten des NPCs, kann er den NPC im Detective-Mode (Taste T), auf dieses Problem ansprechen, indem er im Detective-Mode die beiden Objekte markiert,
+                                die ein Problem aufweisen (Beispiel: Kontaminations-Wert des NPCs zu hoch: Spieler markiert Kontaminations-Scanner und den Zettel der den erlaubten Kontaminations-Wert anzeigt -> Spieler kann NPC
+                                darauf ansprechen, den NPC daraufhin raus schicken, oder eine Dekontaminations-Dusche zuweisen)
+
+                            </li>
+                            <li>
+                                Tag 1: Essens-Ausgabe. NPCs können in die Ausgabe-Station kommen
+                                und um Essen bitten. Der Spieler muss mit einem Kontaminations-Scanner
+                                den Kontaminations-Wert des NPCs prüfen, um zu entscheiden ob dieser in den
+                                Essen-Vorratsraum gehen darf, oder nicht. Außerdem hat der Spieler die Wahl
+                                bis zu 3 NPCs am Tag eine Dekontaminations-Dusche nehmen zu lassen.
+                                Außerdem bricht der Tag früh ab, weil ein NPC durch eine Tür in Hinode
+                                eindringt.
+                            </li>
+                            <li>
+                                Tag 2: Rekrutierung. NPCs können ab dem zweiten Tag rekrutiert werden, wenn sie dies erbitten.
+                                Die NPCs müssen einen Rekrutierungs-Test ausführen und gehen dann zurück zum Spieler und legen ihre Ergebnisse vor.
+                                Der Spieler muss den Test überprüfen und entscheiden wie er mit dem NPC fortfährt (bestanden -> rekrutieren ; durchgefallen -> NPC raus schicken)
+                                Außerdem stehen ab dem zweiten Tag 2 Security-Personal-NPCs im Raum des Spielers. Einige NPCs werden nicht auf die Aufforderungen des Spielers hören,
+                                der Spieler muss dann den Raum, in den der NPC gehen möchte, abriegeln, und einen der Security-Personal-NPCs befehligen diesen NPC raus zu eskortieren.
+                            </li>
+                            <li>
+                                Tag 3: Wasser-Ausgabe. Ab dem dritten Tag können NPCs auch um Wasser bitten. Der Spieler muss
+                                die Wasser-Marke des NPCs überprüfen, ob diese original und noch gültig ist.
+                            </li>
+                            <li>
+                                Tag 4: Daten-Terminal. Ab dem vierten Tag kann der Spieler eine Datenbank an einem Terminal überprüfen.
+                                Jeder NPC muss überprüft werden, ob die Datenbank Einträge über diesen NPC besitzt, die ihnen den Zugang zu den gewünschten Ressourcen verbieten sollten (Beispiel: NPC will Essen -> evtl. Eintrag in Datenbank "Hat versucht unser Essen zu vergiften! Kein Zugang erlauben!")
+                            </li>
+                            <li>
+                                Am Ende jedes Tages erscheint eine Übersicht über den Status der Familie. Es muss täglich Essen, Wasser, Strom, Heizkosten und unter Umständen Medizin bezahlt werden. Reicht das Geld für eine dieser Dinge nicht mehr aus, besteht die Chance dass zufällige
+                                Familienmitglieder entsprechende negative Zustände erhalten (zB Heizkosten nicht bezahlt -> "kalt", wieder nicht bezahlt -> "friert", wieder nicht bezahlt -> "krank").
+                                Nach dieser Übersicht endet der Tag und der nächste beginnt.
+                            </li>
+                            <li>
+                                Bevor der nächste Tag richtig startet, kann der Spieler noch die aktuelle Zeitung lesen, um zu erfahren was am Vortag in Hinode passiert ist.
+                                Dort sieht er dann wie sich welche NPCs bemerkbar gemacht haben (z.B."Leopold Ptieza" repariert Wasserwerke, usw.)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/praisehinode18.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Ressourcen/Überprüfungen</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kontamination</h3>
+                                <p class="pickup-desc">Der Spieler kann NPCs mit dem Kontaminations-Scanner auf ihren Kontaminations-Wert überprüfen. Der erlaubte Kontaminations-Wert kann sich jeden Tag ändern.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Rekrutier-Test Ergebnisse</h3>
+                                <p class="pickup-desc">Das Ergebnis des Rekrutier-Tests besteht aus 2 Zahlen. Beide Zahlen müssen in gewissen vorgegebenen Reichweiten liegen, um den Test zu bestehen.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode9.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wasser-Marke</h3>
+                                <p class="pickup-desc">Der Spieler muss überprüfen ob die Marke original ist (das Bild in der Mitte der Marke kann sich ändern) und ob die Marke noch gültig ist (auf jeder Karte steht ein "gültig bis:", dieses darf nicht abgelaufen sein)</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode10.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Datenbank-Einträge</h3>
+                                <p class="pickup-desc">Jeder NPC muss nach seinem Namen gefragt und die zugehörige Datenbank-Einträge überprüft werden. Am Datenbank-Terminal kann der Spieler nach Eingabe des NPC-Namen alle zugehörigen Datenbank-Einträge einsehen.</p>
+                            </div>
+                        </article>
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Einzigartige NPCs (Beispiele)</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode11.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Leopold Ptieza</h3>
+                                <p class="pickup-desc">
+                                    Ein Elektriker, der um Rekrutierung bittet. Er schafft den Rekrutierungs-Test nicht, bittet dennoch darum rekrutiert zu werden und verspricht dem Spieler,
+                                    dass es sich für ihn lohnen wird.
+                                </p>
+                                <div class="pickup-meta">Wenn Leopold Ptieza dennoch rekrutiert wird, repariert er die Wasserwerke und Stromumwandler in Hinode, wodurch Wasser- und Stromkosten für die nächsten 2 Tage sinken!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode12.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Verrückter Ödländer</h3>
+                                <p class="pickup-desc">
+                                    Ein verrückter Ödländer der kaum verständlich spricht. Er möchte Essen, hat aber einen viel zu hohen Kontaminations-Wert.
+                                    Der Ödländer warnt den Spieler vor großem Unglück wenn seiner Bitte um Essen ignoriert wird.
+                                </p>
+                                <div class="pickup-meta">Wenn der Spieler den Verrückten Ödländer die Essensausgabe verweigert, fällt in der selben Nacht ein Schwarm Heuschrecken über Hinode her -> Essens-Kosten werden für 3 Tage erhöht!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode13.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">John Kero(Banditen-Anführer)</h3>
+                                <p class="pickup-desc">Ein Banditen-Anführer der vorgibt einer angeblichen Ödland-Polizei anzugehören und nach "Leopold Ptieza" zu suchen. </p>
+                                <div class="pickup-meta">Wird diesem NPC Zugang zu Hinode gewährt, kann es zu einem "Bürgerkrieg"-Ende kommen, wenn der Widerstands-Anführerin ebenso Zugang zu Hinode gewährt wird.</div>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode14.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Dr. Laszle Beck</h3>
+                                <p class="pickup-desc">Ein sehr guter Arzt, besteht jedoch den Rekrutierungstest nicht.</p>
+                                <div class="pickup-meta">Wird diesem NPC dennoch die Rekrutierung gewährt, senken Medizinkosten für die nächsten 3 Tage!</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode15.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Lina Haul (Widerstands-Anführerin)</h3>
+                                <p class="pickup-desc">Die Anführerin des Widerstandes gegen das Regime von Hinode. Sie bittet den Protagonisten um Hilfe um ihre Unterwanderung von Hinode starten zu können.</p>
+                                <div class="pickup-meta">
+                                    Wird Lina Haul Zugang zu Hinode gewährt, besteht die Möglichkeit auf das "Gute Ende"! Eine Serie von Herausforderungen folgt (höhere Kosten, viele NPCs denen ohne zu fragen
+                                    Zugang gewährt werden muss, um den Widerstand zu unterstützen). Schafft der Spieler es 3 Tage mit Lina Haul in Hinode zu überleben, erreicht er das "Gute Ende" und Hinodes korruptes Regime wird gestürzt!
+                                </div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Entwicklungszeit: 2 Monate (01.01.2025 - 01.03.2025)
+                    </li>
+                    <li>
+                        Solo-Projekt
+                    </li>
+
+                </ul>
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: In 2 Monaten ein vollständigen Prototypen erstellen.
+                    </li>
+                    <li>
+                        ->Lösung: Strikte Zeiteinteilung: Mir im Januar die Grenze zu setzen mit dem Code/Programmieren fertig zu sein, hat extrem dabei geholfen
+                        genügend Zeit zum einbauen von 3D Models/Worldbuilding zu haben, und um dann sogar noch viele neue einzigartige NPCs zu implementieren.
+                    </li>
+                    <li>
+                        Herausforderung: Robustes, dynamisches Dialogsystem erstellen.
+                    </li>
+                    <li>
+                        ->Lösung: Zum ersten mal die "Data Table"-Klasse richtig genutzt. Diese Klasse hat mir sehr dabei geholfen einfach und schnell neue Dialoge zu erstellen.
+
+                    </li>
+
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        "Data Table"-Klasse zum speichern vieler verschiedenen Werte für den selben Nutzen kann sehr hilfreich sein.
+                    </li>
+                </ul>
+
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    [Link zum Gameplay]. Downloads gibt es keine, Spiel ist unveröffentlicht.
+                </p>
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+    <!-- Optional: dein app.js -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 20px auto 20px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Cookie Crumble</span>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/CookieCrumble.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Cookie Crumble</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> 2.5D Sidescroller | Jump&Run | Platformer | Unreal Engine</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine 5</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Rolle:</strong> Programmer / Artist</div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content panel">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Cookie Crumble ist ein 2.5D, Side-Scroller/Plattformer: der
+                    Spieler steuert eine Maus durch eine Küche, sammelt Keks-Krümel und
+                    Käse-Stücke(Highscore) und muss am Levelende einen Boss überwinden, um an
+                    den großen Keks zu gelangen. Fokus für dieses Projekt: während der Game Jam rechtzeitig fertig werden
+                    und viel Zeit für Playtesting und Polishing haben.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    "Cookie Crumble" wurde für die "Brackeys Game Jam 2025.2" (24.-31. August 2025)
+                    von mir und einer Freundin entwickelt. Meine Rolle im Team war primär Programmierer,
+                    während ich auch einzelne 3D Models für die Umgebung erstellt habe.
+                    Ziel der Game Jam war ein sauberer, gut spielbarer Single-Level-Plattformer mit
+                    solidem Gameplay.
+                </p>
+
+                <!-- Two-column block: Text (links) + Bild (rechts) -->
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>Ein Level: der Spieler (Maus) läuft von links nach rechts durch eine Küche.</li>
+                            <li>Gegner blockieren den Weg; sie können durch Springen auf den Kopf besiegt werden.</li>
+                            <li>Sammelobjekte: Keks-Krümel und Käse-Stücke als Score-Mechanik.</li>
+                            <li>Am Ende wartet ein Boss. Besiegt der Spieler den Boss, erreicht er den großen Keks und gewinnt das Spiel.</li>
+                            <li>Ziel: Level meistern und ggf. Score verbessern (Speedrun / Highscore).</li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/cookiecrumble3.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>Engine: Unreal Engine (Blueprints / Visual Scripting)</li>
+                    <li>Source Control: GitHub</li>
+                    <li>
+                        Team: 2 Personen (ich: Lead Programmer & sekundär Artist; 1 Lead
+                        Artist & sekundär Programmer)
+                    </li>
+                    <li>Entwicklungszeit: Game Jam-Woche (24.–31.08.2025)</li>
+                    <li>Status: Jam-Prototype, ein vollständig spielbares Level</li>
+
+                </ul>
+
+
+                <section class="pickups-section">
+                    <h3 class="project-subheading center-large">Features</h3>
+                    <h2 class="section-title">Pickups</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookie.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Keks-Krümel</h3>
+                                <p class="pickup-desc">Collectable für die Highscore-Mechanik. Liegen oft auf dem offensichtlichen Pfad. Insgesamt im Level verteilt: 40.</p>
+                                <div class="pickup-meta">Rarity: Common</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cheese.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Käse</h3>
+                                <p class="pickup-desc">Collectable für die Highscore-Mechanik. Liegt an schwer erreichbaren Positionen. Insgesamt im Level verteilt: 12.</p>
+                                <div class="pickup-meta">Rarity: Rare</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/doublejump.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Double Jump</h3>
+                                <p class="pickup-desc">Sobald der Spieler dieses Pickup aufsammelt, wird die Doppelsprung-Mechanik für den Spieler permanent freigeschaltet.</p>
+                                <div class="pickup-meta">Rarity: Unique</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/1up.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1-Up</h3>
+                                <p class="pickup-desc">Stellt ein Leben des Spielers wieder her. Spieler steigt bei Respawn-Point neu ein.</p>
+                                <div class="pickup-meta">Rarity: Rare</div>
+                            </div>
+                        </article>
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/hermes.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Speed Up</h3>
+                                <p class="pickup-desc">Steigert für 20 Sekunden die Bewegungsgeschwindigkeit des Spielers um 50%.</p>
+                                <div class="pickup-meta">Rarity: Common </div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/melon.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wassermelone</h3>
+                                <p class="pickup-desc">Erlaubt es dem Spieler für 10 Sekunden Projektile mit der Taste X zu verschießen.</p>
+                                <div class="pickup-meta">Rarity: Rare</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/slowmo.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Stoppuhr</h3>
+                                <p class="pickup-desc">Erlaubt es dem Spieler für 10 Sekunden die Bewegungsgeschwindigkeit aller Gegner um 50% zu reduzieren.</p>
+                                <div class="pickup-meta">Rarity: Rare</div>
+                            </div>
+                        </article>
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Gegner</h2>
+
+                    <div class="pickups-grid">
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_enemy6.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Springen um Gegner zu besiegen!</h3>
+                                <p class="pickup-desc">Wenn der Spieler aus einem Fall auf einem Gegner landet, wird der Gegner besiegt.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_enemy1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Fliege</h3>
+                                <p class="pickup-desc">Fliegt zwischen Punkt A und B hin und her.</p>
+                                <div class="pickup-meta">HP: 1</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_enemy2.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Fliege(schnell)</h3>
+                                <p class="pickup-desc">Fliegt schnell zwischen Punkt A und B hin und her.</p>
+                                <div class="pickup-meta">HP: 1</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_enemy3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kakerlake</h3>
+                                <p class="pickup-desc">Läuft am Boden zwischen Punkt A und B hin und her.</p>
+                                <div class="pickup-meta">HP: 1</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_enemy4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wespe</h3>
+                                <p class="pickup-desc">Folgt dem Spieler im Flug.</p>
+                                <div class="pickup-meta">HP: 1</div>
+                            </div>
+                        </article>
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_enemy5.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wespen-Königin</h3>
+                                <p class="pickup-desc">Die Königin der Wespen! Endboss.</p>
+                                <div class="pickup-meta">HP: 30 </div>
+                            </div>
+                        </article>
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Umgebungsgefahren</h2>
+
+                    <div class="pickups-grid">
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_umgebungsgefahr1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Herd</h3>
+                                <p class="pickup-desc">Wird periodisch heiß und schaltet sich wieder aus.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/cookiecrumble_umgebungsgefahr2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wassertropfen</h3>
+                                <p class="pickup-desc">An machen Stellen im Level tropft es! Wassertropfen verursachen Schaden am Spieler!</p>
+                            </div>
+                        </article>
+
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <h2>Herausforderung → Lösungsweg</h2>
+                <ul>
+                    <li>
+                        Herausforderung: In einer kurzen Jam-Woche ein befriedigendes
+                        Sprung- und Kollisions-Gefühl zu erzielen und genug Zeit für
+                        ausführliches Playtesting zu haben.
+                    </li>
+                    <li>
+                        -> Lösung: Fokus auf wenige, aber gut gebaute Mechaniken. Frühes
+                        Minimal-Playable-Build fertigstellen, danach gezielte Playtest Runden zur Feinjustierung von Sprung Höhe, Sprung Kontrolle, Enemy-HP, usw.
+                    </li>
+                    <li>
+                        Herausforderung: Begrenzte Teamgröße / Artressourcen → klare
+                        Priorisierung.
+                    </li>
+                    <li>
+                        -> Lösung: Art-Assets gezielt für den wichtigsten Level-Durchlauf
+                        erstellen; Gameplay-Polish vor zusätzlichen Featurewünschen
+                        priorisiert.
+                    </li>
+                    <li>
+                        Herausforderung: Texturen meiner Art-Assets waren für mich und dem damit verbundenen Zeitaufwand nicht zufriedenstellend.
+                    </li>
+                    <li>
+                        -> Lösung: Ich habe nur den Modellier-Teil der Art-Assets übernommen und die fertigen Models dem Lead Artist zugeschickt,
+                        welche sich dann um die Aufgabe des Texturieren mit Hilfe von Substance Painter kümmern und bessere Ergebnisse als ich erzielen konnte.
+                    </li>
+
+                </ul>
+
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Priorisierung + frühes Playable ist der effizienteste Weg zu gutem
+                        Feel in kurzen Jams.
+                    </li>
+                    <li>
+                        Wiederholte, kurze Playtests sind wertvoller als lange Einzeltests.
+                        Kleine Anpassungen am Movement haben großen Einfluss auf
+                        Spielspaß.
+                    </li>
+                    <li>
+                        Klare Aufgabenaufteilung (Art vs. Code) ermöglicht schnelles
+                        Vorankommen auch bei kleinem Team.
+                    </li>
+
+                </ul>
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+
+                <a class="project-back" href="https://bobhstone.itch.io/cookie-crumble">←View "CookieCrumble" on itch.io</a>
+
+                <p></p>
+
+                <a class="project-back" href="art.html#cookiecrumble" aria-label="Mehr zu Praise Hinode">MORE</a>
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

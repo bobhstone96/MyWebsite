@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-witdth, initial-scale=1.0">
+    <title>LutzCode</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+           /* Toggle UI */
+           #viewToggleBar {
+               display: flex;
+               justify-content: center;
+               margin: 10px 0 20px;
+           }
+
+           #viewToggleBtn {
+               background: rgba(80,120,160,0.95);
+               color: white;
+               border-radius: 8px;
+               padding: 8px 14px;
+               border: none;
+               cursor: pointer;
+               font-weight: 600;
+               box-shadow: 0 6px 10px rgba(0,0,0,0.25);
+           }
+
+               #viewToggleBtn:focus {
+                   outline: 3px solid rgba(120,180,220,0.25);
+               }
+
+           /* Kategorie-Section (sorgt dafür, dass jede Kategorie eine eigene Zeile ist) */
+           .category-section {
+               width: 100%;
+               margin: 28px 0; /* Abstand zwischen Kategorie-Zeilen */
+               box-sizing: border-box;
+           }
+
+           .category-title {
+               text-align: left;
+               color: #f6f6f6;
+               margin: 0 0 12px;
+               font-size: 1.25rem;
+               font-weight: 700;
+           }
+
+           /* Inneres Grid für Karten IN EINER KATEGORIE (eine Zeile von links nach rechts, responsiv) */
+           .projects-inner-grid {
+               display: grid;
+               /* passe minmax-Breite an deine Card-Breite an (z.B. min 240px) */
+               grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+               gap: 1.6rem;
+               align-items: start;
+           }
+
+           /* Wenn die Seite in "Chronologisch" ist, bleibt #projectsGrid wie vorher (Grid mit Cards).
+        Beim Kategorisieren wird das äußere Grid auf block gesetzt (durch class "categorized" im JS). */
+           #projectsGrid.categorized {
+               display: block;
+           }
+
+           /* Optional: kleines optisches Tuning, damit category-section nicht als Grid-Item von
+        äußeren Grid interpretiert werden kann */
+           .category-section {
+               display: block;
+           }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- ... (unverändert) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+
+        <nav class="breadcrumbs">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+        </nav>
+
+        <div class="sidebar">
+            <div class="close-icon">
+                <i class='bx bx-x'></i>
+            </div>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+        </div>
+
+        <main class="site-main">
+            <section id="projects" class="projects-section">
+                <h2 class="section-title">Mein Portfolio</h2>
+
+                <!-- Toggle Bar -->
+                <div id="viewToggleBar" aria-hidden="false">
+                    <button id="viewToggleBtn" type="button">Chronologisch</button>
+                </div>
+
+                <!-- Grid (wird per JS umgebaut / gruppiert) -->
+                <div id="projectsGrid" class="projects-grid">
+                    <!-- jede Card hat jetzt ein data-category-Attribut -->
+                    <article class="project-card" data-category="Experimental" style="position: relative;">
+                        <img src="images/ultimatemultiplayer2.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">My First Online Multiplayer [Experimental]</h3>
+                            <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                            <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                        </div>
+                        <a class="project-cta" href="experimental.html#multiplayer" aria-label="Mehr zu Multiplayer">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Experimental" style="position: relative;">
+                        <img src="images/cargame1.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Shader Tutorial / Fahrzeug Prototyp [Experimental]</h3>
+                            <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                            <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                        </div>
+                        <a class="project-cta" href="experimental.html#carprototype" aria-label="Mehr zu Fahrzeugprot">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Game Jam" style="position: relative;">
+                        <img src="images/CookieCrumble.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Cookie Crumble</h3>
+                            <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Game Jam | Unreal Engine 5</p>
+                            <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                        </div>
+                        <a class="project-cta" href="cookiecrumble.html" aria-label="Mehr zu Cookie Crumble">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Experimental" style="position: relative;">
+                        <img src="images/NoitaProjectiles12.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Komplexes Projektil-System [Experimental]</h3>
+                            <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                            <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                        </div>
+                        <a class="project-cta" href="experimental.html#projectilesystem" aria-label="Mehr zu Projektil-System">MORE</a>
+                    </article>
+
+
+
+                    <article class="project-card" data-category="Game Jam" style="position: relative;">
+                        <img src="images/LeafItToMe.png" alt="Project Two screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Leaf It To Me</h3>
+                            <p class="project-genre">Management | 3D | Game Jam | Unreal Engine 5</p>
+                            <p class="project-desc">Kurzbeschreibung: Kurzer Text über die Idee.</p>
+                        </div>
+                        <a class="project-cta" href="leafittome.html" aria-label="Mehr zu Leaf It To Me">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Experimental" style="position: relative;">
+                        <img src="images/islandgame6.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Fisch/Harpunier Prototyp [Experimental]</h3>
+                            <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                            <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                        </div>
+                        <a class="project-cta" href="experimental.html#fishingprototype" aria-label="Mehr zu Fishing Proto">MORE</a>
+                    </article>
+
+
+                    <article class="project-card" data-category="Game Jam" style="position: relative;">
+                        <img src="images/StarRider.png" alt="Project Three screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Star Rider - Elemental Shuffle</h3>
+                            <p class="project-genre">Battle Simulator | 3D | Game Jam | Unreal Engine 5</p>
+                            <p class="project-desc">Kurzbeschreibung: Kurzer Text über Gameplay & Ziel.</p>
+                        </div>
+                        <a class="project-cta" href="starrider.html" aria-label="Mehr zu Star Rider">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Experimental" style="position: relative;">
+                        <img src="images/praisehinode1.png" alt="Project Four screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">PRAISE HINODE</h3>
+                            <p class="project-genre">Puzzle | 2D | Game Jam | Unity</p>
+                            <p class="project-desc">Kurzbeschreibung: Kurzer Text über Motivation & Features.</p>
+                        </div>
+                        <a class="project-cta" href="experimental.html#praisehinode" aria-label="Mehr zu Praise Hinode">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Game Jam" style="position: relative;">
+                        <img src="images/NecroSting.png" alt="Project Four screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">NecroSting</h3>
+                            <p class="project-genre">Puzzle | 2D | Game Jam | Unity</p>
+                            <p class="project-desc">Kurzbeschreibung: Kurzer Text über Motivation & Features.</p>
+                        </div>
+                        <a class="project-cta" href="necrosting.html" aria-label="Mehr zu NecroSting">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Art" style="position: relative;">
+                        <img src="images/ArtImg.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Art</h3>
+                            <p class="project-genre">Genre: Puzzle / Adventure</p>
+                            <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                        </div>
+                        <a class="project-cta" href="art.html" aria-label="Mehr zu Art">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Web" style="position: relative;">
+                        <img src="images/WebDevIMG.png" alt="Project Two screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Web development</h3>
+                            <p class="project-genre">Genre: Platformer</p>
+                            <p class="project-desc">Kurzbeschreibung: Kurzer Text über die Idee.</p>
+                        </div>
+                        <a class="project-cta" href="webdevelopment.html" aria-label="Mehr zu Web Development">MORE</a>
+                    </article>
+
+                    <article class="project-card" data-category="Experimental" style="position: relative;">
+                        <img src="images/CookieCrumble.png" alt="Project Three screenshot" class="project-image" loading="lazy">
+                        <div class="project-body panel panel--card">
+                            <h3 class="project-title">Experimental</h3>
+                            <p class="project-genre">Genre: FPS / Action</p>
+                            <p class="project-desc">Kurzbeschreibung: Kurzer Text über Gameplay & Ziel.</p>
+                        </div>
+                        <a class="project-cta" href="experimental.html" aria-label="Mehr zu Experimental">MORE</a>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('viewToggleBtn');
+            const grid = document.getElementById('projectsGrid');
+            if (!toggleBtn || !grid) return;
+
+            // originalOrder = festgehaltene DOM-Elemente (Reference, nicht Kopien)
+            const originalOrder = Array.from(grid.querySelectorAll('.project-card'));
+            let isCategorized = true;
+            const preferredOrder = ['Game Jam', 'Experimental', 'Art', 'Web'];
+
+            toggleBtn.addEventListener('click', function () {
+                isCategorized = !isCategorized;
+                toggleBtn.textContent = isCategorized ? 'Sortierung: Kategorien' : 'Sortierung: Chronologisch';
+
+                if (isCategorized) {
+                    // 1) Höhe messen *bevor* wir die DOM-Struktur umbauen
+                    const maxH = measureMaxCardHeight(originalOrder) || 360; // fallback
+                    // 2) CSS-Variable setzen (wir setzen sie auf root, damit alle Cards sie erben)
+                    document.documentElement.style.setProperty('--card-min-height', Math.round(maxH) + 'px');
+                    // 3) Kategorie-Ansicht aufbauen
+                    showCategories();
+                } else {
+                    // zurück auf Chrono: CSS-Variable entfernen und DOM wiederherstellen
+                    document.documentElement.style.removeProperty('--card-min-height');
+                    showChronological();
+                }
+            });
+
+            function measureMaxCardHeight(cards) {
+                // misst die visuelle Höhe (bounding rect) aller cards und gibt den Max-Wert zurück
+                let max = 0;
+                cards.forEach(c => {
+                    // force reflow-getBoundingClientRect ist zuverlässig
+                    const r = c.getBoundingClientRect();
+                    if (r && r.height > max) max = r.height;
+                });
+                return max;
+            }
+
+            function showChronological() {
+                grid.classList.remove('categorized');
+                // clear + wieder in originaler Reihenfolge anhängen
+                grid.innerHTML = '';
+                originalOrder.forEach(card => grid.appendChild(card));
+            }
+
+            function showCategories() {
+                // gruppiere nach data-category
+                const groups = {};
+                originalOrder.forEach(card => {
+                    const cat = (card.dataset.category || 'Uncategorized').trim();
+                    if (!groups[cat]) groups[cat] = [];
+                    groups[cat].push(card);
+                });
+
+                // bestimme Kategorie-Reihenfolge: preferredOrder zuerst, dann restliche wie im Original
+                const categoryOrder = [];
+                preferredOrder.forEach(pref => { if (groups[pref]) categoryOrder.push(pref); });
+                originalOrder.forEach(card => {
+                    const c = (card.dataset.category || 'Uncategorized').trim();
+                    if (!categoryOrder.includes(c)) categoryOrder.push(c);
+                });
+
+                // äußeren Container blocken (damit Kategorien untereinander stehen)
+                grid.classList.add('categorized');
+                // leeren
+                grid.innerHTML = '';
+
+                // für jede Kategorie eine section mit title + innerGrid (innerGrid verwendet dieselben CSS-Regeln)
+                categoryOrder.forEach(cat => {
+                    if (!groups[cat] || !groups[cat].length) return;
+                    const section = document.createElement('div');
+                    section.className = 'category-section';
+
+                    const title = document.createElement('h3');
+                    title.className = 'category-title';
+                    title.textContent = cat;
+                    section.appendChild(title);
+
+                    const innerGrid = document.createElement('div');
+                    innerGrid.className = 'projects-inner-grid';
+
+                    // Karten in originaler Reihenfolge anfügen
+                    groups[cat].forEach(card => innerGrid.appendChild(card));
+
+                    section.appendChild(innerGrid);
+                    grid.appendChild(section);
+                });
+
+               
+            }
+
+            showCategories();
+            toggleBtn.textContent = 'Sortierung: Kategorien';
+        });
+    </script>
+
+    <script src="app.js"></script>
+</body>
+</html>

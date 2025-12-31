@@ -1,0 +1,3172 @@
+/* global gradient auf body/html - scrollt mit der Seite (nicht fixed) */
+/* Grundlegender, seitenweiter Gradient (läuft über die komplette Seitenhöhe) */
+
+:root {
+    --panel-bg: rgba(2,10,12,0.62); /* Grundfarbe des Panels (dunkel, leicht transparent) */
+    --panel-bg-2: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));
+    --panel-border: rgba(255,255,255,0.06); /* subtle border */
+    --panel-radius: 12px;
+    --panel-shadow: 0 12px 28px rgba(0,0,0,0.45);
+    --panel-blur: 6px; /* backdrop blur (opt.) */
+    --text-on-panel: #E6EAF6;
+}
+
+/* radial aus Ecke unten-rechts */
+body {
+    background: radial-gradient(circle at 92% 98%, #000000 0%, #000000 28%, #0b7e45 55%, #000000 100%);
+    color: var(--text);
+    min-height: 100vh;
+    background-size: 140% 140%;
+}
+
+
+html {
+    /* nicht: height:100% - wir erlauben html/body dynamische Höhe */
+    min-height: 100%;
+    box-sizing: border-box;
+}
+
+/* Variante 3: linear diagonal (oben links dunkelblau -> unten rechts dunkelgrün) */
+/* Variante 2: dunkles, fast schwarzes Umfeld mit grünem Kern (u.rechts) */
+/*
+body {
+    background: radial-gradient( circle at 92% 98%, #071013 0%, #0b2a20 28%, #08623d 55%, #000305 100% );
+    background-repeat: no-repeat;
+    background-size: 140% 140%;
+    background-position: center;
+    background-attachment: scroll;
+    min-height: 100vh;
+}
+    */
+/*
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lightgray;
+    background: linear-gradient(180deg, #130018 0%, #4B0F63 45%, #C800FF 100%);
+}*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* Container: darf den Body-Gradient nicht überdecken; soll mit Inhalt wachsen */
+.container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* mindestens Viewport-Höhe, wächst mit Inhalt */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    background-color: transparent; /* keine eigene Hintergrundfarbe, damit Body-Gradient überall sichtbar bleibt */
+    box-sizing: border-box;
+}
+
+.back-vid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    mix-blend-mode: lighten;
+}
+
+header{
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.123);
+    backdrop-filter: blur(10px);
+    padding: 0 30px;
+    box-shadow: 0 0 15px #72a1de52;
+    z-index: 999;
+}
+
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.left img{
+    width: 40px;
+    margin: 0 15px;
+}
+
+header ul {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    padding: 15px 15px;
+    border-radius: 50px;
+    background-color: rgba(0, 0, 69, 0.30);
+    backdrop-filter: blur(10px);
+    box-shadow: 0, 0, 10px #727fde6f;
+}
+
+header ul li{
+    list-style: none;
+}
+
+header ul a{
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    margin: 0 10px;
+}
+
+.box-icons{
+    display: flex;
+    gap: 40px;
+}
+
+.box-icons a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #727fde;
+    text-decoration: none;
+    color: lightgray;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.box-icons a:hover{
+    background-color: #727fde;
+    color: black;
+    box-shadow: 0 0 15px #727fde6f;
+}
+
+.blackhole-box{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    justify-content: center;
+    mix-blend-mode: lighten;
+}
+
+.blackhole-box video{
+    width: 100%;
+    margin-top: -23.5%;
+}
+
+.hero {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-height: 60vh;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.hero-info{
+    position: absolute;
+    left: 15%;
+    top: 18%;
+}
+
+
+.hero-info .hero-info-title{
+    color: #727fde6f;
+    padding: 8px 5px;
+    border: 1px solid #727fde6f;
+    width: 240px;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde88;
+    border-radius: 50px;
+}
+
+.hero-info h1{
+    font-size: 60px;
+    max-width: 600px;
+    font-weight: 700;
+    line-height: 70px;
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.hero-info p{
+    max-width: 550px;
+    line-height: 25px;
+    margin-bottom: 40px;
+    font-size: 20px;
+}
+
+.hero-info button{
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: 1px solid #727fde8e;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde6f;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .hero-info button + button {
+        display: block;
+        margin-top: 12px; /* Abstand nach oben */
+    }
+
+.hero-info button:hover{
+    box-shadow: 0 0 20px #727fde6f;
+}
+
+/* Gradient Animation */
+
+.gradient{
+    background: linear-gradient(to right, #008baa, #7e42a7, #6070fd, #2a46ff, #0099ff, #008baa);
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animate-gradient 2.5s linear infinite;
+}
+
+@keyframes animate-gradient{
+    to{
+        background-position: 200%;
+    }
+}
+
+.hero-vid-box{
+    position: absolute;
+    right: 15%;
+}
+
+.hero-vid-box video{
+    height: 900px;
+    mix-blend-mode: lighten;
+}
+
+.hero-vid-box img {
+    display: block; /* entfernt inline-Abstände */
+    height: 400px; /* fixe Höhe: deutlich kleiner als 900px (anpassen möglich) */
+    max-height: 60vh; /* schützt vor zu großer Darstellung auf sehr kleinen Bildschirmen */
+    width: auto; /* behält Seitenverhältnis */
+    object-fit: cover; /* füllt den sichtbaren Bereich, schneidet ggf. Ränder ab */
+    mix-blend-mode: lighten; /* optional: falls du den gleichen Blend-Effekt wie beim Video willst */
+    overflow: hidden; /* sicherheitshalber, falls das img größer sein sollte */
+    }
+
+
+/*.scroll-down{
+    height: 50px;
+    width: 30px;
+    border: 2px solid lightgray;
+    position: absolute;
+    left: 49%;
+    bottom: 8%;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(211, 211, 211, 0.459);
+}
+
+.scroll-down::before,
+.scroll-down::after{
+    content: "";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    height: 10px;
+    width: 10px;
+    border: 2px solid lightgray;
+    transform: translate(-50%, -100%) rotate(45deg);
+    border-top: transparent;
+    border-left: transparent;
+    animation: scroll-down 2s ease-in-out infinite;
+}
+
+.scroll-down::before{
+    top: 30%;
+    animation-delay: 0.5s;
+}
+
+@keyframes scroll-down{
+    0%{
+        opacity: 0;
+    }
+    30%, 60%{
+        opacity: 1;
+    }
+    100%{
+        top: 90%;
+        opacity: 0;
+    }
+}
+    */
+
+
+@media (max-aspect-ratio: 16/9){
+    .back-vid{
+        width: auto;
+        height: 100%;
+    }
+}
+
+@media (min-aspect-ratio: 16/9){
+    .back-vid{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.info-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin-top: 100px;
+}
+
+.section-title{
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.info-cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.card{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    width: auto;
+    height: 40vh;
+    overflow: hidden;
+    border: 1px solid gray;
+    background-color: #080020b7;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.card img{
+    width: 80%;
+    height: 50%;
+    object-fit: cover;
+}
+
+.card h1{
+    position: absolute;
+    margin: 0;
+    bottom: 40%;
+    left: 5%;
+    font-size: 25px;
+    z-index: 1;
+    color: lightgray;
+}
+
+.card p{
+    position: absolute;
+    bottom: 3%;
+    left: 5%;
+    z-index: 1;
+    max-width: 300px;
+    color: gray;
+    font-size: 13px;
+    line-height: 20px;
+}
+
+.card video{
+    margin-top: 10%;
+    width: 70%;
+    height: 50%;
+    object-fit: cover;
+    mix-blend-mode: lighten;
+}
+
+.card button{
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid #727fde8e;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde6f;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.card button:hover{
+    box-shadow: 0 0 15px #727fde6f;
+    opacity: 0.7;
+}
+
+.card:hover{
+    box-shadow: 0 0 15px rgba(211, 211, 211, 0.493);
+}
+
+.card:nth-child(3){
+    grid-row: span 2;
+    height: 83vh;
+}
+
+.card:nth-child(3) p{
+    bottom: 12%;
+}
+
+.card:nth-child(3) h1{
+    bottom: 21%;
+}
+
+.card:nth-child(4){
+    grid-column: span 2;
+}
+
+.card:nth-child(4) p{
+    max-width: 650px;
+}
+
+.card:nth-child(4) h1{
+    bottom: 35%;   
+}
+
+.my-projects{
+    display: flex;
+    flex-direction: column;
+    gap: 130px;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    /* height: 100vh; */
+    height: auto; 
+    min-height: 100vh;
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.project-card{
+    display: flex;
+    width: 100%;
+    height: 40%;
+    align-items: center;
+    gap: 10%;
+    justify-content: center;
+}
+
+.project-vidbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    position: relative;
+    cursor: pointer;
+    min-width: 400px;
+    transition: 0.5s;
+    mix-blend-mode: exclusion;
+}
+
+.project-vidbox video{
+    object-fit: cover;
+    width: 100%;
+    box-shadow: 0 0 10px lightgray;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.project-vidbox video:hover{
+    box-shadow: 0 0 20px lightgray;
+}
+
+.project-info{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    width: 50%;
+    padding-left: 10%;
+}
+
+.project-info h1{
+    width: 90%;
+    font-size: 25px;
+    font-weight: bold;
+    text-wrap: nowrap;
+    margin-bottom: 10px;
+    margin-top: 0;
+    max-width: 450px;
+}
+
+.project-info p{
+    width: 90%;
+    max-width: 400px;
+    min-width: 300px;
+    margin-bottom: 50px;
+    margin-top: 0;
+}
+
+.project-info button{
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid #727fde8e;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde6f;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.project-info button:hover{
+    box-shadow: 0 0 15px #727fde6f;
+    opacity: 0.7;
+}
+
+.hover-sign{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30%;
+    height: 100px;
+}
+
+.hover-sign::before,
+.hover-sign::after{
+    content:"👆";
+    text-align: center;
+    position: absolute;
+    font-size: 50px;
+    top: 20%;
+    left: 40%;
+    border-radius: 50%;
+    animation: hoverAnimation 3s ease-in-out infinite;
+}
+
+@keyframes hoverAnimation{
+    0%{
+        box-shadow: 0 0 5px lightgray;
+        transform: translate(100%, 50%) rotate(30deg);
+    }
+    100%{
+        box-shadow: 0 0 15px lightgray;
+        transform: translateX(80%, 50%) rotate(0deg);
+    }
+}
+
+.hover-sign.active{
+    display: none;
+}
+
+/* Skills Section */
+
+.skills-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.skills-box{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.skills-image{
+    width: 70%;
+    mix-blend-mode: lighten;
+    opacity: 0.7;
+}
+
+.designer{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    top: 25%;
+    left: 5%;
+    max-width: 300px;
+}
+
+.coder{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    top: 25%;
+    right: 5%;
+    max-width: 300px;
+}
+
+.skills-box h1{
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.skills-box p{
+    line-height: 23px;
+}
+
+/* SLIDER */
+
+.slider{
+    position: absolute;
+    bottom: 5%;
+    right: 20%;
+    width: 60%;
+    height: var(--height);
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
+    mix-blend-mode: difference;
+    opacity: 0.8;
+}
+
+.slider .list{
+    display: flex;
+    width: 100%;
+    min-width: calc(var(--width)* var(--quantity));
+    position: relative;
+}
+
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
+}
+
+.slider .list .item img{
+    width: 100%;
+}
+
+@keyframes autoRun {
+    from {
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
+    }
+}
+
+.slider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+
+.slider .item:hover{
+    filter: grayscale(0);
+}
+
+/* Contact Section */
+.contact-section{
+    width: 80%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    align-items: center;
+    position: relative;
+}
+
+.contact-section h1{
+    position: absolute;
+    top: 10%;
+    left: 40%;
+}
+
+.social-box{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.social-box a{
+    color: lightgray;
+    text-decoration: none;
+    font-size: 20px;
+    text-wrap: nowrap;
+}
+
+.social-box i{
+    color: #727fde;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.social-icons a i{
+    color: white;
+    margin-top: 40px;
+}
+
+.contact-box p{
+    max-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 5px;
+}
+
+.contact-box input{
+    padding: 7.5px 30px;
+    background-color: lightgray;
+    width: 80%;
+    height: 25px;
+    border: none;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.contact-box button{
+    margin-top: 30px;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    border: 1px solid #727fde8e;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde6f;
+    cursor: pointer;
+    transition: 0.3s;    
+}
+
+.contact-box button:hover{
+    box-shadow: 0 0 15px #727fde6f;
+    opacity: 0.7;
+}
+
+footer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.128);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.356);
+    z-index: 999;
+}
+
+footer h1{
+    font-size: 30px;
+}
+
+.menu-icon{
+    font-size: 35px;
+    cursor: pointer;
+    display: none;
+}
+
+/* SideBar */
+.sidebar{
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 70%;
+    width: 0%;
+    background-color: #000000b8;
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    box-shadow: 0 0 20px rgba(211, 211, 211, 0.411);
+    border-bottom-left-radius: 100%;
+    opacity: 0;
+}
+
+.close-icon{
+    font-size: 50px;
+    color: lightgray;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.sidebar ul{
+    padding-left: 20px;
+}
+
+.sidebar ul li{
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.sidebar ul li a{
+    text-decoration: none;
+    color: lightgray;
+    font-size: 30px;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(128, 128, 128, 0.256);
+}
+
+.sidebar .social-icons{
+    padding-left: 20px;
+    margin-top: 60px;
+    text-wrap: nowrap;
+}
+
+.sidebar .social-icons a{
+    font-size: 35px;
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+/* Open Sidebar Animation */
+.sidebar.open-sidebar{
+    animation: openSidebarAnimation 1.5s forwards;
+}
+
+@keyframes openSidebarAnimation{
+    to{
+        width: 80%;
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    
+    }
+}
+
+/* Close Sidebar Animation */
+.sidebar.close-sidebar{
+    animation: closeSidebarAnimation 1.5s forwards;
+}
+
+@keyframes closeSidebarAnimation{
+    from{
+        width: 80%;
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }to{
+        width: 0;
+        opacity: 0;
+        bottom: 70%;
+        border-bottom-left-radius: 50%;
+    }
+}
+
+
+
+/* Blur Effect Animation */
+.autoBlur{
+    animation: autoBlurAnimation linear both;
+    animation-timeline: view();
+}
+
+@keyframes autoBlurAnimation {
+    0%{
+        filter: blur(40px);
+        opacity: 0;
+        mix-blend-mode: screen;
+    }
+    35%, 65%{
+        filter: blur(0);
+        opacity: 1;
+        mix-blend-mode: normal;
+    }
+    100%{
+        filter: blur(40px);
+        opacity: 0;
+        mix-blend-mode: screen;
+    }
+}
+
+/* AUTO DISPLAY ANIMATION */
+.autoDisplay{
+    animation: autoDisplayAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes autoDisplayAnimation{
+    from{
+        filter: blur(10px);
+        transform: translateY(-200px) scale(0);
+        opacity: 0.2;
+    }
+    50%{
+        opacity: 1;
+        fill: blur(0);
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* FADEIN-Right */
+.fadeInRight{
+    animation: fadeInAnimation both;
+    animation-timeline: view();
+}
+
+@keyframes fadeInAnimation{
+    0%{
+        opacity: 0;
+        transform: translateX(-500px) scale(0.2);
+        filter: blur(20px);
+        mix-blend-mode: screen;
+    }
+    35%, 65%{
+        opacity: 1;
+        transform: translateX(0px) scale(1);
+        filter: blur(0);
+        mix-blend-mode: normal;
+    }
+    100%{
+        filter: blur(20px);
+        mix-blend-mode: screen;
+    }
+}
+
+/* TABLET RESPONSIVE */
+@media screen and (max-width: 1000px){
+    .blackhole-box video{
+        margin-top: -20%;
+    }
+
+    .hero-info h1{
+        font-size: 40px;
+        max-width: 400px;
+        line-height: 40px;
+    }
+
+    .hero-info p{
+        max-width: 300px;
+    }
+
+    .hero-vid-box{
+        right: 0;
+    }
+
+    .hero-vid-box video{
+        height: 500px;
+    }
+
+    .section-title{
+        font-size: 30px;
+    }
+
+    .info-cards{
+        grid-template-columns: auto;
+    }
+
+    .card:nth-child(3){
+        -ms-grid-column-span: 2;
+        height: 70vh;
+    }
+
+    .info-cards .card h1{
+        font-size: 20px;
+    }
+
+    .card:nth-child(3) h1{
+        bottom: 25%;
+    }
+
+    .card video{
+        height: 65%;
+        margin-top: 5%;
+    }
+
+    .my-projects{
+        margin-bottom: 300px;
+    }
+
+    .project-vidbox video{
+        width: 250px;
+        margin-left: -100px;
+    }
+
+    .project-info{
+        padding-left: 0;
+        margin-left: -50px;
+    }
+
+    .project-info h1{
+        font-size: 20px;
+        max-width: 200px;
+        text-wrap: wrap;
+    }
+
+    .project-info p{
+        font-size: 10px;
+        text-wrap: wrap;
+        max-width: 200px;
+        min-width: 0;
+    }
+
+    .footer h1{
+        font-size: 20px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media screen and (max-width: 700px){
+    header{
+        position: fixed;
+        height: 50px;
+    }
+
+    header ul{
+        display: none;
+    }
+
+    header .box-icons{
+        display: none;
+    }
+
+    header h1{
+        font-size: 25px;
+    }
+
+    .blackhole-box video{
+        margin-top: -16%;
+    }
+
+    .hero{
+        flex-direction: column;
+    }
+
+    .autoBlur{
+        animation: none;
+    }
+
+    .hero-info{
+        bottom: 5%;
+    }
+
+    .scroll-down{
+        bottom: 5%;
+    }
+
+    .hero-info h1{
+        line-height: 50px;
+    }
+
+    .hero-vid-box{
+        height: 200px;
+        top: 5%;
+        right: 0%;
+    }
+
+    .card video{
+        width: 100%;
+    }
+
+    .my-projects{
+        margin-bottom: 600px;
+    }
+
+    .project-card{
+        flex-direction: column;
+        margin-left: 25%;
+        gap: 30px;
+    }
+
+    .project-info{
+        width: 85%;
+    }
+
+    .project-info h1{
+        text-wrap: nowrap;
+    }
+
+    .project-info p{
+        max-width: 300px;
+    }
+
+    .designer{
+        top: 15%;
+        left: 18%;
+    }
+
+    .coder{
+        top: 50%;
+        left: 18%;
+    }
+
+    .skills-box h1{
+        margin-bottom: 0;
+        margin-top: 70px;
+    }
+
+    .slider{
+        bottom: 0;
+    }
+
+    .slider img{
+        width: 60%;
+    }
+
+    .contact-section{
+        flex-direction: column;
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .contact-section .section-title{
+        top: -40px;
+        left: 25%;
+    }
+
+    footer h1{
+        font-size: 17px;
+    }
+
+    .project-vidbox{
+        min-width: 200px;
+    }
+
+    .menu-icon{
+        display: inline;
+    }
+}
+
+/* ---------------- Projects Section ---------------- */
+.projects-section {
+    padding: 32px 0 72px;
+    background: transparent;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 26px;
+    margin: 0 0 28px 0;
+    color: #EAEFFF;
+}
+
+/* Grid: 4 columns desktop, 2 columns tablet, 1 on mobile */
+.projects-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: stretch;
+    padding: 0 5%;
+}
+
+/* Breakpoints */
+@media (max-width: 1100px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 4%;
+    }
+}
+
+/* Card */
+.project-card {
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(3,3,8,0.35);
+    display: flex;
+    flex-direction: column;
+    transition: transform .22s ease, box-shadow .22s ease;
+}
+
+    /* Hover */
+    .project-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 18px 36px rgba(3,3,8,0.45);
+    }
+
+/* Image */
+.project-image {
+    width: 100%;
+    height: 160px; /* einheitliche Vorschaubildhöhe */
+    object-fit: cover;
+    display: block;
+}
+
+/* Body */
+.project-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.project-title {
+    margin: 0;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.project-genre {
+    margin: 0;
+    font-size: 13px;
+    color: #BFC8FF;
+}
+
+.project-desc {
+    margin: 0;
+    font-size: 14px;
+    color: #D1D6E6;
+    line-height: 1.4;
+    flex: 1;
+}
+
+/* ---- Überschreibungen für Projects (muss ans Ende der Datei) ---- */
+
+/* Stelle sicher, dass die "alte" height:40% nicht mehr greift */
+.projects-section .project-card {
+    height: 40vh; /* kein prozentuales Height mehr */
+    min-height: 260px; /* ausreichend große Karten, anpassen nach Wunsch */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 0;
+    box-shadow: 0 12px 30px rgba(3,3,8,0.35);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+    /* Optional: größere Hover-Animation */
+    .projects-section .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 22px 44px rgba(3,3,8,0.45);
+    }
+
+/* Mehr Platz für die Bilder (sichtbar größer) */
+.projects-section .project-image {
+    height: 240px; /* deutlich größer - ändere auf 200/260 etc. falls nötig */
+    object-fit: cover;
+    display: block;
+}
+
+/* Text größer / lesbarer */
+.projects-section .project-title {
+    font-size: 20px;
+}
+
+.projects-section .project-desc {
+    font-size: 15px;
+    line-height: 1.45;
+}
+
+/* projects-section: leicht nach oben ziehen (dezent) */
+.projects-section {
+    margin-top: -36px !important; /* negative margin = näher an Hero */
+    padding-top: 8px !important; /* verringert oberen Innenabstand */
+}
+
+/* Mobile: negativen Margin nicht zu groß machen */
+@media (max-width: 700px) {
+    .projects-section {
+        margin-top: -10px !important;
+        padding-top: 12px !important;
+    }
+}
+
+/* --- Header: Linke Gruppe (Logo + Icons) und rechte Navigation --- */
+.header-left-group {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Abstand zwischen Logo-Block und Icons */
+}
+
+/* .left bleibt wie gehabt; falls du Abstand zwischen Logo & Titel willst: */
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Abstand zwischen Bild und "LutzCode" */
+}
+
+/* Box-icons direkt neben dem Logo (kleinerer Abstand als vorher) */
+.box-icons {
+    display: flex;
+    gap: 12px; /* engerer Abstand, wirkt kompakter */
+    margin-left: 6px;
+}
+
+/* Navigation auf der rechten Seite: ul wird nur so breit wie nötig */
+.header-nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 12px;
+    background-color: rgba(0,0,69,0.20);
+    border-radius: 50px;
+    align-items: center;
+}
+
+/* Link-Styling (überschreibt evtl. alte header ul a Regeln) */
+.header-nav a {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 6px 8px;
+    display: inline-block;
+}
+
+/* Falls vorher header ul { width: 30% } existiert, überschreiben wir es */
+/* damit die Nav nicht mehr 30% breite nimmt */
+header ul, .header-nav ul {
+    width: auto;
+}
+
+/* kleine optische Anpassung: auf sehr großen Bildschirmen mehr Abstand */
+@media (min-width: 1400px) {
+    header {
+        padding: 0 40px;
+    }
+
+    .header-nav ul {
+        gap: 30px;
+        padding: 12px 18px;
+    }
+}
+
+/* Responsiveness: Mobile (behält bestehendes Verhalten: ausblenden und mobile menu-icon nutzen) */
+@media screen and (max-width: 700px) {
+    /* wie in deiner Datei: nav ausgeblendet, icons evtl. ausgeblendet */
+    .header-nav ul {
+        display: none;
+    }
+
+    /* wenn du trotzdem die icons links behalten willst, keine Änderung nötig,
+     ansonsten: .box-icons { display: none; } ist bereits in deiner mobile CSS */
+}
+
+
+.designer.autoDisplay,
+.coder.autoDisplay {
+  /* Animation erst gar nicht laufen lassen: */
+  animation: none !important;
+  /* Direkt scharf und an der finalen Position: */
+  filter: blur(0);
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* MORE CTA Button, bottom-right */
+.project-cta {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    background-color: #001f7c38;
+    padding: 10px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 13px;
+    box-shadow: 0 6px 18px rgba(114,127,222,0.25);
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+
+    .project-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 26px rgba(114,127,222,0.30);
+    }
+
+
+/* === FORCE: MORE-Button permanent sichtbar + Cards höher machen === */
+
+/* Ensure card is positioned and tall enough (vertical space) */
+.project-card {
+    position: relative !important; /* damit absolute CTA sich an Card orientiert */
+    min-height: 320px !important; /* macht Karte vertikal grösser */
+    padding-bottom: 84px !important; /* Platz für Button unten */
+    overflow: visible !important; /* verhindert, dass der Button abgeschnitten wird */
+}
+
+/* Adjust preview image so text area grows */
+.project-image {
+    height: 240px !important;
+    object-fit: cover !important;
+}
+
+/* Ensure the body area has room and text doesn't overlap the button */
+.project-body {
+    padding: 20px 20px 28px 20px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1 1 auto;
+}
+
+/* Make CTA permanently visible and reachable */
+.project-cta {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    position: absolute !important;
+    right: 18px !important;
+    bottom: 18px !important;
+    background: #727fde !important; /* change accent color if you want */
+    color: #fff !important;
+    padding: 10px 14px !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    box-shadow: 0 8px 20px rgba(114,127,222,0.25) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    z-index: 50 !important;
+}
+
+    /* small hover polish (button still visible) */
+    .project-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 26px rgba(114,127,222,0.30);
+    }
+
+/* Responsive: smaller cards on mobile but button still visible */
+@media (max-width:700px) {
+    .project-card {
+        min-height: 380px !important;
+        padding-bottom: 64px !important;
+    }
+
+    .project-image {
+        height: 180px !important;
+    }
+
+    .project-cta {
+        right: 12px !important;
+        bottom: 12px !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+    }
+}
+
+
+/* ----- Override: Cards kleiner / flacher machen ----- */
+.projects-section .project-card {
+    min-height: 320px !important; /* Gesamthöhe der Card verringern */
+    max-height: 400px !important; /* optional: verhindert zu hohe Karten */
+    padding-bottom: 36px !important; /* genug Platz für Button, aber weniger als vorher */
+    overflow: hidden !important; /* sicherstellen, dass nichts rausragt */
+}
+
+/* Bild etwas kleiner machen, damit Textbereich ebenfalls kleiner wird */
+.projects-section .project-image {
+    height: 250px !important;
+}
+
+/* Optional: Textbereich kleiner machen */
+.projects-section .project-body {
+    padding: 12px 12px 12px 12px !important;
+    gap: 6px !important;
+    font-size: 13px;
+}
+
+/* ---------------- Breadcrumbs (hardcoded) ------------------ */
+/* Platz unter Header sichern: Header-Höhe ist 70px in deiner CSS.
+   Wir geben extra Puffer (z.B. 18px) damit es nicht direkt an der Header-Unterkante klebt. */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #E6EEFF;
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 80px; /* Abstand oberhalb vom Breadcrumb-Block */
+    /* links positionieren, so dass es unter LutzCode / Logo sitzt:
+     header hat padding-left:30px; logo width ~40 + margin 15 → ~85px */
+    padding-left: 90px; /* PASSE AN: erhöhe/verkleinere, falls es nicht genau unter dem Text sitzt */
+    pointer-events: auto;
+    z-index: 10;
+}
+
+    /* Links */
+    .breadcrumbs a {
+        color: #E6EEFF;
+        text-decoration: none;
+        background: rgba(255,255,255,0.03);
+        padding: 4px 8px;
+        border-radius: 6px;
+    }
+
+    /* Separator */
+    .breadcrumbs .sep {
+        color: rgba(230,238,255,0.6);
+        padding: 0 6px;
+    }
+
+    /* Aktuelle Seite: kein Link */
+    .breadcrumbs .current {
+        color: #FFFFFF;
+        background: transparent;
+        padding: 0;
+        font-weight: 700;
+    }
+
+/* Mobile: weniger padding-left, kleinere Schrift */
+@media (max-width: 700px) {
+    .breadcrumbs {
+        padding-left: 16px;
+        font-size: 13px;
+        margin-top: 12px;
+    }
+
+        .breadcrumbs a {
+            padding: 3px 6px;
+        }
+}
+
+/* Breadcrumbs: links ausrichten ohne container zu verändern */
+.breadcrumbs {
+    width: 100%; /* volle Breite, damit justify-content wirkt */
+    max-width: 1200px; /* optional: begrenzt die Breite wie dein Content */
+    margin: 0 auto; /* zentriert die group innerhalb des Viewports (wenn du max-width nutzt) */
+    margin-top: 80px;
+    margin-left: 20px;
+    justify-content: flex-start; /* linksbündig die Items anordnen */
+    display: flex;
+    align-items: center;
+    padding-left: 90px; /* Abstand damit es unter dem Logo steht — ggf. anpassen */
+    box-sizing: border-box;
+}
+
+/* Brand (Logo + Site name) als Link */
+.left .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Abstand zwischen Bild und Text */
+    text-decoration: none; /* keine Unterstreichung */
+    color: inherit; /* Textfarbe vom Eltern-Element übernehmen */
+}
+
+    /* Optional: Hover-Effekt */
+    .left .brand:hover {
+        transform: translateY(-2px);
+        transition: transform .12s ease;
+    }
+
+    /* Sicherstellen, dass das img im Link genauso aussieht */
+    .left .brand img {
+        display: block;
+        width: 40px; /* wie vorher */
+    }
+
+/* --- Contact form styling (für Formspree) --- */
+.contact-form {
+    max-width: 520px; /* Breite des Formulars */
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: #E6EAF6;
+}
+
+    /* einzelne Zeilen */
+    .contact-form .form-row {
+        display: block;
+        margin-bottom: 18px;
+    }
+
+    /* Label oben */
+    .contact-form .form-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #BFC8FF;
+        font-size: 13px;
+        font-weight: 700;
+    }
+
+    /* Input- / Textarea Styles (passen zu deinem Design) */
+    .contact-form .form-input,
+    .contact-form .form-textarea {
+        width: 100%;
+        box-sizing: border-box;
+        background: rgba(255,255,255,0.07);
+        border: none;
+        padding: 12px 14px;
+        border-radius: 10px;
+        color: #0f1020;
+        font-size: 14px;
+        outline: none;
+        transition: box-shadow .12s ease, transform .06s;
+    }
+
+    /* Textarea etwas größer / mehr Zeilen */
+    .contact-form .form-textarea {
+        min-height: 160px;
+        resize: vertical;
+        line-height: 1.5;
+    }
+
+        /* Focus */
+        .contact-form .form-input:focus,
+        .contact-form .form-textarea:focus {
+            box-shadow: 0 8px 20px rgba(114,127,222,0.18);
+            transform: translateY(-1px);
+        }
+
+    /* Submit-Button (passe an deine vorhandenen Button-Klassen an) */
+    .contact-form .form-actions {
+        margin-top: 6px;
+        text-align: left;
+    }
+
+    .contact-form .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #727fde;
+        color: white;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 700;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(114,127,222,0.2);
+    }
+
+        .contact-form .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 36px rgba(114,127,222,0.28);
+        }
+
+/* Responsive: auf schmalen Screens volle Breite nutzen */
+@media (max-width: 700px) {
+    .contact-form {
+        max-width: 95%;
+    }
+
+        .contact-form .form-textarea {
+            min-height: 140px;
+        }
+}
+
+/* Buttons als Links: gleiche Optik wie .hero-info button */
+.hero-info .btn {
+    display: inline-block;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 10px;
+    border: 1px solid #727fde8e;
+    background-color: #2200493d;
+    box-shadow: 0 0 5px #727fde6f;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none; /* verhindert Unterstreichung */
+    font-weight: 600;
+}
+
+    .hero-info .btn + .btn {
+        display: block;
+        margin-top: 12px; /* falls du Buttons vertikal haben willst */
+    }
+
+    .hero-info .btn:hover {
+        box-shadow: 0 0 20px #727fde6f;
+        transform: translateY(-2px);
+    }
+
+/* Fix: hero buttons nicht full-width */
+.hero-info .btn {
+    display: inline-flex !important; /* bleibt so groß wie Inhalt */
+    align-items: center;
+    gap: 8px;
+    padding: 15px 28px; /* anpassen wenn du andere Breite willst */
+    width: auto !important;
+    min-width: 0 !important;
+    white-space: nowrap; /* verhindert Umbruch im Button-Text */
+    box-sizing: border-box;
+}
+
+    .hero-info .btn + .btn {
+        margin-top: 12px; /* Abstand zwischen den Buttons; kein display:block mehr */
+        display: inline-flex !important;
+    }
+
+
+/* Re-usable "panel" look for any text container */
+.panel {
+    background: var(--panel-bg); /* fallback solide halbtransparent */
+    background-image: var(--panel-bg-2); /* optional: leichter Gradient oben->unten */
+    border-radius: var(--panel-radius);
+    border: 1px solid var(--panel-border);
+    box-shadow: var(--panel-shadow);
+    color: var(--text-on-panel);
+    padding: 16px;
+    box-sizing: border-box;
+    /* Backdrop blur (glassy effect) - optional, remove if performance issue */
+    -webkit-backdrop-filter: blur(var(--panel-blur));
+    backdrop-filter: blur(var(--panel-blur));
+}
+
+/* Slight variation for smaller blocks (cards text area) */
+.panel--card {
+    padding: 18px;
+    min-height: 120px;
+}
+
+/* For the hero text block, give larger padding and max-width */
+.panel--hero {
+    padding: 26px;
+    max-width: 700px;
+}
+
+/* Make sure text colors inside panels are readable */
+.panel h1, .panel h2, .panel h3, .panel p, .panel a {
+    color: var(--text-on-panel);
+}
+
+/* If you want the "MORE" button sitting on the panel's bottom-right: */
+.panel .project-cta {
+    position: absolute; /* ensure parent is position:relative */
+    right: 16px;
+    bottom: 16px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 700px) {
+    .panel {
+        padding: 12px;
+    }
+
+    .panel--hero {
+        padding: 18px;
+        max-width: 95%;
+    }
+}
+
+/* ---------- Unified card panel: card-bg + image on top (z-index) ---------- */
+
+/* ensure consistent grid/card layout */
+.projects-grid {
+    gap: 24px;
+}
+
+    /* card = panel */
+    .projects-grid .project-card {
+        background: linear-gradient(180deg, rgba(2,10,12,0.92), rgba(2,10,12,0.92)); /* opaker Panel-Hintergrund */
+        border-radius: 12px;
+        box-shadow: 0 14px 36px rgba(0,0,0,0.55);
+        overflow: visible; /* allow image overflow if needed */
+        position: relative;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        justify-content: flex-start !important;
+        min-height: 380px; /* all cards roughly same min height — anpassen */
+        padding: 0 !important; /* inner padding handled by project-body */
+        box-sizing: border-box;
+    }
+
+    /* image sits inside the card but above the card-bg visually */
+    .projects-grid .project-image {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important; /* prefer natural height, not forced */
+        max-height: 300px !important; /* limit, so images don't blow cards up */
+        object-fit: cover !important;
+        border-top-left-radius: 12px !important;
+        border-top-right-radius: 12px !important;
+        position: relative !important;
+        z-index: 4 !important; /* ensure image is above the card background */
+    }
+
+    /* text panel fills the remaining area and sits above background but below image */
+    .projects-grid .project-body {
+        flex: 1 1 auto !important; /* grow to fill card vertical space */
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: flex-start !important;
+        width: 100% !important;
+        padding: 18px 18px 24px 18px !important; /* bottom padding so CTA not overlap text */
+        box-sizing: border-box !important;
+        background: transparent !important; /* card itself provides the background */
+        z-index: 2 !important; /* below image but above card bg */
+        color: var(--panel-text, #E6EAF6) !important;
+        text-align: left !important;
+    }
+
+/* If you used .panel on project-body, keep it visually consistent */
+.project-body.panel, .project-body.panel--card {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* CTA button: keep visible on top of everything */
+.projects-grid .project-cta {
+    position: absolute !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    z-index: 6 !important;
+}
+
+/* Optional: if you want image to slightly overlap the top edge (more "card art" feel) */
+/* uncomment if desired */
+/*
+.projects-grid .project-image {
+  margin-top: -16px;
+  border-radius: 16px 16px 8px 8px;
+}
+*/
+
+/* Responsive: stack to single column on mobile, reduce image height */
+@media (max-width: 900px) {
+    .projects-grid .project-image {
+        max-height: 240px !important;
+    }
+
+    .projects-grid .project-card {
+        min-height: 320px;
+    }
+}
+
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        padding: 0 12px;
+    }
+
+        .projects-grid .project-image {
+            max-height: 200px !important;
+        }
+
+        .projects-grid .project-card {
+            min-height: auto;
+        }
+}
+/* ---- Einheitliche Card-Bilder: gleiche Größe / responsive ---- */
+.projects-grid .project-image {
+    display: block;
+    width: 100%; /* volle Kartenbreite */
+    height: clamp(160px, 20vw, 300px) !important; /* responsive Höhe (min|vw|max) */
+    object-fit: cover; /* füllt Fläche, beschneidet sauber */
+    object-position: center; /* Fokus zentriert */
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    /* falls vorher irgendwelche max-height/height Regeln existieren: überschreiben */
+    max-height: none !important;
+}
+
+/* Mobile: etwas kleinere Bildhöhe */
+@media (max-width: 700px) {
+    .projects-grid .project-image {
+        height: clamp(140px, 28vw, 220px) !important;
+    }
+}
+
+/* Quick fix: genug rechts Platz im Textbereich für den absolut positionierten CTA */
+.projects-grid .project-body {
+    padding: 18px 110px 24px 18px !important; /* top right bottom left */
+    /* 110px = Platz für Button + Abstand; anpassen wenn dein Button breiter ist */
+    box-sizing: border-box;
+}
+
+/* Responsive: weniger padding auf kleinen Bildschirmen */
+@media (max-width: 700px) {
+    .projects-grid .project-body {
+        padding: 14px 14px 18px 14px !important; /* auf Mobile Button meist inline, kein extra Platz nötig */
+    }
+}
+
+/* ------------------ Cards größer machen + 2 sichtbare Linien für project-desc ------------------ */
+
+/* 1) Grid: höhere Zeilen auf großen Viewports (min / preferred / max) */
+.projects-grid {
+    /* mind. 460px, ideal 50vh, max 900px */
+    grid-auto-rows: minmax(460px, min(50vh, 900px)) !important;
+}
+
+    /* 2) Karte nimmt Grid-Zeilenhöhe an */
+    .projects-grid .project-card {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important; /* sehr wichtig, damit die Karte die Grid row height annimmt */
+        min-height: 460px !important;
+        box-sizing: border-box;
+    }
+
+    /* 3) Bild: proportionaler Anteil an der Kartenhöhe (Anpassen möglich) */
+    .projects-grid .project-image {
+        width: 100% !important;
+        height: 44% !important; /* Bild nimmt 44% der Kartenhöhe -> ca. erste Hälfte */
+        object-fit: cover !important;
+        object-position: center;
+        max-height: none !important;
+    }
+
+    /* 4) Textbereich füllt den Rest; Platz für CTA (Bottom padding) */
+    .projects-grid .project-body {
+        flex: 1 1 auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        align-items: stretch !important;
+        padding: 20px 20px 90px 20px !important; /* extra bottom padding damit CTA nicht überlappt */
+        box-sizing: border-box;
+        background: transparent !important; /* Hintergrund bleibt auf .project-card */
+    }
+
+    /* 5) ensure the MORE button won't overlap content (absolute safe) */
+    .projects-grid .project-cta {
+        position: absolute !important;
+        right: 16px !important;
+        bottom: 16px !important;
+        z-index: 8 !important;
+    }
+
+/* 6) Force project-desc to at least 2 visible lines (responsive) */
+.project-desc {
+    line-height: 1.45; /* ideal für lesbarkeit */
+    font-size: 14px; /* passe an deine Basisgröße an */
+    min-height: calc(1.45em * 2) !important; /* mindestens 2 Zeilen */
+    margin-bottom: 8px;
+    overflow-wrap: break-word;
+}
+
+/* 7) Mobile / small screens: weniger Höhe damit Karten nicht zu groß werden */
+@media (max-width: 900px) {
+    .projects-grid {
+        grid-auto-rows: minmax(380px, min(45vh, 720px)) !important;
+    }
+
+        .projects-grid .project-image {
+            height: 48% !important;
+        }
+
+        .projects-grid .project-body {
+            padding: 16px 16px 72px 16px !important;
+        }
+}
+
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto !important; /* content bestimmt Höhe mobil */
+    }
+
+        .projects-grid .project-image {
+            height: 160px !important;
+        }
+
+        .projects-grid .project-card {
+            min-height: auto !important;
+            height: auto !important;
+        }
+
+        .projects-grid .project-body {
+            padding-bottom: 24px !important;
+        }
+
+    .project-desc {
+        min-height: calc(1.45em * 2) !important;
+    }
+    /* bleibt 2 lines */
+}
+
+/* ------------- Robust small-screen fixes ------------- */
+
+/* 1) Sauberes box-sizing (verhindert unerwartete Breitenprobleme) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2) Verhindere horizontales Scrollen (falls Elemente leicht überstehen) */
+html, body {
+    overflow-x: hidden;
+}
+
+/* 3) Zentrale Max-Width & responsive Padding für die Grid-Region */
+.projects-grid {
+    width: 100%;
+    max-width: 1200px; /* zentriert und begrenzt Breite */
+    margin: 0 auto; /* zentriert das Grid */
+    padding: 0 clamp(12px, 3vw, 32px); /* kleine, responsive Seitenabstände */
+    box-sizing: border-box;
+}
+
+/* 4) Wenn header auf Mobile fixed ist: Content nicht darunter verstecken */
+@media (max-width: 700px) {
+    /* header ist bei dir schon fixed; sorgen wir für Abstand im Inhalt */
+    .site-main {
+        padding-top: 64px; /* Platz für den header (50px) + etwas Puffer */
+    }
+
+    /* grid: mobile einspaltig (falls noch nicht) und sicheres padding */
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+        /* project-card: stelle sicher, dass nichts die Box nach rechts schiebt */
+        .projects-grid .project-card {
+            min-width: 0; /* wichtig gegen flex/overflow issues */
+            overflow: visible; /* erlauben (oder hidden wenn du Buttons lieber abschneidest) */
+            margin: 0 auto;
+        }
+
+        /* project-body: verringere das extra-right-padding (desktop hatte mehr Platz für Button) */
+        .projects-grid .project-body {
+            padding: 14px !important; /* mobile: gleiche padding rundherum */
+        }
+
+        /* Wenn CTA absolut ist: lege den Abstand so, dass er nicht rausragt */
+        .projects-grid .project-cta {
+            right: 12px !important;
+            bottom: 12px !important;
+            transform: none !important;
+        }
+
+    /* Falls ein element (z.B. .box-icons) in header ausgeblendet ist, stellen wir sicher, dass die Breite trotzdem passt */
+    header {
+        left: 0;
+        right: 0;
+    }
+}
+
+/* 5) Extra-Schutz: Buttons/absolute Elemente dürfen nicht die Seite verbreitern */
+.projects-grid .project-cta,
+header .box-icons,
+header .header-nav {
+    max-width: 100%; /* verhindert, dass ein übergroßes Element die Seite verbreitert */
+}
+
+/* 6) Debughilfe (optional): sichtbare Umrandung für problematische Bereiche - entferne wenn OK */
+@media (max-width:700px) {
+    /* .projects-grid { outline: 1px dashed rgba(255,255,255,0.06); } */
+    /* .projects-grid .project-card { outline: 1px dashed rgba(255,0,0,0.06); } */
+}
+
+/* ---------- Responsive grid: breitere cards auf großen Bildschirmen ---------- */
+
+/* Container für das Grid: erlauben, mehr Platz zu nutzen auf großen Displays */
+.projects-grid {
+    width: 100%;
+    max-width: 1600px; /* erhöht die nutzbare Breite auf großen Displays */
+    margin: 0 auto;
+    padding: 0 clamp(12px, 3vw, 48px);
+    box-sizing: border-box;
+    display: grid;
+    gap: 24px;
+    /* auto-fit / minmax sorgt dafür, dass Spalten so groß wie möglich werden,
+     aber nicht kleiner als 300px (du kannst 300px anpassen) */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* grid-auto-rows legt die Zeilenhöhe (Kartenhöhe) fest; min ist 460px, preferred 45vh, max 1000px */
+    grid-auto-rows: minmax(460px, min(45vh, 1000px));
+}
+
+/* Auf sehr großen Monitoren ggf. noch größere Min/Preferred Höhe */
+@media (min-width: 2000px) {
+    .projects-grid {
+        max-width: 2000px;
+        grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+        grid-auto-rows: minmax(520px, min(48vh, 1200px));
+    }
+}
+
+/* Desktop: etwas großzügigere Bildhöhe (proportional) */
+@media (min-width: 1200px) {
+    .projects-grid .project-image {
+        height: 46% !important; /* Bild nimmt fast die Hälfte der card-höhe */
+    }
+}
+
+/* Mittleres Layout: 3 Spalten circa */
+@media (max-width: 1400px) and (min-width: 900px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: minmax(420px, min(48vh, 900px));
+    }
+}
+
+/* Kleinerer Bildschirm: 2 Spalten */
+@media (max-width: 900px) and (min-width: 700px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(380px, min(45vh, 720px));
+    }
+}
+
+/* Mobile keep as single column (your previous mobile styles likely already handle this) */
+@media (max-width: 700px) {
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        grid-auto-rows: auto !important; /* content bestimmt height on phone */
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+        .projects-grid .project-image {
+            height: 160px !important;
+        }
+}
+
+/* Make sure each card uses the grid row height */
+.projects-grid .project-card {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 0 !important;
+}
+
+/* Ensure body area uses remaining space and CTA has room */
+.projects-grid .project-body {
+    flex: 1 1 auto !important;
+    padding: 20px 20px 96px 20px !important; /* extra bottom space for CTA */
+    box-sizing: border-box;
+}
+
+/* CTA remains visible on top */
+.projects-grid .project-cta {
+    position: absolute !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    z-index: 6 !important;
+}
+
+/* ------- Weniger vertikaler Abstand zwischen Cards auf großen Bildschirmen ------- */
+
+/* Ziel: nur auf breiten/hochauflösenden Bildschirmen (nicht auf Mobile) */
+@media (min-width: 1400px) {
+
+    /* 1) weniger Abstand zwischen Grid-Zeilen/Spalten */
+    .projects-grid {
+        gap: 14px; /* Gesamtabstand (row + column) */
+        row-gap: 12px; /* genauer: weniger vertikaler Abstand */
+        padding-top: 18px; /* optional: etwas weniger Abstand oben im Grid */
+        padding-bottom: 18px;
+        max-width: 1600px; /* belasse die max-width, passt bei dir gut */
+    }
+
+    /* 2) Karten etwas flacher (geringere minimale Höhe) */
+    .projects-grid {
+        /* min = 420px (statt 520+), preferred = 42vh, max = 900px */
+        grid-auto-rows: minmax(420px, min(42vh, 900px)) !important;
+    }
+
+        /* 3) Bild-Anteil leicht verringern, dadurch bleibt mehr Raum für Text ohne extra Höhe */
+        .projects-grid .project-image {
+            height: 42% !important; /* vorher war z.B. 50% - jetzt etwas kleiner */
+        }
+
+        /* 4) Textpanel-Padding reduzieren (vertikal weniger Luft) */
+        .projects-grid .project-body {
+            padding: 16px 20px 72px 20px !important; /* top/right/bottom/left */
+        }
+}
+
+/* Kleine Anpassung auch für mittlere Bildschirme (optional) */
+@media (min-width: 1000px) and (max-width: 1399px) {
+    .projects-grid {
+        gap: 16px;
+        row-gap: 14px;
+        grid-auto-rows: minmax(400px, min(42vh, 800px));
+    }
+
+        .projects-grid .project-image {
+            height: 44% !important;
+        }
+
+        .projects-grid .project-body {
+            padding: 16px 18px 78px 18px !important;
+        }
+}
+/* ---------- Reduce vertical spacing between project cards (strong overrides) ---------- */
+
+/* Grid: much smaller gaps */
+.projects-grid {
+  gap: 8px !important;         /* global gap */
+  row-gap: 6px !important;     /* vertical gap between rows */
+  padding-top: 12px !important;
+  padding-bottom: 12px !important;
+}
+
+/* Reduce section top/bottom padding that can add extra space */
+.projects-section {
+  padding: 12px 0 16px !important;
+  margin-top: 8px !important;
+}
+
+/* Section title spacing (smaller) */
+.projects-section .section-title,
+.section-title {
+  margin: 0 0 10px 0 !important;   /* less space under the title */
+  padding: 0 !important;
+}
+
+/* Make grid rows less tall (cards smaller height) */
+.projects-grid {
+  /* min row 320px, preferred 34vh, max 700px - tweak numbers if still too tall */
+  grid-auto-rows: minmax(320px, min(34vh, 700px)) !important;
+}
+
+/* Ensure each card uses the grid row height */
+.projects-grid .project-card {
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Slightly reduce image portion so text area uses less vertical space */
+.projects-grid .project-image {
+  height: 40% !important;
+}
+
+/* make project-body use rest but with smaller paddings */
+.projects-grid .project-body {
+  padding: 14px 16px 64px 16px !important; /* less vertical padding */
+}
+
+/* If there is a parent container with gap, neutralize it */
+.container, .my-projects, .info-section {
+  gap: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Mobile: keep a bit more spacing on small screens for touch comfort */
+@media (max-width: 700px) {
+  .projects-grid {
+    gap: 10px !important;
+    row-gap: 10px !important;
+    grid-auto-rows: auto !important;
+  }
+  .projects-grid .project-image { height: 160px !important; }
+  .projects-grid .project-body { padding: 12px !important; }
+}
+/* reserve Platz rechts nur für die Kurzbeschreibung (verhindert Überlappung mit dem CTA) */
+:root {
+    --project-cta-space: 55px; /* Platz für Button + Sicherheitsabstand – anpassen falls nötig */
+}
+
+/* Nur die Kurzbeschreibung einkapseln */
+.projects-grid .project-desc {
+    padding-right: var(--project-cta-space) !important;
+    box-sizing: border-box !important; /* wichtig, damit padding innerhalb der Box gerechnet wird */
+    display: block;
+    overflow-wrap: break-word;
+}
+
+/* Auf sehr schmalen Bildschirmen brauchen wir die Extra-Breite nicht */
+@media (max-width: 700px) {
+    .projects-grid .project-desc {
+        padding-right: 12px !important;
+    }
+}
+
+/* ---------------- Project media inside the dark panel ---------------- */
+.project-content .project-media {
+    margin: 16px 0 26px 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 16px;
+}
+
+    /* Einzelnes media-item (figure) */
+    .project-content .project-media figure {
+        margin: 0 0 12px 0;
+        padding: 0;
+        display: block;
+        width: 100%;
+    }
+
+    /* Bild / Video Style: passt sich Breite an, bleibt innerhalb des Panels */
+    .project-content .project-media img,
+    .project-content .project-media video,
+    .project-content .project-media .project-video {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+        border: 1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Caption */
+    .project-content .project-media figcaption {
+        font-size: 13px;
+        color: #BFC8FF;
+        margin-top: 8px;
+    }
+
+/* grid für mehrere thumbs */
+.project-content .project-media-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    margin-top: 12px;
+}
+
+    .project-content .project-media-grid img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+/* responsive: auf sehr kleinen Bildschirmen evtl. weniger Schatten / kleinere abstände */
+@media (max-width: 700px) {
+    .project-content .project-media img,
+    .project-content .project-media video {
+        border-radius: 6px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    .project-content .project-media-grid img {
+        height: 100px;
+    }
+}
+
+/* ---------------- Portfolio: größere, "volle" Vorschaubilder in den Cards ---------------- */
+/* Vorschlag: ein sauberes Format 16:9, nicht zu flach */
+.projects-grid .project-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;     /* garantiert 16:9 - moderne Browser */
+  height: auto;             /* Höhe kommt vom aspect-ratio */
+  max-height: 360px;        /* limit falls Karten nicht zu riesig werden sollen */
+  object-fit: cover;        /* füllt den Bereich & schneidet ggf. Ränder ab */
+  object-position: center;  /* wo beschnitten wird (center / top / left) */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: block;
+}
+
+/* Falls aspect-ratio nicht komplett greift: Fallback mit fester Höhe */
+@supports not (aspect-ratio: 1/1) {
+  .projects-grid .project-image {
+    height: 240px;          /* fallback-Höhe (anpassen) */
+    object-fit: cover;
+  }
+}
+
+/* Auf sehr großen Bildschirmen kannst du Höhe noch erhöhen */
+@media (min-width: 1400px) {
+  .projects-grid .project-image {
+    max-height: 420px;
+    aspect-ratio: 16/9;
+  }
+}
+
+/* ---------------- Project page: Media-Grid (kleine thumbs unter Video) --------------- */
+.project-content .project-media-grid img {
+  width: 100%;
+  height: 160px;            /* war vorher 120px — höher macht sie weniger flach */
+  object-fit: cover;        /* wichtige Zeile: sauber beschnitten */
+  object-position: center;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Für größere thumbnails (falls du willst) */
+@media (min-width: 1000px) {
+  .project-content .project-media-grid img {
+    height: 200px;
+  }
+}
+
+/* Optional: wenn du mehrere Reihen mit gleicher Höhe möchtest */
+/* ---------- Thumbnails: größere Zellen + ganze Bilder sichtbar (kein Crop) ---------- */
+/* Grid: feste Reihenhöhe (Desktop größer), gleiche Zellen, stabile Layout-Flow */
+.project-content .project-media-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* min cell width */
+    grid-auto-rows: 260px; /* <-- Zellenhöhe: macht Thumbs deutlich größer (anpassen) */
+    align-items: stretch;
+    justify-items: center;
+    margin-top: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+    /* Wrapper pro Zelle (nutze dieses HTML: <div class="thumb"><img ...></div>) */
+    .project-content .project-media-grid .thumb {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 6px; /* kleiner Innenabstand, reduziert visuell "kleine" Bilder */
+        background: rgba(0,0,0,0.04);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+        /* Bild-Style: füllt Höhe, behält Seitenverhältnis, kein Crop */
+        .project-content .project-media-grid .thumb img {
+            height: 100%; /* füllt die komplette Zellenhöhe */
+            width: auto; /* skaliert proportional */
+            object-fit: contain; /* extra safety: zeigt das ganze Bild */
+            object-position: center;
+            display: block;
+            border-radius: 6px;
+            background: transparent;
+        }
+
+/* Desktop: noch größere Zellen, wenn Platz da ist */
+@media (min-width: 1400px) {
+    .project-content .project-media-grid {
+        grid-auto-rows: 320px; /* mehr Höhe auf großen Bildschirmen */
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    }
+
+        .project-content .project-media-grid .thumb {
+            padding: 8px;
+        }
+}
+
+/* Mobile: dichteres Grid, kleinere Zellen */
+@media (max-width: 700px) {
+    .project-content .project-media-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 140px;
+        gap: 8px;
+    }
+
+        .project-content .project-media-grid .thumb {
+            padding: 6px;
+        }
+}
+
+/* ---------- Project media: smart layouts (single / two / grid) ---------- */
+.project-content .project-media,
+.project-media {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 18px 0 26px;
+    color: #BFC8FF;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+    /* Basis figure (Wrapper für Bild + caption) */
+    .project-media figure {
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Bild default (used by all layouts) */
+    .project-media img {
+        display: block;
+        width: auto; /* controlled per-layout */
+        height: auto;
+        max-width: 100%;
+        border-radius: 8px;
+    }
+
+    /* ---------- 1) MEDIA SINGLE: 1 grosses Bild (full width inside panel) ---------- */
+    .project-media.media-single figure,
+    .project-media.media-single img {
+        width: 100%;
+        height: auto;
+    }
+
+    .project-media.media-single img {
+        object-fit: contain; /* keine Beschneidung, Bild komplett sichtbar */
+        object-position: top center; /* HUD oben bleibt sichtbar */
+    }
+
+    /* Caption under big image */
+    .project-media.media-single figcaption {
+        margin-top: 8px;
+        color: #BFC8FF;
+    }
+
+    /* ---------- 2) MEDIA TWO: zwei große Thumbs nebeneinander ---------- */
+    .project-media.media-two {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+        align-items: stretch;
+    }
+
+        .project-media.media-two figure {
+            height: 320px; /* macht die Thumbs groß — anpassen nach Wunsch */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8px;
+            background: transparent; /* kein starkes Kästchen dahinter */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .project-media.media-two img {
+            height: 100%; /* füllt zelle in der Höhe */
+            width: auto;
+            object-fit: contain; /* wichtig: zeigt das ganze Bild */
+            object-position: top center;
+        }
+
+        /* caption */
+        .project-media.media-two figcaption {
+            margin-top: 10px;
+            color: #BFC8FF;
+        }
+
+    /* ---------- 3) MEDIA GRID: mehrere Thumbs (gleichmäßig & größer) ---------- */
+    .project-media.media-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-auto-rows: 260px; /* Zellenhöhe: groß genug, passt für viele Bilder */
+        align-items: stretch;
+        justify-items: center;
+    }
+
+        .project-media.media-grid figure {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent; /* kein störendes Kasten-Hintergrund */
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .project-media.media-grid img {
+            height: 100%;
+            width: auto;
+            object-fit: contain; /* GANZES Bild sichtbar */
+            object-position: center;
+            display: block;
+        }
+
+        .project-media.media-grid figcaption {
+            margin-top: 8px;
+            color: #BFC8FF;
+            font-size: 13px;
+        }
+
+/* Anpassungen für sehr große Bildschirme */
+@media (min-width: 1400px) {
+    .project-media.media-two figure {
+        height: 380px;
+    }
+
+    .project-media.media-grid {
+        grid-auto-rows: 320px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+}
+
+/* Mobile: scrollbare 1-column Reihen (platzsparend) */
+@media (max-width: 700px) {
+    .project-media.media-two {
+        grid-template-columns: 1fr;
+    }
+
+        .project-media.media-two figure {
+            height: 220px;
+        }
+
+    .project-media.media-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 160px;
+    }
+}
+.project-wrapper {
+    max-width: 1400px; /* erhöht nutzbare Breite (eher 1200-1600 ok) */
+    width: calc(100% - 60px);
+    margin: 28px auto 80px;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+
+/* --- FORCE: figure + figcaption immer unter dem Bild (kein Seit-an-Seit) --- */
+.project-media,
+.project-media * {
+    box-sizing: border-box;
+}
+
+    /* Stelle sicher, dass figure ein Block ist und die volle Breite einnimmt */
+    .project-media figure,
+    .project-media .figure {
+        display: block !important;
+        width: 100% !important;
+        margin: 0 0 16px 0 !important;
+        padding: 0 !important;
+        background: transparent !important; /* kein störender Kasten */
+        overflow: visible !important;
+    }
+
+        /* Bild/Video: volle Breite des figure, caption kommt darunter */
+        .project-media figure img,
+        .project-media figure video,
+        .project-media .figure img,
+        .project-media .figure video {
+            display: block !important;
+            width: 100% !important;
+            height: auto !important;
+            max-width: 100% !important;
+            object-fit: contain !important; /* zeigt das ganze Bild; wenn du crop willst: cover */
+            object-position: top center !important;
+            border-radius: 8px !important;
+        }
+
+        /* Caption steht IMMER unter dem Bild */
+        .project-media figure figcaption,
+        .project-media .figure figcaption {
+            display: block !important;
+            margin-top: 8px !important;
+            color: #BFC8FF !important;
+            font-size: 13px !important;
+            line-height: 1.4 !important;
+        }
+
+    /* Falls du ein media-grid nutzt: jede Zelle zeigt figure oben + caption unten (keine flex-wrapping) */
+    .project-media.media-grid {
+        display: grid !important;
+        gap: 12px !important;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+        grid-auto-rows: auto !important;
+        align-items: start !important;
+    }
+
+        .project-media.media-grid > figure {
+            display: block !important;
+            height: auto !important;
+        }
+
+    /* Entferne/überschreibe frühere "thumb" flex-wrappers, damit caption nicht daneben landet */
+    .project-media .thumb {
+        display: block !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+/* Falls du vorher media-row/flex benutzt hast: das erlaubt Bild+Text nebeneinander.
+   Damit die Captions unter Bildern bleiben, nutze media-row nur für *anders* intendierte Bereiche.
+   Optional defensive rule: */
+.media-row figure {
+    display: block !important;
+}
+
+/* Mobile: alles stacked, sicherheitshalber */
+@media (max-width: 900px) {
+    .project-media.media-grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+    }
+}
+
+/* --- PICKUPS: Card-Grid mit einheitlichen Bildern --- */
+.pickups-section {
+    width: 100%;
+    max-width: 1400px;
+    margin: 36px auto;
+    padding: 0 24px;
+    box-sizing: border-box;
+}
+
+/* Grid: 4 cols desktop, 3 tablet, 2 small, 1 mobile */
+.pickups-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+}
+
+@media (max-width: 1200px) {
+    .pickups-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .pickups-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .pickups-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* einzelne Card */
+.pickup-card {
+    background: rgba(0,0,0,0.12); /* dunkles Panel */
+    border-radius: 12px;
+    padding: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 280px; /* sorgt dafür, dass cards gleiche Höhe haben können */
+    transition: transform .18s ease, box-shadow .18s ease;
+    overflow: hidden;
+}
+
+    /* Hover */
+    .pickup-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 36px rgba(0,0,0,0.45);
+    }
+
+/* Bild-Wrapper: festen Bildbereich definieren (zB 210px high) */
+.pickup-image {
+    width: 100%;
+    height: 220px; /* fixierte Vorschauhöhe */
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.06));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+
+    /* Das tatsächliche img: füllt Wrapper gleichmäßig.
+   object-fit: cover -> füllt (abschneiden möglich)
+   object-fit: contain -> zeigt ganzes Bild (evtl. letterbox)
+*/
+    .pickup-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* -> zeigt komplettes Pickup, keine abgeschnittenen HUDs */
+        object-position: center;
+        display: block;
+        background: transparent;
+    }
+
+/* Body unter dem Bild */
+.pickup-body {
+    padding: 0 6px 6px 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1 1 auto;
+}
+
+/* Titel + Beschreibung */
+.pickup-title {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #E6EAF6;
+}
+
+.pickup-desc {
+    margin: 0;
+    font-size: 13px;
+    color: #BFC8FF;
+    line-height: 1.35;
+    flex: 1;
+}
+
+/* optional: kleine meta/label-zeile */
+.pickup-meta {
+    font-size: 12px;
+    color: #9fb2ff;
+    opacity: 0.9;
+}
+
+/* Wenn du möchtest, dass manche Cards höher sind, entferne min-height oben. */
+
+/* Two-column text + side image inside the project panel */
+.project-two-column {
+    display: grid;
+    grid-template-columns: 1fr 500px; /* Text nimmt Rest, Bild fixe Breite */
+    gap: 28px;
+    align-items: start; /* Bild oben ausrichten, Text fließt */
+    margin-bottom: 22px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Text-Seite: nutzt die volle Rest-Breite */
+.project-two-text {
+    /* nichts extra nötig, kann bei Bedarf typografisch angepasst werden */
+}
+
+/* Bild-Box (rechts) */
+.project-two-image {
+    margin: 0;
+    padding: 8px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.08); /* dezenter Kasten hinter dem Bild - sieht sauber im Panel aus */
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    text-align: center;
+}
+
+    /* Bild: vollständig sichtbar (HUD nicht abgeschnitten) */
+    .project-two-image img {
+        width: 100%;
+        height: auto;
+        max-height: 420px; /* verhindert zu hohe Bilder, anpassen nach Wunsch */
+        object-fit: contain; /* WICHTIG: zeigt das ganze Bild (nicht zugeschnitten) */
+        display: block;
+        border-radius: 6px;
+    }
+
+    /* figcaption styling */
+    .project-two-image figcaption {
+        font-size: 13px;
+        color: #BFC8FF;
+        margin-top: 8px;
+    }
+
+/* Responsive: eine Spalte auf kleinen Bildschirmen */
+@media (max-width: 900px) {
+    .project-two-column {
+        grid-template-columns: 1fr; /* Bild wandert unter Text */
+        gap: 14px;
+    }
+
+    .project-two-image {
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Optional: wenn das Panel bereits ein padding hat und du keine extra "background" box am Bild willst,
+   entferne die background-Eigenschaft in .project-two-image (setze sie auf transparent). */
+
+.project-two-column {
+    /* vorher: gap: 28px; */
+    gap: 14px 10px; /* row-gap column-gap -> weniger vertikaler und horizontaler Abstand */
+    align-items: start;
+}
+
+/* ---------------- Two-column: Text links, Bild rechts (Project page) ------------- */
+/* Sehr spezifisch damit andere Regeln nicht drübergehen */
+.project-page .project-content .project-two-column {
+    display: flex;
+    gap: 100px; /* Abstand zwischen Text und Bild */
+    align-items: flex-start; /* Bild oben ausrichten */
+    justify-content: left;
+    margin: 18px 0 28px; /* Abstand zum umgebenden Text */
+    flex-wrap: wrap; /* mobil untereinander */
+}
+
+    /* Textbereich soll so viel Platz nehmen wie möglich */
+    .project-page .project-content .project-two-column .project-two-text {
+        flex: 1 1 56%; /* wächst, nimmt ~56% min - anpassbar */
+        min-width: 300px; /* verhindert zu engen Text auf sehr kleinen Breakpoints */
+        max-width: 600px;
+    }
+
+    /* Bildbereich: feste max-breite, kommt nah an den Text */
+    .project-page .project-content .project-two-column .project-two-image {
+        flex: 0 0 36%; /* Bild nimmt ~36% Breite (anpassen) */
+        max-width: 560px; /* begrenzt Bildbreite */
+        margin: 0; /* kein extra Abstand rechts */
+        display: block;
+    }
+
+        /* Bild selbst: volle Breite des Containers, proportional */
+        .project-page .project-content .project-two-column .project-two-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover; /* schneidet bei Bedarf, zentriert */
+            box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+        }
+
+        /* figcaption (kleinerer Text) direkt unter dem Bild, zentriert */
+        .project-page .project-content .project-two-column .project-two-image figcaption {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #BFC8FF;
+            text-align: center;
+        }
+
+/* Mobile: untereinander, Bild über Text (falls gewünscht) */
+@media (max-width: 900px) {
+    .project-page .project-content .project-two-column {
+        flex-direction: column-reverse; /* Bild zuerst oder ändere zu column wenn Text zuerst */
+        gap: 12px;
+    }
+
+        .project-page .project-content .project-two-column .project-two-text {
+            flex-basis: 100%;
+            min-width: 0;
+        }
+
+        .project-page .project-content .project-two-column .project-two-image {
+            flex-basis: 100%;
+            max-width: 100%;
+        }
+}
+
+/* Falls deine Seite Reglen mit höherer Spezifität überschreiben,
+   du kannst testweise die wichtigsten Eigenschaften mit !important erzwingen */
+.project-page .project-content .project-two-column .project-two-image {
+    /* max-width: 560px !important; */
+    /* margin: 0 !important; */
+}
+
+
+
+.project-subheading.center-large {
+    font-size: 2rem; /* etwas größer (ca. 20px) */
+    font-weight: 700; /* optional: kräftiger */
+    text-align: center; /* zentriert */
+    margin: 18px 0; /* etwas Abstand oben/unten */
+    line-height: 1.2;
+}
+
+/* kleine Geräte: Schrift leicht reduzieren */
+@media (max-width: 700px) {
+    .project-subheading.center-large {
+        font-size: 1.05rem;
+    }
+}
+
+/* ============================
+   WICHTIG: Breite stabilisieren
+   ============================ */
+
+/* Hauptbereich: immer volle Breite bis max 1600px (zentriert) */
+.site-main {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+    display: block !important; /* verhindert unerwünschte flex/grid-Effekte */
+}
+
+/* Sektion mit den Projekten ebenso sichern */
+.projects-section,
+#projects,
+#projectsGrid,
+#projectsGrid.categorized {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+}
+
+/* Jede Kategorie-Section ebenfalls */
+.category-section {
+    width: 100%;
+    max-width: 1600px;
+    margin: 28px auto;
+    box-sizing: border-box;
+}
+
+/* Inneres Grid: responsiv, füllt die Sektion */
+#projectsGrid.categorized .projects-inner-grid {
+    display: grid;
+    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* -------------------------
+   Layout-Schutz & Kategorie-Grid
+   ------------------------- */
+
+/* Hauptbereich: stabilisieren */
+.site-main {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+    display: block !important;
+}
+
+/* Projekte-Wrapper */
+#projects,
+#projectsGrid,
+#projectsGrid.categorized,
+.projects-section {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 1600px !important;
+    margin: 0 auto !important;
+}
+
+/* Jede Kategorie soll eine volle, zentrierte Reihe belegen */
+.category-section {
+    width: 100%;
+    max-width: 1600px;
+    margin: 28px auto;
+    box-sizing: border-box;
+    padding: 0 16px;
+    display: block;
+}
+
+/* Inneres Grid: max. 4 Karten pro Zeile auf Desktop */
+#projectsGrid.categorized .projects-inner-grid {
+    display: grid;
+    gap: 8px;
+    /* Desktop: max 4 Spalten, Kartenbreite mindestens 260px */
+    grid-template-columns: repeat(4, minmax(260px, 1fr));
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Responsive: weniger Spalten auf kleineren Viewports */
+@media (max-width: 1200px) {
+    #projectsGrid.categorized .projects-inner-grid {
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    #projectsGrid.categorized .projects-inner-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    #projectsGrid.categorized .projects-inner-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Damit die Cards dieselbe "visuelle Größe" behalten wie im Chrono-Grid, 
+   stellen wir sicher, dass ihre Boxing gleich bleibt */
+.project-card {
+    box-sizing: border-box;
+    /* wenn du feste Höhe hattest, kannst du sie hier ergänzen, 
+     z.B. min-height: 360px; (nur falls notwendig) */
+}
+
+/* Kategorie-Section: kein horizontales padding mehr, damit Grid die volle Breite behält */
+.category-section {
+    width: 100%;
+    max-width: 1600px; /* gleiche Max-Width wie Hauptgrid */
+    margin: 28px auto;
+    box-sizing: border-box;
+    padding: 0; /* wichtig: entfernt zusätzlichen Innenabstand */
+    display: block;
+}
+
+/* Titel oberhalb, nimmt keinen horizontalen Platz weg */
+.category-title {
+    text-align: center;
+    margin: 0 0 12px;
+    padding: 0; /* kein padding, reduziert keine Breite */
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1; /* kompakt */
+}
+
+/* Das innere Grid füllt die volle Breite der Section */
+#projectsGrid.categorized .projects-inner-grid {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    /* grid-template-columns/gap setzen wir per JS (kopieren vom Original-Grid) */
+}
+
+/* Sicherstellen, dass die project-card dieselbe Box-Größe verwendet wie Chrono-Ansicht */
+.project-card {
+    box-sizing: border-box;
+}
+
+/* ======= Grid-Basis (gilt für Chrono- und Kategorie-View) ======= */
+#projectsGrid, .projects-grid {
+    display: grid;
+    gap: 1.6rem;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+    /* Desktop: maximal 4 Spalten */
+    .projects-grid,
+    #projectsGrid.categorized .projects-inner-grid {
+        grid-template-columns: repeat(4, minmax(260px, 1fr));
+    }
+
+/* Breakpoints (reduziert Spalten je schmaler) */
+@media (max-width: 1200px) {
+    .projects-grid,
+    #projectsGrid.categorized .projects-inner-grid {
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 900px) {
+    .projects-grid,
+    #projectsGrid.categorized .projects-inner-grid {
+        grid-template-columns: repeat(2, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 520px) {
+    .projects-grid,
+    #projectsGrid.categorized .projects-inner-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* ======= Kategorie-Wrapper unverändert breit halten ======= */
+#projectsGrid.categorized {
+    display: block; /* damit Kategorien untereinander stehen */
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/* Kategorie-Section und Title */
+.category-section {
+    width: 100%;
+    max-width: 1600px;
+    margin: 28px auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.category-title {
+    margin: 0 0 12px;
+    padding: 0;
+    line-height: 1;
+    text-align: center;
+}
+
+/* Inneres Grid füllt die ganze Section und verwendet dieselben Spalten/Gap-Regeln */
+.projects-inner-grid {
+    display: grid; /* Fallback; Spaltenregel wird durch die Regeln oben getroffen */
+    gap: 1.6rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ======= Card-Höhe: in Kategorien nutzen wir die CSS-Variable --card-min-height ======= */
+.project-card {
+    box-sizing: border-box;
+    min-height: var(--card-min-height, auto); /* wird per JS gesetzt wenn Kategorie-Ansicht aktiv */
+}

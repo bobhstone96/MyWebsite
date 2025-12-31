@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">NecroSting</span>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/NecroSting.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">NecroSting</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Puzzle / Adventure</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unity</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2024</div>
+                    <div class="meta-item"><strong>Rolle:</strong> Programmer / Designer</div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    „NecroSting“(Solo-Projekt) ist ein 2D Top-Down Rätselspiel, erstellt in der
+                    Unity Spiele-Engine(C#).
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Dieses Spiel wurde für die Teilnahme bei der „Jame
+                    Gam#40“(21. Mai 2024 - 26. Mai 2024, veranstaltet von itch.io) erstellt. Für die Entwicklung hatte Ich 6 Tage Zeit. Das
+                    vorgegebene Thema der Game Jam lautet „Necromancer“. Außerdem
+                    wurde für die Game Jam ein besonderes Objekt angekündigt, welche
+                    Entwickler nach eigenem Ermessen in das Spiel einbauen durften:
+                    „Needle“. So ist meine Idee für „NecroSting“ entstanden.
+
+                </p>
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <p>
+                            Der Spieler spielt einen Nekromanten, der mit Hilfe seinen Nadeln
+                            seine Untertanen zum Leben erwecken kann, was es dem Spieler erlaubt
+                            Rätsel zu lösen und somit durch das Spiel fortzuschreiten. Im letzten Level
+                            wartet ein Endboss auf den Spieler. Jedes Level kann mit der Taste R neugestartet werden.
+                        </p>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/necrosting1.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>Engine: Unity</li>
+                    <li>Programmiersprache: C#</li>
+                    <li>Source Control: Keine (nur manuelle backups)</li>
+                    <li>Entwicklungszeit: 6 Tage (Solo Projekt)</li>
+                </ul>
+
+                <h3 class="project-subheading center-large">Features</h3>
+
+
+                <section class="pickups-section">
+
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStingPlayer.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Nekromant(Spieler)</h3>
+                                <p class="pickup-desc">
+                                    Zu Beginn eines Levels kontrolliert der Spieler nur den Nekromanten. Linke Maustaste: verschießt NecroNeedles vom Nekromanten (Spieler) aus in Richtung Mauszeigerposition.
+                                    Anzahl verfügbarer NecroNeedles wird über dem Nekromanten in simplen schwarzen Strichen mit weißer Umrandung dargestellt.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrostingSleepMinion.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Minion(ruhend)</h3>
+                                <p class="pickup-desc">
+                                    Trifft der Spieler einen ruhenden Minion mit einer NecroNeedle (linke Maustaste zum verschießen), erwacht dieser zum Leben.
+                                    Alle erwachten Minions nutzen den selben Bewegungs-Input wie der Spieler, somit werden alle kontrollierbaren Charaktere gleichzeitig bewegt.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrostingMinionAwake.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Minion(erwacht)</h3>
+                                <p class="pickup-desc">
+                                    Erwachte Minions können vom Spieler kontrolliert werden. Durch Klicken der rechten Maustaste können kontrollierte Minions ihre NecroNeedles in Mauszeiger-Richtung verschießen.
+                                    Hat ein Minion keine NecroNeedles mehr übrig(aktuelle Anzahl wird über Minion angezeigt), geht dieser Minion wieder in den ruhenden Modus. Minions nutzen den selben Bewegungs-Input wie der Spieler.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrostingActivationStone.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Aktivator-Stein</h3>
+                                <p class="pickup-desc">Sobald ein Minion nah genug an einem Aktivator-Stein steht, wird der Stein aktiviert. Aktivierte Steine beeinflussen das aktuelle Level (lassen z.B. Hindernisse verschwinden).</p>
+                                <div class="pickup-meta">Minions aktivieren Aktivator-Steine auch im ruhenden Modus! Es wird in einigen Levels erwartet Minions zu einem Aktivator-Stein zu bringen und diese dort ruhen zu lassen.</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrosting4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Portal</h3>
+                                <p class="pickup-desc">Ziel ist es in jedem Level das Portal zu aktivieren und den Weg dort hin für den Nekromanten freizulegen. Wenn der Nekromant das Portal erreicht, wird das nächste Level geladen.</p>
+                            </div>
+                        </article>
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrostingDoubleActivationStone.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Aktivator-Stein mit Voraussetzung</h3>
+                                <p class="pickup-desc">Einige Aktivator-Steine können nur aktiviert werden, wenn ein bestimmter anderer Aktivator-Stein bereits aktiviert ist.</p>
+                                <div class="pickup-meta">Grüne Aktivator-Steine setzen einen anderen aktivierten Aktivator-Stein voraus!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrostingLaserWall.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Minion-Laser</h3>
+                                <p class="pickup-desc">Wenn ein Minion durch die roten Minion-Laser hindurch geht, wechselt er sofort in den ruhenden Modus. Der Nekromant(Spieler) kann sich frei durch die Minion-Laser bewegen.</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrosting9.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Projektil-Block-Zone</h3>
+                                <p class="pickup-desc">
+                                    Sobald 4 Projektile(NecroNeedles) in die gelbe Zone eingetroffen sind, sperrt sich dieser gelbe Bereich vom Nekromanten ab und erschafft eine Wand die alle weiteren Projektile von außen abblockt. Der Spieler muss dieses
+                                    Level mit 4 taktischen und präzisen NecroNeedles bewältigen.
+                                </p>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStinghealthactivationstone.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Aktivator-Stein mit Leben</h3>
+                                <p class="pickup-desc">
+                                    Dieser Aktivator-Stein kann nur aktiviert werden, indem er mit NecroNeedles abgeschossen wird. Die Anzahl der nötigen NecroNeedles zum aktivieren dieses Aktivator-Steines wird in Lebenspunkten (Anzahl Herze) unter dem Aktivator-Stein dargestellt.
+                                </p>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/necrostingBoss.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">End-Boss</h3>
+                                <p class="pickup-desc">
+                                    Im End-Boss-Raum befinden sich auf jeder Seite (links, unten, oben, rechts) jeweils 2 Aktivator-Steine. Wird ein Aktivator-Stein aktiviert, wird die entsprechende nächste Wand vom Endboss deaktiviert. Trifft ein Minion durch
+                                    die entstandene Lücke, erhält der Boss 1 Schaden und die genutzte Lücke wird durch eine Projektil-Wand abgesperrt.
+                                </p>
+                                <div class="pickup-meta">HP: 6</div>
+                            </div>
+                        </article>
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <h3 class="project-subheading center-large">Level-Übersicht</h3>
+
+
+                <section class="pickups-section">
+
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStinglvl1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Level 1</h3>
+                                <p class="pickup-desc">
+                                    Einführung in Auferweckungs-Mechanik.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStinglvl2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Level 2</h3>
+                                <p class="pickup-desc">
+                                    Einführung in (grüne) Aktivator-Steine mit Voraussetzung.
+                                </p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStinglvl3.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Level 3</h3>
+                                <p class="pickup-desc">
+                                    Einführung in (orangene) Aktivator-Steine mit 2 Voraussetzungen. Außerdem: In diesem Level muss der Spieler zum ersten mal mehrere NecroNeedles in einem Minion stapeln, um das Level zu bewältigen.
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStinglvl4.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Level 4</h3>
+                                <p class="pickup-desc">Einführung in Minion-Laser-Mechanik.</p>
+
+                                <!--
+                    <div class="pickup-meta">Leider ist mir hier ein kleiner Fehler im Rätsel des Levels unterlaufen. Der grüne Aktivator-Stein ist an den blauen Aktivator-Stein unten links geknüpft(setzt diesen voraus um aktiviert zu werden), welcher auch den Weg zum grünen Aktivator-Stein freiräumt.
+                    Somit ist die Aktivierung des zweiten blauen Aktivator-Steines nicht nötig um das Level zu schaffen. Stattdessen hätte der grüne Aktivator-Stein an den zweiten blauen Aktivator-Stein hinter dem Minion-Laser geknüpft werden sollen.</div>
+                        -->
+
+                            </div>
+
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStinglvl5.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Level 5</h3>
+                                <p class="pickup-desc">Einführung in Projektil-Block-Zone und Aktivator-Stein mit Leben.</p>
+                            </div>
+                        </article>
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/NecrcoStinglvl6.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Boss-Level</h3>
+                                <p class="pickup-desc">In diesem Level kann der Spieler seine NecroNeedles an der "Ammo"-Box auffüllen. Letztes Level.</p>
+                            </div>
+                        </article>
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <!-- Two-column block: Text (links) + Bild (rechts) -->
+
+                <h2>Herausforderung → Lösungsweg</h2>
+                <ul>
+                    <li>
+                        Meine persönliche Herausforderung war, dass ich Rätselspiele oft als zu
+                        repetitiv empfinde. Das setzte mir selbst einen hohen Anspruch: Die
+                        Rätsel sollten nicht nur funktionieren, sie sollten sich frisch und
+                        abwechslungsreich anfühlen. Anstatt viele Level mit derselben Mechanic
+                        zu bauen, habe ich pro Level gezielt neue Mechaniken eingeführt und
+                        bestehende Mechaniken kombiniert:
+                    </li>
+                    <li>
+                        Level-1: Einführung der Auferweckungs-Mechanik (Untertanen
+                        aktivieren Steine).
+                    </li>
+                    <li>
+                        Level-2: Abhängige Aktivatoren — manche Steine verlangen, dass
+                        bereits ein anderer Stein aktiviert ist.
+                    </li>
+                    <li>
+                        Level-3: Barrieren, die Untertanen „töten“ — der Spieler kann
+                        hindurch, seine Untertanen nicht.
+                    </li>
+                    <li>
+                        Level-4: Zone mit Schuss-Limit (Blockiert nach X
+                        Projektileinträgen).
+                    </li>
+                    <li>
+                        Level-5: Kombinationen aus Barrieren + Aktivatoren, die alternative
+                        Lösungsansätze erzwingen.
+                    </li>
+                    <li>
+                        Level-6: Endboss mit eigenen Regeln.
+                    </li>
+                    <li>
+                        Dieser Ansatz hat Scope und Testaufwand erhöht, aber das Risiko hat
+                        sich ausgezahlt: Die Spielabfolge fühlte sich dynamischer an und wir
+                        bekamen sehr positives Feedback während der Jam. Als Trade-off habe
+                        ich gelernt, Mechaniken gezielt zu priorisieren und früh zu playtesten,
+                        damit Gameplay-Komplexität nicht den Zeitplan sprengt.
+                    </li>
+                </ul>
+
+
+
+                <h2>Learnings</h2>
+                <p>
+                    In diesem Projekt habe ich in erster Linie gelernt die Zeit in
+                    einer Game Jam vernünftig zu managen. Ich habe mir das Ziel gesetzt
+                    bis 3 Tage vor Abgabe mit dem Spielprinzip fertig zu sein. Ab dem 3. Tag
+                    vor Abgabe habe ich mit Polishing begonnen, die Sprites eingebaut,
+                    Sound implementiert, mehr Level erstellt, usw. Im Allgemeinen ist dieses
+                    Projekt sehr erfolgreich abgelaufen und hat mir Vorfreude auf zukünftige
+                    Game Jams bereitet.
+
+
+                    <h3>Downloads / Links / Screenshots</h3>
+
+                    <a class="project-back" href="https://bobhstone.itch.io/necrosting">←View "NecroSting" on itch.io (Im Browser spielbar!)</a>
+
+                <p></p>
+
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

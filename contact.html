@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-witdth, initial-scale=1.0">
+    <title>LutzCode</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <section class="contact-section">
+            <h1 class="section-title autoDisplay">Let's talk!</h1>
+            <form class="contact-form panel" action="https://formspree.io/f/mldqkrpp" method="POST" novalidate>
+                <!-- optional: Honeypot gegen Bots -->
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+                <!-- Optional: Betreff in der E-Mail -->
+                <input type="hidden" name="_subject" value="Neue Nachricht via LutzCode Kontaktformular">
+
+                <!-- Name -->
+                <label class="form-row">
+                    <span class="form-label">Full Name</span>
+                    <input class="form-input" type="text" name="name" placeholder="Your Full Name" required>
+                </label>
+
+                <!-- E-Mail -->
+                <label class="form-row">
+                    <span class="form-label">E-Mail Address</span>
+                    <input class="form-input" type="email" name="email" placeholder="Your E-Mail Address" required>
+                </label>
+
+                <!-- Message (große Box) -->
+                <label class="form-row">
+                    <span class="form-label">Your Message</span>
+                    <textarea class="form-textarea" name="message" rows="8" placeholder="Share your thoughts..." required></textarea>
+                </label>
+
+                <div class="form-actions">
+                    <button class="btn btn-primary" type="submit"><i class='bx bx-send'></i> Send Message</button>
+                </div>
+            </form>
+
+            <div class="contact-box panel">
+                <p>Whether you're looking to build a new website, improve your existing platform, or bring a unique project to life, I'm here to help.</p>
+            </div>
+
+            <div class="social-box panel">
+                <a href="#"><i class='bx bxs-phone-call'></i> +39 111 222 333</a>
+                <a href="#"><i class='bx bxl-telegram'></i> Contact Example.com</a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i> Contact Example.com</a>
+
+                <div class="social-icons">
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+
+
+
+            <!-- modify this form HTML and place wherever you want your form -->
+
+        </section>
+
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

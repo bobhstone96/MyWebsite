@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Leaf It To Me</span>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/LeafItToMe.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Leaf It To Me</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Puzzle / Management</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Rolle:</strong> Programmer / Artist</div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Leaf it to me ist ein Top-Down Management Spiel, in dem der Spieler als Pflanzenbetreuer getestet
+                    wird: Ziel ist es, gleichzeitig 20 lebende Pflanzen zu halten, indem Licht-,
+                    Nachbarschafts- und Versorgungsanforderungen (Wasser, Dünger, Entstaubung,
+                    Schädlingsbekämpfung) rechtzeitig erfüllt werden. Spielt mit Versorgungs-Management unter Zeitdruck.
+
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Entwickelt für die Shovel Jam 2025 (11. Juli 2025 – 21. Juli 2025). Team: 4 Personen
+                    — ich (anfangs primär Künstler, später auch Programmierer), 1 weitere Künstlerin
+                    (Character Meshes & Texturen), 2 Programmierer (Polish/Support/Grid-System). Ziel der Teilnahme
+                    war sowohl mein künstlerisches Talent zu testen als auch ein
+                    kurzer, spaßiger Prototyp mit einem starken Fokus auf abwechslungsreichen Gameplay-Loop.
+
+
+                </p>
+
+
+                <!-- Two-column block: Text (links) + Bild (rechts) -->
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Der Spieler verwaltet ein Zimmer, welches in einem Grid unterteilt ist; jeder Grid-Slot hat eine bestimmte
+                                Lichtintensität (abhängig von Fensternähe).
+                            </li>
+                            <li>
+                                Alle 30s tauchen zufällige NPCs am Zaun auf und bieten dem Spieler Pflanzen
+                                an (kleine Text-UI erklärt die Anforderungen der jeweiligen Pflanze).
+                            </li>
+                            <li>
+                                Pflanzen haben Anforderungen: passende Lichtstufe,
+                                Platzierungsverträglichkeit (nicht neben bestimmten Pflanzen platzierbar) und
+                                periodisch auftretende Bedürfnisse (Wasser, Dünger, Entstaubung,
+                                Schädlingsbekämpfung).
+                            </li>
+                            <li>
+                                Durch Interaktion mit einer Pflanze, während ein Werkzeug ausgerüstet ist, werden die
+                                entsprechenden Anforderungen der Pflanze befriedigt (Gießkanne -> Pflanze wässern ; Dünger -> Nährstoffmangel beheben ; Gift -> Schädlingsbekämpfung ; Staubwedel -> Entstauben)
+                            </li>
+                            <li>
+                                Vertrocknete Pflanzen können in den Mülleimer geworfen; ist der Mülleimer voll,
+                                muss der Inhalt zum Kompost transportiert werden, um wieder genutzt zu werden.
+                            </li>
+                            <li>
+                                Pflanzen gewähren Buffs (z. B. MoveSpeed, größere Gießkanne, größerer
+                                Mülleimer).
+                            </li>
+                            <li>
+                                Verlustbedingung: mehr als die Hälfte der aktuell vorhandenen Pflanzen
+                                verwelkt → Game Over. Ziel ist es, 20 Pflanzen gleichzeitig lebendig zu halten.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/leafittome1.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub
+                    </li>
+                    <li>
+                        Team: 4 Personen (duales Rollenprofil: Artist → später zusätzl. GameplayProgrammer)
+                    </li>
+                    <li>
+                        Pflanzen-Anforderungen werden durch Interaktion mit ausgerüsteten Werkzeugen erfüllt: Gießkanne(Wasser),
+                        Dünger(Nährstoffmangel), Staubwedel(Staub), Gift(Schädlingsbefall)
+                    </li>
+                    <li>
+                        Entwicklungszeit: 11.07.2025 – 21.07.2025 (Jam-Phase)
+                    </li>
+                    <li>
+                        Assets: alle 3D-Models vollkommen selbst erstellt (Blender: modelliert, texturiert, animiert) — Fokus auf
+                        Performance und geringer Poly-Count
+                    </li>
+                    <li>
+                        Status: Jam-Prototype
+                    </li>
+                </ul>
+
+
+                <section class="pickups-section">
+                    <h3 class="project-subheading center-large">Features</h3>
+                    <h2 class="section-title">Pflanzen</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/plant1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Biter Pflanze</h3>
+                                <p class="pickup-desc">- Lichtanforderung: Schattig</p>
+                                <p class="pickup-desc">- Nachbarschafts-Unverträglichkeit: Grüne Pflanze</p>
+                                <div class="pickup-meta">Verleiht dem Spieler einen Geschwindigkeits-Bonus.</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/plant2.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Grüne Pflanze</h3>
+                                <p class="pickup-desc">- Lichtanforderung: Halb-Schatten.</p>
+                                <p class="pickup-desc">- Nachbarschafts-Unverträglichkeit: Gelbe Pflanze</p>
+                                <div class="pickup-meta">Verleiht der Gießkanne des Spielers einen Größe-Bonus(Mehr Wasser).</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/plant2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Gelbe Pflanze</h3>
+                                <p class="pickup-desc">- Lichtanforderung: Sonnig</p>
+                                <p class="pickup-desc">- Nachbarschafts-Unverträglichkeit: Biter Pflanze</p>
+                                <div class="pickup-meta">Verleiht dem Mülleimer des Spieler einen Größe-Bonus(Mehr Müllplätze).</div>
+                            </div>
+                        </article>
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+
+
+                <div id="center" style="height:1px;"></div>
+
+
+
+
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Werkzeuge</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/wateringcan.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Gießkanne</h3>
+                                <p class="pickup-desc">Ermöglicht bewässern von Pflanzen. Muss am Waschbecken aufgefüllt werden.</p>
+                                <div class="pickup-meta">Kann durch "Grüne Pflanze"-Bonus erweitert werden!</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/sink.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Waschbecken</h3>
+                                <p class="pickup-desc">Interaktion mit Gießkanne ausgerüstet -> Gießkanne wird augefüllt</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/fertilizer.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Dünger</h3>
+                                <p class="pickup-desc">Füllt Nahrungsbedarf einer Pflanze wieder auf.</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/poison.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Schädling-Gift</h3>
+                                <p class="pickup-desc">Bekämpft Pflanzen-Schädlinge</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/trashcan.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Mülleimer</h3>
+                                <p class="pickup-desc">Interaktion mit verwelkter Pflanze ausgerüstet -> Pflanze entsorgt. Muss entleert werden, wenn voll. (Müllbeutel ausrüsten und mit Kompost interagieren)</p>
+                                <div class="pickup-meta">Kann durch "Gelbe-Pflanze"-Bonus erweitert werden!</div>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/trash.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Müllbeutel</h3>
+                                <p class="pickup-desc">Interaktion mit vollen Mülleimer, während kein Item ausgerüstet ist -> Müllbeutel wird ausgerüstet. Muss in Kompost entsorgt werden.</p>
+                            </div>
+                        </article>
+
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/compost.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kompost</h3>
+                                <p class="pickup-desc">Interaktion mit Müllbeutel ausgerüstet -> Müll entsorgt. Kompost wird niemals voll.</p>
+                            </div>
+                        </article>
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: Fertigstellung des geplanten vollständigen Gameplay-Loops innerhalb der Jam-Zeit;
+                        vorher war meine Rolle primär künstlerisch.
+                    </li>
+                    <li>
+                        ->Lösung: Nach einigen Tagen wechselte ich in die Programmierung und
+                        implementierte Kernsysteme priorisiert: Werkzeug-Interaktionen (F), Timer-Logik für
+                        Pflanzen-Anforderungen, NPCs, UI, Win/Lose-Bedingungen. Dadurch konnte der Loop spielbar werden, auch
+                        wenn für Balancing & QA leider dennoch wenig Zeit blieb.
+                    </li>
+                    <li>
+                        Herausforderung: Performance-Risiken durch viele Assets.
+                    </li>
+                    <li>
+                        ->Lösung: Alle 3D-Assets selbst modelliert (Blender). Fokus auf Performance durch geringer Poly-Anzahl.
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+
+                <ul>
+                    <li>
+                        Rollenflexibilität ist wertvoll: Künstlerische Skills halfen bei schneller Erstellung der 3D Models, späteres Umschwenken auf Gameplay-Programmierung machte
+                        den Loop überhaupt spielbar.
+                    </li>
+                    <li>
+                        Frühes Playtesting / Balancing ist essentiell — fehlende Playtest-Zeit führte zu
+                        zu schnellem Verwelken und einem zu hohen Schwierigkeitsgrad.
+                    </li>
+
+                    <li>
+                        Priorisierung: Schnelle Gameplay-Essentials (Interaktion, Timer, Werkzeuge, NPCs) sichern den spielbaren Kern.
+                    </li>
+                </ul>
+
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <a class="project-back" href="https://ahundt.itch.io/leaf-it-to-me">←View Leaf It To Me on itch.io</a>
+
+
+                <p>
+                </p>
+                <a class="project-back" href="art.html#leafittome" aria-label="Mehr zu Praise Hinode">MORE</a>
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

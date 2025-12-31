@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-witdth, initial-scale=1.0">
+    <title>LutzCode</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+
+        <!--<nav class="breadcrumbs">
+        <a href="index.html">Home</a>
+
+    </nav>-->
+
+        <div class="sidebar">
+            <div class="close-icon">
+                <i class='bx bx-x'></i>
+            </div>
+
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Projects</a></li>
+            </ul>
+
+            <div class="social-icons">
+                <a href="#"><i class='bx bxl-youtube'></i></a>
+                <a href="#"><i class='bx bxl-github'></i></a>
+                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+            </div>
+
+
+        </div>
+
+        <section class="hero">
+            <div class="hero-info panel panel--hero">
+
+                <h1><span class="gradient">Lutz Hollstein</span> Programmer </h1>
+
+                <p>I'm a Programmer with experience in multiple game engines, website development and 3D modeling software</p>
+
+
+                <a class="btn" href="portfolio.html" aria-label="Zu Portfolio">
+                    <i class='bx bxs-send'></i> My Portfolio
+                </a>
+
+                <a class="btn" href="contact.html" aria-label="Zu Kontakt">
+                    <i class='bx bxs-send'></i> Contact Me
+                </a>
+                <!--
+                <button><i class='bx bxs-send'></i>My Portfolio</button>
+            <button><i class='bx bxs-send'></i>Contact Me</button>
+                -->
+            </div>
+
+            <div class="hero-vid-box">
+                <img src="images/grid1.png" alt="card-image">
+            </div>
+
+            <div class="scroll-down"></div>
+        </section>
+        <!-- Projects Section: Latest 4 -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Latest Projects</h2>
+
+            <div class="projects-grid">
+                <!-- Card 1 -->
+                <article class="project-card" data-category="Experimental" style="position: relative;">
+                    <img src="images/ultimatemultiplayer2.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">My First Online Multiplayer [Experimental]</h3>
+                        <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                        <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                    </div>
+                    <a class="project-cta" href="experimental.html#multiplayer" aria-label="Mehr zu Multiplayer">MORE</a>
+                </article>
+
+                <article class="project-card" data-category="Experimental" style="position: relative;">
+                    <img src="images/cargame1.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">Shader Tutorial / Fahrzeug Prototyp [Experimental]</h3>
+                        <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                        <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                    </div>
+                    <a class="project-cta" href="experimental.html#carprototype" aria-label="Mehr zu Fahrzeugprot">MORE</a>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="project-card" data-category="Game Jam" style="position: relative;">
+                    <img src="images/CookieCrumble.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">Cookie Crumble</h3>
+                        <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Game Jam | Unreal Engine 5</p>
+                        <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                    </div>
+                    <a class="project-cta" href="cookiecrumble.html" aria-label="Mehr zu Cookie Crumble">MORE</a>
+                </article>
+
+
+                <article class="project-card" data-category="Experimental" style="position: relative;">
+                    <img src="images/NoitaProjectiles12.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">Komplexes Projektil-System [Experimental]</h3>
+                        <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                        <p class="project-desc">Kurzbeschreibung: Warum das Spiel entstanden ist und was man dort macht.</p>
+                    </div>
+                    <a class="project-cta" href="experimental.html#projectilesystem" aria-label="Mehr zu Projektil-System">MORE</a>
+                </article>
+            </div>
+    </div>
+
+
+        <!--
+    <footer>
+        <h1>Copyright © Lutz, Made with MiladiCode</h1>
+    </footer>
+        -->
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

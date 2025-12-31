@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Star Rider - Elemental Shuffle</span>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/StarRider.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Star Rider - Elemental Shuffle</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong>  Erkundung / Battle-Simulator </div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Rolle:</strong> Programmer </div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Star Rider — Elemental Shuffle ist ein kurzweiliger Battle-Simulator
+                    in dem der Spieler als kleiner Drache auf einem Stern Minions
+                    (Vögel) sammelt, diese kommandiert und in phasenbasierten
+                    Erkundungs- und Bosskämpfen gegen Gegner mit elementaren Affinitäten antreten lässt.
+                    Kernfokus: schnelle, taktische Team-Zusammenstellung (ElementSynergien + Levelstufen) und risk/reward-Erkundung.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Entwickelt für die Mini Jame Gam #42 (2.–4. Mai 2025) von einem kleinen
+                    Team, bei dem ich als Lead Gameplay Programmer fungierte. Team: 2
+                    Programmierer (ich: Lead Gameplay & größere UI-Funktionen; 1
+                    Programmierer: UI-Polish), 1 Artist (Character Meshes), 1 Level Designer
+                    (World-Building & Balancing). Ziel der Jam: in kurzer Zeit ein spaßiges,
+                    kompaktes Spiel mit klarer Loop-Mechanik und spürbarer Progression
+                    realisieren
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Spieler steuert einen Drachen auf einem kleinen Stern und beginnt
+                                mit 5 eigenen Minions (Vögel).
+                            </li>
+                            <li>
+                                Erkundungsphase: Spieler erkundet ein Gebiet (Vulkan / See /
+                                Wald) für eine begrenzte Zeit (Phase 1 = 90s, Phase 2 = 120s,
+                                Phase 3 = 150s) und besiegt feindliche Vögel. Besiegte Gegner
+                                lassen Beschwörungs-Karten fallen, mit denen neue Minions am
+                                Beschwörungsportal rekrutiert werden können.
+                            </li>
+                            <li>
+                                Minion-System: Vögel besitzen je ein Element (Neutral, Feuer,
+                                Wasser, Pflanze) und eine Stufe (Lvl1, Lvl2, Lvl3). Elemente bilden
+                                ein Schere-Stein-Papier-System (Wasser > Feuer; Feuer > Pflanze;
+                                Pflanze > Wasser). Höhere Stufen bedeuten mehr HP und Basis
+                                Schaden. Minions attackieren automatisch gegnerische Vögel in
+                                Reichweite.
+                            </li>
+                            <li>
+                                Map-Progression-System: Wenn ein Boss besiegt wurde und der Spieler
+                                in die Erkundungsphase eintritt, öffnet sich in jedem Gebiet(Vulkan, Wald, See)
+                                ein weiterer Bereich. Die zu besiegenden Gegner in den neuen Gebieten
+                                haben häufiger ein höheres Level als in den vorherigen Gebieten.
+                            </li>
+                            <li>
+                                Bossphase: Nach jeder Erkundungsphase folgt ein Bosskampf
+                                (kein Zeitlimit). Jeder Boss hat ein dominantes Element; nach
+                                Besiegen eines Bosses wird dieses Element für zukünftige Bosse
+                                gesperrt, wodurch der Spieler in der Wahl seiner nächsten
+                                Erkundungsgebiete strategisch vorgehen muss.
+                            </li>
+                            <li>
+                                Ziel: Drei Bossphasen (insgesamt drei Bosse) erfolgreich
+                                absolvieren → Sieg. Scheitert der Spieler, beginnt ein Neustart.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/starrider1.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub
+                    </li>
+                    <li>
+                        Entwicklungszeit: 3 Tage (Game Jam: 02.–04.05.2025)
+                    </li>
+                    <li>
+                        Team: 4 (2 Programmierer, 1 Artist, 1 Level Designer)
+                    </li>
+                    <li>
+                        Meine Aufgaben: Lead Gameplay-Programmierung
+                        (Minion/Gegner/Boss-Logik/Phasen-Wechsel/BeschwörungsMechanik, Implementierung zentraler UI-Funktionen, Koordination
+                        mit UI- und Level-Team für Balancing & Darstellung.)
+                    </li>
+                </ul>
+                <h3 class="project-subheading center-large">Features</h3>
+                <section class="pickups-section">
+                    <h2 class="section-title">Elemente</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/firebirds1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Feuer</h3>
+                                <p class="pickup-desc">Stark gegen Pflanze, schwach gegen Wasser.</p>
+                                <div class="pickup-meta">Feuer-Gegner können auf dem Vulkan gefunden werden!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/grassbirds1.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Pflanze</h3>
+                                <p class="pickup-desc">Stark gegen Wasser, schwach gegen Feuer.</p>
+                                <div class="pickup-meta">Pflanzen-Gegner können im Wald gefunden werden!</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/waterbirds1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wasser</h3>
+                                <p class="pickup-desc">Stark gegen Feuer, schwach gegen Pflanze.</p>
+                                <div class="pickup-meta">Wasser-Gegner können am See gefunden werden!</div>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/waterbirds1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Neutral</h3>
+                                <p class="pickup-desc">Normal stark gegen alle Elemente.</p>
+                                <div class="pickup-meta">Neutral-Gegner können in jedem Gebiet gefunden werden!</div>
+                            </div>
+                        </article>
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Combat-System</h2>
+
+                    <div class="pickups-grid">
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starridercombat1.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Elementare Anfälligkeiten</h3>
+                                <p class="pickup-desc">(Wasser > Feuer; Feuer > Pflanze; Pflanze > Wasser)</p>
+                                <div class="pickup-meta">Besiegte Gegner lassen eine Beschwörungs-Karte fallen, mit der Minions mit selben Element und Stufe wie der besiegte Gegner beschworen werden können!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starridercombat2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Minions kommandieren</h3>
+                                <p class="pickup-desc">Minions lassen sich einzeln in ihren Elementen auswählen, oder alle auf einmal! Klicken von Linker Maustaste schickt die ausgewählten Minions zum Zielort. Mit Hilfe von "Q" folgen die ausgewählten Minions dem Spieler!</p>
+                                <div class="pickup-meta">Phase: Erkundungs-Phase, Boss-Phase</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starridercombat3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Neue Minions beschwören</h3>
+                                <p class="pickup-desc">Das Beschwörungsportal befindet sich am Startpunkt der Erkundungsphase, in der Mitte der Erkundungsmap, zwischen allen anderen Gebieten.</p>
+                                <div class="pickup-meta">Phase: Erkundungs-Phase</div>
+                            </div>
+                        </article>
+
+
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starridercombat4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Boss-Fight</h3>
+                                <p class="pickup-desc">Besiege alle 3 Bosse! Jeder Boss hat ein zugehöriges Element. Wird ein Boss besiegt, können die nächsten Bosse das Element des besiegten Bosses NICHT haben!</p>
+                                <div class="pickup-meta">Phase: Boss-Phase</div>
+                            </div>
+                        </article>
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Gebiete(Erkundungs-Phase)</h2>
+
+                    <div class="pickups-grid">
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starrider4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Vulkan</h3>
+                                <p class="pickup-desc">Hier gibt es neutrale- und Feuer-Gegner.</p>
+                                <div class="pickup-meta">Besiegte Gegner lassen eine Beschwörungs-Karte fallen, mit der Minions mit selben Element und Stufe wie der besiegte Gegner beschworen werden können!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starrider2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wald</h3>
+                                <p class="pickup-desc">Hier gibt es neutrale- und Pflanzen-Gegner.</p>
+                                <div class="pickup-meta">Besiegte Gegner lassen eine Beschwörungs-Karte fallen, mit der Minions mit selben Element und Stufe wie der besiegte Gegner beschworen werden können!</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starrider3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">See</h3>
+                                <p class="pickup-desc">Hier gibt es neutrale- und Wasser-Gegner.</p>
+                                <div class="pickup-meta">Besiegte Gegner lassen eine Beschwörungs-Karte fallen, mit der Minions mit selben Element und Stufe wie der besiegte Gegner beschworen werden können!</div>
+                            </div>
+                        </article>
+
+
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/starrider5.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Übersicht</h3>
+                                <p class="pickup-desc">Übersicht über die gesamte Map. In der Mitte der Map befindet sich das Beschwörungsportal.</p>
+                                <div class="pickup-meta">Rarity: Common</div>
+                            </div>
+                        </article>
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: In nur 72 Stunden ein System zu bauen, das
+                        sowohl schnell zugänglich als auch spaßig und taktisch sinnvoll ist.
+                    </li>
+                    <li>
+                        ->Lösung: Fokus auf eine kleine, aber robuste Mechanik-Basis: vier
+                        Elemente × drei Stufen sorgen für ein einfaches und spaßiges Gameplay, mit wenig Programmier- und Leveldesign-Aufwand.
+                        Ein Tutorial stand für schnelle Zugänglichkeit in Planung, konnte aus Zeitgründen aber leider nicht mehr erstellt werden.
+                    </li>
+                    <li>
+                        Herausforderung: Sobald ein Minion einen Feind in "Sichtweite hat" (große Collision-Sphere auf dem Minion für collision detection="Erkennung des Gegners")
+                        ist er stehen geblieben und hat den Gegner beschossen, bis er besiegt war.
+                        Dadurch war aber kein weiterer Gegner in Sichtweite und die Minions blieben sofort stehen, während die weiteren Minions
+                        des Spielers noch im Kampf waren -> Erstes Combat System wirkte nicht flüssig genug.
+                    </li>
+                    <li>
+                        ->Lösung: Sobald ein Minion einen Gegner besiegt hat, wird an der Position des besiegten Gegners in einem gewissen Umkreis ein sphere-collision ausgelöst,
+                        mit der auf weitere verbleibende Gegner überprüft wird. Findet dieses Minion nun einen Gegner, bewegt er sich nach dem besiegen eines Gegners nun zum nächsten Gegner im Kampf.
+                    </li>
+                    <li>
+                        Herausforderung: Combat-System wirkte eintönig, da alle Minions mit einem Knopf kontrolliert wurden.
+                    </li>
+                    <li>
+                        ->Lösung: Tastaturbelegungen zum auswählen aller Minions eines gewissen Elements: Taste 1 wählt alle Minions(unabhängig von Element) aus, Taste 2 alle Wasser Minions, usw.
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        In kurzen Jams zahlt sich ein klarer, reduzierter System-Scope aus:
+                        wenige gut funktionierende Gameplay-Elemente (Minions, Gegner, Level, Erkundungs-/Boss-Phase)
+                        liefern besseren Spielspaß als viele unausgegorene Features.
+                    </li>
+                    <li>
+                        Modulare Blueprint-Templates erleichtern schnelles Erweitern (neue
+                        Minion-/Gegner-Typen, Bossvarianten) ohne großen Refactor-Aufwand.
+                    </li>
+                    <li>
+                        Frühes, fokussiertes Playtesting (Level Designer) ist entscheidend,
+                        um Balancing & Loop-Spaß in kurzer Zeit zu erreichen.
+                    </li>
+                    <li>
+                        Team-Aufteilung (Programming vs. Artist vs. Designer) funktionierte gut:
+                        klare Verantwortlichkeiten ermöglichen schnelle Iterationen und viel intensives Playtesting.
+                    </li>
+                </ul>
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    Links zu GitHub, Builds, Videos oder eingebettete Screenshots/Videos.
+                </p>
+                <a class="project-back" href="https://lynzee.itch.io/star-rider">←View Star Rider - Elemental Shuffle on itch.io</a>
+                <p></p>
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

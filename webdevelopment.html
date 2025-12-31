@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Web Development</span>
+        </nav>
+
+        <!-- MAIN CONTENT -->
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/webdev4.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Meine Website</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>IDE:</strong> Visual Studio</div>
+                    <div class="meta-item"><strong>Sprachen:</strong> HTML, CSS, JavaScript</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Meine eigene Website, Hauptziel war es mein Web Development Können zu erweitern und mein Portfolio zu veröffentlichen. Laufendes Projekt, wird noch erweitert.
+                    Für diese Website ist auch mein Figma-Prototyp entstanden. Einige Dinge haben sich in der aktuellen Website-Version im Vergleich zum Figma-Prototypen geändert (Beispiel: Portfolio ist jetzt Chronologisch und nach Kategorien sortierbar).
+                </p>
+
+
+
+                <!-- Two-column block: Text (links) + Bild (rechts) -->
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Stand: Dezember 2025</h2>
+                        <ul>
+                            <li>
+                                Alle wichtigen Seiten(Homepage, Portfolio, Projekte, About Me, Kontakt) sind erstellt und funktionieren wie erwünscht.
+                            </li>
+                            <li>
+                                Design sollte als nächstes überarbeitet werden.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/webdev4.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <section class="pickups-section">
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/webdev5.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Homepage</h3>
+
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/webdev4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Portfolio-Seite</h3>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/webdev6.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Projekt-Seite</h3>
+
+                            </div>
+                        </article>
+
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/webdev7.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">About Me-Seite</h3>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/webdev8.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kontakt-Seite</h3>
+
+                            </div>
+                        </article>
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        IDE: Visual Studio
+                    </li>
+                    <li>
+                        Genutzte Programmier-Sprachen: HTML, CSS, JavaScript
+                    </li>
+                    <li>
+                        Design in Figma geplant
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+
+                <ul>
+                    <li>
+                        Web Development Wissen vertieft.
+                    </li>
+
+                </ul>
+
+
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/figma2.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Figma-Prototyp</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Puzzle / Adventure</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unity</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2024</div>
+                    <div class="meta-item"><strong>Rolle:</strong> Programmer / Designer</div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Ein kleiner, in Figma erstellter, Prototyp als Orientierung für meine Portfolio-Website.
+
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Ich brauchte eine einen groben Plan wie ich meine Portfolio-Website gestalten möchte. Eine Freundin empfahl mir dafür Figma, daraufhin ist dieser Prototyp entstanden. Als mir bewusst wurde, dass ich das Figma Projekt nicht einfach in ein .html Projekt konvertieren/exportieren kann,
+                    begann ich mit dem Entwickeln der tatsächlichen Website.
+                </p>
+
+
+                <!-- Two-column block: Text (links) + Bild (rechts) -->
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Struktur</h2>
+                        <ul>
+                            <li>
+                                Homepage: Eine große Card, in der ich mich kurz vorstelle. Außerdem zwei große sichtbare Buttons in der Card: "My Portfolio" und "Contact Me". Unter der großen Card vier weitere cards, mit denen die aktuellsten/neusten Projekte dargestellt werden.
+                            </li>
+                            <li>
+                                Portfolio-Übersicht: Alle Game Jams direkt sichtbar als einzelne Cards. "Art" und "Web Development" und "Experimental"(Prototypen) sind jeweils eine Seite mit mehreren Projekten. Projekt-Cards sind anklickbar und führen zu der entsprechenden Projekt-Seite.
+                            </li>
+                            <li>
+                                Projekt-Seite: Ein simples projektspezifisches Bild. Text und weiteres Layout habe ich in Figma noch nicht geplant.
+                            </li>
+                            <li>
+                                Kontakt-Seite: Ein kleiner Text und ein Formular für die Kontaktaufnahme. Hier wurde mir bewusst, dass Figma alleine nicht reicht um eine Website zu erstellen, sondern lediglich zum Designen der Website gedacht ist.
+                            </li>
+                            <li>
+                                Über Mich-Seite: Ein kleiner text Platzhalter.
+                            </li>
+                            <li>
+                                Von jeder Seite aus können über den Header rechts "My Portfolio", "About Me" und "Contact" die jeweiligen Seiten aufgerufen werden.
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/figma.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+
+
+                <section class="pickups-section">
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/figma1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Homepage</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/figma2.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Portfolio-Seite</h3>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/figma3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Projekt-Seite</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/figma4.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kontakt-Seite</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/figma5.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">About Me</h3>
+                            </div>
+                        </article>
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+
+
+                <h2>Learnings</h2>
+
+                <ul>
+                    <li>
+                        Figma eignet sich sehr gut um das Design einer Website zu erstellen.
+                    </li>
+                    <li>
+                        Figma bietet keine eigene Möglichkeit um das Design der Website zu einem .html Projekt zu konvertieren/exportieren.
+                    </li>
+
+                </ul>
+
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+
+        <!-- MAIN CONTENT -->
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/webdev9.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Tutorials/Lernstoff</h1>
+
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+
+                <h2 class="section-title">- Website Tutorial (Einführung in HTML, CSS, JavaScript)-</h2>
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Hintergrund</h2>
+                        <ul>
+
+                            <li>
+                                Ich hatte mich zuvor noch nie mit Web Development beschäftigt. Dies ist mein erster Ansatz HTML, CSS und JavaScript zu lernen.
+                            </li>
+
+                            <li>
+                                Eine Freundin empfiehl mir ein Portfolio-Tutorial, welches ich dann nutzte um mein erstes Web-Projekt zu erstellen.
+                            </li>
+
+                            <li>
+                                Link zum Tutorial:  https://www.youtube.com/watch?v=moRqo158NGc&t=2519s
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/webdev10.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Ein Frame aus meinem Donut-Render</figcaption>
+                    </figure>
+                </div>
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Grundlagen: Visual Studio
+                    </li>
+                    <li>
+                        Grundlagen: HTML, CSS, JavaScript
+                    </li>
+
+
+                </ul>
+
+
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>
