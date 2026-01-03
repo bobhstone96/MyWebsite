@@ -3170,3 +3170,280 @@ header .header-nav {
     box-sizing: border-box;
     min-height: var(--card-min-height, auto); /* wird per JS gesetzt wenn Kategorie-Ansicht aktiv */
 }
+
+/* ---------------- Responsive Hero (Überschreiben der absoluten Werte) ---------------- */
+
+/* Grundlegendes flex-layout: nebeneinander auf großen Bildschirmen, wrap bei Bedarf */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: clamp(36px, 6vw, 80px) 5%;
+    box-sizing: border-box;
+    min-height: 60vh;
+    flex-wrap: wrap; /* erlaubt Umbruch auf kleine Bildschirme */
+}
+
+/* Wichtig: überschreibe absolute Positionen, damit Elemente im Flow sitzen */
+.hero-info,
+.hero-vid-box {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    width: 48%; /* nebeneinander: je ca. halbbreite */
+    max-width: 720px;
+    box-sizing: border-box;
+}
+
+    /* Text-Box: responsive Typo */
+    .hero-info h1 {
+        font-size: clamp(28px, 5vw, 60px);
+        line-height: clamp(32px, 5.5vw, 70px);
+        margin-top: 0.4rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-info p {
+        font-size: clamp(14px, 2.2vw, 20px);
+        max-width: 100%;
+        margin-bottom: 1.2rem;
+    }
+
+/* Bild-Box: passt Bild an Containerbreite an */
+.hero-vid-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .hero-vid-box img,
+    .hero-vid-box video {
+        width: 100%;
+        height: auto;
+        max-height: 60vh; /* schützt vor zu grossen Medien */
+        object-fit: contain;
+        display: block;
+    }
+
+/* Buttons in der Text-Box: nebeneinander, aber auf kleinen Screens umbrechen */
+.hero-info .btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 22px;
+    margin-right: 12px;
+    white-space: nowrap;
+}
+
+/* ---------------- Mobile / schmale Screens ---------------- */
+@media (max-width: 900px) {
+    .hero {
+        padding: 28px 4%;
+    }
+
+    /* stack: Bild zuerst, Text darunter (besser für mobile UX) */
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-info,
+    .hero-vid-box {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .hero-info {
+        padding-top: 12px;
+    }
+
+        .hero-info h1 {
+            font-size: clamp(24px, 6.5vw, 42px);
+            line-height: 1.08;
+        }
+
+        .hero-info p {
+            font-size: 16px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+    .hero-vid-box img,
+    .hero-vid-box video {
+        max-height: 40vh;
+    }
+
+    /* Buttons: zentriert und etwas mehr Abstand */
+    .hero-info .btn {
+        margin: 8px 6px;
+    }
+}
+
+/* Extra small screens - sicherstellen, dass nichts raussteht */
+@media (max-width: 420px) {
+    .hero-info h1 {
+        font-size: 20px;
+        line-height: 1.05;
+    }
+
+    .hero-info p {
+        font-size: 14px;
+    }
+
+    .hero-vid-box img {
+        max-height: 32vh;
+    }
+}
+
+
+/* ---------------- Hero: zentrieren auf breiten Bildschirmen ---------------- */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* ganze Hero-Gruppe zentrieren */
+    gap: clamp(1rem, 4vw, 5rem); /* Abstand zwischen Card und Bild */
+    padding: clamp(36px, 6vw, 80px) 0%;
+    box-sizing: border-box;
+    flex-wrap: wrap; /* erlaubt Umbruch auf schmalen Bildschirmen */
+    /* zentrale Begrenzung: verhindert, dass Card und Bild zu weit auseinander rücken */
+    max-width: 1500px; /* bei Bedarf anpassen (z.B. 1100px oder 1400px) */
+    margin: 0 auto; /* zentriert die Hero-Block in der Seite */
+}
+
+/* Entferne/überschreibe absolute Positionierungen */
+.hero-info,
+.hero-vid-box {
+  position: relative !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* Auf sehr großen Bildschirmen: Card etwas breiter als Bild */
+@media (min-width: 1100px) {
+  .hero-info {
+    flex: 0 0 55%;
+    max-width: 55%;
+    text-align: left; /* falls du linksbündigen Text bevorzugst */
+  }
+
+  .hero-vid-box {
+    flex: 0 0 35%;
+    max-width: 35%;
+  }
+}
+
+/* Mittlere Breiten: proportional anpassen */
+@media (min-width: 901px) and (max-width: 1099px) {
+  .hero-info { flex: 0 0 60%; max-width: 60%; }
+  .hero-vid-box { flex: 0 0 40%; max-width: 40%; }
+}
+
+/* Kleine/handybreite Bildschirme: bereits von dir gut eingestellt (stack) */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .hero-info,
+  .hero-vid-box {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .hero-info { padding-top: 12px; }
+}
+
+/* ----------------------------
+   Fix: Seitenränder & mobile Gutter
+   ---------------------------- */
+
+/* 1) Etwas weniger Seiten-Padding (kleiner als 24px) */
+.project-wrapper {
+    max-width: 1800px;
+    margin: 40px auto 80px;
+    padding: 0 16px; /* was 24px -> reduziert seitliche Lücke */
+    box-sizing: border-box;
+    width: calc(100% - 32px); /* stellt sicher, dass es nicht über den Viewport hinausläuft */
+}
+
+/* Falls deine .container global extra Padding hat: entfernen/überschreiben */
+.container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 2) Two-column: Text darf schrumpfen, verhindert erzwungene Breite */
+.project-two-column {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* wichtig: min-width:0 damit die Text-Spalte wirklich schrumpfen kann */
+.project-two-text {
+    flex: 1 1 0;
+    min-width: 0; /* verhindert, dass die Textspalte overflow erzwingt */
+}
+
+/* Bild-Seite in der Spalte: beschränken, damit sie nicht zu breit bleibt */
+.project-two-image {
+    flex: 0 0 320px; /* feste Max-Breiten-Vorgabe auf großer Ansicht */
+    max-width: 40%;
+}
+
+    .project-two-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+/* 3) Mobile: Spalten untereinander, weniger Padding */
+@media (max-width: 860px) {
+    .project-wrapper {
+        padding: 0 12px; /* noch weniger Seitenabstand auf kleinen Displays */
+        margin: 20px auto 40px;
+        width: 100%;
+    }
+
+    .project-two-column {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .project-two-image {
+        flex: 0 0 auto;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .project-content {
+        padding: 4px;
+    }
+    /* kompakteres Panel auf Mobil */
+}
+
+/* 4) Sehr kleine Telefone */
+@media (max-width: 480px) {
+    .project-wrapper {
+        padding: 0 0px;
+        width: calc(100% - 0px);
+    }
+
+    .project-title {
+        font-size: 22px;
+    }
+
+    .project-meta {
+        font-size: 13px;
+        gap: 12px;
+    }
+}
