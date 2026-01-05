@@ -2014,8 +2014,8 @@ html, body {
     /* grid: mobile einspaltig (falls noch nicht) und sicheres padding */
     .projects-grid {
         grid-template-columns: 1fr !important;
-        padding-left: 16px !important;
-        padding-right: 16px !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
     }
 
         /* project-card: stelle sicher, dass nichts die Box nach rechts schiebt */
@@ -3577,7 +3577,7 @@ header .header-nav {
     #projectsGrid.categorized .category-section > .projects-inner-grid.panel {
         background: transparent !important;
         box-shadow: none !important;
-        padding: 18px !important; /* behält Innenabstand für Karten */
+        padding: 0px !important; /* behält Innenabstand für Karten */
     }
 
     /* 3) Give each category a full-panel background (adjust colors as you like) */
@@ -3846,5 +3846,388 @@ header .header-nav {
     #projectsGrid.categorized .project-card,
     #projectsGrid.categorized .project-card * {
         transition: none !important;
+    }
+}
+
+/* ===== simple TOC styling ===== */
+.project-toc {
+    max-width: 1100px;
+    margin: 12px auto;
+    padding: 10px 12px;
+    background: rgba(8,12,14,0.6);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.04);
+    color: #f3f7fb;
+}
+
+    .project-toc h3 {
+        margin: 0 0 8px 0;
+        font-size: 1.05rem;
+        font-weight: 800;
+    }
+
+    .project-toc ul {
+        margin: 0;
+        padding-left: 16px;
+    }
+
+    .project-toc li {
+        margin: 6px 0;
+        line-height: 1.25;
+    }
+
+    .project-toc a {
+        color: rgba(220,225,230,0.95);
+        text-decoration: none;
+        padding: 4px 6px;
+        border-radius: 6px;
+    }
+
+        .project-toc a:hover {
+            background: rgba(255,255,255,0.03);
+            color: #fff;
+        }
+
+/* kleine responsive Anpassung */
+@media (max-width: 900px) {
+    .project-toc {
+        margin: 10px 12px;
+    }
+}
+
+/* ========== Mobile Category Indicator (responsive, shows <= 900px) ========== */
+.mobile-category-indicator {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .mobile-category-indicator {
+        display: flex;
+        position: fixed;
+        z-index: 9999;
+        top: 50vh;
+        transform: translateY(-50%);
+        align-items: center;
+        gap: 10px;
+        padding: 8px 12px;
+        border-radius: 24px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+        background: rgba(8,12,10,0.85);
+        color: #fff;
+        font-weight: 800;
+        font-size: 0.95rem;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .22s ease, transform .22s ease;
+        will-change: opacity, transform;
+    }
+
+        .mobile-category-indicator.left {
+            left: 8px;
+            right: auto;
+            transform: translateY(-50%) translateX(-6px);
+        }
+
+        .mobile-category-indicator.right {
+            right: 8px;
+            left: auto;
+            transform: translateY(-50%) translateX(6px);
+        }
+
+        .mobile-category-indicator .indicator-dot {
+            width: 10px;
+            height: 30px;
+            border-radius: 6px;
+            display: inline-block;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.04);
+        }
+
+        .mobile-category-indicator .indicator-text {
+            display: inline-block;
+            padding-left: 6px;
+            padding-right: 8px;
+            white-space: nowrap;
+        }
+
+        .mobile-category-indicator.visible {
+            opacity: 1;
+            transform: translateY(-50%) translateX(0);
+        }
+
+    @media (max-width: 420px) {
+        .mobile-category-indicator {
+            font-size: 0.9rem;
+            padding: 6px 10px;
+        }
+
+            .mobile-category-indicator .indicator-dot {
+                width: 8px;
+                height: 26px;
+            }
+    }
+}
+
+/* category accent color mapping */
+.mobile-category-indicator.cat-game-jam {
+    background: linear-gradient(90deg, rgba(255,179,77,0.12), rgba(0,0,0,0.75));
+}
+
+.mobile-category-indicator.cat-experimental {
+    background: linear-gradient(90deg, rgba(79,195,247,0.12), rgba(0,0,0,0.75));
+}
+
+.mobile-category-indicator.cat-art {
+    background: linear-gradient(90deg, rgba(255,111,181,0.12), rgba(0,0,0,0.75));
+}
+
+.mobile-category-indicator.cat-web {
+    background: linear-gradient(90deg, rgba(127,123,255,0.12), rgba(0,0,0,0.75));
+}
+
+.mobile-category-indicator.cat-game-jam .indicator-dot {
+    background: rgba(255,179,77,0.95);
+}
+
+.mobile-category-indicator.cat-experimental .indicator-dot {
+    background: rgba(79,195,247,0.95);
+}
+
+.mobile-category-indicator.cat-art .indicator-dot {
+    background: rgba(255,111,181,0.95);
+}
+
+.mobile-category-indicator.cat-web .indicator-dot {
+    background: rgba(127,123,255,0.95);
+}
+/* ================= Fixed category label for small screens ================= */
+/* Single fixed label that follows the current category while scrolling.
+   Visible only at small screens (<=900px). */
+
+.fixed-category-label {
+    display: none;
+}
+
+@media (max-width: 900px) {
+
+    /* hide per-section rotated titles (we show one fixed label instead) */
+    #projectsGrid.categorized .category-section .category-title {
+        display: none !important;
+    }
+
+    /* fixed label container */
+    .fixed-category-label {
+        display: flex !important;
+        position: fixed;
+        z-index: 99999;
+        right: 12px; /* right side of screen (change to left if desired) */
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg); /* rotate so text reads vertically */
+        transform-origin: center;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 14px;
+        border-radius: 12px;
+        pointer-events: none; /* not interactive */
+        background: rgba(8,14,18,0.80);
+        color: #fff;
+        font-weight: 800;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        transition: opacity .18s ease, transform .18s ease;
+        opacity: 0;
+        white-space: nowrap;
+    }
+
+        /* visible state */
+        .fixed-category-label.visible {
+            opacity: 1;
+            transform: translateY(-50%) rotate(90deg);
+        }
+
+    /* small adjustments for tiny screens */
+    @media (max-width: 420px) {
+        .fixed-category-label {
+            padding: 8px 12px;
+            font-size: 0.95rem;
+            right: 8px;
+        }
+    }
+
+    /* small decorative dot (accent color) */
+    .fixed-category-label .label-dot {
+        width: 8px;
+        height: 26px;
+        border-radius: 6px;
+        display: inline-block;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+
+    .fixed-category-label .label-text {
+        display: inline-block;
+        padding-left: 6px; /* visual spacing between dot and text (after rotation) */
+        padding-right: 6px;
+    }
+}
+
+/* Category color classes (adjust alphas to taste) */
+.fixed-category-label.cat-game-jam {
+    background: linear-gradient(90deg, rgba(255,179,77,0.14), rgba(0,0,0,0.78));
+}
+
+.fixed-category-label.cat-experimental {
+    background: linear-gradient(90deg, rgba(79,195,247,0.14), rgba(0,0,0,0.78));
+}
+
+.fixed-category-label.cat-art {
+    background: linear-gradient(90deg, rgba(255,111,181,0.14), rgba(0,0,0,0.78));
+}
+
+.fixed-category-label.cat-web {
+    background: linear-gradient(90deg, rgba(127,123,255,0.14), rgba(0,0,0,0.78));
+}
+
+/* dot color mapping */
+.fixed-category-label.cat-game-jam .label-dot {
+    background: rgba(255,179,77,0.95);
+}
+
+.fixed-category-label.cat-experimental .label-dot {
+    background: rgba(79,195,247,0.95);
+}
+
+.fixed-category-label.cat-art .label-dot {
+    background: rgba(255,111,181,0.95);
+}
+
+.fixed-category-label.cat-web .label-dot {
+    background: rgba(127,123,255,0.95);
+}
+/* ===== Vertical category title on small screens: RIGHT side, no hover effects ===== */
+@media (max-width: 900px) {
+
+    /* make section relative and create right-side space for the vertical title (cards shift left) */
+    #projectsGrid.categorized .category-section {
+        position: relative !important;
+        padding-right: 12px !important; /* Platz auf der rechten Seite für die Title-Box */
+        padding-left: 20px !important; /* kleine linke Einrückung für cards */
+        box-sizing: border-box !important;
+    }
+
+        /* vertical title: fixed to the right edge of each section, rotated and centered */
+        #projectsGrid.categorized .category-section .category-title {
+            position: absolute !important;
+            right: 12px !important; /* Abstand vom rechten Rand der section */
+            top: 50% !important; /* vertikal zentriert */
+            transform-origin: center !important;
+            transform: translateY(-50%) rotate(90deg) !important; /* 90deg for right-side vertical text */
+            white-space: nowrap !important;
+            padding: 10px 14px !important;
+            border-radius: 10px !important;
+            z-index: 50 !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            font-size: 1rem !important;
+            font-weight: 800 !important;
+            color: #f5f7fa !important;
+            /* keep the visual look, but remove hover transitions */
+            background: rgba(8,14,18,0.72) !important;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.03) !important;
+            -webkit-backdrop-filter: blur(4px) !important;
+            backdrop-filter: blur(4px) !important;
+            transition: none !important; /* keine Hover-Animation an der Title-Box */
+            pointer-events: none !important; /* nicht interaktiv, verhindert Hover/Click */
+        }
+
+            /* Ensure the accent (::before) stays aligned alongside the rotated text */
+            #projectsGrid.categorized .category-section .category-title::before {
+                content: "" !important;
+                width: 6px !important;
+                height: 18px !important;
+                border-radius: 4px !important;
+                display: inline-block !important;
+                margin-right: 8px !important;
+                vertical-align: middle !important;
+            }
+
+        /* Make sure hover rules elsewhere can't change the title transform */
+        #projectsGrid.categorized .category-section:hover .category-title,
+        #projectsGrid.categorized .category-section:active .category-title {
+            transform: translateY(-50%) rotate(90deg) !important;
+            transition: none !important;
+        }
+
+        /* Reduce top margin so content doesn't have huge gaps */
+        #projectsGrid.categorized .category-section > .projects-inner-grid {
+            margin-top: 6px !important;
+        }
+}
+
+/* Very small phones tweak */
+@media (max-width: 420px) {
+    #projectsGrid.categorized .category-section {
+        padding-right: 76px !important;
+    }
+
+        #projectsGrid.categorized .category-section .category-title {
+            right: 8px !important;
+            padding: 8px 12px !important;
+            font-size: 0.95rem !important;
+            transform: translateY(-50%) rotate(90deg) !important;
+        }
+}
+/* === Mobile category side label === */
+@media (max-width: 900px) {
+    .mobile-category-label {
+        position: fixed;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        z-index: 999;
+        padding: 8px 14px;
+        border-radius: 10px;
+        background: rgba(10, 14, 18, 0.85);
+        color: #fff;
+        font-weight: 800;
+        pointer-events: none;
+        white-space: nowrap;
+        transition: none;
+    }
+}
+
+/* === Right category labels: allow JS movement === */
+@media (max-width: 900px) {
+    .category-side-label {
+        position: fixed !important;
+        right: 8px;
+        transform: translateY(-50%) rotate(90deg);
+        transition: none !important;
+        pointer-events: none;
+        z-index: 200;
+    }
+}
+
+/* === Rotate mobile category indicator by 90 degrees === */
+@media (max-width: 900px) {
+
+    #mobileCategoryIndicator {
+        transform: translateY(-50%) rotate(-90deg) !important;
+        transform-origin: center !important;
+        white-space: nowrap !important;
+        pointer-events: none !important;
+        transition: none !important;
+    }
+}
+
+/* === Remove right-side category titles on mobile === */
+@media (max-width: 900px) {
+    #projectsGrid.categorized .category-section .category-title {
+        display: none !important;
+    }
+}
+
+/* === Move mobile category indicator further left === */
+@media (max-width: 900px) {
+    #mobileCategoryIndicator {
+        left: -50px !important; /* weiter nach links schieben */
     }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-witdth, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LutzCode</title>
     <!--<link rel="stylesheet" href="style.css">-->
     <style>
@@ -172,6 +172,7 @@
                     </article>
 
                     <article class="project-card" data-category="Game Jam" style="position: relative;">
+
                         <img src="images/CookieCrumble.png" alt="Project One screenshot" class="project-image" loading="lazy">
                         <div class="project-body panel panel--card">
                             <h3 class="project-title">Cookie Crumble</h3>
@@ -267,9 +268,20 @@
                 </div>
             </section>
         </main>
+        <div id="kurzbeschreibung" style="height:300px;"></div>
     </div>
 
+    <!-- Mobile current-category indicator (insert once, e.g. before </body>) -->
+    <div id="mobileCategoryIndicator" class="mobile-category-indicator left" aria-hidden="true" aria-live="polite">
+        <span class="indicator-dot"></span>
+        <span class="indicator-text">Kategorie</span>
+    </div>
+    <!-- end indicator -->
+
+
     <script>
+
+
         document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('viewToggleBtn');
             const grid = document.getElementById('projectsGrid');
@@ -368,8 +380,106 @@
             showCategories();
             toggleBtn.textContent = 'Sortierung: Kategorien';
         });
+        // init mobile category indicator AFTER categories exist
+        (function initMobileIndicator() {
+            const mq = window.matchMedia('(max-width: 900px)');
+            const indicator = document.getElementById('mobileCategoryIndicator');
+            if (!indicator) return;
+
+            let currentCat = null;
+            let observer = null;
+
+            const map = {
+                'game-jam': { label: 'Game Jam', cls: 'cat-game-jam' },
+                'experimental': { label: 'Experimental', cls: 'cat-experimental' },
+                'art': { label: 'Art', cls: 'cat-art' },
+                'web': { label: 'Web', cls: 'cat-web' }
+            };
+
+            function slugFromSection(section) {
+                for (const c of section.classList) {
+                    if (c.startsWith('category-') && c !== 'category-section') return c.replace('category-', '');
+                }
+                return null;
+            }
+
+            function showForSlug(slug) {
+                if (!indicator) return;
+                indicator.classList.remove('cat-game-jam', 'cat-experimental', 'cat-art', 'cat-web');
+                const entry = map[slug] || null;
+                if (entry) {
+                    indicator.querySelector('.indicator-text').textContent = entry.label;
+                    indicator.classList.add(entry.cls, 'visible');
+                    indicator.setAttribute('aria-hidden', 'false');
+                } else {
+                    indicator.querySelector('.indicator-text').textContent = '';
+                    indicator.classList.remove('visible');
+                    indicator.setAttribute('aria-hidden', 'true');
+                }
+                currentCat = slug;
+            }
+
+            function hideIndicator() {
+                indicator.classList.remove('visible');
+                indicator.setAttribute('aria-hidden', 'true');
+                currentCat = null;
+            }
+            const ioOptions = {
+                root: null,
+                rootMargin: '-35% 0px -55% 0px',
+                threshold: 0
+            };
+            function buildObserver() {
+                if (observer) observer.disconnect();
+
+                // query categories **now** (they exist because we call this after showCategories())
+                const categorySections = Array.from(document.querySelectorAll('#projectsGrid.categorized .category-section'));
+                observer = new IntersectionObserver((entries) => {
+                    if (!mq.matches) { hideIndicator(); return; }
+                    let best = null;
+                    entries.forEach(e => {
+                        if (!e.isIntersecting) return;
+                        if (!best || (e.intersectionRect && best.intersectionRect && e.intersectionRect.height > best.intersectionRect.height)) best = e;
+                    });
+                    if (best && best.target) {
+                        const slug = slugFromSection(best.target);
+                        if (slug && slug !== currentCat) showForSlug(slug);
+                    }
+                }, ioOptions);
+
+                categorySections.forEach(s => observer.observe(s));
+            }
+
+            function init() {
+                if (!mq.matches) { hideIndicator(); return; }
+                buildObserver();
+                // try to pick the currently visible section (on first load)
+                const categorySections = Array.from(document.querySelectorAll('#projectsGrid.categorized .category-section'));
+                for (const s of categorySections) {
+                    const rect = s.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const slug = slugFromSection(s);
+                        if (slug) showForSlug(slug);
+                        break;
+                    }
+                }
+            }
+
+            // Re-init when layout changes (resize / orientation changes)
+            mq.addListener(init);
+            window.addEventListener('resize', init);
+            window.addEventListener('orientationchange', init);
+
+            // call once now (categories already built)
+            init();
+
+        })();
+
+
     </script>
 
     <script src="app.js"></script>
+
+    <div id="mobileCategoryLabel" class="mobile-category-label" style="display:none;"></div>
 </body>
 </html>
