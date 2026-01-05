@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 2px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Leaf It To Me</span>
+        </nav>
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/cargame1.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Shader Tutorial / Fahrzeug-Prototyp</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Primär ist dieses Projekt eine Testumgebung für meinen outline-shader, den ich mit Hilfe eines Tutorials erstellt habe. Dies ist mein erster Ansatz eigene Shader zu erstellen. Der Fahrzeug-Prototyp ist spontan dazu entstanden.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Einen eigenen Shader zu erstellen lag für mich noch auf meiner To-Do-Liste für 2025. Der standard Unreal Engine-Look störte mich nach so vielen Projekten. Der hier erstellte Outline-Shader hat mir so sehr gefallen,
+                    dass ich unbedint etwas World-Building machen wollte, um zu prüfen ob der Shader wirklich voll einsatzbereit ist oder noch Probleme aufweist. Außerdem wollte ich mit der Kanone auf dem Auto mein Animations-Können auf die Probe stellen:
+                    Ziel war es eine Kanone zu animieren, die aus dem Auto "ausfährt" und sich in Richtung der Mauszeiger-Position sinnvoll mitdreht. Dies funktionierte auch ziemlich problemlos. Zu dieser Zeit habe ich auch Substance Painter getestet.
+                    Das Ergebnis in Substance Painter hat mir so sehr gefallen, dass ich unbedingt einen voll animierten Gegner für diesen Prototyp erstellen wollte.
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf (Idee - noch nicht umgesetzt)</h2>
+                        <ul>
+                            <li>
+                                Spieler startet in Nachbarschaft(Basis). Dort gibt es Aufgaben für Anwohner zu erledigen. Mit Ressourcen kann der Spieler Gebäude upgraden und so neue Upgrades für das Auto freischalten.
+
+                            </li>
+                            <li>
+                                Hat sich der Spieler fertig vorbereitet, verlässt er die Stadt (im Auto) und erkundet die Umgebung("Erkundungs-Phase" beginnt). Die Tank-Ladung ds Autos beschränkt die Reichweite in der sich der Spieler bewegen kann, der Spieler muss mit seiner Tank-Ladung auch wieder zurück in die Nachbarschaft kommen.
+
+                            </li>
+                            <li>
+                                In der Erkundungs-Phase trifft der Spieler auf Gegner, welche er mit seinen Waffen ausschalten kann um Ressourcen zu erhalten. Außerdem lässt sich je nach Ausstattung des Autos mit gewissen Dingen in der Spielwelt interagieren
+                                (Beispiel: Spieler nimmt "Feuerlöscher-Aufsatz" mit -> In der Erkundungs-Phase kann er auf ein brennendes Auto mit einem NPC treffen, wenn er das Auto löscht erscheint der NPC in der Nachbarschaft und neue Upgrades werden freigeschaltet)
+                            </li>
+                            <li>
+                                Wichtig: Dies ist nur die grobe Planung/Idee für dieses Projekt. Bisher implementiert ist Folgendes: Aus- und Einsteigen in das Auto ; Kanone + Schuss-Mechanik (noch keine Schaden-Logik) ;
+                                ein Gegner samt Animationen (Animationen: patroullieren, Spieler entdecken, zum Spieler laufen, (am Spieler angekommen) auf den Spieler zu-springen, Spieler angreifen) und Angriff-/Sprung-Logik des Gegners
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/cargame4.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/cargame2.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+
+                </div>
+
+
+
+
+
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        3D-Models: Blender + Substance Painter
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Solo-Projekt
+                    </li>
+                    <li>
+                        Status: Prototyp, unveröffentlicht.
+                    </li>
+                </ul>
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: Kanone zur Mauszeiger-Position drehen ("LookAt-Node" ließ die Kanone merkwürdig aussehen)
+                    </li>
+                    <li>
+                        ->Lösung: Rotation der Kanone beschränken: Die Rotation der unteren Platte, auf der die Kanone befestigt ist, nur auf die Z-Achse beschränken. Die Rotation für die Kanone selbst wurde auf die Z- und Y-Achse
+                        beschränkt, dadurch bewegt sich die Kanone nun vertikal und horizontal entsprechend des Mauszeigers mit, ohne durch die Halterung der Kanone zu clippen.
+                    </li>
+                    <li>
+                        Herausforderung: Outline-Shader hat teilweise sehr große schwarze Flächen erstellt (dort, wo der Winkel in dem auf die Objekte geschaut wird, zu schmal wird) und an einigen Stellen geflackert.
+                    </li>
+                    <li>
+                        ->Lösung: Viele Änderungen an den Variablen des Outline-Shaders, und zusätzliche Variablen erstellt, die sowohl das Flackern als auch die großen schwarzen Flächen reduziert haben. Sehr wenige Stellen flackern immer noch, dafür brauche ich noch weitere Lösungen.
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Substance Painter ist sehr hilfreich um schnell schönere Texturen zu erstellen.
+                    </li>
+                    <li>
+                        Shader-Basics verstanden.
+                    </li>
+
+                </ul>
+
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    Nicht vorhanden. Steht aktuell nicht in der Planung fortgeführt zu werden, auch wenn mir die Idee und der Style des Spieles sehr gefällt.
+                </p>
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+                <a class="project-back" href="art.html#carprototype" aria-label="Mehr zu Praise Hinode">MORE</a>
+
+                <h2 class="section-title">Unveröffentlichte Projekte</h2>
+                <h2 class="section-title">- Bomber Enemy (Fahrzeug-Prototyp) -</h2>
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Dieses Asset wurde hauptsächlich zum Testen von Substance Painter genutzt. Die Texturen haben mir so sehr gefallen, dass ich
+                    die Idee dieses Gegners gerne weiter umgesetzt sehen wollte, weshalb ich die Animationen erstellt, und diesen Gegner samt seinen Animationen
+                    in den Fahrzeug-Prototyp eingebaut habe.
+                </p>
+
+                <div class="pickups-grid">
+                    <!-- Card 1 -->
+                    <article class="pickup-card">
+                        <div class="pickup-image">
+                            <img src="images/entwürfe1.png" alt="Pickup: Mouse">
+                        </div>
+                        <div class="pickup-body">
+                            <h3 class="pickup-title">Ansicht: Vorne</h3>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="pickup-card">
+                        <div class="pickup-image">
+                            <img src="images/entwürfe2.png" alt="Pickup: Cheese">
+                        </div>
+                        <div class="pickup-body">
+                            <h3 class="pickup-title">Ansicht: Seite</h3>
+
+                        </div>
+                    </article>
+
+
+
+                    <!-- Card 1 -->
+                    <article class="pickup-card">
+                        <div class="pickup-image">
+                            <img src="images/entwürfe3.png" alt="Pickup: Mouse">
+                        </div>
+                        <div class="pickup-body">
+                            <h3 class="pickup-title">Ansicht: Oben</h3>
+                        </div>
+                    </article>
+
+
+
+
+
+
+                    <!-- weitere Cards... -->
+                </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">- Bomber Enemy: Animations -</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/entwürfeanim5.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Animation: Patroullieren</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/entwürfeanim1.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Animation: Spieler erkennen</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/entwürfeanim4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Animation: Lauf zum Spieler</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/entwürfeanim2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Animation: Sprung auf Spieler</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/entwürfeanim3.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Animation: Angriff</h3>
+                            </div>
+                        </article>
+
+                        <a class="project-back" href="experimental.html#carprototype" aria-label="Mehr zu Praise Hinode">MORE</a>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

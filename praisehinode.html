@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 2px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Leaf It To Me</span>
+        </nav>
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/praisehinode1.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">PRAISE HINODE (Komplexes Dialog System)</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Simulation / Puzzle / Adventure</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    PRAISE HINODE (stark inspiriert von "Papers, Please") findet in einem Post-Apokalyptischen Setting statt. Der Protagonist erhält Zuflucht in einer der letzten Bastionen der Menschheit - Hinode.
+                    Hinode wird von einem korrupten und moralisch fragwürdigen Regime geführt. Der Protagonist erhält die Aufgabe einen neuen Posten von Hinode zu besetzen:
+                    Die Ausgabe-Station von Hinode die Kontakt mit den im Umland lebenden Menschen aufnehmen und diese mit Vorräten versorgen soll. Der Spieler muss strengen Anweisungen
+                    folgen, um genug Geld zu sammeln und seine Familie versorgen zu können.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Im Hauptfokus dieses Projektes stand die Herausforderung ein komplexes Dialog-System zu erstellen. Bis zu diesem Projekt hatte ich oft Schwierigkeiten dynamische UI-Elemente zu erstellen,
+                    also dachte ich mir ein sehr Dialog-lastiges Spiel könnte mich aus meiner Komfort-Zone von sehr einfachen UI Elementen locken und mir mit meinen UI-Problemen in Zukunft helfen.
+                    Außerdem wollte ich unbedingt noch vor dem 01.03.2025 ein fertiges Projekt für mein Portfolio haben. Ich habe mir einen sehr eindeutigen Zeitplan gesetzt: 01.01.2025 - 31.01.2025 Implementierung
+                    aller wichtigen Funktionen ; 01.02.2025 - 28.02.2025 Art/Design + Polishing
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Am Anfang jedes Tages (von Tag 1 bis 4) geht ein Security-Personal-NPC
+                                zum Spieler und erklärt die neuen Regeln, die es zu beachten gilt.
+                                Missachtet der Spieler die Regeln (Beispiel: NPC der um Essen bittet darf nur nach Dekontaminations-Dusche in den Essen-Vorratsraum, Spieler
+                                schickt NPC trotz hoher Kontamination ohne Dekontaminations-Dusche in den Essen-Vorratsraum -> Regel missachtet) verliert der Spieler Geld, welches er braucht um seine Familie am Leben zu halten.
+                                Entdeckt der Spieler ein Problem/Diskrepanz mit den Werten des NPCs, kann er den NPC im Detective-Mode (Taste T), auf dieses Problem ansprechen, indem er im Detective-Mode die beiden Objekte markiert,
+                                die ein Problem aufweisen (Beispiel: Kontaminations-Wert des NPCs zu hoch: Spieler markiert Kontaminations-Scanner und den Zettel der den erlaubten Kontaminations-Wert anzeigt -> Spieler kann NPC
+                                darauf ansprechen, den NPC daraufhin raus schicken, oder eine Dekontaminations-Dusche zuweisen)
+
+                            </li>
+                            <li>
+                                Tag 1: Essens-Ausgabe. NPCs können in die Ausgabe-Station kommen
+                                und um Essen bitten. Der Spieler muss mit einem Kontaminations-Scanner
+                                den Kontaminations-Wert des NPCs prüfen, um zu entscheiden ob dieser in den
+                                Essen-Vorratsraum gehen darf, oder nicht. Außerdem hat der Spieler die Wahl
+                                bis zu 3 NPCs am Tag eine Dekontaminations-Dusche nehmen zu lassen.
+                                Außerdem bricht der Tag früh ab, weil ein NPC durch eine Tür in Hinode
+                                eindringt.
+                            </li>
+                            <li>
+                                Tag 2: Rekrutierung. NPCs können ab dem zweiten Tag rekrutiert werden, wenn sie dies erbitten.
+                                Die NPCs müssen einen Rekrutierungs-Test ausführen und gehen dann zurück zum Spieler und legen ihre Ergebnisse vor.
+                                Der Spieler muss den Test überprüfen und entscheiden wie er mit dem NPC fortfährt (bestanden -> rekrutieren ; durchgefallen -> NPC raus schicken)
+                                Außerdem stehen ab dem zweiten Tag 2 Security-Personal-NPCs im Raum des Spielers. Einige NPCs werden nicht auf die Aufforderungen des Spielers hören,
+                                der Spieler muss dann den Raum, in den der NPC gehen möchte, abriegeln, und einen der Security-Personal-NPCs befehligen diesen NPC raus zu eskortieren.
+                            </li>
+                            <li>
+                                Tag 3: Wasser-Ausgabe. Ab dem dritten Tag können NPCs auch um Wasser bitten. Der Spieler muss
+                                die Wasser-Marke des NPCs überprüfen, ob diese original und noch gültig ist.
+                            </li>
+                            <li>
+                                Tag 4: Daten-Terminal. Ab dem vierten Tag kann der Spieler eine Datenbank an einem Terminal überprüfen.
+                                Jeder NPC muss überprüft werden, ob die Datenbank Einträge über diesen NPC besitzt, die ihnen den Zugang zu den gewünschten Ressourcen verbieten sollten (Beispiel: NPC will Essen -> evtl. Eintrag in Datenbank "Hat versucht unser Essen zu vergiften! Kein Zugang erlauben!")
+                            </li>
+                            <li>
+                                Am Ende jedes Tages erscheint eine Übersicht über den Status der Familie. Es muss täglich Essen, Wasser, Strom, Heizkosten und unter Umständen Medizin bezahlt werden. Reicht das Geld für eine dieser Dinge nicht mehr aus, besteht die Chance dass zufällige
+                                Familienmitglieder entsprechende negative Zustände erhalten (zB Heizkosten nicht bezahlt -> "kalt", wieder nicht bezahlt -> "friert", wieder nicht bezahlt -> "krank").
+                                Nach dieser Übersicht endet der Tag und der nächste beginnt.
+                            </li>
+                            <li>
+                                Bevor der nächste Tag richtig startet, kann der Spieler noch die aktuelle Zeitung lesen, um zu erfahren was am Vortag in Hinode passiert ist.
+                                Dort sieht er dann wie sich welche NPCs bemerkbar gemacht haben (z.B."Leopold Ptieza" repariert Wasserwerke, usw.)
+                            </li>
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/praisehinode18.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Ressourcen/Überprüfungen</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kontamination</h3>
+                                <p class="pickup-desc">Der Spieler kann NPCs mit dem Kontaminations-Scanner auf ihren Kontaminations-Wert überprüfen. Der erlaubte Kontaminations-Wert kann sich jeden Tag ändern.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode4.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Rekrutier-Test Ergebnisse</h3>
+                                <p class="pickup-desc">Das Ergebnis des Rekrutier-Tests besteht aus 2 Zahlen. Beide Zahlen müssen in gewissen vorgegebenen Reichweiten liegen, um den Test zu bestehen.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode9.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Wasser-Marke</h3>
+                                <p class="pickup-desc">Der Spieler muss überprüfen ob die Marke original ist (das Bild in der Mitte der Marke kann sich ändern) und ob die Marke noch gültig ist (auf jeder Karte steht ein "gültig bis:", dieses darf nicht abgelaufen sein)</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode10.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Datenbank-Einträge</h3>
+                                <p class="pickup-desc">Jeder NPC muss nach seinem Namen gefragt und die zugehörige Datenbank-Einträge überprüft werden. Am Datenbank-Terminal kann der Spieler nach Eingabe des NPC-Namen alle zugehörigen Datenbank-Einträge einsehen.</p>
+                            </div>
+                        </article>
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Einzigartige NPCs (Beispiele)</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode11.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Leopold Ptieza</h3>
+                                <p class="pickup-desc">
+                                    Ein Elektriker, der um Rekrutierung bittet. Er schafft den Rekrutierungs-Test nicht, bittet dennoch darum rekrutiert zu werden und verspricht dem Spieler,
+                                    dass es sich für ihn lohnen wird.
+                                </p>
+                                <div class="pickup-meta">Wenn Leopold Ptieza dennoch rekrutiert wird, repariert er die Wasserwerke und Stromumwandler in Hinode, wodurch Wasser- und Stromkosten für die nächsten 2 Tage sinken!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode12.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Verrückter Ödländer</h3>
+                                <p class="pickup-desc">
+                                    Ein verrückter Ödländer der kaum verständlich spricht. Er möchte Essen, hat aber einen viel zu hohen Kontaminations-Wert.
+                                    Der Ödländer warnt den Spieler vor großem Unglück wenn seiner Bitte um Essen ignoriert wird.
+                                </p>
+                                <div class="pickup-meta">Wenn der Spieler den Verrückten Ödländer die Essensausgabe verweigert, fällt in der selben Nacht ein Schwarm Heuschrecken über Hinode her -> Essens-Kosten werden für 3 Tage erhöht!</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode13.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">John Kero(Banditen-Anführer)</h3>
+                                <p class="pickup-desc">Ein Banditen-Anführer der vorgibt einer angeblichen Ödland-Polizei anzugehören und nach "Leopold Ptieza" zu suchen. </p>
+                                <div class="pickup-meta">Wird diesem NPC Zugang zu Hinode gewährt, kann es zu einem "Bürgerkrieg"-Ende kommen, wenn der Widerstands-Anführerin ebenso Zugang zu Hinode gewährt wird.</div>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode14.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Dr. Laszle Beck</h3>
+                                <p class="pickup-desc">Ein sehr guter Arzt, besteht jedoch den Rekrutierungstest nicht.</p>
+                                <div class="pickup-meta">Wird diesem NPC dennoch die Rekrutierung gewährt, senken Medizinkosten für die nächsten 3 Tage!</div>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/praisehinode15.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Lina Haul (Widerstands-Anführerin)</h3>
+                                <p class="pickup-desc">Die Anführerin des Widerstandes gegen das Regime von Hinode. Sie bittet den Protagonisten um Hilfe um ihre Unterwanderung von Hinode starten zu können.</p>
+                                <div class="pickup-meta">
+                                    Wird Lina Haul Zugang zu Hinode gewährt, besteht die Möglichkeit auf das "Gute Ende"! Eine Serie von Herausforderungen folgt (höhere Kosten, viele NPCs denen ohne zu fragen
+                                    Zugang gewährt werden muss, um den Widerstand zu unterstützen). Schafft der Spieler es 3 Tage mit Lina Haul in Hinode zu überleben, erreicht er das "Gute Ende" und Hinodes korruptes Regime wird gestürzt!
+                                </div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Entwicklungszeit: 2 Monate (01.01.2025 - 01.03.2025)
+                    </li>
+                    <li>
+                        Solo-Projekt
+                    </li>
+
+                </ul>
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: In 2 Monaten ein vollständigen Prototypen erstellen.
+                    </li>
+                    <li>
+                        ->Lösung: Strikte Zeiteinteilung: Mir im Januar die Grenze zu setzen mit dem Code/Programmieren fertig zu sein, hat extrem dabei geholfen
+                        genügend Zeit zum einbauen von 3D Models/Worldbuilding zu haben, und um dann sogar noch viele neue einzigartige NPCs zu implementieren.
+                    </li>
+                    <li>
+                        Herausforderung: Robustes, dynamisches Dialogsystem erstellen.
+                    </li>
+                    <li>
+                        ->Lösung: Zum ersten mal die "Data Table"-Klasse richtig genutzt. Diese Klasse hat mir sehr dabei geholfen einfach und schnell neue Dialoge zu erstellen.
+
+                    </li>
+
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        "Data Table"-Klasse zum speichern vieler verschiedenen Werte für den selben Nutzen kann sehr hilfreich sein.
+                    </li>
+                </ul>
+
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    [Link zum Gameplay]. Downloads gibt es keine, Spiel ist unveröffentlicht.
+                </p>
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -2197,8 +2197,8 @@ header .header-nav {
 .projects-grid {
   gap: 8px !important;         /* global gap */
   row-gap: 6px !important;     /* vertical gap between rows */
-  padding-top: 12px !important;
-  padding-bottom: 12px !important;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 /* Reduce section top/bottom padding that can add extra space */
@@ -3025,7 +3025,7 @@ header .header-nav {
 /* Inneres Grid: max. 4 Karten pro Zeile auf Desktop */
 #projectsGrid.categorized .projects-inner-grid {
     display: grid;
-    gap: 8px;
+    gap: 12px;
     /* Desktop: max 4 Spalten, Kartenbreite mindestens 260px */
     grid-template-columns: repeat(4, minmax(260px, 1fr));
     width: 100%;
@@ -3710,3 +3710,13 @@ header .header-nav {
 .category-web .project-card {
     border-color: rgba(127,123,255,0.6);
 }
+
+
+/* === Simple outline as black border === */
+#projectsGrid.categorized .projects-inner-grid .project-card,
+.project-card {
+    outline: 3px solid rgba(0,0,0,0.95) !important;
+    outline-offset: 0px;
+    border-radius: 12px !important;
+}
+

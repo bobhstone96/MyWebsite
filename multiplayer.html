@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 2px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Leaf It To Me</span>
+        </nav>
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/ultimatemultiplayer4.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">My First Online Multiplayer</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Genre:</strong> Jump&Run / Party-Game / Casual Game</div>
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo Projekt</strong></div>
+                </div>
+            </div>
+
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    Stark von "Ultimate Chicken Horse" inspiriert, in diesem Prototyp versucht jeder Spieler das Ziel des Levels zu erreichen indem sie zwischen den Runden neue Blöcke dem Level hinzufügen und so neue Wege errichten oder Mitspieler sabotieren.
+                    Hauptfokus dieses Projektes ist es zu lernen stabile Multiplayer-Systeme zu erschaffen.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Viele Spiele die mir gefallen sind vor allem deshalb so gut, weil sie im Multiplayer spielbar sind. Von Spielen wie "Ultimate Chicken Horse" und "R.V. There Yet?", die aus genau diesem Grund sehr spaßig sind, inspiriert, entschied ich mich dazu
+                    zu lernen wie Multiplayer-Systeme in Unreal Engine 5 eingerichtet werden. Ich nahm an dass ein Spiel wie "Ultimate Chicken Horse" recht einfach umzusetzen sein sollte. Ich konnte bereits in sehr wenigen Wochen Entwicklung
+                    sehr aufregende Ergebnisse erreichen. Der Game-Loop (Lauf-Runde:Jeder Spieler 1 Versuch ins Ziel zu kommen -> Dann Bau-Runde -> Lauf-Runde -> usw.) funktioniert bereits problemlos.
+                    Die online-Spiele Verbindung funktioniert auch bereits. Spieler können über Steam dem Spiel des anderen Spielers beitreten.
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Lauf-Runde: Jeder Spieler versucht das Ziel des Levels zu erreichen. Erreicht ein Spieler das Ziel, erhält dieser Spieler Punkte.
+                                Wird ein Spieler besiegt (z.B. durch das Fallen in Stacheln), erhält dieser Spieler keine Punkte, wenn die Runde endet.
+                                Sind alle Spieler im Ziel oder besiegt, endet die Lauf-Runde und der Runden-Rückbklick Bildschirm erscheint.
+                            </li>
+                            <li>
+                                Bau-Runde: Jeder Spieler muss in dieser Runde einen neuen Block dem Level hinzufügen. Aktuell hat noch jeder Spieler die Auswahl über alle aktuell verfügbaren Blöcke,
+                                dies steht in Planung bald geändert zu werden. Hat jeder Spieler seinen Block platziert, beginnt die nächste Lauf-Runde.
+                            </li>
+                            <li>
+                                Der Spieler der zu erst X-Punkte erreicht hat, gewinnt das Spiel. Die Anzahl der benötigten Punkte soll vor dem Start des Spieles einstellbar sein,
+                                Standard-Anzahl der Runden sollte wahrscheinlich bei ~8 liegen. Punkte-Zählung und Limit ist noch nicht implementiert.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/ultimatemultiplayer4.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <section class="pickups-section">
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Lauf-Runde</h3>
+                                <p class="pickup-desc">Jeder Spieler hat einen Versuch das Ziel des Levels zu erreichen!</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer2.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Runden-Rückblick Bildschirm</h3>
+                                <p class="pickup-desc">Hier wird der neue Punktestand angezeigt und welcher Spieler wie viel Punkte in dieser Runde gesammelt hat. Jeder Spieler muss auf "Ready" klicken damit die Bau-Runde beginnt.</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Bau-Runde</h3>
+                                <p class="pickup-desc">Jeder Spieler platziert einen neuen Block im Level! Sobald alle Spieler ihren Block platziert haben, beginnt die nächsteLauf-Runde</p>
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/ultimatemultiplayer4.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Beispiel: Level-Veränderung bei Runde 4</h3>
+                                <p class="pickup-desc">Hier ist das Ausmaß der Level-Veränderungen bei Runde 4 zu sehen. Aus einem simplen Level können sehr komplexe und schwere Level entstehen!</p>
+                            </div>
+                        </article>
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Entwicklungszeit: 3 Wochen
+                    </li>
+                    <li>
+                        Solo Projekt
+                    </li>
+                    <li>
+                        Online Verbindungs-Service: Steam
+                    </li>
+                </ul>
+
+                <h3 class="project-subheading center-large">Implementierte Blöcke</h3>
+
+                <section class="pickups-section">
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock1x1.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x1-Block</h3>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock1x2.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x2-Block</h3>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock3x3.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">3x3-Block</h3>
+
+                            </div>
+                        </article>
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock_L.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">L-Block</h3>
+
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock_spike.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x1-Block mit Stachel</h3>
+                                <p class="pickup-desc">Hat ein Spieler Kontakt mit dem Stachel dieses Blockes, wird er für die aktuelle Lauf-Runde besiegt!</p>
+                            </div>
+                        </article>
+
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/Multiplayerblock_move.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">1x2-Block mit Bewegung</h3>
+                                <p class="pickup-desc">Dieser Block bewegt sich zwischen den Endpunkten der Linie hin und her.</p>
+                            </div>
+                        </article>
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                    <div id="multiplayer" style="height:1px;"></div>
+                    <section class="pickups-section">
+                        <h2 class="section-title">Kunst: Multiplayer Prototyp</h2>
+                        <h2 class="section-title">- Multiplayer Character -</h2>
+                        <h2>Kurzbeschreibung</h2>
+                        <p>
+                            In meinem Multiplayer-Prototyp ("My First Online Multiplayer") hatte ich sehr lange Zeit nur Spheren als Spieler-Modell.
+                            Dies hat mich irgendwann gestört, deshalb habe ich schnell meinen "Humanoid_Base"-Modell aus dem Tutorial (siehe weiter unten)
+                            animiert und in den Multiplayer-Prototyp eingebaut.
+                        </p>
+
+
+                        <div class="pickups-grid">
+                            <!-- Card 1 -->
+                            <!-- Card 2 -->
+                            <article class="pickup-card">
+                                <div class="pickup-image">
+                                    <img src="images/entwürfemultichar1.png" alt="Pickup: Cheese">
+                                </div>
+                                <div class="pickup-body">
+                                    <h3 class="pickup-title">Animation: Untätig</h3>
+                                </div>
+                            </article>
+
+                            <!-- Card 1 -->
+                            <article class="pickup-card">
+                                <div class="pickup-image">
+                                    <img src="images/entwürfemultichar2.png" alt="Pickup: Mouse">
+                                </div>
+                                <div class="pickup-body">
+                                    <h3 class="pickup-title">Animation: Gehen</h3>
+                                </div>
+                            </article>
+
+                            <!-- Card 2 -->
+                            <article class="pickup-card">
+                                <div class="pickup-image">
+                                    <img src="images/entwürfemultichar3.png" alt="Pickup: Cheese">
+                                </div>
+                                <div class="pickup-body">
+                                    <h3 class="pickup-title">Animation: Sprinten</h3>
+
+                                </div>
+                            </article>
+
+                            <a class="project-back" href="experimental.html#multiplayer" aria-label="Mehr zu Praise Hinode">MORE</a>
+
+
+
+                            <!-- weitere Cards... -->
+                        </div>
+                    </section>
+
+
+                    <h2>Herausforderung → Lösungsweg</h2>
+
+                    <ul>
+                        <li>
+                            Herausforderung: Keine vorherige Multiplayer-Programmier Erfahrung.
+                        </li>
+                        <li>
+                            ->Lösung: Youtube Tutorials(Steam Setup: https://www.youtube.com/watch?v=5nMKEKV0acI&t=434s ; Replication-Basics: https://www.youtube.com/watch?v=bBK8A-mFH-s&t=1589s)
+                        </li>
+
+                    </ul>
+
+
+                    <h2>Learnings</h2>
+                    <ul>
+                        <li>
+                            Online-Verbindung über Steam einzurichten geling mir sehr einfach.
+                        </li>
+                        <li>
+                            Grundbasis der Replikation verstanden (Welche Funktionen müssen auf dem Server ausgeführt werden, welche können auf dem Client ausgeführt werden, usw.)
+                        </li>
+                        <li>
+                            Ein Multiplayer Spiel zu programmieren ist zwar etwas anspruchsvoller, aber auch deutlich spaßiger. Bereits nach kurzer Zeit hat sich dieser Prototyp, im Vergleich zu meinen anderen Projekten, wie etwas komplett anderes angefühlt und mir viel Spaß gemacht.
+                        </li>
+
+                    </ul>
+
+
+                    <h3>Downloads / Links / Screenshots</h3>
+                    <p>
+                        Keine Downloads/Links vorhanden. Kommt vielleicht bald!
+                    </p>
+                    <a class="project-back" href="art.html#multiplayer" aria-label="Mehr zu Praise Hinode">MORE</a>
+                    <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+
+
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>

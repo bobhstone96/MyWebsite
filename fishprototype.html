@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie Crumble — LutzCode</title>
+
+  <!-- deine bestehende stylesheet -->
+  <link rel="stylesheet" href="style.css">
+  <!-- icons falls du sie brauchst -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+  <style>
+    /* Project page specific styles */
+    .project-page .project-wrapper {
+      max-width: 1800px;
+      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
+      padding: 0 2px;
+      box-sizing: border-box;
+    }
+
+    /* hero image (zentriert) */
+    .project-hero {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .project-hero img {
+      width: 100%;
+      max-width: 760px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+      object-fit: cover;
+    }
+
+    /* Title + meta area */
+    .project-head {
+      display: block;
+      margin-bottom: 18px;
+    }
+    .project-title {
+      font-size: 36px;
+      margin: 6px 0 10px 0;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left; /* linksbündig */
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #BFC8FF;
+      font-size: 14px;
+      margin-bottom: 22px;
+      text-align: left;
+    }
+    .project-meta .meta-item {
+      background: rgba(255,255,255,0.03);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+      .project-content {
+          background: #041b16; /* <- hier gewünschte Farbe auswählen */
+          border-radius: 12px;
+          border: 1px solid rgba(255,255,255,0.04);
+          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+          padding: 22px;
+          color: #E6EAF6; /* helle Textfarbe */
+          line-height: 1.6;
+          -webkit-backdrop-filter: none; /* entfernt glassy blur */
+          backdrop-filter: none;
+          position: relative; /* damit z-index greift */
+          z-index: 5; /* über eventuell darunterliegenden Elementen */
+      }
+
+    .project-content h2 {
+      margin-top: 0;
+    }
+
+    /* back link */
+    .project-back {
+      display: inline-block;
+      margin-top: 18px;
+      color: #DDE8FF;
+      text-decoration: none;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .project-title { font-size: 26px; }
+      .project-hero img { max-width: 100%; height: auto; }
+    }
+  </style>
+</head>
+<body class="project-page">
+    <div class="container">
+        <header>
+            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+            <div class="header-left-group">
+                <div class="left">
+                    <a href="index.html" class="brand" aria-label="Zur Startseite">
+                        <img src="images/miladicode.png" alt="logo">
+                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                    </a>
+                </div>
+
+                <div class="box-icons">
+                    <a href="#"><i class="bx bxl-youtube"></i></a>
+                    <a href="#"><i class="bx bxl-github"></i></a>
+                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                </div>
+            </div>
+
+            <!-- rechts: Navigation (nun rechts angeordnet) -->
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+        </header>
+        <!-- COPY YOUR HEADER HERE -->
+        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+        <!-- ----------------- -->
+        <!-- z.B. -->
+        <!-- <header> ... dein header ... </header> -->
+        <!-- ----------------- -->
+        <!-- Breadcrumbs (hardcoded; passe an) -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="sep">/</span>
+            <a href="portfolio.html">Portfolio</a>
+            <span class="sep">/</span>
+            <span class="current">Leaf It To Me</span>
+        </nav>
+
+        <main class="project-wrapper">
+            <!-- Hero Image -->
+            <div class="project-hero">
+                <img src="images/islandgame6.png" alt="Cookie Crumble - Screenshot / Key art">
+            </div>
+
+            <!-- Title & Meta -->
+            <div class="project-head">
+                <h1 class="project-title">Fishing/Harpooning Prototype</h1>
+
+                <div class="project-meta">
+                    <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
+                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                </div>
+            </div>
+
+            <!-- große Textfläche -->
+            <article class="project-content">
+                <h2>Kurzbeschreibung</h2>
+                <p>
+                    In diesem Harpunier-Prototyp fängt der Spieler Fische, um diese zu verkaufen und bessere Upgrades zu erhalten. Fische die schwerer zu fangen sind,
+                    bringen beim Verkauf mehr Geld ein. Je mehr upgrades, desto weiter kann der Spieler aufs Meer hinaus schwimmen und exotischere Fische fangen.
+                    Mit Fisch-Fallen und (geplant) später Anglern oder Angeln können Fische passiv gefangen werden, während der Spieler aktiv Fische harpuniert.
+                </p>
+
+                <h2>Hintergrund</h2>
+                <p>
+                    Die Idee dieses Projektes war es mich mit dem Wasser-/BuoyancySystem von Unreal Engine vertraut zu machen. Es ist schon lange ein Wunsch von mir ein Projekt
+                    im Meeres-Setting zu erstellen, dieser Prototyp war der erste Schritt in diese Richtung. Außerdem musste ich eine eigene AI-Bewegungs-Logik erstellen, da
+                    die Standard Unreal Engine-AI-Pfadfindungslogik nur funktioniert, wenn sich die AI am Boden befindet.
+
+                </p>
+
+                <div class="project-two-column">
+                    <div class="project-two-text">
+                        <h2>Spielablauf</h2>
+                        <ul>
+                            <li>
+                                Der Spieler startet mit einem Speer und einem Ruder-Boot an einem Steg. Am Ende des Steges befinden sich
+                                Shops bei denen der Spieler neue Upgrades kaufen, und Fische verkaufen kann.
+                            </li>
+                            <li>
+                                Der Spieler springt ins Wasser und fängt seinen ersten Fisch. Jeder erste Fang einer Fischart erlaubt dem Spieler
+                                neue Upgrades zu kaufen (z.B.: Flunder gefangen: Ruder-Boot Speed-Upgrade Stufe 1 freigeschaltet)
+                            </li>
+                            <li>
+                                Hat der Spieler genug Geld angesammelt kann eine Harpune gekauft werden. Mit der Harpune lassen sich Fische fangen, die vorher
+                                entkommen sind, wenn der Spieler zu nah kam. Die Harpune kann durch den Fang neuer Fische viele Upgrades erhalten
+                                (Stärke, Schuss-Geschwindigkeit, Einhol-Geschwindigkeit, Nachlade-Geschwindigkeit, usw.).
+                            </li>
+                            <li>
+                                Mit genug Geld kann der Spieler ein neues Boot kaufen und neue Gebiete erkunden.
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/islandgame5.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                    <figure class="project-two-image" aria-hidden="false">
+                        <img src="images/islandgame3.png" alt="Screenshot: Gameplay Übersicht">
+                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    </figure>
+                </div>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Boote</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Ruder-Boot</h3>
+                                <p class="pickup-desc">Standard-Boot des Spielers. Kann sich nur im Tutorial-Bereich fortbewegen (in anderen Bereichen werden Wellen zu stark für das Ruder-Boot).</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame6.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Kleines Fischer Boot</h3>
+                                <p class="pickup-desc">Das erste "richtige" Boot des Spielers um den Tutorial-Bereich zu verlassen und neue Gebiete zu erkunden. </p>
+                                <div class="pickup-meta">
+                                    Geplant: An diesem Boot sollen Angeln
+                                    für passives fischen befestigt werden können.
+                                </div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Fisch-Werkzeuge</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame2.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Speer</h3>
+                                <p class="pickup-desc">Anfangs-/Standard-Fisch-Werkzeug des Spielers. Hat eine sehr kurze Reichweite, reicht nur um Flunder, Seeigel und Krabben zu fangen.</p>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame5.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Harpune</h3>
+                                <p class="pickup-desc">Ermöglicht das Fangen von exotischeren Fischen.</p>
+                                <div class="pickup-meta">Die Harpune ist das Hauptwerkzeug des Spielers! Alle neuen Fische(nach Tutorial) müssen zu erst mit der Harpune gefangen werden.</div>
+                            </div>
+                        </article>
+
+                        <!-- Card 2 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/fishinggametrap.png" alt="Pickup: Cheese">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Fisch-Falle</h3>
+                                <p class="pickup-desc">Eine Falle die passiv Fische fängt. Anfangs nur Krabben und Flunder, kann Upgrades erhalten um bessere Fische zu fangen.</p>
+                                <div class="pickup-meta">
+                                    Upgrades für die Fisch-Falle um bessere Fische zu fangen erhält der Spieler erst, wenn er den jeweiligen Fisch zuvor mit der
+                                    Harpune gfangen hat!
+                                </div>
+                            </div>
+                        </article>
+
+
+
+
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+                <section class="pickups-section">
+                    <h2 class="section-title">Upgrade Shop</h2>
+
+                    <div class="pickups-grid">
+                        <!-- Card 1 -->
+                        <article class="pickup-card">
+                            <div class="pickup-image">
+                                <img src="images/islandgame4.png" alt="Pickup: Mouse">
+                            </div>
+                            <div class="pickup-body">
+                                <h3 class="pickup-title">Shop</h3>
+                                <p class="pickup-desc">Hier kann der Spieler neue Upgrades kaufen und seine Fische verkaufen.</p>
+                            </div>
+                        </article>
+
+
+                        <!-- weitere Cards... -->
+                    </div>
+                </section>
+
+
+
+
+
+
+                <h2>Technische Details</h2>
+                <ul>
+                    <li>
+                        Engine: Unreal Engine (Blueprints / Visual Scripting)
+                    </li>
+                    <li>
+                        Source Control: GitHub.
+                    </li>
+                    <li>
+                        Solo-Projekt
+                    </li>
+                </ul>
+
+                <h2>Herausforderung → Lösungsweg</h2>
+
+                <ul>
+                    <li>
+                        Herausforderung: Schiffe lagen nicht stabil auf dem Wasser.
+                    </li>
+                    <li>
+                        ->Lösung: Buoyancy-Settings überarbeitet. Eine vernünftige Verteilung von Buoyancy-Punkten und das Einstellen der wirkenden Kräfte ist essenziell, damit sich das Objekt wie gewünscht verhält
+                    </li>
+                    <li>
+                        Herausforderung: Nav-Mesh-Pfadfindung ist für eine Bewegung in alle Richtungen ohne Kontakt mit dem Nav-Mesh ungenügend.
+                    </li>
+                    <li>
+                        ->Lösung: Mein eigenes AI-Pfadfindungs-System erstellen. Jeder Fisch hat eine gewissen Bereich zugewiesen (z.B. Tutorial-Bereich unterteilt in: Tutorial-oben und Tutorial-unten). Zum Fortbewegen
+                        nimmt der Fisch einen zufälligen Punkt in diesem Bereich, feuert einen Line Trace in die Richtung des Punktes. Wenn der Line Trace etwas trifft bewegt sich der Fisch zum Treffpunkt des Line Traces.
+                        Wenn der Line Trace nichts trifft, bewegt sich der Fisch zum Ende des Line Traces. So konnte ich eine Bewegung der Fische in alle Richtungen gleichzeitig erzeugen, und gleichzeitig erzwingen dass die Fische in ihrem zugewiesenen Bereich bleiben.
+                    </li>
+                </ul>
+
+
+                <h2>Learnings</h2>
+                <ul>
+                    <li>
+                        Masken erlauben mir das Wasser innerhalb gewisser Kollision-Zonen auszublenden.
+                        Dies erlaubte mir das Wasser aus den Schiffen zu entfernen und die Schiffe somit optisch realistischer zu gestalten.
+                    </li>
+                    <li>
+                        Wasser-Plugin Basics verstanden.
+                    </li>
+                    <li>
+                        Eigenes leicht erweiterbares AI-Pfadfindungs-System erstellt.
+                    </li>
+
+                </ul>
+
+
+                <h3>Downloads / Links / Screenshots</h3>
+                <p>
+                    Nicht vorhanden. Steht aktuell nicht in der Planung fortgeführt zu werden. Ich werde das hier gelernte Wissen für ein neues, Meer/Boot bezogenes Projekt nutzen.
+                </p>
+
+                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+            </article>
+        </main>
+
+        <!-- COPY YOUR FOOTER HERE -->
+        <!-- paste your existing footer markup -->
+        <!-- <footer> ... </footer> -->
+
+    </div>
+
+  <!-- Optional: dein app.js -->
+  <script src="app.js"></script>
+</body>
+</html>
