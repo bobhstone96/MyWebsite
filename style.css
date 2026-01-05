@@ -3720,3 +3720,131 @@ header .header-nav {
     border-radius: 12px !important;
 }
 
+/* --------------------- Disable category-wide hover effects --------------------- */
+/* 1) Verhindert, dass beim Hovern über die gesamte Kategorie etwas "hochkommt" */
+#projectsGrid.categorized .category-section:hover {
+    transform: none !important;
+    /* setze hier die normale (nicht-hover) Box-Shadow, damit es nicht "aufblinkt" */
+    box-shadow: 0 18px 40px rgba(0,0,0,0.55) !important;
+}
+
+    /* 2) Verhindert, dass die Titel beim Hovern der Section nach oben springen */
+    #projectsGrid.categorized .category-section:hover .category-title {
+        transform: none !important;
+        /* optional: behalte normalen Titel-Schatten */
+        box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04) !important;
+    }
+
+    /* 3) Verhindert, dass beim Hovern der Section die einzelnen Karten ge-animatet werden */
+    #projectsGrid.categorized .category-section:hover .project-card {
+        transform: none !important;
+        /* setze Standard-Shadow für Cards (nicht-hover Zustand) */
+        box-shadow: 0 8px 26px rgba(0,0,0,0.55) !important;
+    }
+
+/* --------------------- Keep card hover-only behavior --------------------- */
+/* Stelle sicher, dass einzelne Karten beim Überfahren trotzdem reagieren */
+#projectsGrid.categorized .project-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 36px rgba(0,0,0,0.65) !important;
+}
+
+/* --------------------- Make card text permanently clear/readable --------------------- */
+/* Erhöht den Kontrast: dunklen Card-Background + weiße, leicht geschärfte Schrift */
+#projectsGrid.categorized .project-card,
+#projectsGrid.categorized .project-card .project-content {
+    background: linear-gradient(180deg, rgba(0,0,0,0.95), rgba(0,0,0,0.95)) !important;
+    color: #ffffff !important;
+}
+
+    /* Texte (Titel/Meta/Paragraph) klar weiß mit leichtem Text-Shadow für bessere Lesbarkeit */
+    #projectsGrid.categorized .project-card h3,
+    #projectsGrid.categorized .project-card h4,
+    #projectsGrid.categorized .project-card p,
+    #projectsGrid.categorized .project-card .project-meta,
+    #projectsGrid.categorized .project-card .project-description {
+        color: #ffffff !important;
+        text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+
+    /* kleinere Meta-Texte ebenfalls */
+    #projectsGrid.categorized .project-card small {
+        color: #eaeaea !important;
+        text-shadow: 0 1px 1px rgba(0,0,0,0.6);
+    }
+
+
+/* ================= Fix: Card hover wieder aktivieren (höhere Spezifität) ================= */
+
+/* Sicherstellen, dass einzelne Karten beim Hover anheben (überschreibt andere !important-Regeln) */
+#projectsGrid.categorized .category-section .projects-inner-grid .project-card:hover,
+#projectsGrid.categorized .projects-inner-grid .project-card:hover,
+#projectsGrid.categorized .category-section:hover .projects-inner-grid .project-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 14px 40px rgba(0,0,0,0.72) !important;
+    transition: transform .18s ease, box-shadow .18s ease !important;
+    z-index: 10 !important; /* sicherstellen, dass die Karte über anderen Inhalten liegt */
+}
+
+/* Falls es noch eine generelle "disable" Regel gibt, die transform:none !important setzt
+   (z.B. #projectsGrid.categorized .category-section:hover .project-card { transform: none !important; }),
+   diese explizit neutralisieren, wenn die Karte selbst gehovt wird: */
+#projectsGrid.categorized .category-section:hover .projects-inner-grid .project-card:hover {
+    transform: translateY(-6px) !important;
+}
+
+/* Optional: wenn du willst, dass Text beim Hover noch etwas "aufgehellt" wird */
+#projectsGrid.categorized .projects-inner-grid .project-card:hover h3,
+#projectsGrid.categorized .projects-inner-grid .project-card:hover p {
+    color: #ffffff !important;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6) !important;
+}
+
+/* ================= Disable hover effects on touch / small screens ================= */
+
+/* Primary: devices that do not support hover (touchscreens) */
+@media (hover: none) {
+    /* Prevent cards from translating/animating on touch devices */
+    #projectsGrid.categorized .project-card:hover,
+    #projectsGrid.categorized .projects-inner-grid .project-card:hover {
+        transform: none !important;
+        box-shadow: 0 8px 26px rgba(0,0,0,0.55) !important; /* standard card-shadow */
+    }
+
+    /* Prevent category-level hover effects as well (if any left) */
+    #projectsGrid.categorized .category-section:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Reduce/disable transitions to avoid flicker on touch */
+    #projectsGrid.categorized .project-card,
+    #projectsGrid.categorized .project-card * {
+        transition: none !important;
+    }
+
+    /* Make touch feel snappy and remove tap highlight */
+    #projectsGrid.categorized .project-card {
+        -webkit-tap-highlight-color: transparent;
+        touch-action: manipulation;
+    }
+}
+
+/* Fallback: small screens (optional) */
+@media (max-width: 900px) {
+    #projectsGrid.categorized .project-card:hover,
+    #projectsGrid.categorized .projects-inner-grid .project-card:hover {
+        transform: none !important;
+        box-shadow: 0 8px 26px rgba(0,0,0,0.55) !important;
+    }
+
+    #projectsGrid.categorized .category-section:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    #projectsGrid.categorized .project-card,
+    #projectsGrid.categorized .project-card * {
+        transition: none !important;
+    }
+}
