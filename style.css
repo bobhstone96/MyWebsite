@@ -4269,3 +4269,82 @@ header .header-nav {
         overflow-x: hidden !important;
     }
 }
+
+@media (max-width: 900px) {
+    .mobile-category-indicator.left {
+        position: fixed;
+        left: 6px;
+        top: 50%;
+        transform: translateY(-50%) rotate(-90deg);
+        transform-origin: left center;
+        z-index: 9999;
+        /* verhindert Layout-Shifts */
+        pointer-events: none;
+    }
+}
+
+@media (max-width:900px) {
+    #mobileCategoryIndicator {
+        position: fixed !important;
+        left: 6px !important;
+        top: 50% !important;
+        transform: translateY(-50%) rotate(-90deg) !important;
+        pointer-events: none;
+        z-index: 9999;
+    }
+}
+
+@media (max-width:900px) {
+    #mobileCategoryIndicator {
+        position: fixed !important;
+        left: 20px !important;
+        transform: translateY(-50%) rotate(-90deg) !important; /* note: we use translateY(-50%) but set top via JS */
+        transform-origin: left center !important;
+        pointer-events: none;
+        z-index: 9999;
+    }
+}
+
+/* === Mobile: make category indicator background opaque === */
+@media (max-width: 900px) {
+    /* base opaque background for the left indicator */
+    #mobileCategoryIndicator,
+    .mobile-category-indicator {
+        background-color: #0b2e20 !important; /* dunkles, undurchsichtiges Feld (ersetze nach Wunsch) */
+        color: #fff !important; /* weiße Textfarbe für Kontrast */
+        box-shadow: 0 6px 14px rgba(0,0,0,0.45) !important;
+        opacity: 1 !important; /* stelle sicher, dass es nicht transparent ist */
+        border-radius: 8px !important;
+        padding: 6px 10px !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+    }
+
+        /* --- optional: per-category colors (wenn du verschiedene Farben willst) --- */
+        /* Passe die Hex-Farben an oder entferne diese Gruppe, wenn du einheitliche Farbe willst */
+        #mobileCategoryIndicator.cat-game-jam {
+            background-color: #8b5e18 !important;
+        }
+        /* gold/braun */
+        #mobileCategoryIndicator.cat-experimental {
+            background-color: #0f7b78 !important;
+        }
+        /* türkis */
+        #mobileCategoryIndicator.cat-art {
+            background-color: #7a2b5f !important;
+        }
+        /* pink/purple */
+        #mobileCategoryIndicator.cat-web {
+            background-color: #244f9f !important;
+        }
+    /* blau */
+
+    /* If you also have rotated .category-title elements that should be opaque: */
+    #projectsGrid.categorized .category-section .category-title {
+        background-color: #0b2e20 !important; /* same base color */
+        color: #fff !important;
+        padding: 6px 10px !important;
+        border-radius: 6px !important;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.35) !important;
+    }
+}

@@ -474,7 +474,93 @@
             init();
 
         })();
+        (function initMobileIndicatorOffsets() {
+            const indicator = document.getElementById('mobileCategoryIndicator');
+            if (!indicator) return;
+            const mq = window.matchMedia('(max-width:900px)');
 
+            // per-slug fallback offsets (px)
+            const perCategoryOffsets = {
+                'game-jam': 40,
+                'experimental': 40,
+                'art': 60,
+                'web': 200
+            };
+
+            function slugFromSection(section) {
+                for (const c of section.classList) {
+                    if (c.startsWith('category-') && c !== 'category-section') return c.replace('category-', '');
+                }
+                return null;
+            }
+
+            function getOffsetForSection(section) {
+                if (!section) return 40;
+                const dataVal = section.dataset && section.dataset.indicatorOffset;
+                if (dataVal !== undefined) {
+                    const n = parseInt(dataVal, 10);
+                    if (!Number.isNaN(n)) return n;
+                }
+                const slug = slugFromSection(section);
+                if (slug && perCategoryOffsets.hasOwnProperty(slug)) return perCategoryOffsets[slug];
+                return 40;
+            }
+
+            function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+            function pickBestSection() {
+                const secs = Array.from(document.querySelectorAll('#projectsGrid.categorized .category-section'));
+                let best = null, bestVisible = 0;
+                secs.forEach(s => {
+                    const r = s.getBoundingClientRect();
+                    const visible = Math.max(0, Math.min(window.innerHeight, r.bottom) - Math.max(0, r.top));
+                    if (visible > bestVisible) { bestVisible = visible; best = s; }
+                });
+                return { section: best, visible: bestVisible };
+            }
+
+            function update() {
+                if (!mq.matches) { indicator.style.display = 'none'; return; }
+                const { section, visible } = pickBestSection();
+                if (!section || visible < 8) { indicator.style.display = 'none'; return; }
+
+                const labelEl = section.querySelector('.category-title');
+                const labelText = labelEl ? labelEl.textContent.trim() : '';
+                if (indicator.querySelector('.indicator-text')) indicator.querySelector('.indicator-text').textContent = labelText || '';
+
+                // compute target Y: section.top + offset (px), clamped within [SAFE, viewport-SAFE]
+                const rect = section.getBoundingClientRect();
+                const offset = getOffsetForSection(section); // px below section top
+                const minAllowed = Math.max(rect.top + 8, 8);
+                const maxAllowed = Math.min(rect.bottom - 8, window.innerHeight - 8);
+                // desired is rect.top + offset
+                let target = rect.top + offset;
+                target = clamp(target, minAllowed, maxAllowed);
+                // apply as fixed top (indicator should be position: fixed in CSS)
+                indicator.style.display = 'block';
+                indicator.style.top = Math.round(target) + 'px';
+                indicator.style.left = '6px'; // keep left stable
+                indicator.style.opacity = '1';
+            }
+
+            // observer to trigger updates during scrolling more efficiently
+            function buildObserver() {
+                const ioOptions = { root: null, rootMargin: '-35% 0px -55% 0px', threshold: 0 };
+                const observer = new IntersectionObserver((entries) => { update(); }, ioOptions);
+                document.querySelectorAll('#projectsGrid.categorized .category-section').forEach(s => observer.observe(s));
+                // also update on scroll/resize
+                window.addEventListener('scroll', update, { passive: true });
+                window.addEventListener('resize', update);
+                window.addEventListener('orientationchange', update);
+            }
+
+            // init
+            setTimeout(() => {
+                buildObserver();
+                update();
+            }, 120);
+
+        })();
 
     </script>
 
