@@ -4231,3 +4231,41 @@ header .header-nav {
         left: -50px !important; /* weiter nach links schieben */
     }
 }
+
+/* ==== Mobile: Remove right gap/gutter ==== */
+@media (max-width: 900px) {
+
+    /* 1) Stelle sicher, dass der grid-Container volle Breite nutzt */
+    #projectsGrid.categorized,
+    #projectsGrid.categorized .projects-inner-grid {
+        width: 100% !important;
+        max-width: none !important;
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+    }
+
+        /* 2) Entferne hart das extra right-padding, das früher für die rechten labels reserviert war */
+        #projectsGrid.categorized .category-section {
+            padding-right: 12px !important; /* 12px ist ein kleiner innerer Abstand; setze 0px wenn du es ganz eng willst */
+        }
+
+        /* 3) Falls einzelne cards oder inner-grids noch Padding haben */
+        #projectsGrid.categorized .projects-inner-grid .project-card,
+        #projectsGrid.categorized .projects-inner-grid {
+            margin-right: 0 !important;
+            padding-right: 0 !important;
+        }
+
+    /* 4) Falls ein centering-wrapper (z.B. .container / main) eine max-width setzt */
+    .container, main, .site-main, .content, #main {
+        max-width: 100% !important;
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+
+    /* 5) Verhindere horizontales Scrollen von übereinandergeschobenen Elementen */
+    html, body {
+        overflow-x: hidden !important;
+    }
+}
