@@ -4165,7 +4165,7 @@ header .header-nav {
 /* Very small phones tweak */
 @media (max-width: 420px) {
     #projectsGrid.categorized .category-section {
-        padding-right: 76px !important;
+        padding-right: 0px !important;
     }
 
         #projectsGrid.categorized .category-section .category-title {
