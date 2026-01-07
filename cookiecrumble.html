@@ -109,7 +109,7 @@
                 <div class="left">
                     <a href="index.html" class="brand" aria-label="Zur Startseite">
                         <img src="images/miladicode.png" alt="logo">
-                        <h1><span style="color: #72a1de52">Lutz</span>Code</h1>
+                        <h1><span style="color: #72a1de52">Lutz</span>Hollstein</h1>
                     </a>
                 </div>
 
@@ -180,7 +180,7 @@
                     <div class="meta-item"><strong>Rolle:</strong> Programmer / Artist</div>
                 </div>
             </div>
-            <div id="kurzbeschreibung" style="height:1px;"></div>
+            <div id="kurzbeschreibung" style="height:20px;"></div>
             <!-- große Textfläche -->
             <article class="project-content panel">
                 <h2>Kurzbeschreibung</h2>
@@ -191,7 +191,9 @@
                     den großen Keks zu gelangen. Fokus für dieses Projekt: während der Game Jam rechtzeitig fertig werden
                     und viel Zeit für Playtesting und Polishing haben.
                 </p>
-                <div id="hintergrund" style="height:1px;"></div>
+
+
+                <div id="hintergrund" style="height:20px;"></div>
                 <h2>Hintergrund</h2>
                 <p>
                     "Cookie Crumble" wurde für die "Brackeys Game Jam 2025.2" (24.-31. August 2025)
@@ -202,7 +204,7 @@
                 </p>
 
 
-                <div id="spielablauf" style="height:1px;"></div>
+                <div id="spielablauf" style="height:20px;"></div>
                 <!-- Two-column block: Text (links) + Bild (rechts) -->
                 <div class="project-two-column">
                     <div class="project-two-text">
@@ -217,7 +219,7 @@
                     </div>
 
                     <figure class="project-two-image" aria-hidden="false">
-                        <img src="images/cookiecrumble3.png" alt="Screenshot: Gameplay Übersicht">
+                        <img class="zoomable" src="images/cookiecrumble3.png" alt="Screenshot: Level-Layout (Übersicht)" />
                         <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
                     </figure>
                 </div>
@@ -226,7 +228,7 @@
 
                 <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
 
-                <div id="techdetails" style="height:1px;"></div>
+                <div id="techdetails" style="height:20px;"></div>
 
                 <h2>Technische Details</h2>
                 <ul>
@@ -241,7 +243,7 @@
 
                 </ul>
 
-                <div id="features" style="height:1px;"></div>
+                <div id="features" style="height:20px;"></div>
                 <section class="pickups-section">
                     <h3 class="project-subheading center-large">Features</h3>
                     <h2 class="section-title">Pickups</h2>
@@ -250,6 +252,7 @@
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
+                                <img class="zoomable" src="images/cookie.png" alt="Keks-Krümel" />
                                 <img src="images/cookie.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
@@ -453,7 +456,7 @@
                     </div>
                 </section>
 
-                <div id="herausforderung" style="height:1px;"></div>
+                <div id="herausforderung" style="height:20px;"></div>
                 <h2>Herausforderung → Lösungsweg</h2>
                 <ul>
                     <li>
@@ -485,7 +488,7 @@
                 </ul>
 
 
-                <div id="learnings" style="height:1px;"></div>
+                <div id="learnings" style="height:20px;"></div>
                 <h2>Learnings</h2>
                 <ul>
                     <li>
@@ -504,7 +507,7 @@
 
                 </ul>
 
-                <div id="downloads" style="height:1px;"></div>
+                <div id="downloads" style="height:20px;"></div>
                 <h3>Downloads / Links / Screenshots</h3>
 
                 <a class="project-back" href="https://bobhstone.itch.io/cookie-crumble">←View "CookieCrumble" on itch.io</a>
@@ -515,7 +518,7 @@
                 <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
 
 
-                <div id="kunst" style="height:1px;"></div>
+                <div id="kunst" style="height:20px;"></div>
                 <h2 class="section-title">Kunst: Cookie Crumble</h2>
                 <h2>Kurzbeschreibung</h2>
                 <p>
@@ -726,7 +729,103 @@
 
     </div>
 
-  <!-- Optional: dein app.js -->
-  <script src="app.js"></script>
+    <!-- Optional: dein app.js -->
+    <script src="app.js"></script>
+
+    <script>
+        (function () {
+            // CONFIG
+            const requireClass = true; // true = nur <img class="zoomable"> reagieren; false = auto-detect images in article
+            const autoSelector = '.project-content, article, main, .project-page'; // used if requireClass=false
+
+            // Create overlay if missing
+            let overlay = document.querySelector('.img-lightbox-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'img-lightbox-overlay';
+                overlay.innerHTML = '<div class="img-lightbox-inner" role="dialog" aria-modal="true" tabindex="-1"><img alt="" /><div class="img-lightbox-caption" aria-hidden="true"></div></div>';
+                document.body.appendChild(overlay);
+            }
+
+            const inner = overlay.querySelector('.img-lightbox-inner');
+            const overlayImg = overlay.querySelector('img');
+            const captionEl = overlay.querySelector('.img-lightbox-caption');
+            let lastScrollY = 0;
+
+            function openLightboxFromImg(imgEl) {
+                const src = imgEl.dataset.fullsrc || imgEl.src;
+                const caption = imgEl.dataset.caption || imgEl.alt || imgEl.title || '';
+                overlayImg.src = src;
+                overlayImg.alt = imgEl.alt || imgEl.title || '';
+                captionEl.textContent = caption;
+                captionEl.style.display = caption ? 'block' : 'none';
+
+                // lock scroll
+                lastScrollY = window.scrollY || window.pageYOffset;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${lastScrollY}px`;
+                document.body.style.left = '0';
+                document.body.style.right = '0';
+
+                overlay.classList.add('visible');
+                inner.focus();
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('visible');
+                // restore scroll
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.right = '';
+                window.scrollTo(0, lastScrollY || 0);
+                // clear image src after transition
+                setTimeout(() => overlayImg.src = '', 250);
+            }
+
+            // Click delegation for images (works even if images are added later)
+            document.addEventListener('click', function (e) {
+                // If overlay visible and click outside inner => close
+                if (overlay.classList.contains('visible')) {
+                    if (!inner.contains(e.target)) { closeLightbox(); return; }
+                    // If clicking on image or inner, close too (toggle)
+                    if (e.target === overlayImg || inner.contains(e.target)) { closeLightbox(); return; }
+                }
+
+                // else, check if clicked an image to open
+                let img = e.target.closest('img');
+                if (!img) return;
+                if (requireClass) {
+                    if (!img.classList.contains('zoomable')) return;
+                } else {
+                    // optional: ensure image is inside content area
+                    if (!img.closest(autoSelector)) return;
+                }
+
+                // Prevent links etc
+                e.preventDefault();
+                e.stopPropagation();
+                openLightboxFromImg(img);
+            }, true); // use capture true to catch before other handlers
+
+            // ESC to close
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('visible')) closeLightbox();
+            });
+
+            // accessibility: clicking middle mouse/button? handled by click above
+
+            // expose for debug
+            window.__simpleLightbox = { open: openLightboxFromImg, close: closeLightbox, overlay };
+
+            // auto-enable for existing images if requireClass==false (optional)
+            if (!requireClass) {
+                document.querySelectorAll(autoSelector + ' img').forEach(img => {
+                    img.classList.add('zoomable');
+                });
+            }
+        })();
+    </script>
+
 </body>
 </html>
