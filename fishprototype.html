@@ -182,6 +182,7 @@
                     bringen beim Verkauf mehr Geld ein. Je mehr upgrades, desto weiter kann der Spieler aufs Meer hinaus schwimmen und exotischere Fische fangen.
                     Mit Fisch-Fallen und (geplant) später Anglern oder Angeln können Fische passiv gefangen werden, während der Spieler aktiv Fische harpuniert.
                 </p>
+                <h4></h4>
                 <div id="hintergrund" style="height:20px;"></div>
                 <h2>Hintergrund</h2>
                 <p>
@@ -190,6 +191,7 @@
                     die Standard Unreal Engine-AI-Pfadfindungslogik nur funktioniert, wenn sich die AI am Boden befindet.
 
                 </p>
+                <h4></h4>
                 <div id="spielablauf" style="height:20px;"></div>
                 <div class="project-two-column">
                     <div class="project-two-text">
@@ -216,15 +218,16 @@
                     </div>
 
                     <figure class="project-two-image" aria-hidden="false">
-                        <img src="images/islandgame5.png" alt="Screenshot: Gameplay Übersicht">
+                        <img class="zoomable" src="images/islandgame5.png" alt="Screenshot: Gameplay Übersicht">
                         <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
                     </figure>
                     <figure class="project-two-image" aria-hidden="false">
-                        <img src="images/islandgame3.png" alt="Screenshot: Gameplay Übersicht">
+                        <img class="zoomable" src="images/islandgame3.png" alt="Screenshot: Gameplay Übersicht">
                         <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
                     </figure>
                 </div>
 
+                <h4></h4>
                 <div id="features" style="height:20px;"></div>
                 <h2 class="section-title">Features</h2>
                 <section class="pickups-section">
@@ -234,7 +237,7 @@
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img src="images/islandgame.png" alt="Pickup: Mouse">
+                                <img class="zoomable" src="images/islandgame.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Ruder-Boot</h3>
@@ -245,7 +248,7 @@
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img src="images/islandgame6.png" alt="Pickup: Cheese">
+                                <img class="zoomable" src="images/islandgame6.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Kleines Fischer Boot</h3>
@@ -275,7 +278,7 @@
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img src="images/islandgame2.png" alt="Pickup: Mouse">
+                                <img class="zoomable" src="images/islandgame2.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Speer</h3>
@@ -286,7 +289,7 @@
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img src="images/islandgame5.png" alt="Pickup: Cheese">
+                                <img class="zoomable" src="images/islandgame5.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Harpune</h3>
@@ -298,7 +301,7 @@
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img src="images/fishinggametrap.png" alt="Pickup: Cheese">
+                                <img class="zoomable" src="images/fishinggametrap.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Fisch-Falle</h3>
@@ -327,7 +330,7 @@
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img src="images/islandgame4.png" alt="Pickup: Mouse">
+                                <img class="zoomable" src="images/islandgame4.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Shop</h3>
@@ -341,6 +344,7 @@
                 </section>
 
 
+                <h4></h4>
 
 
                 <div id="techdetails" style="height:20px;"></div>
@@ -358,6 +362,7 @@
                     </li>
                 </ul>
 
+                <h4></h4>
 
                 <div id="herausforderung" style="height:20px;"></div>
                 <h2>Herausforderung → Lösungsweg</h2>
@@ -379,6 +384,7 @@
                     </li>
                 </ul>
 
+                <h4></h4>
                 <div id="learnings" style="height:20px;"></div>
                 <h2>Learnings</h2>
                 <ul>
@@ -395,6 +401,7 @@
 
                 </ul>
 
+                <h4></h4>
                 <div id="downloads" style="height:20px;"></div>
                 <h3>Downloads / Links / Screenshots</h3>
                 <p>
@@ -411,7 +418,102 @@
 
     </div>
 
-  <!-- Optional: dein app.js -->
-  <script src="app.js"></script>
+    <!-- Optional: dein app.js -->
+    <script src="app.js"></script>
+
+    <script>
+        (function () {
+            // CONFIG
+            const requireClass = true; // true = nur <img class="zoomable"> reagieren; false = auto-detect images in article
+            const autoSelector = '.project-content, article, main, .project-page'; // used if requireClass=false
+
+            // Create overlay if missing
+            let overlay = document.querySelector('.img-lightbox-overlay');
+            if (!overlay) {
+                overlay = document.createElement('div');
+                overlay.className = 'img-lightbox-overlay';
+                overlay.innerHTML = '<div class="img-lightbox-inner" role="dialog" aria-modal="true" tabindex="-1"><img alt="" /><div class="img-lightbox-caption" aria-hidden="true"></div></div>';
+                document.body.appendChild(overlay);
+            }
+
+            const inner = overlay.querySelector('.img-lightbox-inner');
+            const overlayImg = overlay.querySelector('img');
+            const captionEl = overlay.querySelector('.img-lightbox-caption');
+            let lastScrollY = 0;
+
+            function openLightboxFromImg(imgEl) {
+                const src = imgEl.dataset.fullsrc || imgEl.src;
+                const caption = imgEl.dataset.caption || imgEl.alt || imgEl.title || '';
+                overlayImg.src = src;
+                overlayImg.alt = imgEl.alt || imgEl.title || '';
+                captionEl.textContent = caption;
+                captionEl.style.display = caption ? 'block' : 'none';
+
+                // lock scroll
+                lastScrollY = window.scrollY || window.pageYOffset;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${lastScrollY}px`;
+                document.body.style.left = '0';
+                document.body.style.right = '0';
+
+                overlay.classList.add('visible');
+                inner.focus();
+            }
+
+            function closeLightbox() {
+                overlay.classList.remove('visible');
+                // restore scroll
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.right = '';
+                window.scrollTo(0, lastScrollY || 0);
+                // clear image src after transition
+                setTimeout(() => overlayImg.src = '', 250);
+            }
+
+            // Click delegation for images (works even if images are added later)
+            document.addEventListener('click', function (e) {
+                // If overlay visible and click outside inner => close
+                if (overlay.classList.contains('visible')) {
+                    if (!inner.contains(e.target)) { closeLightbox(); return; }
+                    // If clicking on image or inner, close too (toggle)
+                    if (e.target === overlayImg || inner.contains(e.target)) { closeLightbox(); return; }
+                }
+
+                // else, check if clicked an image to open
+                let img = e.target.closest('img');
+                if (!img) return;
+                if (requireClass) {
+                    if (!img.classList.contains('zoomable')) return;
+                } else {
+                    // optional: ensure image is inside content area
+                    if (!img.closest(autoSelector)) return;
+                }
+
+                // Prevent links etc
+                e.preventDefault();
+                e.stopPropagation();
+                openLightboxFromImg(img);
+            }, true); // use capture true to catch before other handlers
+
+            // ESC to close
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && overlay.classList.contains('visible')) closeLightbox();
+            });
+
+            // accessibility: clicking middle mouse/button? handled by click above
+
+            // expose for debug
+            window.__simpleLightbox = { open: openLightboxFromImg, close: closeLightbox, overlay };
+
+            // auto-enable for existing images if requireClass==false (optional)
+            if (!requireClass) {
+                document.querySelectorAll(autoSelector + ' img').forEach(img => {
+                    img.classList.add('zoomable');
+                });
+            }
+        })();
+    </script>
 </body>
 </html>

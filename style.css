@@ -4538,10 +4538,36 @@ header .header-nav {
 }
 
 /* Volle Breite (alternative) */
-main h2,
-article h2,
-.project-page h2 {
+main h4,
+article h4,
+.project-page h4 {
     padding-bottom: 0.4rem;
     margin-bottom: 0.8rem;
     border-bottom: 2px solid rgba(255,255,255,0.06); /* dezente Linie */
+}
+
+/* Lightbox caption: klar lesbar auf weißem Hintergrund */
+.img-lightbox-caption {
+    display: block;
+    background: #ffffff; /* komplett weiß, nicht transparent */
+    color: #111111; /* schwarze Schrift für besten Kontrast */
+    padding: 10px 14px; /* innenabstand */
+    margin: 12px auto 0; /* Abstand nach oben (unter dem Bild) */
+    border-radius: 8px; /* abgerundete Ecken */
+    max-width: min(84vw, 720px); /* breit genug, auf kleinen Bildschirmen begrenzt */
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    box-sizing: border-box;
+    z-index: 100000; /* sicher über dem Bild */
+}
+
+/* wenn du willst: Caption etwas kleiner auf Mobile */
+@media (max-width: 520px) {
+    .img-lightbox-caption {
+        font-size: 0.88rem;
+        padding: 8px 10px;
+        max-width: 92vw;
+    }
 }
