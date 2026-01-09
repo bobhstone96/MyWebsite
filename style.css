@@ -4571,3 +4571,83 @@ article h4,
         max-width: 92vw;
     }
 }
+
+/* Sidebar: immer im geschlossenen Zustand starten (offscreen) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -360px; /* außerhalb des Viewports */
+    width: 320px;
+    height: 100vh;
+    background: rgba(6, 40, 30, 0.95);
+    box-shadow: -12px 0 30px rgba(0,0,0,0.6);
+    z-index: 9999;
+    padding: 18px;
+    overflow-y: auto;
+    /* WICHTIG: keine transitions im Default-Zustand, damit beim Laden nichts animiert */
+    transition: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+    /* Offscreen/geschlossen (duplicate for clarity) */
+    .sidebar.close-sidebar {
+        right: -360px;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Wenn geöffnet: positioniere sichtbar und aktiviere Übergang */
+    .sidebar.open-sidebar {
+        /* Animation vom Offscreen-Zustand in den sichtbaren Zustand */
+        right: 12px; /* oder 0 je nachdem wie du es willst */
+        opacity: 1;
+        visibility: visible;
+        /* Transition hier aktivieren — so tritt die Bewegung NUR beim Öffnen ein */
+        transition: right 0.28s cubic-bezier(.2,.9,.2,1), opacity 0.28s ease;
+    }
+
+/* ---------------------------------------------------------
+   FORCE fix: ensure .project-cta sits absolute on small screens
+   and reserve padding in the body so text can't flow under it.
+   Paste as LAST rules in style.css
+   --------------------------------------------------------- */
+
+/* VERY specific selector chain to win specificity wars */
+#projectsGrid.categorized .projects-inner-grid .project-card {
+    position: relative !important;
+}
+
+    /* reserve space under card content */
+    #projectsGrid.categorized .projects-inner-grid .project-card .project-body {
+        padding-bottom: 84px !important; /* reserve space for button */
+        box-sizing: border-box !important;
+    }
+
+    /* absolute position for the CTA button */
+    #projectsGrid.categorized .projects-inner-grid .project-card .project-cta {
+        position: absolute !important;
+        right: 14px !important;
+        bottom: 14px !important;
+        z-index: 9999 !important;
+        display: inline-block !important;
+        white-space: nowrap !important;
+        padding: 8px 12px !important;
+        border-radius: 10px !important;
+    }
+
+/* tweak for very narrow devices */
+@media (max-width: 420px) {
+    #projectsGrid.categorized .projects-inner-grid .project-card .project-body {
+        padding-bottom: 96px !important;
+    }
+
+    #projectsGrid.categorized .projects-inner-grid .project-card .project-cta {
+        right: 10px !important;
+        bottom: 10px !important;
+        padding: 7px 10px !important;
+        font-size: 0.88rem !important;
+    }
+}
+
+
