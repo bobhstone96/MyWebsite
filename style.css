@@ -4650,4 +4650,15 @@ article h4,
     }
 }
 
+/* === Mobile / Touch Devices: Burger Menu erzwingen === */
+@media (hover: none) and (pointer: coarse) {
+    .menu-icon {
+        display: inline-flex !important;
+        align-items: center;
+    }
 
+    header ul,
+    header .box-icons {
+        display: none !important;
+    }
+}
