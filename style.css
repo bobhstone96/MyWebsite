@@ -4658,3 +4658,21 @@ article h4,
 .mobile-category-indicator {
     z-index: 3000;
 }
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000; /* höher als alles andere */
+}
+
+.container {
+    padding-top: 70px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        padding-top: 50px;
+    }
+}
