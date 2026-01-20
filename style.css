@@ -4650,11 +4650,15 @@ article h4,
     }
 }
 
-/* === Mobile / Touch Devices: Burger Menu erzwingen === */
-@media (hover: none) and (pointer: coarse) {
+/* === FIX: Burger menu always visible & anchored on mobile === */
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
     .menu-icon {
         display: inline-flex !important;
         align-items: center;
+        position: fixed;        /* <<< DAS ist der Schlüssel */
+        top: 16px;
+        right: 16px;
+        z-index: 2000;          /* über Header + Grid */
     }
 
     header ul,
