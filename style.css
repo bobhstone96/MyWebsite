@@ -4676,3 +4676,6 @@ header {
         padding-top: 50px;
     }
 }
+.category-title.clone {
+    display: none !important;
+}
