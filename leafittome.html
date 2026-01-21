@@ -1,106 +1,117 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cookie Crumble — LutzCode</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Leaf It To Me — Lutz Hollstein</title>
 
-  <!-- deine bestehende stylesheet -->
-  <link rel="stylesheet" href="style.css">
-  <!-- icons falls du sie brauchst -->
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- deine bestehende stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- icons falls du sie brauchst -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-  <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
-  <style>
-    /* Project page specific styles */
-    .project-page .project-wrapper {
-      max-width: 1800px;
-      margin: 40px auto 80px;   /* oben etwas Platz, unten genug Abstand zum Footer */
-      padding: 0 2px;
-      box-sizing: border-box;
-    }
+    <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+    <style>
+        /* Project page specific styles */
+        .project-page .project-wrapper {
+            max-width: 1800px;
+            margin: 40px auto 80px; /* oben etwas Platz, unten genug Abstand zum Footer */
+            padding: 0 2px;
+            box-sizing: border-box;
+        }
 
-    /* hero image (zentriert) */
-    .project-hero {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 28px;
-    }
-    .project-hero img {
-      width: 100%;
-      max-width: 760px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-      object-fit: cover;
-    }
+        /* hero image (zentriert) */
+        .project-hero {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 28px;
+        }
 
-    /* Title + meta area */
-    .project-head {
-      display: block;
-      margin-bottom: 18px;
-    }
-    .project-title {
-      font-size: 36px;
-      margin: 6px 0 10px 0;
-      color: #ffffff;
-      font-weight: 800;
-      text-align: left; /* linksbündig */
-    }
+            .project-hero img {
+                width: 100%;
+                max-width: 760px;
+                height: auto;
+                border-radius: 12px;
+                box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+                object-fit: cover;
+            }
 
-    .project-meta {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-      color: #BFC8FF;
-      font-size: 14px;
-      margin-bottom: 22px;
-      text-align: left;
-    }
-    .project-meta .meta-item {
-      background: rgba(255,255,255,0.03);
-      padding: 6px 10px;
-      border-radius: 8px;
-    }
+        /* Title + meta area */
+        .project-head {
+            display: block;
+            margin-bottom: 18px;
+        }
 
-      /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
-      .project-content {
-          background: #041b16; /* <- hier gewünschte Farbe auswählen */
-          border-radius: 12px;
-          border: 1px solid rgba(255,255,255,0.04);
-          box-shadow: 0 12px 30px rgba(0,0,0,0.45);
-          padding: 22px;
-          color: #E6EAF6; /* helle Textfarbe */
-          line-height: 1.6;
-          -webkit-backdrop-filter: none; /* entfernt glassy blur */
-          backdrop-filter: none;
-          position: relative; /* damit z-index greift */
-          z-index: 5; /* über eventuell darunterliegenden Elementen */
-      }
+        .project-title {
+            font-size: 36px;
+            margin: 6px 0 10px 0;
+            color: #ffffff;
+            font-weight: 800;
+            text-align: left; /* linksbündig */
+        }
 
-    .project-content h2 {
-      margin-top: 0;
-    }
+        .project-meta {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            color: #BFC8FF;
+            font-size: 14px;
+            margin-bottom: 22px;
+            text-align: left;
+        }
 
-    /* back link */
-    .project-back {
-      display: inline-block;
-      margin-top: 18px;
-      color: #DDE8FF;
-      text-decoration: none;
-      background: rgba(255,255,255,0.04);
-      padding: 8px 12px;
-      border-radius: 8px;
-    }
+            .project-meta .meta-item {
+                background: rgba(255,255,255,0.03);
+                padding: 6px 10px;
+                border-radius: 8px;
+            }
 
-    /* responsive */
-    @media (max-width: 700px) {
-      .project-title { font-size: 26px; }
-      .project-hero img { max-width: 100%; height: auto; }
-    }
-  </style>
+        /* Einfarbiger, opaker Panel-Hintergrund (kein Gradient) */
+        .project-content {
+            background: #041b16; /* <- hier gewünschte Farbe auswählen */
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.04);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+            padding: 22px;
+            color: #E6EAF6; /* helle Textfarbe */
+            line-height: 1.6;
+            -webkit-backdrop-filter: none; /* entfernt glassy blur */
+            backdrop-filter: none;
+            position: relative; /* damit z-index greift */
+            z-index: 5; /* über eventuell darunterliegenden Elementen */
+        }
+
+            .project-content h2 {
+                margin-top: 0;
+            }
+
+        /* back link */
+        .project-back {
+            display: inline-block;
+            margin-top: 18px;
+            color: #DDE8FF;
+            text-decoration: none;
+            background: rgba(255,255,255,0.04);
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            .project-title {
+                font-size: 26px;
+            }
+
+            .project-hero img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 </head>
-<body class="project-page">
+
+<body>
     <div class="container">
         <header>
             <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
@@ -113,9 +124,11 @@
                 </div>
 
                 <div class="box-icons">
-                    <a href="#"><i class="bx bxl-youtube"></i></a>
-                    <a href="#"><i class="bx bxl-github"></i></a>
-                    <a href="#"><i class="bx bxl-linkedin-square"></i></a>
+                    <a href="https://bobhstone.itch.io/" aria-label="itch.io">
+                        <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+                    </a>
+                    <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
+
                 </div>
             </div>
 
@@ -124,7 +137,7 @@
                 <ul>
                     <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="contact.html">Kontakt</a></li>
                 </ul>
             </nav>
 
@@ -139,13 +152,15 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
             </ul>
 
             <div class="social-icons">
-                <a href="#"><i class='bx bxl-youtube'></i></a>
-                <a href="#"><i class='bx bxl-github'></i></a>
-                <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://bobhstone.itch.io/" aria-label="itch.io">
+                    <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+                </a>
+                <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
+
             </div>
         </div>
         <!-- COPY YOUR HEADER HERE -->
@@ -496,40 +511,14 @@
 
 
 
-                <h4></h4>
-                <div id="downloads" style="height: 20px;"></div>
 
-                <h3>Downloads / Links / Screenshots</h3>
-                <a class="project-back" href="https://ahundt.itch.io/leaf-it-to-me">←View Leaf It To Me on itch.io</a>
-
-
-                <p>
-                </p>
-                <a class="project-back" href="art.html#leafittome" aria-label="Mehr zu Praise Hinode">MORE</a>
-                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
 
                 <div id="kunst" style="height: 20px;"></div>
                 <h4></h4>
-                <h2 class="section-title">Leaf It To Me: Kunst</h2>
-                <h2>Kurzbeschreibung</h2>
-                <p>
-                    Für diese Game Jam habe ich, was die künstlerische Arbeit angeht, hauptsächlich Meshs erstellt, simple Meshs texturiert, und Animationen für die Charaktere und Pflanzen erstellt. Die Zeit war leider zu knapp, um alle vorbereiteten Pflanzen-Assets im Spiel zu implementieren.
 
-                </p>
-
-                <h4></h4>
-                <h2>Hintergrund</h2>
-                <p>
-                    Kurz vor der Game Jam habe ich angefangen Blender zu lernen und mich langsam halbwegs vertraut mit dem Programm gefühlt.
-                    Ursprünglich war die Idee, dass ich in dieser Game Jam gar nicht programmiere, sondern nur künstlerische Arbeit übernehme. Damit wollte ich mein Können in Blender auf die Probe stellen.
-                    Wir waren mit dem Erstellen der meisten, wichtigsten Models schnell fertig, weshalb ich mich zu diesem Zeitpunkt entschloss mich als Unterstützung den Programmierern anzuschließen und die künstlerische Arbeit für diese Game Jam vorübergehend zu beenden.
-
-                </p>
-
-                <h4></h4>
                 <div class="project-two-column">
                     <div class="project-two-text">
-                        <h2>Meine Aufgaben</h2>
+                        <h2>Kunst</h2>
                         <ul>
                             <li>
                                 3D-Meshes erstellen für: Pflanzen, Werkzeuge, Umgebung (Blender)
@@ -551,7 +540,7 @@
                 </div>
 
                 <section class="pickups-section">
-                    <h2 class="section-title">Plants</h2>
+                    <h2 class="section-title">Pflanzen</h2>
 
                     <div class="pickups-grid">
                         <!-- Card 1 -->
@@ -621,7 +610,7 @@
                 </section>
 
                 <section class="pickups-section">
-                    <h2 class="section-title">Tools</h2>
+                    <h2 class="section-title">Werkzeuge</h2>
 
                     <div class="pickups-grid">
                         <!-- Card 1 -->
@@ -791,38 +780,24 @@
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/environment1.png" alt="Pickup: Mouse">
+                                <img class="zoomable" src="images/leafitwalkanim.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Contamination</h3>
-                                <p class="pickup-desc">Gibt dem Spieler kurzzeitig Flügel, damit er höhere Plattformen erreicht.</p>
-                                <div class="pickup-meta">Rarity: Common · Collected: 0/5</div>
+                                <h3 class="pickup-title">Gehen</h3>
                             </div>
                         </article>
 
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/environment2.png" alt="Pickup: Cheese">
+                                <img class="zoomable" src="images/leafitgiveplant.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Recruit Test Result</h3>
-                                <p class="pickup-desc">Sammelt Punkte und heilt 1 Herz. Wird häufig in Levels platziert.</p>
-                                <div class="pickup-meta">Rarity: Common</div>
+                                <h3 class="pickup-title">Pflanze geben</h3>
                             </div>
                         </article>
 
-                        <!-- Card 2 -->
-                        <article class="pickup-card">
-                            <div class="pickup-image">
-                                <img class="zoomable" src="images/environment3.png" alt="Pickup: Cheese">
-                            </div>
-                            <div class="pickup-body">
-                                <h3 class="pickup-title">Water Mark/Ticket</h3>
-                                <p class="pickup-desc">Sammelt Punkte und heilt 1 Herz. Wird häufig in Levels platziert.</p>
-                                <div class="pickup-meta">Rarity: Common</div>
-                            </div>
-                        </article>
+
 
 
                         <!-- weitere Cards... -->
@@ -837,61 +812,14 @@
 
 
 
-                <h2>Technische Details</h2>
-                <ul>
-                    <li>
-                        3D-Meshs: Blender
-                    </li>
-                    <li>
-                        Texturen: Blender, Substance Painter
-                    </li>
-
-                </ul>
-
-                <h4></h4>
-                <h2>Herausforderung → Lösungsweg</h2>
-
-                <ul>
-                    <li>
-                        Herausforderung: Viele gute game-ready Assets in kurzer Zeit erstellen. Das Texturieren der Objekte in Blender hat viel Zeit in Anspruch genommen.
-                    </li>
-                    <li>
-                        ->Lösung: Ich habe nur Texturen für sehr simple Objekte erstellt, komplexere Texturen (z.B. Teppich-Boden, Charakter-Texturen, einige Pflanzen-Texturen) habe ich meiner Game Jam-Partnerin erledigen lassen(sie hatte zu diesem Zeitpunkt Zugriff auf Substance Painter).
-                    </li>
-                </ul>
 
 
-                <h4></h4>
-                <h2>Learnings</h2>
-                <ul>
-                    <li>
-                        In kurzen Jams zahlt sich ein klarer, reduzierter System-Scope aus:
-                        wenige gut funktionierende Variablen (Element, Level, Phase)
-                        liefern besseren Spielspaß als viele unausgegorene Features.
-                    </li>
-                    <li>
-                        Modulare Blueprint-Templates erleichtern schnelles Erweitern (neue
-                        Minion-Typen, Bossvarianten) ohne großen Refactor-Aufwand.
-                    </li>
-                    <li>
-                        Frühes, fokussiertes Playtesting (Level Designer) ist entscheidend,
-                        um Balancing & Loop-Spaß in kurzer Zeit zu erreichen.
-                    </li>
-                    <li>
-                        Team-Aufteilung (Lead Gameplay vs. UI-Polish) funktionierte gut:
-                        klare Verantwortlichkeiten ermöglichen schnelle Iterationen.
-                    </li>
-                </ul>
+                <div id="downloads" style="height:20px;"></div>
+                <h3>Downloads / Links</h3>
 
-                <h4></h4>
-
-
-                <h3>Downloads / Links / Screenshots</h3>
-                <p>
-                    Links zu GitHub, Builds, Videos oder eingebettete Screenshots/Videos.
-                </p>
                 <a class="project-back" href="https://ahundt.itch.io/leaf-it-to-me">←View "Leaf It To Me" on itch.io</a>
-                <a class="project-back" href="leafittome.html">← Zu Leaf It To Me Portfolio-Seite</a>
+
+                <p></p>
                 <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
             </article>
 
