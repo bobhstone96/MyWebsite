@@ -118,7 +118,7 @@
             <div class="header-left-group">
                 <div class="left">
                     <a href="index.html" class="brand" aria-label="Zur Startseite">
-                        <img src="images/miladicode.png" alt="logo">
+                        <img src="images/myicon.png" alt="logo">
                         <h1><span style="color: #72a1de52">Lutz</span>Hollstein</h1>
                     </a>
                 </div>
@@ -211,6 +211,7 @@
             </div>
             <div id="kurzbeschreibung" style="height:20px;"></div>
             <!-- große Textfläche -->
+
             <article class="project-content">
                 <h2>Kurzbeschreibung</h2>
                 <p>
@@ -285,9 +286,17 @@
                         </ul>
                     </div>
 
-                    <figure class="project-two-image" aria-hidden="false">
-                        <img class="zoomable" src="images/praisehinode18.png" alt="Screenshot: Gameplay Übersicht">
-                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    <figure class="project-two-image video-thumb" aria-hidden="false">
+                        <video class="zoomable preview-video"
+                               src="videos/PraiseHinodeVideo.mp4"
+                               poster="images/praisehinode18.png"
+                               preload="metadata"
+                               muted
+                               loop
+                               playsinline
+                               aria-label="Gameplay Übersicht — Vorschau">
+                        </video>
+                        <figcaption>Video: Level-Layout (Übersicht)</figcaption>
                     </figure>
                 </div>
 
@@ -501,6 +510,7 @@
 
     </div>
 
+
     <!-- Optional: dein app.js -->
     <script src="app.js"></script>
     <script>
@@ -595,6 +605,86 @@
                     img.classList.add('zoomable');
                 });
             }
+        })();
+        (function () {
+            // Wähle alle Vorschau-Videos
+            const previewVideos = document.querySelectorAll('.preview-video');
+
+            previewVideos.forEach(video => {
+                // Hover (Desktop): bei Enter stumm abspielen, bei Leave pausieren + zurücksetzen
+                video.addEventListener('mouseenter', (e) => {
+                    // ensure muted so autoplay allowed
+                    video.muted = true;
+                    // play — ignore returns / errors
+                    video.play().catch(() => {/* ignore */ });
+                });
+
+                video.addEventListener('mouseleave', (e) => {
+                    // pause and reset to start for a clean preview
+                    try { video.pause(); video.currentTime = 0; } catch (_) { }
+                });
+
+                // Touch devices: ein kurzer Touch startet die Vorschau (kein fullscreen)
+                video.addEventListener('touchstart', (e) => {
+                    e.stopPropagation();
+                    video.muted = true;
+                    video.play().catch(() => {/* ignore */ });
+                    // let taps fallthrough for click to toggle fullscreen
+                }, { passive: true });
+
+                // Click: toggle enlarged/fullscreen view (click is a user gesture so sound can play)
+                video.addEventListener('click', (e) => {
+                    const fig = video.closest('.video-thumb');
+                    if (!fig) return;
+                    const isOpen = fig.classList.contains('fullscreen');
+
+                    if (!isOpen) {
+                        // open fullscreen: allow sound and play from currentTime
+                        fig.classList.add('fullscreen');
+                        document.body.style.overflow = 'hidden'; // prevent background scroll
+                        // allow sound when opening (click initiated)
+                        video.muted = false;
+                        video.play().catch(() => {/* ignore */ });
+                        // Focus for keyboard handling
+                        video.focus();
+                    } else {
+                        // close
+                        closeFullscreen(fig, video);
+                    }
+                });
+            });
+
+            // close helper
+            function closeFullscreen(fig, video) {
+                fig.classList.remove('fullscreen');
+                document.body.style.overflow = '';
+                // pause or keep playing? we'll pause and reset
+                try { video.pause(); video.currentTime = 0; } catch (_) { }
+                // restore muted so hover autoplay can work later
+                video.muted = true;
+            }
+
+            // ESC key to close any opened fullscreen video
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const open = document.querySelector('.project-two-image.video-thumb.fullscreen');
+                    if (open) {
+                        const vid = open.querySelector('video');
+                        closeFullscreen(open, vid);
+                    }
+                }
+            });
+
+            // Click outside to close (when in fullscreen)
+            document.addEventListener('click', (e) => {
+                const open = document.querySelector('.project-two-image.video-thumb.fullscreen');
+                if (!open) return;
+                // if click was inside the open figure, ignore (we already handle clicks on video)
+                if (open.contains(e.target)) return;
+                const vid = open.querySelector('video');
+                closeFullscreen(open, vid);
+            }, true);
+
         })();
     </script>
 

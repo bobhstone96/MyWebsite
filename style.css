@@ -1061,7 +1061,6 @@ footer h1{
     }
 
     .hero-vid-box{
-        height: 200px;
         top: 5%;
         right: 0%;
     }
@@ -3309,7 +3308,7 @@ header .header-nav {
     box-sizing: border-box;
     flex-wrap: wrap; /* erlaubt Umbruch auf schmalen Bildschirmen */
     /* zentrale Begrenzung: verhindert, dass Card und Bild zu weit auseinander rücken */
-    max-width: 1500px; /* bei Bedarf anpassen (z.B. 1100px oder 1400px) */
+    max-width: 1700px; /* bei Bedarf anpassen (z.B. 1100px oder 1400px) */
     margin: 0 auto; /* zentriert die Hero-Block in der Seite */
 }
 
@@ -3328,13 +3327,13 @@ header .header-nav {
 @media (min-width: 1100px) {
   .hero-info {
     flex: 0 0 55%;
-    max-width: 55%;
+    max-width: 45%;
     text-align: left; /* falls du linksbündigen Text bevorzugst */
   }
 
   .hero-vid-box {
-    flex: 0 0 35%;
-    max-width: 35%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
 
@@ -4678,4 +4677,204 @@ header {
 }
 .category-title.clone {
     display: none !important;
+}
+
+/* Video-Thumb (kleine Vorschau) */
+.project-two-image.video-thumb {
+    position: relative;
+    cursor: pointer;
+    max-width: 560px; /* wie bei deinen anderen rules, anpassen */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 8px;
+    background: rgba(0,0,0,0.04);
+    border-radius: 10px;
+    overflow: visible;
+}
+
+    .project-two-image.video-thumb .preview-video {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 420px;
+        object-fit: contain;
+        border-radius: 8px;
+        transition: transform .22s ease, box-shadow .22s ease;
+        box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+    }
+
+    /* kleine Hover-Polish */
+    .project-two-image.video-thumb:hover .preview-video {
+        transform: scale(1.02);
+        box-shadow: 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    /* Fullscreen / enlarged state (applied by JS) */
+    .project-two-image.video-thumb.fullscreen {
+        position: fixed !important;
+        inset: 0 !important; /* top:0; right:0; bottom:0; left:0; */
+        width: 100vw !important;
+        height: 100vh !important;
+        margin: 0 !important;
+        padding: 20px !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999999 !important;
+        background: rgba(2,6,6,0.85);
+        border-radius: 0 !important;
+    }
+
+        /* Video inside fullscreen: maximize (keep aspect ratio) */
+        .project-two-image.video-thumb.fullscreen .preview-video {
+            width: auto !important;
+            height: 90vh !important;
+            max-width: 94vw !important;
+            object-fit: contain;
+            transform: none !important;
+            box-shadow: 0 28px 60px rgba(0,0,0,0.6);
+            border-radius: 6px;
+        }
+
+        /* Caption: im fullscreen kleiner und deutlich sichtbar */
+        .project-two-image.video-thumb.fullscreen figcaption {
+            position: absolute;
+            bottom: 22px;
+            left: 20px;
+            right: 20px;
+            color: #E6EAF6;
+            text-align: center;
+            z-index: 1000000;
+            font-size: 13px;
+        }
+
+/* Make sure your existing .img-lightbox-overlay rules don't visually conflict.
+   If you prefer the existing image lightbox, we could hook into that instead. */
+/* Video in Cards: ähnlich wie .project-image (Bild) darstellen */
+.project-card .project-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 220px; /* passt an: gleiche Höhe wie deine Bilder */
+    object-fit: cover; /* Füllt die Fläche, ohne das Layout zu verschieben */
+    border-top-left-radius: 8px; /* falls deine cards abgerundete Ecken haben */
+    border-top-right-radius: 8px;
+    vertical-align: middle;
+    background: #000; /* wenn Video noch nicht geladen: schwarzer Hintergrund */
+}
+
+/* für kleine Bildschirme evtl. kleinere Höhe */
+@media (max-width: 700px) {
+    .project-card .project-image {
+        max-height: 160px;
+    }
+}
+
+/* falls du später Hover-Effekte auf Bild/Video willst */
+.project-card:hover .project-image {
+    transform: none; /* bei Bedarf scale/box-shadow hinzufügen */
+}
+
+/* ----- Force thumbnails to 16:9 and always show full video (no crop) ----- */
+/* Put this at the very end of style.css so it overrides prior rules. */
+
+.projects-grid .project-image {
+    /* Use CSS aspect-ratio where supported */
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9; /* modern browsers keep 16:9 box */
+    max-height: 320px !important; /* optional: cap height so cards don't grow too large */
+    object-fit: contain !important; /* show full frame (letterbox if needed) */
+    object-position: center center !important;
+    background: #000; /* letterbox color when using contain */
+    display: block !important;
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+}
+
+/* Fallback for older browsers that don't support aspect-ratio:
+   Wrap the media in a container with .media-wrap class (see note below). */
+.project-card .media-wrap {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 fallback (9/16 = 56.25%) */
+    overflow: hidden;
+    background: #000;
+}
+
+    .project-card .media-wrap video,
+    .project-card .media-wrap img {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: contain !important;
+        object-position: center center !important;
+    }
+
+/* Slight responsive tweak: on very small screens slightly reduce max-height */
+@media (max-width: 700px) {
+    .projects-grid .project-image {
+        max-height: 220px !important;
+    }
+
+    .project-card .media-wrap {
+        padding-top: 56.25%;
+    }
+    /* keep 16:9 */
+}
+
+/* --- FIX hero video color / transparency --- */
+.hero-vid-box {
+    position: relative;
+    z-index: 5; /* über hero overlays */
+    isolation: isolate; /* trennt blend-modes */
+    background: #0b1f14; /* neutraler dunkler Hintergrund */
+    padding: 10px; /* Platz für Border */
+    border-radius: 16px;
+}
+
+    /* Video selbst */
+    .hero-vid-box video {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 1 !important;
+        mix-blend-mode: normal !important;
+        filter: none !important;
+        border-radius: 12px;
+    }
+
+/* =========================
+   HERO – Mobile Fix
+   ========================= */
+
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 24px;
+        padding-top: 120px; /* Platz für Header */
+    }
+
+    .hero-info {
+        width: 100%;
+        max-width: 520px;
+        z-index: 2;
+    }
+
+    .hero-vid-box {
+        width: 100%;
+        max-width: 520px;
+        order: -1; /* 👉 Video kommt VOR den Text */
+        z-index: 1;
+    }
+
+        .hero-vid-box video {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
 }
