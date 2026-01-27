@@ -410,9 +410,9 @@
 
                     if (card.classList.contains('active')) {
                         // deactivate
-                        card.classList.remove('active');
+                        //card.classList.remove('active');
                         //pauseAndResetVideo(card);
-                        activeCard = null;
+                        //activeCard = null;
                     } else {
                         playVideoForCard(card);
                     }
@@ -423,9 +423,9 @@
             document.addEventListener('click', function (e) {
                 if (!activeCard) return;
                 if (!activeCard.contains(e.target)) {
-                    activeCard.classList.remove('active');
+                    //activeCard.classList.remove('active');
                     //pauseAndResetVideo(activeCard);
-                    activeCard = null;
+                    //activeCard = null;
                 }
             }, true);
 
