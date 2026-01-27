@@ -4878,3 +4878,9 @@ header {
             object-fit: contain;
         }
 }
+
+/* Verhindert, dass ein Tap direkt auf das <video> das native play/pause auslöst.
+   Klicks/Taps landen stattdessen auf der Card (parent) */
+.project-card .project-image {
+    pointer-events: none;
+}

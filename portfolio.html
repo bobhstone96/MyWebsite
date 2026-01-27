@@ -470,18 +470,21 @@
                 });
 
                 card.addEventListener('pointerleave', () => {
+                    // Wenn die Karte persistent aktiv ist, NICHT pausieren (mobile: Nutzer hat sie aktiviert)
+                    if (card.classList && card.classList.contains('active')) return;
+
                     try {
                         video.pause();
                         video.currentTime = 0;
                         video.load();
-                    } catch (e) { }
+                    } catch (e) { /* ignore */ }
                 });
 
                 // Touch: beim ersten Tap starten wir die Vorschau (passive true)
-                card.addEventListener('touchstart', () => {
-                    video.muted = true;
-                    video.play().catch(() => { });
-                }, { passive: true });
+                //card.addEventListener('touchstart', () => {
+                //    video.muted = true;
+                //    video.play().catch(() => { });
+                //}, { passive: true });
             });
 
             // Wenn Tab wechselt, pausieren wir alle Videos (ressourcen-schonend)
