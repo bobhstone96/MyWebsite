@@ -368,6 +368,91 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            const cards = Array.from(document.querySelectorAll('.project-card'));
+            let activeCard = null;
+
+            function pauseAndResetVideo(card) {
+                if (!card) return;
+                const v = card.querySelector('video.preview-video');
+                if (v) {
+                    try { v.pause(); v.currentTime = 0; v.load(); } catch (_) { }
+                }
+                // falls du die Poster-overlay-Methode nutzt (siehe früher), zeige das Poster wieder
+                const poster = card.querySelector('.project-poster');
+                if (poster) poster.style.opacity = '';
+            }
+
+            function playVideoForCard(card) {
+                if (!card) return;
+                // Pause vorheriger
+                if (activeCard && activeCard !== card) pauseAndResetVideo(activeCard);
+
+                activeCard = card;
+                card.classList.add('active');
+
+                const v = card.querySelector('video.preview-video');
+                if (v) {
+                    // Autoplay policy: für Hover-Preview stumm
+                    v.muted = true;
+                    v.play().catch(() => { /* ignore */ });
+                }
+
+                // hide poster overlay if present
+                const poster = card.querySelector('.project-poster');
+                if (poster) poster.style.opacity = '0';
+            }
+
+            // Toggle on click/tap on the card (but allow clicks on real links/buttons inside to act normally)
+            cards.forEach(card => {
+                card.addEventListener('click', function (e) {
+                    // if user clicked a link or button inside the card, let it behave normally
+                    if (e.target.closest('a, button, .project-cta')) return;
+
+                    if (card.classList.contains('active')) {
+                        // deactivate
+                        card.classList.remove('active');
+                        pauseAndResetVideo(card);
+                        activeCard = null;
+                    } else {
+                        playVideoForCard(card);
+                    }
+                }, false);
+            });
+
+            // Click outside any card -> deactivate activeCard
+            document.addEventListener('click', function (e) {
+                if (!activeCard) return;
+                if (!activeCard.contains(e.target)) {
+                    activeCard.classList.remove('active');
+                    pauseAndResetVideo(activeCard);
+                    activeCard = null;
+                }
+            }, true);
+
+            // Escape to close
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && activeCard) {
+                    activeCard.classList.remove('active');
+                    pauseAndResetVideo(activeCard);
+                    activeCard = null;
+                }
+            });
+
+            // Optional: When user switches tab, pause all videos
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    document.querySelectorAll('video.preview-video').forEach(v => {
+                        try { v.pause(); } catch (_) { }
+                    });
+                    if (activeCard) {
+                        // keep active visual state, but video paused
+                    }
+                }
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
             // alle Cards mit enthaltenen preview-videos
             const cards = document.querySelectorAll('.project-card');
 
