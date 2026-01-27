@@ -410,9 +410,9 @@
 
                     if (card.classList.contains('active')) {
                         // deactivate
-                        //card.classList.remove('active');
-                        //pauseAndResetVideo(card);
-                        //activeCard = null;
+                        card.classList.remove('active');
+                        pauseAndResetVideo(card);
+                        activeCard = null;
                     } else {
                         playVideoForCard(card);
                     }
@@ -423,9 +423,9 @@
             document.addEventListener('click', function (e) {
                 if (!activeCard) return;
                 if (!activeCard.contains(e.target)) {
-                    //activeCard.classList.remove('active');
-                    //pauseAndResetVideo(activeCard);
-                    //activeCard = null;
+                    activeCard.classList.remove('active');
+                    pauseAndResetVideo(activeCard);
+                    activeCard = null;
                 }
             }, true);
 
@@ -433,7 +433,7 @@
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape' && activeCard) {
                     activeCard.classList.remove('active');
-                    //pauseAndResetVideo(activeCard);
+                    pauseAndResetVideo(activeCard);
                     activeCard = null;
                 }
             });
