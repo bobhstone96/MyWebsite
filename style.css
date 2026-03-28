@@ -4884,3 +4884,7 @@ header {
 .project-card .project-image {
     pointer-events: none;
 }
+
+#viewToggleBar {
+    display: none;
+}
