@@ -32,9 +32,9 @@
             <!-- rechts: Navigation (nun rechts angeordnet) -->
             <nav class="header-nav">
                 <ul>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
@@ -42,9 +42,9 @@
         </header>
 
         <!--<nav class="breadcrumbs">
-        <a href="index.html">Home</a>
+            <a href="index.html">Home</a>
 
-    </nav>-->
+        </nav>-->
 
         <div class="sidebar">
             <div class="close-icon" aria-label="Close menu" role="button" tabindex="0">
@@ -52,10 +52,9 @@
             </div>
 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
 
             <div class="social-icons">
@@ -72,20 +71,18 @@
 
                 <h1><span class="gradient">Lutz Hollstein</span> </h1>
                 <h1>Game Developer</h1>
-                <p>Ich entwickle Spiele in Unreal Engine 5 (C++) und Unity (C#). Außerdem arbeite ich mit Blender, Substance Painter, GitHub und entwickle Websites mit HTML, CSS und JavaScript.</p>
+                <p>I develop games in Unreal Engine 5 (C++) and Unity (C#). In addition, I work with Blender, Substance Painter, GitHub, and develop websites using HTML, CSS, and JavaScript.</p>
 
 
-                <a class="btn" href="portfolio.html" aria-label="Zu Portfolio">
-                    <i class='bx bxs-send'></i> Mein Portfolio
-                </a>
+
 
                 <a class="btn" href="contact.html" aria-label="Zu Kontakt">
-                    <i class='bx bxs-send'></i> Nachricht senden
+                    <i class='bx bxs-send'></i> Send message
                 </a>
                 <!--
-            <button><i class='bx bxs-send'></i>My Portfolio</button>
-        <button><i class='bx bxs-send'></i>Contact Me</button>
-            -->
+                    <button><i class='bx bxs-send'></i>My Portfolio</button>
+                <button><i class='bx bxs-send'></i>Contact Me</button>
+                    -->
             </div>
 
             <div class="hero-vid-box">
@@ -100,68 +97,660 @@
                 </video>
             </div>
             <!--
-    <div class="scroll-down"></div>-->
+            <div class="scroll-down"></div>-->
         </section>
         <!-- Projects Section: Latest 4 -->
-        <section id="projects" class="projects-section">
-            <h2 class="section-title">Neue Projekte</h2>
 
-            <div class="projects-grid">
+    
+
+    <main class="site-main">
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">My Projects</h2>
+
+            <!-- Toggle Bar -->
+            <div id="viewToggleBar" aria-hidden="false">
+                <button id="viewToggleBtn" type="button">Chronologisch</button>
+            </div>
+
+            <!-- Grid (wird per JS umgebaut / gruppiert) -->
+            <div id="projectsGrid" class="projects-grid">
+                <!-- jede Card hat jetzt ein data-category-Attribut -->
+
 
                 <article class="project-card" data-category="Web" style="position: relative;">
                     <img src="images/webdev5.png" alt="Project Two screenshot" class="project-image" loading="lazy">
                     <div class="project-body panel panel--card">
-                        <h3 class="project-title">Meine Website</h3>
+                        <h3 class="project-title">My Website</h3>
                         <p class="project-genre">CSS, HTML, JavaScript, Figma</p>
-                        <p class="project-desc">Meine erste eigene Website zur Präsentation meines Portfolios.</p>
+                        <p class="project-desc">My first personal website for presenting my portfolio.</p>
                     </div>
                     <a class="project-cta" href="webdevelopment.html" aria-label="Mehr zu Web Development">MORE</a>
                 </article>
 
 
+
                 <article class="project-card" data-category="Experimental" style="position: relative;">
-                    <img src="images/ultimatemultiplayer2.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                    <video class="project-image preview-video"
+                           src="videos/multiplayervid.mp4"
+                           poster="images/ultimatemultiplayer2.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
                     <div class="project-body panel panel--card">
                         <h3 class="project-title">Online-Multiplayer Prototyp</h3>
-                        <p class="project-genre"> Jump&Run | Sidescroller | Unreal Engine 5</p>
-                        <p class="project-desc">Mein erster Online-Multiplayer Prototyp, inspiriert von "Ultimate Chicken Horse".</p>
+                        <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Unreal Engine 5</p>
+                        <p class="project-desc">My first online multiplayer prototype, inspired by "Ultimate Chicken Horse.</p>
                     </div>
                     <a class="project-cta" href="multiplayer.html" aria-label="Mehr zu Multiplayer">MORE</a>
                 </article>
 
+
+
                 <article class="project-card" data-category="Experimental" style="position: relative;">
-                    <img src="images/cargame1.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                    <video class="project-image preview-video"
+                           src="videos/VehiclePrototypVid.mp4"
+                           poster="images/cargame1.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
                     <div class="project-body panel panel--card">
-                        <h3 class="project-title">Fahrzeug Prototyp</h3>
+                        <h3 class="project-title">Vehicle Prototyp</h3>
                         <p class="project-genre"> Prototyp | Unreal Engine 5</p>
-                        <p class="project-desc">Mein erster Versuch die "Vehicle Template" von Unreal Engine zu nutzen. Außerdem erster World Building-Versuch mit outline-shader.</p>
+                        <p class="project-desc">My first attempt at using Unreal Engine’s "Vehicle Template." Also my first experiment with world building using an outline shader.</p>
                     </div>
                     <a class="project-cta" href="carprototype.html" aria-label="Mehr zu Fahrzeugprot">MORE</a>
                 </article>
 
+
+
                 <article class="project-card" data-category="Game Jam" style="position: relative;">
 
-                    <img src="images/CookieCrumble.png" alt="Project One screenshot" class="project-image" loading="lazy">
+                    <video class="project-image preview-video"
+                           src="videos/BrackeysGameJam_vid.mp4"
+                           poster="images/CookieCrumble.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
                     <div class="project-body panel panel--card">
                         <h3 class="project-title">Cookie Crumble</h3>
-                        <p class="project-genre"> Jump&Run | Sidescroller | Game Jam | Unreal Engine 5</p>
-                        <p class="project-desc">"Cookie Crumble" ist ein 2.5D Sidescroller, entwickelt für die "Brackeys Game Jam 2025.2". Team Größe: 2</p>
+                        <p class="project-genre"> Jump&Run | 2.5D Sidescroller | Game Jam | Unreal Engine 5</p>
+                        <p class="project-desc">"Cookie Crumble" is a sidescroller platformer developed for the "Brackeys Game Jam."</p>
                     </div>
                     <a class="project-cta" href="cookiecrumble.html" aria-label="Mehr zu Cookie Crumble">MORE</a>
                 </article>
 
 
 
+
+
+                <article class="project-card" data-category="Experimental" style="position: relative;">
+                    <video class="project-image preview-video"
+                           src="videos/ProjectileSystemVid.mp4"
+                           poster="images/NoitaProjectiles12.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">Complex Projectile-System</h3>
+                        <p class="project-genre"> Prototyp | Unreal Engine 5</p>
+                        <p class="project-desc">A complex system designed to be easily extendable and implementable in new projects.</p>
+                    </div>
+                    <a class="project-cta" href="projectilesystem.html" aria-label="Mehr zu Projektil-System">MORE</a>
+                </article>
+
+
+
+                <article class="project-card" data-category="Game Jam" style="position: relative;">
+                    <video class="project-image preview-video"
+                           src="videos/LeafItVid.mp4"
+                           poster="images/LeafItToMe.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">Leaf It To Me</h3>
+                        <p class="project-genre">Management | 3D | Game Jam | Unreal Engine 5</p>
+                        <p class="project-desc">"Leaf It To Me" was developed for Shovel Jam 2025. The player must take care of the neighbors' plants. Team size: 4.</p>
+                    </div>
+                    <a class="project-cta" href="leafittome.html" aria-label="Mehr zu Leaf It To Me">MORE</a>
+                </article>
+
+
+
+
+
+
+
+
+
+
+                <article class="project-card" data-category="Experimental" style="position: relative;">
+                    <video class="project-image preview-video"
+                           src="videos/FishPrototypeVid.mov"
+                           poster="images/islandgame6.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">Fishing/Harpoonier Prototyp</h3>
+                        <p class="project-genre"> Prototyp | Unreal Engine 5</p>
+                        <p class="project-desc">A prototype in which I primarily familiarized myself with Unreal Engine’s water plugin.</p>
+                    </div>
+                    <a class="project-cta" href="fishprototype.html" aria-label="Mehr zu Fishing Proto">MORE</a>
+                </article>
+
+
+
+
+                <article class="project-card" data-category="Game Jam" style="position: relative;">
+                    <video class="project-image preview-video"
+                           src="videos/StarRiderVideo.mp4"
+                           poster="images/StarRider.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">Star Rider - Elemental Shuffle</h3>
+                        <p class="project-genre">Battle Simulator | 3D | Game Jam | Unreal Engine 5</p>
+                        <p class="project-desc">Star Rider – Elemental Shuffle was developed for Mini Jam #42. The player fights through multiple boss phases with the help of their minions. Team size: 4.</p>
+                    </div>
+                    <a class="project-cta" href="starrider.html" aria-label="Mehr zu Star Rider">MORE</a>
+                </article>
+
+
+
+                <article class="project-card" data-category="Experimental" style="position: relative;">
+                    <video class="project-image preview-video"
+                           src="videos/PraiseHinodeVideo.mp4"
+                           poster="images/praisehinode1.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">PRAISE HINODE</h3>
+                        <p class="project-genre">Prototyp | Unreal Engine 5</p>
+                        <p class="project-desc">"Praise Hinode" is set in a post-apocalyptic, dystopian world. The protagonist is tasked with taking over a new outpost of Hinode in order to establish contact with the outside world. </p>
+                    </div>
+                    <a class="project-cta" href="praisehinode.html" aria-label="Mehr zu Praise Hinode">MORE</a>
+                </article>
+
+
+
+                <article class="project-card" data-category="Game Jam" style="position: relative;">
+                    <video class="project-image preview-video"
+                           src="videos/NecroStingVideo.mp4"
+                           poster="images/NecroSting.png"
+                           preload="metadata"
+                           muted
+                           loop
+                           playsinline
+                           aria-label="Praise Hinode Vorschau">
+                    </video>
+                    <div class="project-body panel panel--card">
+                        <h3 class="project-title">NecroSting</h3>
+                        <p class="project-genre">Puzzle | 2D | Game Jam | Unity</p>
+                        <p class="project-desc">My first game jam. The player takes on the role of a necromancer who must solve puzzles with the help of their minions. Solo project.</p>
+                    </div>
+                    <a class="project-cta" href="necrosting.html" aria-label="Mehr zu NecroSting">MORE</a>
+                </article>
+
+
+
+
+
+
+
+
             </div>
-    </div>
+        </section>
+    </main>
 
 
-        <!--
+    <!--
     <footer>
         <h1>Copyright © Lutz, Made with MiladiCode</h1>
     </footer>
         -->
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cards = Array.from(document.querySelectorAll('.project-card'));
+            let activeCard = null;
+
+            function pauseAndResetVideo(card) {
+                if (!card) return;
+                const v = card.querySelector('video.preview-video');
+                if (v) {
+                    try { v.pause(); v.currentTime = 0; v.load(); } catch (_) { }
+                }
+                // falls du die Poster-overlay-Methode nutzt (siehe früher), zeige das Poster wieder
+                const poster = card.querySelector('.project-poster');
+                if (poster) poster.style.opacity = '';
+            }
+
+            function playVideoForCard(card) {
+                if (!card) return;
+                // Pause vorheriger
+                if (activeCard && activeCard !== card) pauseAndResetVideo(activeCard);
+
+                activeCard = card;
+                card.classList.add('active');
+
+                const v = card.querySelector('video.preview-video');
+                if (v) {
+                    // Autoplay policy: für Hover-Preview stumm
+                    v.muted = true;
+                    v.play().catch(() => { /* ignore */ });
+                }
+
+                // hide poster overlay if present
+                const poster = card.querySelector('.project-poster');
+                if (poster) poster.style.opacity = '0';
+            }
+
+            // Toggle on click/tap on the card (but allow clicks on real links/buttons inside to act normally)
+            cards.forEach(card => {
+                card.addEventListener('click', function (e) {
+                    // if user clicked a link or button inside the card, let it behave normally
+                    if (e.target.closest('a, button, .project-cta')) return;
+
+                    if (card.classList.contains('active')) {
+                        // deactivate
+                        card.classList.remove('active');
+                        //pauseAndResetVideo(card);
+                        activeCard = null;
+                    } else {
+                        playVideoForCard(card);
+                    }
+                }, false);
+            });
+
+            // Click outside any card -> deactivate activeCard
+            document.addEventListener('click', function (e) {
+                if (!activeCard) return;
+                if (!activeCard.contains(e.target)) {
+                    activeCard.classList.remove('active');
+                    pauseAndResetVideo(activeCard);
+                    activeCard = null;
+                }
+            }, true);
+
+            // Escape to close
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && activeCard) {
+                    activeCard.classList.remove('active');
+                    pauseAndResetVideo(activeCard);
+                    activeCard = null;
+                }
+            });
+
+            // Optional: When user switches tab, pause all videos
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    document.querySelectorAll('video.preview-video').forEach(v => {
+                        try { v.pause(); } catch (_) { }
+                    });
+                    if (activeCard) {
+                        // keep active visual state, but video paused
+                    }
+                }
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // alle Cards mit enthaltenen preview-videos
+            const cards = document.querySelectorAll('.project-card');
+
+            cards.forEach(card => {
+                const video = card.querySelector('video.preview-video');
+                if (!video) return;
+
+                // pointerenter/pointerleave funktioniert für Maus + Touch in modernen Browsern besser
+                card.addEventListener('pointerenter', () => {
+                    // sicherstellen, dass stumm gesetzt ist (Autoplay-Policy)
+                    video.muted = true;
+                    // start from beginning for consistent preview (optional)
+                    // video.currentTime = 0;
+                    video.play().catch(() => { });
+                });
+
+                card.addEventListener('pointerleave', () => {
+                    // Wenn die Karte persistent aktiv ist, NICHT pausieren (mobile: Nutzer hat sie aktiviert)
+                    if (card.classList && card.classList.contains('active')) return;
+
+                    try {
+                        video.pause();
+                        video.currentTime = 0;
+                        video.load();
+                    } catch (e) { /* ignore */ }
+                });
+
+                // Touch: beim ersten Tap starten wir die Vorschau (passive true)
+                //card.addEventListener('touchstart', () => {
+                //    video.muted = true;
+                //    video.play().catch(() => { });
+                //}, { passive: true });
+            });
+
+            // Wenn Tab wechselt, pausieren wir alle Videos (ressourcen-schonend)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    document.querySelectorAll('video.preview-video').forEach(v => {
+                        try { v.pause(); } catch (_) { }
+                    });
+                }
+            });
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('viewToggleBtn');
+            const grid = document.getElementById('projectsGrid');
+            if (!toggleBtn || !grid) return;
+
+            // originalOrder = festgehaltene DOM-Elemente (Reference, nicht Kopien)
+            const originalOrder = Array.from(grid.querySelectorAll('.project-card'));
+            let isCategorized = true;
+            const preferredOrder = ['Game Jam', 'Experimental', 'Art', 'Web'];
+
+            toggleBtn.addEventListener('click', function () {
+                isCategorized = !isCategorized;
+                toggleBtn.textContent = isCategorized ? 'Sortierung: Kategorien' : 'Sortierung: Chronologisch';
+
+                if (isCategorized) {
+                    // 1) Höhe messen *bevor* wir die DOM-Struktur umbauen
+                    const maxH = measureMaxCardHeight(originalOrder) || 360; // fallback
+                    // 2) CSS-Variable setzen (wir setzen sie auf root, damit alle Cards sie erben)
+                    document.documentElement.style.setProperty('--card-min-height', Math.round(maxH) + 'px');
+                    // 3) Kategorie-Ansicht aufbauen
+                    showCategories();
+                } else {
+                    // zurück auf Chrono: CSS-Variable entfernen und DOM wiederherstellen
+                    document.documentElement.style.removeProperty('--card-min-height');
+                    showChronological();
+                }
+            });
+
+            function measureMaxCardHeight(cards) {
+                // misst die visuelle Höhe (bounding rect) aller cards und gibt den Max-Wert zurück
+                let max = 0;
+                cards.forEach(c => {
+                    // force reflow-getBoundingClientRect ist zuverlässig
+                    const r = c.getBoundingClientRect();
+                    if (r && r.height > max) max = r.height;
+                });
+                return max;
+            }
+
+            function showChronological() {
+                grid.classList.remove('categorized');
+                // clear + wieder in originaler Reihenfolge anhängen
+                grid.innerHTML = '';
+                originalOrder.forEach(card => grid.appendChild(card));
+            }
+
+            function showCategories() {
+                // gruppiere nach data-category
+                const groups = {};
+                originalOrder.forEach(card => {
+                    const cat = (card.dataset.category || 'Uncategorized').trim();
+                    if (!groups[cat]) groups[cat] = [];
+                    groups[cat].push(card);
+                });
+
+                // bestimme Kategorie-Reihenfolge: preferredOrder zuerst, dann restliche wie im Original
+                const categoryOrder = [];
+                preferredOrder.forEach(pref => { if (groups[pref]) categoryOrder.push(pref); });
+                originalOrder.forEach(card => {
+                    const c = (card.dataset.category || 'Uncategorized').trim();
+                    if (!categoryOrder.includes(c)) categoryOrder.push(c);
+                });
+
+                grid.classList.add('categorized');
+                grid.innerHTML = '';
+
+                categoryOrder.forEach(cat => {
+                    if (!groups[cat] || !groups[cat].length) return;
+
+                    // erzeugen Section
+                    const section = document.createElement('div');
+                    section.className = 'category-section';
+
+                    // erzeugen einer slug-Klasse aus dem Kategorienamen (z.B. "Game Jam" -> "category-game-jam")
+                    const slug = cat.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9\-]/g, '') || 'uncategorized';
+                    section.classList.add('category-' + slug);
+
+                    const title = document.createElement('h3');
+                    title.className = 'category-title';
+                    title.textContent = cat;
+                    section.appendChild(title);
+
+                    const innerGrid = document.createElement('div');
+                    innerGrid.className = 'projects-inner-grid';
+                    // optional: benutze panel styling für inneres Feld
+                    innerGrid.classList.add('panel');
+
+                    // Karten in originaler Reihenfolge anfügen
+                    groups[cat].forEach(card => innerGrid.appendChild(card));
+
+                    section.appendChild(innerGrid);
+                    grid.appendChild(section);
+                });
+            }
+
+            showCategories();
+            toggleBtn.textContent = 'Sortierung: Kategorien';
+        });
+        // init mobile category indicator AFTER categories exist
+        (function initMobileIndicator() {
+            const mq = window.matchMedia('(max-width: 900px)');
+            const indicator = document.getElementById('mobileCategoryIndicator');
+            if (!indicator) return;
+
+            let currentCat = null;
+            let observer = null;
+
+            const map = {
+                'game-jam': { label: 'Game Jam', cls: 'cat-game-jam' },
+                'experimental': { label: 'Experimental', cls: 'cat-experimental' },
+                'art': { label: 'Art', cls: 'cat-art' },
+                'web': { label: 'Web', cls: 'cat-web' }
+            };
+
+            function slugFromSection(section) {
+                for (const c of section.classList) {
+                    if (c.startsWith('category-') && c !== 'category-section') return c.replace('category-', '');
+                }
+                return null;
+            }
+
+            function showForSlug(slug) {
+                if (!indicator) return;
+                indicator.classList.remove('cat-game-jam', 'cat-experimental', 'cat-art', 'cat-web');
+                const entry = map[slug] || null;
+                if (entry) {
+                    indicator.querySelector('.indicator-text').textContent = entry.label;
+                    indicator.classList.add(entry.cls, 'visible');
+                    indicator.setAttribute('aria-hidden', 'false');
+                } else {
+                    indicator.querySelector('.indicator-text').textContent = '';
+                    indicator.classList.remove('visible');
+                    indicator.setAttribute('aria-hidden', 'true');
+                }
+                currentCat = slug;
+            }
+
+            function hideIndicator() {
+                indicator.classList.remove('visible');
+                indicator.setAttribute('aria-hidden', 'true');
+                currentCat = null;
+            }
+            const ioOptions = {
+                root: null,
+                rootMargin: '-35% 0px -55% 0px',
+                threshold: 0
+            };
+            function buildObserver() {
+                if (observer) observer.disconnect();
+
+                // query categories **now** (they exist because we call this after showCategories())
+                const categorySections = Array.from(document.querySelectorAll('#projectsGrid.categorized .category-section'));
+                observer = new IntersectionObserver((entries) => {
+                    if (!mq.matches) { hideIndicator(); return; }
+                    let best = null;
+                    entries.forEach(e => {
+                        if (!e.isIntersecting) return;
+                        if (!best || (e.intersectionRect && best.intersectionRect && e.intersectionRect.height > best.intersectionRect.height)) best = e;
+                    });
+                    if (best && best.target) {
+                        const slug = slugFromSection(best.target);
+                        if (slug && slug !== currentCat) showForSlug(slug);
+                    }
+                }, ioOptions);
+
+                categorySections.forEach(s => observer.observe(s));
+            }
+
+            function init() {
+                if (!mq.matches) { hideIndicator(); return; }
+                buildObserver();
+                // try to pick the currently visible section (on first load)
+                const categorySections = Array.from(document.querySelectorAll('#projectsGrid.categorized .category-section'));
+                for (const s of categorySections) {
+                    const rect = s.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom > 0) {
+                        const slug = slugFromSection(s);
+                        if (slug) showForSlug(slug);
+                        break;
+                    }
+                }
+            }
+
+            // Re-init when layout changes (resize / orientation changes)
+            mq.addListener(init);
+            window.addEventListener('resize', init);
+            window.addEventListener('orientationchange', init);
+
+            // call once now (categories already built)
+            init();
+
+        })();
+        (function initMobileIndicatorOffsets() {
+            const indicator = document.getElementById('mobileCategoryIndicator');
+            if (!indicator) return;
+            const mq = window.matchMedia('(max-width:900px)');
+
+            // per-slug fallback offsets (px)
+            const perCategoryOffsets = {
+                'game-jam': 40,
+                'experimental': 40,
+                'art': 60,
+                'web': 200
+            };
+
+            function slugFromSection(section) {
+                for (const c of section.classList) {
+                    if (c.startsWith('category-') && c !== 'category-section') return c.replace('category-', '');
+                }
+                return null;
+            }
+
+            function getOffsetForSection(section) {
+                if (!section) return 40;
+                const dataVal = section.dataset && section.dataset.indicatorOffset;
+                if (dataVal !== undefined) {
+                    const n = parseInt(dataVal, 10);
+                    if (!Number.isNaN(n)) return n;
+                }
+                const slug = slugFromSection(section);
+                if (slug && perCategoryOffsets.hasOwnProperty(slug)) return perCategoryOffsets[slug];
+                return 40;
+            }
+
+            function clamp(v, a, b) { return Math.max(a, Math.min(b, v)); }
+
+            function pickBestSection() {
+                const secs = Array.from(document.querySelectorAll('#projectsGrid.categorized .category-section'));
+                let best = null, bestVisible = 0;
+                secs.forEach(s => {
+                    const r = s.getBoundingClientRect();
+                    const visible = Math.max(0, Math.min(window.innerHeight, r.bottom) - Math.max(0, r.top));
+                    if (visible > bestVisible) { bestVisible = visible; best = s; }
+                });
+                return { section: best, visible: bestVisible };
+            }
+
+            function update() {
+                if (!mq.matches) { indicator.style.display = 'none'; return; }
+                const { section, visible } = pickBestSection();
+                if (!section || visible < 8) { indicator.style.display = 'none'; return; }
+
+                const labelEl = section.querySelector('.category-title');
+                const labelText = labelEl ? labelEl.textContent.trim() : '';
+                if (indicator.querySelector('.indicator-text')) indicator.querySelector('.indicator-text').textContent = labelText || '';
+
+                // compute target Y: section.top + offset (px), clamped within [SAFE, viewport-SAFE]
+                const rect = section.getBoundingClientRect();
+                const offset = getOffsetForSection(section); // px below section top
+                const minAllowed = Math.max(rect.top + 8, 8);
+                const maxAllowed = Math.min(rect.bottom - 8, window.innerHeight - 8);
+                // desired is rect.top + offset
+                let target = rect.top + offset;
+                target = clamp(target, minAllowed, maxAllowed);
+                // apply as fixed top (indicator should be position: fixed in CSS)
+                indicator.style.display = 'block';
+                indicator.style.top = Math.round(target) + 'px';
+                indicator.style.left = '6px'; // keep left stable
+                indicator.style.opacity = '1';
+            }
+
+            // observer to trigger updates during scrolling more efficiently
+            function buildObserver() {
+                const ioOptions = { root: null, rootMargin: '-35% 0px -55% 0px', threshold: 0 };
+                const observer = new IntersectionObserver((entries) => { update(); }, ioOptions);
+                document.querySelectorAll('#projectsGrid.categorized .category-section').forEach(s => observer.observe(s));
+                // also update on scroll/resize
+                window.addEventListener('scroll', update, { passive: true });
+                window.addEventListener('resize', update);
+                window.addEventListener('orientationchange', update);
+            }
+
+            // init
+            setTimeout(() => {
+                buildObserver();
+                update();
+            }, 120);
+
+        })();
+
+    </script>
+
     <script src="app.js"></script>
 </body>
 </html>

@@ -1,17 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Leaf It To Me — Lutz Hollstein</title>
-
-    <!-- deine bestehende stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <!-- icons falls du sie brauchst -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Leaf It To Me — Lutz Hollstein</title>
+<!-- deine bestehende stylesheet -->
+<link href="style.css" rel="stylesheet"/>
+<!-- icons falls du sie brauchst -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+<!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+<style>
         /* Project page specific styles */
         .project-page .project-wrapper {
             max-width: 1800px;
@@ -108,9 +107,8 @@
             }
         }
     </style>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 </head>
-
 <body>
     <div class="container">
         <header>
@@ -135,32 +133,29 @@
             <!-- rechts: Navigation (nun rechts angeordnet) -->
             <nav class="header-nav">
                 <ul>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html">Projects</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
             <div class="menu-icon"><i class='bx bx-menu'></i></div>
         </header>
         <div class="sidebar">
-            <div class="close-icon" aria-label="Close menu" role="button" tabindex="0">
-                <i class='bx bx-x'></i>
+            <div aria-label="Close menu" class="close-icon" role="button" tabindex="0">
+                <i class="bx bx-x"></i>
             </div>
-
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
+                <li><a href="index.html">Projects</a></li>
 
+                <li><a href="about.html">About Me</a></li>
+                <li>Contact</li>
+            </ul>
             <div class="social-icons">
-                <a href="https://bobhstone.itch.io/" aria-label="itch.io">
-                    <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+                <a aria-label="itch.io" href="https://bobhstone.itch.io/">
+                    <img alt="itch.io" src="images/itchio.png" style="width:20px;height:20px;" />
                 </a>
                 <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
-
             </div>
         </div>
         <!-- COPY YOUR HEADER HERE -->
@@ -171,38 +166,33 @@
         <!-- ----------------- -->
         <!-- Breadcrumbs (hardcoded; passe an) -->
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html">Projects</a>
             <span class="sep">/</span>
             <span class="current">Leaf It To Me</span>
         </nav>
-
         <!-- MAIN CONTENT -->
         <main class="project-wrapper">
             <!-- Hero Image -->
             <div class="project-hero">
-                <img src="images/LeafItToMe.png" alt="Cookie Crumble - Screenshot / Key art">
+                <img alt="Cookie Crumble - Screenshot / Key art" src="images/LeafItToMe.png" />
             </div>
-
             <!-- Title & Meta -->
             <div class="project-head">
-                <nav class="project-toc" aria-label="Inhaltsverzeichnis">
-                    <h3>Inhaltsverzeichnis</h3>
+                <nav aria-label="Inhaltsverzeichnis" class="project-toc">
+                    <h3>Table of Contents</h3>
                     <ul>
-                        <li><a href="#kurzbeschreibung">Kurzbeschreibung</a></li>
-                        <li><a href="#hintergrund">Hintergrund</a></li>
-                        <li><a href="#spielablauf">Spielablauf</a></li>
+                        <li>Short Description</li>
+                        <li>Background</li>
+                        <li>Gameplay</li>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#techdetails">Technische Details</a></li>
-                        <li><a href="#herausforderung">Herausforderung → Lösungsweg</a></li>
-                        <li><a href="#learnings">Learnings</a></li>
-                        <li><a href="#kunst">Kunst</a></li>
-                        <li><a href="#downloads">Downloads / Links</a></li>
+                        <li>Technical Details</li>
+                        <li>Challenge → Solution Approach</li>
+                        <li>Learnings</li>
+                        <li>Art</li>
+                        <li>Downloads / Links</li>
                     </ul>
                 </nav>
                 <h1 class="project-title">Leaf It To Me</h1>
-
                 <div class="project-meta">
                     <div class="meta-item"><strong>Genre:</strong> Puzzle / Management</div>
                     <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
@@ -213,630 +203,443 @@
             <div id="kurzbeschreibung" style="height:20px;"></div>
             <!-- große Textfläche -->
             <article class="project-content">
-                <h2>Kurzbeschreibung</h2>
-                <p>
-                    Leaf it to me ist ein Top-Down Management Spiel, in dem der Spieler als Pflanzenbetreuer getestet
-                    wird: Ziel ist es, gleichzeitig 20 lebende Pflanzen zu halten, indem Licht-,
-                    Nachbarschafts- und Versorgungsanforderungen (Wasser, Dünger, Entstaubung,
-                    Schädlingsbekämpfung) rechtzeitig erfüllt werden. Spielt mit Versorgungs-Management unter Zeitdruck.
-
-                </p>
-
+                <h2>Short Description</h2>
+                <p>Leaf It To Me is a top-down management game in which the player is tested as a plant caretaker: the goal is to keep 20 living plants alive at the same time by meeting their light, neighborhood, and supply requirements (water, fertilizer, dusting, pest control) in time. It is a supply-management game under time pressure.</p>
                 <h4></h4>
                 <div id="hintergrund" style="height: 20px;"></div>
-                <h2>Hintergrund</h2>
-                <p>
-                    Entwickelt für die Shovel Jam 2025 (11. Juli 2025 – 21. Juli 2025). Team: 4 Personen
-                    — ich (anfangs primär Künstler, später auch Programmierer), 1 weitere Künstlerin
-                    (Character Meshes & Texturen), 2 Programmierer (Polish/Support/Grid-System). Ziel der Teilnahme
-                    war sowohl mein künstlerisches Talent zu testen als auch ein
-                    kurzer, spaßiger Prototyp mit einem starken Fokus auf abwechslungsreichen Gameplay-Loop.
-
-
-                </p>
-
+                <h2>Background</h2>
+                <p>Developed for Shovel Jam 2025 (July 11, 2025 – July 21, 2025). Team: 4 people — me (initially primarily an artist, later also a programmer), one additional artist (character meshes &amp; textures), and two programmers (polish/support/grid system). My goal in taking part was both to test my artistic talent and to create a short, fun prototype with a strong focus on a varied gameplay loop.</p>
                 <h4></h4>
                 <div id="spielablauf" style="height: 20px;"></div>
                 <!-- Two-column block: Text (links) + Bild (rechts) -->
                 <div class="project-two-column">
                     <div class="project-two-text">
-                        <h2>Spielablauf</h2>
+                        <h2>Gameplay</h2>
                         <ul>
-                            <li>
-                                Der Spieler verwaltet ein Zimmer, welches in einem Grid unterteilt ist; jeder Grid-Slot hat eine bestimmte
-                                Lichtintensität (abhängig von Fensternähe).
-                            </li>
-                            <li>
-                                Alle 30s tauchen zufällige NPCs am Zaun auf und bieten dem Spieler Pflanzen
-                                an (kleine Text-UI erklärt die Anforderungen der jeweiligen Pflanze).
-                            </li>
-                            <li>
-                                Pflanzen haben Anforderungen: passende Lichtstufe,
-                                Platzierungsverträglichkeit (nicht neben bestimmten Pflanzen platzierbar) und
-                                periodisch auftretende Bedürfnisse (Wasser, Dünger, Entstaubung,
-                                Schädlingsbekämpfung).
-                            </li>
-                            <li>
-                                Durch Interaktion mit einer Pflanze, während ein Werkzeug ausgerüstet ist, werden die
-                                entsprechenden Anforderungen der Pflanze befriedigt (Gießkanne -> Pflanze wässern ; Dünger -> Nährstoffmangel beheben ; Gift -> Schädlingsbekämpfung ; Staubwedel -> Entstauben)
-                            </li>
-                            <li>
-                                Vertrocknete Pflanzen können in den Mülleimer geworfen; ist der Mülleimer voll,
-                                muss der Inhalt zum Kompost transportiert werden, um wieder genutzt zu werden.
-                            </li>
-                            <li>
-                                Pflanzen gewähren Buffs (z. B. MoveSpeed, größere Gießkanne, größerer
-                                Mülleimer).
-                            </li>
-                            <li>
-                                Verlustbedingung: mehr als die Hälfte der aktuell vorhandenen Pflanzen
-                                verwelkt → Game Over. Ziel ist es, 20 Pflanzen gleichzeitig lebendig zu halten.
-                            </li>
+                            <li>The player manages a room divided into a grid; each grid slot has a specific light intensity (depending on how close it is to the windows).</li>
+                            <li>Every 30 seconds, random NPCs appear at the fence and offer the player plants (a small text UI explains the requirements of each plant).</li>
+                            <li>Plants have requirements: the correct light level, placement compatibility (some plants cannot be placed next to certain others), and periodically recurring needs (water, fertilizer, dusting, pest control).</li>
+                            <li>By interacting with a plant while a tool is equipped, the plant’s corresponding needs are fulfilled (watering can -&gt; water the plant; fertilizer -&gt; fix nutrient deficiency; pesticide -&gt; pest control; feather duster -&gt; dusting).</li>
+                            <li>Withered plants can be thrown into the trash can; once the trash can is full, its contents must be taken to the compost before it can be used again.</li>
+                            <li>Plants grant buffs (e.g. movement speed, a larger watering can, a larger trash can).</li>
+                            <li>Lose condition: more than half of the currently existing plants wither → Game Over. The goal is to keep 20 plants alive at the same time.</li>
                         </ul>
                     </div>
-
-                    <figure class="project-two-image" aria-hidden="false">
-                        <img class="zoomable" src="images/leafittome1.png" alt="Screenshot: Gameplay Übersicht">
+                    <figure aria-hidden="false" class="project-two-image">
+                        <img alt="Screenshot: Gameplay Übersicht" class="zoomable" src="images/leafittome1.png" />
                         <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
                     </figure>
                 </div>
-
                 <h4></h4>
-                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
-
-
+                <h3 class="project-subheading center-large">- Development &amp; Technology -</h3>
                 <div id="techdetails" style="height: 20px;"></div>
-                <h2>Technische Details</h2>
+                <h2>Technical Details</h2>
                 <ul>
-                    <li>
-                        Engine: Unreal Engine (Blueprints / Visual Scripting)
-                    </li>
-                    <li>
-                        Source Control: GitHub
-                    </li>
-                    <li>
-                        Team: 4 Personen (duales Rollenprofil: Artist → später zusätzl. GameplayProgrammer)
-                    </li>
-                    <li>
-                        Pflanzen-Anforderungen werden durch Interaktion mit ausgerüsteten Werkzeugen erfüllt: Gießkanne(Wasser),
-                        Dünger(Nährstoffmangel), Staubwedel(Staub), Gift(Schädlingsbefall)
-                    </li>
-                    <li>
-                        Entwicklungszeit: 11.07.2025 – 21.07.2025 (Jam-Phase)
-                    </li>
-                    <li>
-                        Assets: alle 3D-Models vollkommen selbst erstellt (Blender: modelliert, texturiert, animiert) — Fokus auf
-                        Performance und geringer Poly-Count
-                    </li>
-                    <li>
-                        Status: Jam-Prototype
-                    </li>
+                    <li>Engine: Unreal Engine (Blueprints / Visual Scripting)</li>
+                    <li>Source Control: GitHub</li>
+                    <li>Team: 4 people (dual role profile: artist → later additional gameplay programmer)</li>
+                    <li>Plant requirements are fulfilled through interaction with equipped tools: watering can (water), fertilizer (nutrient deficiency), feather duster (dust), pesticide (pest infestation).</li>
+                    <li>Development time: July 11, 2025 – July 21, 2025 (jam phase)</li>
+                    <li>Assets: all 3D models created entirely by me (Blender: modeled, textured, animated) — focus on performance and a low poly count</li>
+                    <li>Status: Jam prototype</li>
                 </ul>
-
                 <h4></h4>
                 <div id="features" style="height: 20px;"></div>
                 <section class="pickups-section">
                     <h3 class="project-subheading center-large">Features</h3>
-                    <h2 class="section-title">Pflanzen</h2>
-
+                    <h2 class="section-title">Plants</h2>
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant1.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/plant1.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Biter Pflanze</h3>
-                                <p class="pickup-desc">- Lichtanforderung: Schattig</p>
-                                <p class="pickup-desc">- Nachbarschafts-Unverträglichkeit: Grüne Pflanze</p>
+                                <h3 class="pickup-title">Biter Plant</h3>
+                                <p class="pickup-desc">- Light requirement: shady</p>
+                                <p class="pickup-desc">- Neighborhood incompatibility: Green Plant</p>
                                 <div class="pickup-meta">Verleiht dem Spieler einen Geschwindigkeits-Bonus.</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant2.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/plant2.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Grüne Pflanze</h3>
-                                <p class="pickup-desc">- Lichtanforderung: Halb-Schatten.</p>
-                                <p class="pickup-desc">- Nachbarschafts-Unverträglichkeit: Gelbe Pflanze</p>
+                                <h3 class="pickup-title">Green Plant</h3>
+                                <p class="pickup-desc">- Light requirement: partial shade.</p>
+                                <p class="pickup-desc">- Neighborhood incompatibility: Yellow Plant</p>
                                 <div class="pickup-meta">Verleiht der Gießkanne des Spielers einen Größe-Bonus(Mehr Wasser).</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant2.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/plant2.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Gelbe Pflanze</h3>
-                                <p class="pickup-desc">- Lichtanforderung: Sonnig</p>
-                                <p class="pickup-desc">- Nachbarschafts-Unverträglichkeit: Biter Pflanze</p>
+                                <h3 class="pickup-title">Yellow Plant</h3>
+                                <p class="pickup-desc">- Light requirement: sunny</p>
+                                <p class="pickup-desc">- Neighborhood incompatibility: Biter Plant</p>
                                 <div class="pickup-meta">Verleiht dem Mülleimer des Spieler einen Größe-Bonus(Mehr Müllplätze).</div>
                             </div>
                         </article>
-
-
-
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
-
-
-
-
-
                 <div id="center" style="height: 20px;"></div>
-
-
-
-
-
                 <section class="pickups-section">
-                    <h2 class="section-title">Werkzeuge</h2>
-
+                    <h2 class="section-title">Tools</h2>
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/wateringcan.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/wateringcan.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Gießkanne</h3>
-                                <p class="pickup-desc">Ermöglicht bewässern von Pflanzen. Muss am Waschbecken aufgefüllt werden.</p>
+                                <h3 class="pickup-title">Watering Can</h3>
+                                <p class="pickup-desc">Allows the player to water plants. Must be refilled at the sink.</p>
                                 <div class="pickup-meta">Kann durch "Grüne Pflanze"-Bonus erweitert werden!</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/sink.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/sink.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Waschbecken</h3>
-                                <p class="pickup-desc">Interaktion mit Gießkanne ausgerüstet -> Gießkanne wird augefüllt</p>
+                                <h3 class="pickup-title">Sink</h3>
+                                <p class="pickup-desc">Interact while the watering can is equipped -&gt; the watering can is refilled</p>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/fertilizer.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/fertilizer.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Dünger</h3>
-                                <p class="pickup-desc">Füllt Nahrungsbedarf einer Pflanze wieder auf.</p>
+                                <h3 class="pickup-title">Fertilizer</h3>
+                                <p class="pickup-desc">Restores a plant’s nutrient needs.</p>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/poison.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/poison.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Schädling-Gift</h3>
-                                <p class="pickup-desc">Bekämpft Pflanzen-Schädlinge</p>
+                                <h3 class="pickup-title">Pesticide</h3>
+                                <p class="pickup-desc">Fights plant pests</p>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/trashcan.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/trashcan.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Mülleimer</h3>
-                                <p class="pickup-desc">Interaktion mit verwelkter Pflanze ausgerüstet -> Pflanze entsorgt. Muss entleert werden, wenn voll. (Müllbeutel ausrüsten und mit Kompost interagieren)</p>
+                                <h3 class="pickup-title">Trash Can</h3>
+                                <p class="pickup-desc">Interact while equipped with a withered plant -&gt; the plant is discarded. Must be emptied when full. (Equip the trash bag and interact with the compost)</p>
                                 <div class="pickup-meta">Kann durch "Gelbe-Pflanze"-Bonus erweitert werden!</div>
                             </div>
                         </article>
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/trash.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/trash.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Müllbeutel</h3>
-                                <p class="pickup-desc">Interaktion mit vollen Mülleimer, während kein Item ausgerüstet ist -> Müllbeutel wird ausgerüstet. Muss in Kompost entsorgt werden.</p>
+                                <h3 class="pickup-title">Trash Bag</h3>
+                                <p class="pickup-desc">Interact with the full trash can while no item is equipped -&gt; the trash bag is equipped. It must be disposed of at the compost.</p>
                             </div>
                         </article>
-
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/compost.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/compost.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Kompost</h3>
-                                <p class="pickup-desc">Interaktion mit Müllbeutel ausgerüstet -> Müll entsorgt. Kompost wird niemals voll.</p>
+                                <h3 class="pickup-title">Compost</h3>
+                                <p class="pickup-desc">Interact while the trash bag is equipped -&gt; the trash is disposed of. The compost never fills up.</p>
                             </div>
                         </article>
-
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
-
                 <h4></h4>
                 <div id="herausforderung" style="height: 20px;"></div>
-                <h2>Herausforderung → Lösungsweg</h2>
-
+                <h2>Challenge → Solution Approach</h2>
                 <ul>
-                    <li>
-                        Herausforderung: Fertigstellung des geplanten vollständigen Gameplay-Loops innerhalb der Jam-Zeit;
-                        vorher war meine Rolle primär künstlerisch.
-                    </li>
-                    <li>
-                        ->Lösung: Nach einigen Tagen wechselte ich in die Programmierung und
-                        implementierte Kernsysteme priorisiert: Werkzeug-Interaktionen (F), Timer-Logik für
-                        Pflanzen-Anforderungen, NPCs, UI, Win/Lose-Bedingungen. Dadurch konnte der Loop spielbar werden, auch
-                        wenn für Balancing & QA leider dennoch wenig Zeit blieb.
-                    </li>
-                    <li>
-                        Herausforderung: Performance-Risiken durch viele Assets.
-                    </li>
-                    <li>
-                        ->Lösung: Alle 3D-Assets selbst modelliert (Blender). Fokus auf Performance durch geringer Poly-Anzahl.
-                    </li>
+                    <li>Challenge: completing the planned full gameplay loop within the jam time; before that, my role had been primarily artistic.</li>
+                    <li>-&gt;Solution: After a few days, I switched to programming and prioritized implementing the core systems: tool interactions (F), timer logic for plant requirements, NPCs, UI, and win/lose conditions. This made the loop playable, even though there was still unfortunately little time left for balancing and QA.</li>
+                    <li>Challenge: performance risks due to many assets.</li>
+                    <li>-&gt;Solution: I modeled all 3D assets myself (Blender). Focus on performance through a low poly count.</li>
                 </ul>
-
                 <h4></h4>
                 <div id="learnings" style="height: 20px;"></div>
                 <h2>Learnings</h2>
-
                 <ul>
-                    <li>
-                        Rollenflexibilität ist wertvoll: Künstlerische Skills halfen bei schneller Erstellung der 3D Models, späteres Umschwenken auf Gameplay-Programmierung machte
-                        den Loop überhaupt spielbar.
-                    </li>
-                    <li>
-                        Frühes Playtesting / Balancing ist essentiell — fehlende Playtest-Zeit führte zu
-                        zu schnellem Verwelken und einem zu hohen Schwierigkeitsgrad.
-                    </li>
-
-                    <li>
-                        Priorisierung: Schnelle Gameplay-Essentials (Interaktion, Timer, Werkzeuge, NPCs) sichern den spielbaren Kern.
-                    </li>
+                    <li>Role flexibility is valuable: artistic skills helped with quickly creating the 3D models, and later switching to gameplay programming made the loop playable at all.</li>
+                    <li>Early playtesting / balancing is essential — the lack of playtesting time led to plants withering too quickly and the difficulty being too high.</li>
+                    <li>Prioritization: quick gameplay essentials (interaction, timers, tools, NPCs) secure the playable core.</li>
                 </ul>
-
-
-
-
-
-
-
-
-
-
-
-
                 <div id="kunst" style="height: 20px;"></div>
                 <h4></h4>
-
                 <div class="project-two-column">
                     <div class="project-two-text">
-                        <h2>Kunst</h2>
+                        <h2>Art</h2>
                         <ul>
-                            <li>
-                                3D-Meshes erstellen für: Pflanzen, Werkzeuge, Umgebung (Blender)
-                            </li>
-                            <li>
-                                Animationen erstellen für: Charaktere, Pflanzen(Wassermangel -> Blätter hängen lassen) (Blender)
-                            </li>
-                            <li>
-                                Texturen erstellen für: simple Meshs (Blender)
-                            </li>
-
+                            <li>Creating 3D meshes for: plants, tools, environment (Blender)</li>
+                            <li>Creating animations for: characters, plants (water shortage -&gt; leaves droop) (Blender)</li>
+                            <li>Creating textures for: simple meshes (Blender)</li>
                         </ul>
                     </div>
-
-                    <figure class="project-two-image" aria-hidden="false">
-                        <img class="zoomable" src="images/artleafittome.png" alt="Screenshot: Gameplay Übersicht">
+                    <figure aria-hidden="false" class="project-two-image">
+                        <img alt="Screenshot: Gameplay Übersicht" class="zoomable" src="images/artleafittome.png" />
                         <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
                     </figure>
                 </div>
-
                 <section class="pickups-section">
-                    <h2 class="section-title">Pflanzen</h2>
-
+                    <h2 class="section-title">Plants</h2>
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant1.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/plant1.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Biter Pflanze</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Biter Plant</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Nein</div>
                             </div>
                         </article>
-
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant3.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/plant3.png" />
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Aloe Vera</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant4.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/plant4.png" />
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Black Flower</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant6.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/plant6.png" />
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Dieffenbachia</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/plant7.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/plant7.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Kaktus</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Cactus</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
-
                 <section class="pickups-section">
-                    <h2 class="section-title">Werkzeuge</h2>
-
+                    <h2 class="section-title">Tools</h2>
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools10.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/tools10.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Kompost</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Compost</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools2.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools2.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Guide-Buch</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Guidebook</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools3.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools3.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Müllsack</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Trash Bag</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools4.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools4.png" />
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Gift</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools5.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools5.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Dünger</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Fertilizer</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools6.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools6.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Gießkanne</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Watering Can</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools7.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools7.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Mülleimer</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Trash Can</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools8.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools8.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Waschbecken</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Sink</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Nein</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/tools9.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/tools9.png" />
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Radio</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Nein</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/trashbagroll.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/trashbagroll.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Müllsackrolle</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Trash Bag Roll</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article><!-- weitere Cards... -->
                     </div>
                 </section>
-
                 <section class="pickups-section">
                     <h2 class="section-title">Umgebung</h2>
-
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/environment1.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/environment1.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Zäune</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Fences</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/environment2.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/environment2.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Tische</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Tables</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Nein</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/environment3.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/environment3.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Bäume</h3>
-                                <p class="pickup-desc">Mesh von mir erstellt: Ja</p>
+                                <h3 class="pickup-title">Trees</h3>
+                                <p class="pickup-desc">Mesh created by me: Yes</p>
                                 <div class="pickup-meta">Textur von mir erstellt: Ja</div>
                             </div>
                         </article>
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
-
                 <section class="pickups-section">
                     <h2 class="section-title">Animations</h2>
-
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/leafitwalkanim.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/leafitwalkanim.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Gehen</h3>
+                                <h3 class="pickup-title">Walking</h3>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/leafitgiveplant.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/leafitgiveplant.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Pflanze geben</h3>
+                                <h3 class="pickup-title">Giving a Plant</h3>
                             </div>
                         </article>
-
-
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
-
-
-
-
-
                 <h4></h4>
-
-
-
-
-
                 <div id="downloads" style="height:20px;"></div>
                 <h3>Downloads / Links</h3>
-
                 <a class="project-back" href="https://ahundt.itch.io/leaf-it-to-me">←View "Leaf It To Me" on itch.io</a>
-
                 <p></p>
-                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+                <a class="project-back" href="index.html">← Back to Projects</a>
             </article>
-
-
-
         </main>
-
         <!-- COPY YOUR FOOTER HERE -->
         <!-- paste your existing footer markup -->
         <!-- <footer> ... </footer> -->
-
     </div>
-
-    <!-- Optional: dein app.js -->
-    <script src="app.js"></script>
-
-    <script>
+<!-- Optional: dein app.js -->
+<script src="app.js"></script>
+<script>
         (function () {
             // CONFIG
             const requireClass = true; // true = nur <img class="zoomable"> reagieren; false = auto-detect images in article

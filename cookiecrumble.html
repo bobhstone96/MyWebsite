@@ -135,9 +135,9 @@
             <!-- rechts: Navigation (nun rechts angeordnet) -->
             <nav class="header-nav">
                 <ul>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html">Projects</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
 
@@ -149,8 +149,7 @@
             </div>
 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html">Projects</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
@@ -171,9 +170,7 @@
         <!-- ----------------- -->
         <!-- Breadcrumbs (hardcoded; passe an) -->
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html">Projects</a>
             <span class="sep">/</span>
             <span class="current">Cookie Crumble</span>
         </nav>
@@ -188,16 +185,16 @@
             <!-- Title & Meta -->
             <div class="project-head">
                 <nav class="project-toc" aria-label="Inhaltsverzeichnis">
-                    <h3>Inhaltsverzeichnis</h3>
+                    <h3>Table of content</h3>
                     <ul>
-                        <li><a href="#kurzbeschreibung">Kurzbeschreibung</a></li>
-                        <li><a href="#hintergrund">Hintergrund</a></li>
-                        <li><a href="#spielablauf">Spielablauf</a></li>
-                        <li><a href="#techdetails">Technische Details</a></li>
+                        <li><a href="#kurzbeschreibung">Short Description</a></li>
+                        <li><a href="#hintergrund">Background</a></li>
+                        <li><a href="#spielablauf">Gameplay</a></li>
+                        <li><a href="#techdetails">Technical Details</a></li>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#herausforderung">Herausforderung → Lösungsweg</a></li>
+                        <li><a href="#herausforderung">Challenge → Solution</a></li>
                         <li><a href="#learnings">Learnings</a></li>
-                        <li><a href="#kunst">Kunst</a></li>
+                        <li><a href="#kunst">Art</a></li>
                         <li><a href="#downloads">Downloads / Links</a></li>
                     </ul>
                 </nav>
@@ -214,7 +211,7 @@
             <div id="kurzbeschreibung" style="height:20px;"></div>
             <!-- große Textfläche -->
             <article class="project-content panel">
-                <h2>Kurzbeschreibung</h2>
+                <h2>Short Description</h2>
                 <p>
                     Cookie Crumble ist ein 2.5D, Side-Scroller/Plattformer: der
                     Spieler steuert eine Maus durch eine Küche, sammelt Keks-Krümel und
@@ -226,13 +223,9 @@
                 <h4></h4>
 
                 <div id="hintergrund" style="height:20px;"></div>
-                <h2>Hintergrund</h2>
+                <h2>Background</h2>
                 <p>
-                    "Cookie Crumble" wurde für die "Brackeys Game Jam 2025.2" (24.-31. August 2025)
-                    von mir und einer Freundin entwickelt. Meine Rolle im Team war primär Programmierer,
-                    während ich auch einzelne 3D Models für die Umgebung erstellt habe.
-                    Ziel der Game Jam war ein sauberer, gut spielbarer Single-Level-Plattformer mit
-                    solidem Gameplay.
+                    "Cookie Crumble" was developed for the "Brackeys Game Jam 2025.2" (August 24–31, 2025) by a friend and me. My primary role in the team was programming, while I also created some 3D models for the environment. The goal of the game jam was to create a polished, well-playable single-level platformer with solid gameplay.
                 </p>
 
                 <h4></h4>
@@ -241,13 +234,13 @@
                 <!-- Two-column block: Text (links) + Bild (rechts) -->
                 <div class="project-two-column">
                     <div class="project-two-text">
-                        <h2>Spielablauf</h2>
+                        <h2>Gameplay</h2>
                         <ul>
-                            <li>Ein Level: der Spieler (Maus) läuft von links nach rechts durch eine Küche.</li>
-                            <li>Gegner blockieren den Weg; sie können durch Springen auf den Kopf besiegt werden.</li>
-                            <li>Sammelobjekte: Keks-Krümel und Käse-Stücke als Score-Mechanik.</li>
-                            <li>Am Ende wartet ein Boss. Besiegt der Spieler den Boss, erreicht er den großen Keks und gewinnt das Spiel.</li>
-                            <li>Ziel: Level meistern und ggf. Score verbessern (Speedrun / Highscore).</li>
+                            <li>One level: the player (a mouse) runs from left to right through a kitchen.</li>
+                            <li>Enemies block the path and can be defeated by jumping on their heads.</li>
+                            <li>Collectibles: cookie crumbs and pieces of cheese as a scoring mechanic.</li>
+                            <li>At the end, a boss awaits. If the player defeats the boss, they reach the large cookie and win the game.</li>
+                            <li>Objective: complete the level and optionally improve the score (speedrun / high score).</li>
                         </ul>
                     </div>
 
@@ -260,20 +253,19 @@
 
                 <h4></h4>
 
-                <h3 class="project-subheading center-large">- Entwicklung & Technik -</h3>
+                <h3 class="project-subheading center-large">- Development & Technology -</h3>
 
                 <div id="techdetails" style="height:20px;"></div>
 
-                <h2>Technische Details</h2>
+                <h2>Technical Details</h2>
                 <ul>
                     <li>Engine: Unreal Engine (Blueprints / Visual Scripting)</li>
                     <li>Source Control: GitHub</li>
                     <li>
-                        Team: 2 Personen (ich: Lead Programmer & sekundär Artist; 1 Lead
-                        Artist & sekundär Programmer)
+                        Team: 2 people (me: Lead Programmer & secondary Artist; 1 Lead Artist & secondary Programmer)
                     </li>
-                    <li>Entwicklungszeit: Game Jam-Woche (24.–31.08.2025)</li>
-                    <li>Status: Jam-Prototype, ein vollständig spielbares Level</li>
+                    <li>Development time: Game jam week (August 24–31, 2025)</li>
+                    <li>Status: Jam prototype, a fully playable single level</li>
 
                 </ul>
 
@@ -291,8 +283,8 @@
                                 <img src="images/cookie.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Keks-Krümel</h3>
-                                <p class="pickup-desc">Collectable für die Highscore-Mechanik. Liegen oft auf dem offensichtlichen Pfad. Insgesamt im Level verteilt: 40.</p>
+                                <h3 class="pickup-title">Cookie Crumbs</h3>
+                                <p class="pickup-desc">Collectible for the high score mechanic. Often placed along the obvious path. Total number distributed throughout the level: 40.</p>
                                 <div class="pickup-meta">Rarity: Common</div>
                             </div>
                         </article>
@@ -303,8 +295,8 @@
                                 <img class="zoomable" src="images/cheese.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Käse</h3>
-                                <p class="pickup-desc">Collectable für die Highscore-Mechanik. Liegt an schwer erreichbaren Positionen. Insgesamt im Level verteilt: 12.</p>
+                                <h3 class="pickup-title">Cheese</h3>
+                                <p class="pickup-desc">Collectible for the high score mechanic. Placed in hard-to-reach positions. Total number distributed throughout the level: 12.</p>
                                 <div class="pickup-meta">Rarity: Rare</div>
                             </div>
                         </article>
@@ -315,7 +307,7 @@
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Double Jump</h3>
-                                <p class="pickup-desc">Sobald der Spieler dieses Pickup aufsammelt, wird die Doppelsprung-Mechanik für den Spieler permanent freigeschaltet.</p>
+                                <p class="pickup-desc">Once the player collects this pickup, the double jump mechanic is permanently unlocked.</p>
                                 <div class="pickup-meta">Rarity: Unique</div>
                             </div>
                         </article>
@@ -327,7 +319,7 @@
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">1-Up</h3>
-                                <p class="pickup-desc">Stellt ein Leben des Spielers wieder her. Spieler steigt bei Respawn-Point neu ein.</p>
+                                <p class="pickup-desc">Restores one of the player's lives. The player respawns at the respawn point.</p>
                                 <div class="pickup-meta">Rarity: Rare</div>
                             </div>
                         </article>
@@ -338,7 +330,7 @@
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Speed Up</h3>
-                                <p class="pickup-desc">Steigert für 20 Sekunden die Bewegungsgeschwindigkeit des Spielers um 50%.</p>
+                                <p class="pickup-desc">Increases the player's movement speed by 50% for 20 seconds.</p>
                                 <div class="pickup-meta">Rarity: Common </div>
                             </div>
                         </article>
@@ -349,8 +341,8 @@
                                 <img class="zoomable" src="images/melon.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Wassermelone</h3>
-                                <p class="pickup-desc">Erlaubt es dem Spieler für 10 Sekunden Projektile mit der Taste X zu verschießen.</p>
+                                <h3 class="pickup-title">Watermelon</h3>
+                                <p class="pickup-desc">Allows the player to fire projectiles for 10 seconds using the X key.</p>
                                 <div class="pickup-meta">Rarity: Rare</div>
                             </div>
                         </article>
@@ -360,8 +352,8 @@
                                 <img class="zoomable" src="images/slowmo.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Stoppuhr</h3>
-                                <p class="pickup-desc">Erlaubt es dem Spieler für 10 Sekunden die Bewegungsgeschwindigkeit aller Gegner um 50% zu reduzieren.</p>
+                                <h3 class="pickup-title">Stopwatch</h3>
+                                <p class="pickup-desc">Allows the player to reduce the movement speed of all enemies by 50% for 10 seconds.</p>
                                 <div class="pickup-meta">Rarity: Rare</div>
                             </div>
                         </article>
@@ -373,7 +365,7 @@
                 </section>
 
                 <section class="pickups-section">
-                    <h2 class="section-title">Gegner</h2>
+                    <h2 class="section-title">Enemies</h2>
 
                     <div class="pickups-grid">
 
@@ -383,8 +375,8 @@
                                 <img class="zoomable" src="images/cookiecrumble_enemy6.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Springen um Gegner zu besiegen!</h3>
-                                <p class="pickup-desc">Wenn der Spieler aus einem Fall auf einem Gegner landet, wird der Gegner besiegt.</p>
+                                <h3 class="pickup-title">Jump on enemies!</h3>
+                                <p class="pickup-desc">If the player lands on an enemy after falling, the enemy is defeated.</p>
                             </div>
                         </article>
 
@@ -394,8 +386,8 @@
                                 <img class="zoomable" src="images/cookiecrumble_enemy1.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Fliege</h3>
-                                <p class="pickup-desc">Fliegt zwischen Punkt A und B hin und her.</p>
+                                <h3 class="pickup-title">Fly</h3>
+                                <p class="pickup-desc">Flys back and forth between point A and B.</p>
                                 <div class="pickup-meta">HP: 1</div>
                             </div>
                         </article>
@@ -406,8 +398,8 @@
                                 <img class="zoomable" src="images/cookiecrumble_enemy2.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Fliege(schnell)</h3>
-                                <p class="pickup-desc">Fliegt schnell zwischen Punkt A und B hin und her.</p>
+                                <h3 class="pickup-title">Fly(fast)</h3>
+                                <p class="pickup-desc">Flys fast back and forth between point A and B.</p>
                                 <div class="pickup-meta">HP: 1</div>
                             </div>
                         </article>
@@ -417,8 +409,8 @@
                                 <img class="zoomable" src="images/cookiecrumble_enemy3.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Kakerlake</h3>
-                                <p class="pickup-desc">Läuft am Boden zwischen Punkt A und B hin und her.</p>
+                                <h3 class="pickup-title">Roach</h3>
+                                <p class="pickup-desc">Moves back and forth along the ground between point A and B.</p>
                                 <div class="pickup-meta">HP: 1</div>
                             </div>
                         </article>
@@ -429,8 +421,8 @@
                                 <img src="images/cookiecrumble_enemy4.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Wespe</h3>
-                                <p class="pickup-desc">Folgt dem Spieler im Flug.</p>
+                                <h3 class="pickup-title">Wasp</h3>
+                                <p class="pickup-desc">Follows the player while flying.</p>
                                 <div class="pickup-meta">HP: 1</div>
                             </div>
                         </article>
@@ -440,8 +432,8 @@
                                 <img class="zoomable" src="images/cookiecrumble_enemy5.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Wespen-Königin</h3>
-                                <p class="pickup-desc">Die Königin der Wespen! Endboss.</p>
+                                <h3 class="pickup-title">Wasp Queen</h3>
+                                <p class="pickup-desc">The queen of the wasps! Final boss.</p>
                                 <div class="pickup-meta">HP: 30 </div>
                             </div>
                         </article>
@@ -455,7 +447,7 @@
                 </section>
 
                 <section class="pickups-section">
-                    <h2 class="section-title">Umgebungsgefahren</h2>
+                    <h2 class="section-title">Environmental Hazards</h2>
 
                     <div class="pickups-grid">
 
@@ -465,8 +457,8 @@
                                 <img class="zoomable" src="images/cookiecrumble_umgebungsgefahr1.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Herd</h3>
-                                <p class="pickup-desc">Wird periodisch heiß und schaltet sich wieder aus.</p>
+                                <h3 class="pickup-title">Stove</h3>
+                                <p class="pickup-desc">Heats up periodically and then turns off again.</p>
                             </div>
                         </article>
 
@@ -476,8 +468,8 @@
                                 <img class="zoomable" src="images/cookiecrumble_umgebungsgefahr2.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Wassertropfen</h3>
-                                <p class="pickup-desc">An machen Stellen im Level tropft es! Wassertropfen verursachen Schaden am Spieler!</p>
+                                <h3 class="pickup-title">Water Droplets</h3>
+                                <p class="pickup-desc">In certain areas of the level, water drips from above. The droplets deal damage to the player!</p>
                             </div>
                         </article>
 
@@ -493,32 +485,25 @@
 
                 <h4></h4>
                 <div id="herausforderung" style="height:20px;"></div>
-                <h2>Herausforderung → Lösungsweg</h2>
+                <h2>Challenge → Solution</h2>
                 <ul>
                     <li>
-                        Herausforderung: In einer kurzen Jam-Woche ein befriedigendes
-                        Sprung- und Kollisions-Gefühl zu erzielen und genug Zeit für
-                        ausführliches Playtesting zu haben.
+                        Challenge: Achieving satisfying jump and collision feel within a short jam week, while still having enough time for thorough playtesting.
                     </li>
                     <li>
-                        -> Lösung: Fokus auf wenige, aber gut gebaute Mechaniken. Frühes
-                        Minimal-Playable-Build fertigstellen, danach gezielte Playtest Runden zur Feinjustierung von Sprung Höhe, Sprung Kontrolle, Enemy-HP, usw.
+                        -> Solution: Focus on a few well-crafted mechanics. Create an early minimal playable build, followed by targeted playtest sessions to fine-tune jump height, jump control, enemy HP, etc.
                     </li>
                     <li>
-                        Herausforderung: Begrenzte Teamgröße / Artressourcen → klare
-                        Priorisierung.
+                        Challenge: Limited team size / art resources → clear prioritization required.
                     </li>
                     <li>
-                        -> Lösung: Art-Assets gezielt für den wichtigsten Level-Durchlauf
-                        erstellen; Gameplay-Polish vor zusätzlichen Featurewünschen
-                        priorisiert.
+                        -> Solution: Create art assets specifically for the most important level playthrough; prioritize gameplay polish over additional feature ideas.
                     </li>
                     <li>
-                        Herausforderung: Texturen meiner Art-Assets waren für mich und dem damit verbundenen Zeitaufwand nicht zufriedenstellend.
+                        Challenge: The textures of my art assets were not satisfactory to me considering the time investment
                     </li>
                     <li>
-                        -> Lösung: Ich habe nur den Modellier-Teil der Art-Assets übernommen und die fertigen Models dem Lead Artist zugeschickt,
-                        welche sich dann um die Aufgabe des Texturieren mit Hilfe von Substance Painter kümmern und bessere Ergebnisse als ich erzielen konnte.
+                        -> Solution: I focused solely on modeling the art assets and sent the finished models to the lead artist, who then handled texturing using Substance Painter and achieved better results than I could.
                     </li>
 
                 </ul>
@@ -529,17 +514,14 @@
                 <h2>Learnings</h2>
                 <ul>
                     <li>
-                        Priorisierung + frühes Playable ist der effizienteste Weg zu gutem
-                        Feel in kurzen Jams.
+                        Prioritization and an early playable build are the most efficient way to achieve good game feel in short jams.
+                        Repeated, short playtests are more valuable than long individual sessions.
                     </li>
                     <li>
-                        Wiederholte, kurze Playtests sind wertvoller als lange Einzeltests.
-                        Kleine Anpassungen am Movement haben großen Einfluss auf
-                        Spielspaß.
+                        Small adjustments to movement have a significant impact on player enjoyment.
                     </li>
                     <li>
-                        Klare Aufgabenaufteilung (Art vs. Code) ermöglicht schnelles
-                        Vorankommen auch bei kleinem Team.
+                        Clear division of responsibilities (art vs. code) enables rapid progress even in a small team.
                     </li>
 
                 </ul>
@@ -549,11 +531,10 @@
 
 
                 <div id="kunst" style="height:20px;"></div>
-                <h2 class="section-title">Kunst: Cookie Crumble</h2>
-                <h2>Kunst</h2>
+                <h2 class="section-title">Art: Cookie Crumble</h2>
+                <h2>Art</h2>
                 <p>
-                    Durch meine vorherige Zusammenarbeit mit LynZee (Lead-Artist) konnten wir unsere Aufgaben sehr gut einteilen: Ich habe primär programmiert und LynZee beim Erstellen von Meshes unterstützt, während LynZee die Meshes mit Texturen versehen hat.
-                    So konnte ich LynZee flexibel und schnell helfen, wenn gewisse neue Models anstanden. Alle Meshes wurden in Blender erstellt.
+                    Through my previous collaboration with LynZee (Lead Artist), we were able to divide our tasks very effectively: I primarily focused on programming and supported LynZee in creating meshes, while LynZee handled texturing the meshes. This allowed me to assist LynZee flexibly and quickly whenever new models were needed. All meshes were created in Blender.
                 </p>
 
                 <h4></h4>
@@ -561,7 +542,7 @@
 
 
                 <section class="pickups-section">
-                    <h2 class="section-title">Umgebung</h2>
+                    <h2 class="section-title">Environment</h2>
 
                     <div class="pickups-grid">
                         <!-- Card 1 -->
@@ -570,7 +551,7 @@
                                 <img class="zoomable" src="images/cookiecrumbleenvironment1.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Apfel</h3>
+                                <h3 class="pickup-title">Apple</h3>
                             </div>
                         </article>
 
@@ -580,7 +561,7 @@
                                 <img class="zoomable" src="images/cookiecrumbleenvironment2.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Salz-/Pfeffer-Streuer</h3>
+                                <h3 class="pickup-title">Salt/Pepper</h3>
 
                             </div>
                         </article>
@@ -591,7 +572,7 @@
                                 <img class="zoomable" src="images/cookiecrumbleenvironment3.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Teller</h3>
+                                <h3 class="pickup-title">Plate</h3>
                             </div>
                         </article>
 
@@ -601,7 +582,7 @@
                                 <img class="zoomable" src="images/cookiecrumbleenvironment4.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Birne</h3>
+                                <h3 class="pickup-title">Pear</h3>
                             </div>
                         </article>
 
@@ -619,7 +600,7 @@
                                 <img class="zoomable" src="images/cookiecrumbleenvironment6.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Zitrone</h3>
+                                <h3 class="pickup-title">Lemon</h3>
 
                             </div>
                         </article>
@@ -629,7 +610,7 @@
                                 <img class="zoomable" src="images/cookiecrumbleenvironment7.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Keksdose</h3>
+                                <h3 class="pickup-title">Cookie jar</h3>
 
                             </div>
                         </article>
@@ -649,7 +630,7 @@
                                 <img class="zoomable" src="images/cookiecrumblepickups1.png" alt="Pickup: Mouse">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Stoppuhr</h3>
+                                <h3 class="pickup-title">Stopwatch</h3>
                             </div>
                         </article>
 
@@ -659,8 +640,8 @@
                                 <img class="zoomable" src="images/cookiecrumblepickups2.png" alt="Pickup: Cheese">
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Speed-Schuhe (unfertig)</h3>
-                                <p class="pickup-desc">Die "Flügel" hier wurden vor der Implementierung noch von LynZee überarbeitet!</p>
+                                <h3 class="pickup-title">Speed-Boots (unfinished)</h3>
+                                <p class="pickup-desc">The "wings" here were further refined by LynZee before implementation!</p>
 
                             </div>
                         </article>
@@ -685,12 +666,12 @@
                 <div id="downloads" style="height:20px;"></div>
                 <h3>Downloads / Links</h3>
                 <p>
-                    Links zu GitHub, Builds, Videos oder eingebettete Screenshots/Videos.
+                    Links to GitHub, builds, videos, or embedded screenshots/videos.
                 </p>
 
                 <a class="project-back" href="https://bobhstone.itch.io/cookie-crumble">←View "Cookie Crumble" on itch.io</a>
                 <p></p>
-                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+                <a class="project-back" href="index.html">← Back to Projects</a>
             </article>
         </main>
 

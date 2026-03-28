@@ -1,120 +1,104 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-witdth, initial-scale=1.0">
-    <title>Über mich - Lutz Hollstein</title>
-    <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-witdth, initial-scale=1.0" name="viewport"/>
+<title>Über mich - Lutz Hollstein</title>
+<link href="style.css" rel="stylesheet"/>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
-            <div class="header-left-group">
-                <div class="left">
-                    <a href="index.html" class="brand" aria-label="Zur Startseite">
-                        <img src="images/myicon.png" alt="logo">
-                        <h1><span class="gradient">Lutz Hollstein</span></h1>
-                    </a>
-                </div>
-
-                <div class="box-icons">
-                    <a href="https://bobhstone.itch.io/" aria-label="itch.io">
-                        <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
-                    </a>
-                    <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
-
-                </div>
+<div class="container">
+    <header>
+        <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
+        <div class="header-left-group">
+            <div class="left">
+                <a aria-label="Zur Startseite" class="brand" href="index.html">
+                    <img alt="logo" src="images/myicon.png" />
+                    <h1><span class="gradient">Lutz Hollstein</span></h1>
+                </a>
             </div>
-
-            <!-- rechts: Navigation (nun rechts angeordnet) -->
-            <nav class="header-nav">
-                <ul>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
-                </ul>
-            </nav>
-
-            <div class="menu-icon"><i class='bx bx-menu'></i></div>
-        </header>
-        <div class="sidebar">
-            <div class="close-icon" aria-label="Close menu" role="button" tabindex="0">
-                <i class='bx bx-x'></i>
-            </div>
-
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-
-            <div class="social-icons">
-                <a href="https://bobhstone.itch.io/" aria-label="itch.io">
-                    <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+            <div class="box-icons">
+                <a aria-label="itch.io" href="https://bobhstone.itch.io/">
+                    <img alt="itch.io" src="images/itchio.png" style="width:20px;height:20px;" />
                 </a>
                 <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
-
             </div>
         </div>
-        <!-- COPY YOUR HEADER HERE -->
-        <!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
-        <!-- ----------------- -->
-        <!-- z.B. -->
-        <!-- <header> ... dein header ... </header> -->
-        <!-- ----------------- -->
-        <!-- Breadcrumbs (hardcoded; passe an) -->
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="about.html">About Me</a>
+        <!-- rechts: Navigation (nun rechts angeordnet) -->
+        <nav class="header-nav">
+            <ul>
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
-        <section class="contact-section">
-            <h1 class="section-title autoDisplay">About Me</h1>
-
-            <div class="slider" reverse="true" style="
+        <div class="menu-icon"><i class="bx bx-menu"></i></div>
+    </header>
+<div class="sidebar">
+<div aria-label="Close menu" class="close-icon" role="button" tabindex="0">
+<i class="bx bx-x"></i>
+</div>
+<ul>
+    <li><a href="index.html">Projects</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="contact.html">Kontakt</a></li>
+</ul>
+<div class="social-icons">
+<a aria-label="itch.io" href="https://bobhstone.itch.io/">
+<img alt="itch.io" src="images/itchio.png" style="width:20px;height:20px;"/>
+</a>
+<a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
+</div>
+</div>
+<!-- COPY YOUR HEADER HERE -->
+<!-- paste the exact <header>...</header> markup from index.html so header stays identical -->
+<!-- ----------------- -->
+<!-- z.B. -->
+<!-- <header> ... dein header ... </header> -->
+<!-- ----------------- -->
+<!-- Breadcrumbs (hardcoded; passe an) -->
+<nav aria-label="Breadcrumb" class="breadcrumbs">
+<a href="index.html">Home</a>
+<span class="sep">/</span>
+<a href="about.html">About Me</a>
+</nav>
+<section class="contact-section">
+<h1 class="section-title autoDisplay">About Me</h1>
+<div class="slider" reverse="true" style="
                     --width: 100px;
                     --height: 100px;
                     --quantity: 9;
                 ">
-                <div class="list">
-                    <div class="item" style="--position: 1"><img src="images/1.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 2"><img src="images/2.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 3"><img src="images/3.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 4"><img src="images/4.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 5"><img src="images/5.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 6"><img src="images/6.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 7"><img src="images/7.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 8"><img src="images/8.png" alt="slider-image"></div>
-                    <div class="item" style="--position: 9"><img src="images/9.png" alt="slider-image"></div>
-                </div>
-            </div>
-            <div class="contact-box panel">
-                <p>
-                    Ich entwickle seit ungefähr zwei Jahren leidenschaftlich Videospiele. Als Generalist arbeite ich entlang der gesamten Entwicklungs-Pipeline: Prototyping und Gameplay-Implementierung in Unreal Engine 5 und Unity, 3D-Modellierung und Texturing mit Blender und Substance Painter sowie Versionsverwaltung mit GitHub. Für Websites arbeite ich mit HTML, CSS, JavaScript und Figma.
+<div class="list">
+<div class="item" style="--position: 1"><img alt="slider-image" src="images/1.png"/></div>
+<div class="item" style="--position: 2"><img alt="slider-image" src="images/2.png"/></div>
+<div class="item" style="--position: 3"><img alt="slider-image" src="images/3.png"/></div>
+<div class="item" style="--position: 4"><img alt="slider-image" src="images/4.png"/></div>
+<div class="item" style="--position: 5"><img alt="slider-image" src="images/5.png"/></div>
+<div class="item" style="--position: 6"><img alt="slider-image" src="images/6.png"/></div>
+<div class="item" style="--position: 7"><img alt="slider-image" src="images/7.png"/></div>
+<div class="item" style="--position: 8"><img alt="slider-image" src="images/8.png"/></div>
+<div class="item" style="--position: 9"><img alt="slider-image" src="images/9.png"/></div>
+</div>
+</div>
+<div class="contact-box panel">
+<p>
+                    I have been passionately developing video games for about two years. As a generalist, I work across the entire development pipeline: prototyping and gameplay implementation in Unreal Engine 5 and Unity, 3D modeling and texturing with Blender and Substance Painter, as well as version control with GitHub. For websites, I work with HTML, CSS, JavaScript, and Figma.
                 </p>
-
-                <p>
-                    Projekte und Spiel-Demos: https://bobhstone.itch.io/
+<p>
+                    Projects and game demos: https://bobhstone.itch.io/
                     YouTube: https://www.youtube.com/@BobHstone
                 </p>
-                
-            </div>
-
-        </section>
-
-
-        <!-- COPY YOUR FOOTER HERE -->
-        <!-- paste your existing footer markup -->
-        <!-- <footer> ... </footer> -->
-
-    </div>
-
-    <!-- Optional: dein app.js -->
-    <script src="app.js"></script>
+</div>
+</section>
+<!-- COPY YOUR FOOTER HERE -->
+<!-- paste your existing footer markup -->
+<!-- <footer> ... </footer> -->
+</div>
+<!-- Optional: dein app.js -->
+<script src="app.js"></script>
 </body>
 </html>

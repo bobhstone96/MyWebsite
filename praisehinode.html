@@ -1,17 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>PRAISE HINODE - Lutz Hollstein</title>
-
-    <!-- deine bestehende stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <!-- icons falls du sie brauchst -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>PRAISE HINODE - Lutz Hollstein</title>
+<!-- deine bestehende stylesheet -->
+<link href="style.css" rel="stylesheet"/>
+<!-- icons falls du sie brauchst -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+<!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+<style>
         /* Project page specific styles */
         .project-page .project-wrapper {
             max-width: 1800px;
@@ -108,59 +107,50 @@
             }
         }
     </style>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 </head>
-
 <body>
     <div class="container">
         <header>
             <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
             <div class="header-left-group">
                 <div class="left">
-                    <a href="index.html" class="brand" aria-label="Zur Startseite">
-                        <img src="images/myicon.png" alt="logo">
+                    <a aria-label="Zur Startseite" class="brand" href="index.html">
+                        <img alt="logo" src="images/myicon.png" />
                         <h1><span class="gradient">Lutz Hollstein</span></h1>
                     </a>
                 </div>
-
                 <div class="box-icons">
-                    <a href="https://bobhstone.itch.io/" aria-label="itch.io">
-                        <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+                    <a aria-label="itch.io" href="https://bobhstone.itch.io/">
+                        <img alt="itch.io" src="images/itchio.png" style="width:20px;height:20px;" />
                     </a>
                     <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
-
                 </div>
             </div>
-
             <!-- rechts: Navigation (nun rechts angeordnet) -->
             <nav class="header-nav">
                 <ul>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html">Projects</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-
-            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+            <div class="menu-icon"><i class="bx bx-menu"></i></div>
         </header>
         <div class="sidebar">
-            <div class="close-icon" aria-label="Close menu" role="button" tabindex="0">
-                <i class='bx bx-x'></i>
+            <div aria-label="Close menu" class="close-icon" role="button" tabindex="0">
+                <i class="bx bx-x"></i>
             </div>
-
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html">Projects</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
-
             <div class="social-icons">
-                <a href="https://bobhstone.itch.io/" aria-label="itch.io">
-                    <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+                <a aria-label="itch.io" href="https://bobhstone.itch.io/">
+                    <img alt="itch.io" src="images/itchio.png" style="width:20px;height:20px;" />
                 </a>
                 <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
-
             </div>
         </div>
         <!-- COPY YOUR HEADER HERE -->
@@ -171,283 +161,205 @@
         <!-- ----------------- -->
         <!-- Breadcrumbs (hardcoded; passe an) -->
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
-            <span class="sep">/</span>
-            <a href="portfolio.html">Portfolio</a>
+            <a href="index.html">Projects</a>
             <span class="sep">/</span>
             <span class="current">PRAISE HINODE</span>
         </nav>
-
         <main class="project-wrapper">
             <!-- Hero Image -->
             <div class="project-hero">
-                <img src="images/praisehinode1.png" alt="Cookie Crumble - Screenshot / Key art">
+                <img alt="Cookie Crumble - screenshot / key art" src="images/praisehinode1.png" />
             </div>
-
             <!-- Title & Meta -->
             <div class="project-head">
-                <nav class="project-toc" aria-label="Inhaltsverzeichnis">
-                    <h3>Inhaltsverzeichnis</h3>
+                <nav aria-label="Inhaltsverzeichnis" class="project-toc">
+                    <h3>Table of Contents</h3>
                     <ul>
-                        <li><a href="#kurzbeschreibung">Kurzbeschreibung</a></li>
-                        <li><a href="#hintergrund">Hintergrund</a></li>
-                        <li><a href="#spielablauf">Spielablauf</a></li>
+                        <li><a href="#kurzbeschreibung">Short Description</a></li>
+                        <li><a href="#hintergrund">Background</a></li>
+                        <li><a href="#spielablauf">Gameplay</a></li>
                         <li><a href="#features">Features</a></li>
-                        <li><a href="#techdetails">Technische Details</a></li>
-                        <li><a href="#leveloverview">Level-Übersicht</a></li>
-                        <li><a href="#herausforderung">Herausforderung → Lösungsweg</a></li>
+                        <li><a href="#techdetails">Technical Details</a></li>
+                        <li><a href="#leveloverview">Level Overview</a></li>
+                        <li><a href="#herausforderung">Challenge → Solution Approach</a></li>
                         <li><a href="#learnings">Learnings</a></li>
-
                     </ul>
                 </nav>
-                <h1 class="project-title">PRAISE HINODE (Komplexes Dialog System)</h1>
-
+                <h1 class="project-title">PRAISE HINODE (Complex Dialogue System)</h1>
                 <div class="project-meta">
                     <div class="meta-item"><strong>Genre:</strong> Simulation / Puzzle / Adventure</div>
                     <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
                     <div class="meta-item"><strong>Jahr:</strong> 2025</div>
-                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                    <div class="meta-item"><strong>Solo Project</strong></div>
                 </div>
             </div>
             <div id="kurzbeschreibung" style="height:20px;"></div>
             <!-- große Textfläche -->
-
             <article class="project-content">
-                <h2>Kurzbeschreibung</h2>
+                <h2>Short Description</h2>
                 <p>
-                    PRAISE HINODE (stark inspiriert von "Papers, Please") findet in einem Post-Apokalyptischen Setting statt. Der Protagonist erhält Zuflucht in einer der letzten Bastionen der Menschheit - Hinode.
-                    Hinode wird von einem korrupten und moralisch fragwürdigen Regime geführt. Der Protagonist erhält die Aufgabe einen neuen Posten von Hinode zu besetzen:
-                    Die Ausgabe-Station von Hinode die Kontakt mit den im Umland lebenden Menschen aufnehmen und diese mit Vorräten versorgen soll. Der Spieler muss strengen Anweisungen
-                    folgen, um genug Geld zu sammeln und seine Familie versorgen zu können.
+                    PRAISE HINODE (heavily inspired by "Papers, Please") is set in a post-apocalyptic world. The protagonist finds refuge in one of humanity’s last strongholds: Hinode. Hinode is ruled by a corrupt and morally questionable regime. The protagonist is assigned to take over a new post at Hinode: the distribution station, which is supposed to contact the people living in the surrounding area and supply them with provisions. The player must follow strict instructions in order to earn enough money to support their family.
                 </p>
-
                 <h4></h4>
-
                 <div id="hintergrund" style="height:20px;"></div>
-                <h2>Hintergrund</h2>
+                <h2>Background</h2>
                 <p>
-                    Im Hauptfokus dieses Projektes stand die Herausforderung ein komplexes Dialog-System zu erstellen. Bis zu diesem Projekt hatte ich oft Schwierigkeiten dynamische UI-Elemente zu erstellen,
-                    also dachte ich mir ein sehr Dialog-lastiges Spiel könnte mich aus meiner Komfort-Zone von sehr einfachen UI Elementen locken und mir mit meinen UI-Problemen in Zukunft helfen.
-                    Außerdem wollte ich unbedingt noch vor dem 01.03.2025 ein fertiges Projekt für mein Portfolio haben. Ich habe mir einen sehr eindeutigen Zeitplan gesetzt: 01.01.2025 - 31.01.2025 Implementierung
-                    aller wichtigen Funktionen ; 01.02.2025 - 28.02.2025 Art/Design + Polishing
+                    The main focus of this project was the challenge of creating a complex dialogue system. Before this project, I often had trouble creating dynamic UI elements, so I thought a very dialogue-heavy game might push me out of my comfort zone of very simple UI elements and help me with my UI problems in the future. I also absolutely wanted to have a finished project for my portfolio before 03/01/2025. I set myself a very clear schedule: 01/01/2025 – 01/31/2025 implementation of all important features; 02/01/2025 – 02/28/2025 art/design + polishing.
 
                 </p>
-
-
                 <h4></h4>
                 <div id="spielablauf" style="height:20px;"></div>
                 <div class="project-two-column">
                     <div class="project-two-text">
-                        <h2>Spielablauf</h2>
+                        <h2>Gameplay</h2>
                         <ul>
                             <li>
-                                Am Anfang jedes Tages (von Tag 1 bis 4) geht ein Security-Personal-NPC
-                                zum Spieler und erklärt die neuen Regeln, die es zu beachten gilt.
-                                Missachtet der Spieler die Regeln (Beispiel: NPC der um Essen bittet darf nur nach Dekontaminations-Dusche in den Essen-Vorratsraum, Spieler
-                                schickt NPC trotz hoher Kontamination ohne Dekontaminations-Dusche in den Essen-Vorratsraum -> Regel missachtet) verliert der Spieler Geld, welches er braucht um seine Familie am Leben zu halten.
-                                Entdeckt der Spieler ein Problem/Diskrepanz mit den Werten des NPCs, kann er den NPC im Detective-Mode (Taste T), auf dieses Problem ansprechen, indem er im Detective-Mode die beiden Objekte markiert,
-                                die ein Problem aufweisen (Beispiel: Kontaminations-Wert des NPCs zu hoch: Spieler markiert Kontaminations-Scanner und den Zettel der den erlaubten Kontaminations-Wert anzeigt -> Spieler kann NPC
-                                darauf ansprechen, den NPC daraufhin raus schicken, oder eine Dekontaminations-Dusche zuweisen)
+                                At the start of each day (from day 1 to 4), a security staff NPC approaches the player and explains the new rules that must be followed. If the player breaks the rules (example: an NPC asking for food may only enter the food storage room after a decontamination shower; the player sends the NPC into the food storage room without a decontamination shower despite high contamination -&gt; rule broken), the player loses money that is needed to keep their family alive. If the player discovers a problem / discrepancy in the NPC’s values, they can confront the NPC about it in Detective Mode (T key) by marking the two objects that reveal the issue in Detective Mode (example: NPC’s contamination value is too high: the player marks the contamination scanner and the note showing the allowed contamination value -&gt; the player can confront the NPC, send them away, or assign a decontamination shower).
 
                             </li>
                             <li>
-                                Tag 1: Essens-Ausgabe. NPCs können in die Ausgabe-Station kommen
-                                und um Essen bitten. Der Spieler muss mit einem Kontaminations-Scanner
-                                den Kontaminations-Wert des NPCs prüfen, um zu entscheiden ob dieser in den
-                                Essen-Vorratsraum gehen darf, oder nicht. Außerdem hat der Spieler die Wahl
-                                bis zu 3 NPCs am Tag eine Dekontaminations-Dusche nehmen zu lassen.
-                                Außerdem bricht der Tag früh ab, weil ein NPC durch eine Tür in Hinode
-                                eindringt.
+                                Day 1: Food distribution. NPCs can come to the distribution station and ask for food. The player must use a contamination scanner to check the NPC’s contamination value and decide whether they may enter the food storage room or not. In addition, the player can choose to let up to 3 NPCs take a decontamination shower per day. The day also ends early because an NPC breaks into Hinode through a door.
                             </li>
                             <li>
-                                Tag 2: Rekrutierung. NPCs können ab dem zweiten Tag rekrutiert werden, wenn sie dies erbitten.
-                                Die NPCs müssen einen Rekrutierungs-Test ausführen und gehen dann zurück zum Spieler und legen ihre Ergebnisse vor.
-                                Der Spieler muss den Test überprüfen und entscheiden wie er mit dem NPC fortfährt (bestanden -> rekrutieren ; durchgefallen -> NPC raus schicken)
-                                Außerdem stehen ab dem zweiten Tag 2 Security-Personal-NPCs im Raum des Spielers. Einige NPCs werden nicht auf die Aufforderungen des Spielers hören,
-                                der Spieler muss dann den Raum, in den der NPC gehen möchte, abriegeln, und einen der Security-Personal-NPCs befehligen diesen NPC raus zu eskortieren.
+                                Day 2: Recruitment. From the second day on, NPCs can be recruited if they request it. The NPCs must complete a recruitment test and then return to the player to present their results. The player must review the test and decide how to proceed with the NPC (passed -&gt; recruit; failed -&gt; send the NPC away). In addition, from the second day onward there are 2 security staff NPCs in the player’s room. Some NPCs will not listen to the player’s instructions; the player must then lock down the room the NPC wants to enter and command one of the security staff NPCs to escort that NPC out.
                             </li>
                             <li>
-                                Tag 3: Wasser-Ausgabe. Ab dem dritten Tag können NPCs auch um Wasser bitten. Der Spieler muss
-                                die Wasser-Marke des NPCs überprüfen, ob diese original und noch gültig ist.
+                                Day 3: Water distribution. From the third day on, NPCs can also ask for water. The player must check whether the NPC’s water stamp is authentic and still valid.
                             </li>
                             <li>
-                                Tag 4: Daten-Terminal. Ab dem vierten Tag kann der Spieler eine Datenbank an einem Terminal überprüfen.
-                                Jeder NPC muss überprüft werden, ob die Datenbank Einträge über diesen NPC besitzt, die ihnen den Zugang zu den gewünschten Ressourcen verbieten sollten (Beispiel: NPC will Essen -> evtl. Eintrag in Datenbank "Hat versucht unser Essen zu vergiften! Kein Zugang erlauben!")
+                                Day 4: Data terminal. From the fourth day on, the player can check a database at a terminal. Every NPC must be checked to see whether the database contains entries about them that should deny access to the requested resources (example: NPC wants food -&gt; possible database entry: "Tried to poison our food! Deny access!").
                             </li>
                             <li>
-                                Am Ende jedes Tages erscheint eine Übersicht über den Status der Familie. Es muss täglich Essen, Wasser, Strom, Heizkosten und unter Umständen Medizin bezahlt werden. Reicht das Geld für eine dieser Dinge nicht mehr aus, besteht die Chance dass zufällige
-                                Familienmitglieder entsprechende negative Zustände erhalten (zB Heizkosten nicht bezahlt -> "kalt", wieder nicht bezahlt -> "friert", wieder nicht bezahlt -> "krank").
-                                Nach dieser Übersicht endet der Tag und der nächste beginnt.
+                                At the end of each day, an overview of the family’s status appears. Food, water, electricity, heating costs, and possibly medicine must be paid for every day. If there is no longer enough money for one of these things, there is a chance that random family members will receive corresponding negative conditions (e.g. heating costs not paid -&gt; "cold", not paid again -&gt; "freezing", not paid again -&gt; "sick"). After this overview, the day ends and the next one begins.
                             </li>
                             <li>
-                                Bevor der nächste Tag richtig startet, kann der Spieler noch die aktuelle Zeitung lesen, um zu erfahren was am Vortag in Hinode passiert ist.
-                                Dort sieht er dann wie sich welche NPCs bemerkbar gemacht haben (z.B."Leopold Ptieza" repariert Wasserwerke, usw.)
+                                Before the next day properly starts, the player can still read the current newspaper to find out what happened in Hinode the day before. There they can see which NPCs made an impact (e.g. "Leopold Ptieza" repairing waterworks, etc.).
                             </li>
                         </ul>
                     </div>
-
-                    <figure class="project-two-image video-thumb" aria-hidden="false">
-                        <video class="zoomable preview-video"
-                               src="videos/PraiseHinodeVideo.mp4"
-                               poster="images/praisehinode18.png"
-                               preload="metadata"
-                               muted
-                               loop
-                               playsinline
-                               aria-label="Gameplay Übersicht — Vorschau">
+                    <figure aria-hidden="false" class="project-two-image video-thumb">
+                        <video aria-label="Gameplay overview — preview" class="zoomable preview-video" loop="" muted="" playsinline="" poster="images/praisehinode18.png" preload="metadata" src="videos/PraiseHinodeVideo.mp4">
                         </video>
-                        <figcaption>Video: Level-Layout (Übersicht)</figcaption>
+                        <figcaption>Video: Level Layout (Overview)</figcaption>
                     </figure>
                 </div>
-
                 <h4></h4>
                 <div id="features" style="height:20px;"></div>
                 <h2 class="section-title">Features</h2>
-
                 <section class="pickups-section">
-                    <h2 class="section-title">Ressourcen/Überprüfungen</h2>
-
+                    <h2 class="section-title">Resources / Checks</h2>
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode2.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/praisehinode2.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Kontamination</h3>
-                                <p class="pickup-desc">Der Spieler kann NPCs mit dem Kontaminations-Scanner auf ihren Kontaminations-Wert überprüfen. Der erlaubte Kontaminations-Wert kann sich jeden Tag ändern.</p>
+                                <h3 class="pickup-title">Contamination</h3>
+                                <p class="pickup-desc">The player can check NPCs’ contamination values with the contamination scanner. The allowed contamination value can change every day.</p>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode4.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/praisehinode4.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Rekrutier-Test Ergebnisse</h3>
-                                <p class="pickup-desc">Das Ergebnis des Rekrutier-Tests besteht aus 2 Zahlen. Beide Zahlen müssen in gewissen vorgegebenen Reichweiten liegen, um den Test zu bestehen.</p>
+                                <h3 class="pickup-title">Recruitment Test Results</h3>
+                                <p class="pickup-desc">The result of the recruitment test consists of 2 numbers. Both numbers must fall within certain predefined ranges to pass the test.</p>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode9.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/praisehinode9.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Wasser-Marke</h3>
-                                <p class="pickup-desc">Der Spieler muss überprüfen ob die Marke original ist (das Bild in der Mitte der Marke kann sich ändern) und ob die Marke noch gültig ist (auf jeder Karte steht ein "gültig bis:", dieses darf nicht abgelaufen sein)</p>
+                                <h3 class="pickup-title">Water Stamp</h3>
+                                <p class="pickup-desc">The player must check whether the stamp is authentic (the image in the center of the stamp may change) and whether it is still valid (each card shows an "valid until:" date, which must not be expired).</p>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode10.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/praisehinode10.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Datenbank-Einträge</h3>
-                                <p class="pickup-desc">Jeder NPC muss nach seinem Namen gefragt und die zugehörige Datenbank-Einträge überprüft werden. Am Datenbank-Terminal kann der Spieler nach Eingabe des NPC-Namen alle zugehörigen Datenbank-Einträge einsehen.</p>
+                                <h3 class="pickup-title">Database Entries</h3>
+                                <p class="pickup-desc">Each NPC must be asked for their name and the corresponding database entries must be checked. At the database terminal, the player can view all related database entries after entering the NPC’s name.</p>
                             </div>
                         </article>
-
-
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
-
                 <section class="pickups-section">
-                    <h2 class="section-title">Einzigartige NPCs (Beispiele)</h2>
-
+                    <h2 class="section-title">Unique NPCs (Examples)</h2>
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode11.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/praisehinode11.png" />
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Leopold Ptieza</h3>
                                 <p class="pickup-desc">
-                                    Ein Elektriker, der um Rekrutierung bittet. Er schafft den Rekrutierungs-Test nicht, bittet dennoch darum rekrutiert zu werden und verspricht dem Spieler,
-                                    dass es sich für ihn lohnen wird.
+                                    An electrician who asks to be recruited. He fails the recruitment test, but still asks to be recruited and promises the player that it will be worth it.
                                 </p>
-                                <div class="pickup-meta">Wenn Leopold Ptieza dennoch rekrutiert wird, repariert er die Wasserwerke und Stromumwandler in Hinode, wodurch Wasser- und Stromkosten für die nächsten 2 Tage sinken!</div>
+                                <div class="pickup-meta">If Leopold Ptieza is recruited anyway, he repairs the waterworks and power converters in Hinode, reducing water and electricity costs for the next 2 days!</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode12.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/praisehinode12.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Verrückter Ödländer</h3>
+                                <h3 class="pickup-title">Crazy Wastelander</h3>
                                 <p class="pickup-desc">
-                                    Ein verrückter Ödländer der kaum verständlich spricht. Er möchte Essen, hat aber einen viel zu hohen Kontaminations-Wert.
-                                    Der Ödländer warnt den Spieler vor großem Unglück wenn seiner Bitte um Essen ignoriert wird.
+                                    A crazy wastelander who is barely understandable. He wants food, but has a contamination value that is far too high. The wastelander warns the player of great misfortune if his request for food is ignored.
                                 </p>
-                                <div class="pickup-meta">Wenn der Spieler den Verrückten Ödländer die Essensausgabe verweigert, fällt in der selben Nacht ein Schwarm Heuschrecken über Hinode her -> Essens-Kosten werden für 3 Tage erhöht!</div>
+                                <div class="pickup-meta">If the player denies the Crazy Wastelander food, a swarm of locusts descends on Hinode that very night -&gt; food costs increase for 3 days!</div>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode13.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/praisehinode13.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">John Kero(Banditen-Anführer)</h3>
-                                <p class="pickup-desc">Ein Banditen-Anführer der vorgibt einer angeblichen Ödland-Polizei anzugehören und nach "Leopold Ptieza" zu suchen. </p>
-                                <div class="pickup-meta">Wird diesem NPC Zugang zu Hinode gewährt, kann es zu einem "Bürgerkrieg"-Ende kommen, wenn der Widerstands-Anführerin ebenso Zugang zu Hinode gewährt wird.</div>
+                                <h3 class="pickup-title">John Kero (Bandit Leader)</h3>
+                                <p class="pickup-desc">A bandit leader who claims to belong to a supposed wasteland police force and is looking for "Leopold Ptieza."</p>
+                                <div class="pickup-meta">If this NPC is granted access to Hinode, it can lead to a "civil war" ending if the resistance leader is also granted access to Hinode.</div>
                             </div>
                         </article>
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode14.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/praisehinode14.png" />
                             </div>
                             <div class="pickup-body">
                                 <h3 class="pickup-title">Dr. Laszle Beck</h3>
-                                <p class="pickup-desc">Ein sehr guter Arzt, besteht jedoch den Rekrutierungstest nicht.</p>
-                                <div class="pickup-meta">Wird diesem NPC dennoch die Rekrutierung gewährt, senken Medizinkosten für die nächsten 3 Tage!</div>
+                                <p class="pickup-desc">A very good doctor, but he does not pass the recruitment test.</p>
+                                <div class="pickup-meta">If this NPC is recruited anyway, medical costs are reduced for the next 3 days!</div>
                             </div>
                         </article>
-
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/praisehinode15.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/praisehinode15.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Lina Haul (Widerstands-Anführerin)</h3>
-                                <p class="pickup-desc">Die Anführerin des Widerstandes gegen das Regime von Hinode. Sie bittet den Protagonisten um Hilfe um ihre Unterwanderung von Hinode starten zu können.</p>
+                                <h3 class="pickup-title">Lina Haul (Resistance Leader)</h3>
+                                <p class="pickup-desc">The leader of the resistance against Hinode’s regime. She asks the protagonist for help so she can begin infiltrating Hinode.</p>
                                 <div class="pickup-meta">
-                                    Wird Lina Haul Zugang zu Hinode gewährt, besteht die Möglichkeit auf das "Gute Ende"! Eine Serie von Herausforderungen folgt (höhere Kosten, viele NPCs denen ohne zu fragen
-                                    Zugang gewährt werden muss, um den Widerstand zu unterstützen). Schafft der Spieler es 3 Tage mit Lina Haul in Hinode zu überleben, erreicht er das "Gute Ende" und Hinodes korruptes Regime wird gestürzt!
+                                    If Lina Haul is granted access to Hinode, there is a chance to reach the "good ending"! A series of challenges follows (higher costs, many NPCs who must be granted access without question in order to support the resistance). If the player manages to survive 3 days with Lina Haul in Hinode, they reach the "good ending" and Hinode’s corrupt regime is overthrown!
                                 </div>
                             </div>
                         </article>
-
-
-
-
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
-
-
-
-
                 <h4></h4>
-
-
-
-
                 <div id="techdetails" style="height:20px;"></div>
-                <h2>Technische Details</h2>
+                <h2>Technical Details</h2>
                 <ul>
                     <li>
                         Engine: Unreal Engine (Blueprints / Visual Scripting)
@@ -461,59 +373,44 @@
                     <li>
                         Solo-Projekt
                     </li>
-
                 </ul>
-
-
                 <h4></h4>
                 <div id="herausforderung" style="height:20px;"></div>
-                <h2>Herausforderung → Lösungsweg</h2>
-
+                <h2>Challenge → Solution Approach</h2>
                 <ul>
                     <li>
-                        Herausforderung: In 2 Monaten ein vollständigen Prototypen erstellen.
+                        Challenge: Create a complete prototype in 2 months.
                     </li>
                     <li>
-                        ->Lösung: Strikte Zeiteinteilung: Mir im Januar die Grenze zu setzen mit dem Code/Programmieren fertig zu sein, hat extrem dabei geholfen
-                        genügend Zeit zum einbauen von 3D Models/Worldbuilding zu haben, und um dann sogar noch viele neue einzigartige NPCs zu implementieren.
+                        → Solution: Strict time management: setting myself the deadline of being done with code/programming in January helped immensely in having enough time to add 3D models/worldbuilding and still implement many new unique NPCs.
                     </li>
                     <li>
-                        Herausforderung: Robustes, dynamisches Dialogsystem erstellen.
+                        Challenge: Create a robust, dynamic dialogue system.
                     </li>
                     <li>
-                        ->Lösung: Zum ersten mal die "Data Table"-Klasse richtig genutzt. Diese Klasse hat mir sehr dabei geholfen einfach und schnell neue Dialoge zu erstellen.
+                        → Solution: I used the "Data Table" class properly for the first time. This class helped me a lot in creating new dialogues quickly and easily.
 
                     </li>
-
                 </ul>
-
                 <h4></h4>
                 <div id="learnings" style="height:20px;"></div>
                 <h2>Learnings</h2>
                 <ul>
                     <li>
-                        "Data Table"-Klasse zum speichern vieler verschiedenen Werte für den selben Nutzen kann sehr hilfreich sein.
+                        The "Data Table" class can be very helpful for storing many different values for the same purpose.
                     </li>
                 </ul>
-
-
                 <h4></h4>
-
-
-                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+                <a class="project-back" href="index.html">← Back to Projects</a>
             </article>
         </main>
-
         <!-- COPY YOUR FOOTER HERE -->
         <!-- paste your existing footer markup -->
         <!-- <footer> ... </footer> -->
-
     </div>
-
-
-    <!-- Optional: dein app.js -->
-    <script src="app.js"></script>
-    <script>
+<!-- Optional: dein app.js -->
+<script src="app.js"></script>
+<script>
         (function () {
             // CONFIG
             const requireClass = true; // true = nur <img class="zoomable"> reagieren; false = auto-detect images in article
@@ -687,6 +584,5 @@
 
         })();
     </script>
-
 </body>
 </html>

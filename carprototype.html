@@ -1,17 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Fahrzeug Prototyp - Lutz Hollstein</title>
-
-    <!-- deine bestehende stylesheet -->
-    <link rel="stylesheet" href="style.css">
-    <!-- icons falls du sie brauchst -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-    <!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Fahrzeug Prototyp - Lutz Hollstein</title>
+<!-- deine bestehende stylesheet -->
+<link href="style.css" rel="stylesheet"/>
+<!-- icons falls du sie brauchst -->
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
+<!-- Optional: kleine page-spezifische CSS (du kannst das auch ans Ende von style.css packen) -->
+<style>
         /* Project page specific styles */
         .project-page .project-wrapper {
             max-width: 1800px;
@@ -108,59 +107,50 @@
             }
         }
     </style>
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet"/>
 </head>
-
 <body>
     <div class="container">
         <header>
             <!-- links: Logo + Seite + Social Icons (als Gruppe) -->
             <div class="header-left-group">
                 <div class="left">
-                    <a href="index.html" class="brand" aria-label="Zur Startseite">
-                        <img src="images/myicon.png" alt="logo">
+                    <a aria-label="Zur Startseite" class="brand" href="index.html">
+                        <img alt="logo" src="images/myicon.png" />
                         <h1><span class="gradient">Lutz Hollstein</span></h1>
                     </a>
                 </div>
-
                 <div class="box-icons">
-                    <a href="https://bobhstone.itch.io/" aria-label="itch.io">
-                        <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+                    <a aria-label="itch.io" href="https://bobhstone.itch.io/">
+                        <img alt="itch.io" src="images/itchio.png" style="width:20px;height:20px;" />
                     </a>
                     <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
-
                 </div>
             </div>
-
             <!-- rechts: Navigation (nun rechts angeordnet) -->
             <nav class="header-nav">
                 <ul>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="index.html">Projects</a></li>
                     <li><a href="about.html">About Me</a></li>
-                    <li><a href="contact.html">Kontakt</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-
-            <div class="menu-icon"><i class='bx bx-menu'></i></div>
+            <div class="menu-icon"><i class="bx bx-menu"></i></div>
         </header>
         <div class="sidebar">
-            <div class="close-icon" aria-label="Close menu" role="button" tabindex="0">
-                <i class='bx bx-x'></i>
+            <div aria-label="Close menu" class="close-icon" role="button" tabindex="0">
+                <i class="bx bx-x"></i>
             </div>
-
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html">Projects</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="contact.html">Kontakt</a></li>
             </ul>
-
             <div class="social-icons">
-                <a href="https://bobhstone.itch.io/" aria-label="itch.io">
-                    <img src="images/itchio.png" alt="itch.io" style="width:20px;height:20px;">
+                <a aria-label="itch.io" href="https://bobhstone.itch.io/">
+                    <img alt="itch.io" src="images/itchio.png" style="width:20px;height:20px;" />
                 </a>
                 <a href="https://www.youtube.com/@BobHstone"><i class="bx bxl-youtube"></i></a>
-
             </div>
         </div>
         <!-- COPY YOUR HEADER HERE -->
@@ -171,288 +161,229 @@
         <!-- ----------------- -->
         <!-- Breadcrumbs (hardcoded; passe an) -->
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="index.html">Home</a>
+            <a href="index.html">Projects</a>
             <span class="sep">/</span>
-            <a href="portfolio.html">Portfolio</a>
-            <span class="sep">/</span>
-            <span class="current">Fahrzeug Prototyp</span>
+            <span class="current">Car Prototype</span>
         </nav>
-
         <main class="project-wrapper">
             <!-- Hero Image -->
             <div class="project-hero">
-                <img src="images/cargame1.png" alt="Cookie Crumble - Screenshot / Key art">
+                <img alt="Cookie Crumble - Screenshot / Key art" src="images/cargame1.png" />
             </div>
-
             <!-- Title & Meta -->
             <div class="project-head">
-                <nav class="project-toc" aria-label="Inhaltsverzeichnis">
-                    <h3>Inhaltsverzeichnis</h3>
+                <nav aria-label="Inhaltsverzeichnis" class="project-toc">
+                    <h3>Contents</h3>
                     <ul>
-                        <li><a href="#kurzbeschreibung">Kurzbeschreibung</a></li>
-                        <li><a href="#hintergrund">Hintergrund</a></li>
-                        <li><a href="#spielablauf">Spielablauf</a></li>
-                        <li><a href="#techdetails">Technische Details</a></li>
-                        <li><a href="#herausforderung">Herausforderung → Lösungsweg</a></li>
+                        <li><a href="#kurzbeschreibung">Short Description</a></li>
+                        <li><a href="#hintergrund">Background</a></li>
+                        <li><a href="#spielablauf">Gameplay</a></li>
+                        <li><a href="#techdetails">Technical Details</a></li>
+                        <li><a href="#herausforderung">Challenge → Solution</a></li>
                         <li><a href="#learnings">Learnings</a></li>
-                        <li><a href="#kunst">Kunst</a></li>
+                        <li><a href="#kunst">Art</a></li>
                     </ul>
                 </nav>
-                <h1 class="project-title">Shader Tutorial / Fahrzeug-Prototyp</h1>
-
+                <h1 class="project-title">Shader Tutorial / Vehicle Prototype</h1>
                 <div class="project-meta">
                     <div class="meta-item"><strong>Engine:</strong> Unreal Engine</div>
-                    <div class="meta-item"><strong>Jahr:</strong> 2025</div>
-                    <div class="meta-item"><strong>Solo-Projekt</strong></div>
+                    <div class="meta-item"><strong>Year:</strong> 2025</div>
+                    <div class="meta-item"><strong>Solo project</strong></div>
                 </div>
             </div>
             <div id="kurzbeschreibung" style="height:20px;"></div>
             <!-- große Textfläche -->
             <article class="project-content">
-                <h2>Kurzbeschreibung</h2>
+                <h2>Short Description</h2>
                 <p>
-                    Primär ist dieses Projekt eine Testumgebung für meinen outline-shader, den ich mit Hilfe eines Tutorials erstellt habe. Dies ist mein erster Ansatz eigene Shader zu erstellen. Der Fahrzeug-Prototyp ist spontan dazu entstanden.
+                    Primarily, this project is a test environment for my outline shader, which I created with the help of a tutorial. This was my first attempt at creating my own shaders. The vehicle prototype came about spontaneously.
                 </p>
                 <div id="hintergrund" style="height:20px;"></div>
-                <h2>Hintergrund</h2>
+                <h2>Background</h2>
                 <p>
-                    Einen eigenen Shader zu erstellen lag für mich noch auf meiner To-Do-Liste für 2025. Der standard Unreal Engine-Look störte mich nach so vielen Projekten. Der hier erstellte Outline-Shader hat mir so sehr gefallen,
-                    dass ich unbedint etwas World-Building machen wollte, um zu prüfen ob der Shader wirklich voll einsatzbereit ist oder noch Probleme aufweist. Außerdem wollte ich mit der Kanone auf dem Auto mein Animations-Können auf die Probe stellen:
-                    Ziel war es eine Kanone zu animieren, die aus dem Auto "ausfährt" und sich in Richtung der Mauszeiger-Position sinnvoll mitdreht. Dies funktionierte auch ziemlich problemlos. Zu dieser Zeit habe ich auch Substance Painter getestet.
-                    Das Ergebnis in Substance Painter hat mir so sehr gefallen, dass ich unbedingt einen voll animierten Gegner für diesen Prototyp erstellen wollte.
+                    Creating my own shader was still on my to-do list for 2025. The standard Unreal Engine look bothered me after so many projects. I liked the outline shader I created so much that I wanted to do some world building to see whether the shader was truly ready to use or still had issues. I also wanted to test my animation skills with the cannon on the car: the goal was to animate a cannon that "extends" from the car and rotates sensibly toward the mouse cursor. That worked pretty smoothly. Around that time, I also tested Substance Painter. I liked the result in Substance Painter so much that I absolutely wanted to create a fully animated enemy for this prototype.
 
                 </p>
                 <h4></h4>
                 <div id="spielablauf" style="height:20px;"></div>
                 <div class="project-two-column">
                     <div class="project-two-text">
-                        <h2>Spielablauf (Idee - noch nicht umgesetzt)</h2>
+                        <h2>Gameplay (Idea - not yet implemented)</h2>
                         <ul>
                             <li>
-                                Spieler startet in Nachbarschaft(Basis). Dort gibt es Aufgaben für Anwohner zu erledigen. Mit Ressourcen kann der Spieler Gebäude upgraden und so neue Upgrades für das Auto freischalten.
+                                The player starts in the neighborhood (base). There are tasks to complete for the residents. With resources, the player can upgrade buildings and unlock new upgrades for the car.
 
                             </li>
                             <li>
-                                Hat sich der Spieler fertig vorbereitet, verlässt er die Stadt (im Auto) und erkundet die Umgebung("Erkundungs-Phase" beginnt). Die Tank-Ladung ds Autos beschränkt die Reichweite in der sich der Spieler bewegen kann, der Spieler muss mit seiner Tank-Ladung auch wieder zurück in die Nachbarschaft kommen.
+                                Once the player is ready, they leave the city (in the car) and explore the surroundings (the "exploration phase" begins). The car's fuel supply limits how far the player can travel, and the player must also make it back to the neighborhood with that fuel supply.
 
                             </li>
                             <li>
-                                In der Erkundungs-Phase trifft der Spieler auf Gegner, welche er mit seinen Waffen ausschalten kann um Ressourcen zu erhalten. Außerdem lässt sich je nach Ausstattung des Autos mit gewissen Dingen in der Spielwelt interagieren
-                                (Beispiel: Spieler nimmt "Feuerlöscher-Aufsatz" mit -> In der Erkundungs-Phase kann er auf ein brennendes Auto mit einem NPC treffen, wenn er das Auto löscht erscheint der NPC in der Nachbarschaft und neue Upgrades werden freigeschaltet)
+                                In the exploration phase, the player encounters enemies that can be defeated with weapons to obtain resources. Depending on the car's equipment, certain things in the game world can also be interacted with (example: the player picks up the "fire extinguisher attachment" -&gt; during the exploration phase, they may encounter a burning car with an NPC; if they extinguish the car, the NPC appears in the neighborhood and new upgrades are unlocked).
                             </li>
                             <li>
-                                Wichtig: Dies ist nur die grobe Planung/Idee für dieses Projekt. Bisher implementiert ist Folgendes: Aus- und Einsteigen in das Auto ; Kanone + Schuss-Mechanik (noch keine Schaden-Logik) ;
-                                ein Gegner samt Animationen (Animationen: patroullieren, Spieler entdecken, zum Spieler laufen, (am Spieler angekommen) auf den Spieler zu-springen, Spieler angreifen) und Angriff-/Sprung-Logik des Gegners
+                                Important: This is only the rough plan/idea for this project. Currently implemented: getting in and out of the car; cannon + shooting mechanic (no damage logic yet); one enemy with animations (animations: patrolling, spotting the player, running to the player, (once at the player) jumping toward the player, attacking the player) and the enemy's attack/jump logic
                             </li>
                         </ul>
                     </div>
-
-                    <figure class="project-two-image" aria-hidden="false">
-                        <img class="zoomable" src="images/cargame4.png" alt="Screenshot: Gameplay Übersicht">
-                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    <figure aria-hidden="false" class="project-two-image">
+                        <img alt="Screenshot: Gameplay Übersicht" class="zoomable" src="images/cargame4.png" />
+                        <figcaption>Screenshot: Level layout (overview)</figcaption>
                     </figure>
-                    <figure class="project-two-image" aria-hidden="false">
-                        <img class="zoomable" src="images/cargame2.png" alt="Screenshot: Gameplay Übersicht">
-                        <figcaption>Screenshot: Level-Layout (übersicht)</figcaption>
+                    <figure aria-hidden="false" class="project-two-image">
+                        <img alt="Screenshot: Gameplay Übersicht" class="zoomable" src="images/cargame2.png" />
+                        <figcaption>Screenshot: Level layout (overview)</figcaption>
                     </figure>
-
                 </div>
-
-
-
                 <h4></h4>
-
-
                 <div id="techdetails" style="height:20px;"></div>
-
-
-                <h2>Technische Details</h2>
+                <h2>Technical Details</h2>
                 <ul>
                     <li>
                         Engine: Unreal Engine (Blueprints / Visual Scripting)
                     </li>
                     <li>
-                        3D-Models: Blender + Substance Painter
+                        3D models: Blender + Substance Painter
                     </li>
                     <li>
-                        Source Control: GitHub.
+                        Source control: GitHub.
                     </li>
                     <li>
-                        Solo-Projekt
+                        Solo project
                     </li>
                     <li>
-                        Status: Prototyp, unveröffentlicht.
+                        Status: Prototype, unpublished.
                     </li>
                 </ul>
                 <h4></h4>
                 <div id="herausforderung" style="height:20px;"></div>
-                <h2>Herausforderung → Lösungsweg</h2>
-
+                <h2>Challenge → Solution</h2>
                 <ul>
                     <li>
-                        Herausforderung: Kanone zur Mauszeiger-Position drehen ("LookAt-Node" ließ die Kanone merkwürdig aussehen)
+                        Challenge: Rotating the cannon toward the mouse cursor position ("LookAt node" made the cannon look strange)
                     </li>
                     <li>
-                        ->Lösung: Rotation der Kanone beschränken: Die Rotation der unteren Platte, auf der die Kanone befestigt ist, nur auf die Z-Achse beschränken. Die Rotation für die Kanone selbst wurde auf die Z- und Y-Achse
-                        beschränkt, dadurch bewegt sich die Kanone nun vertikal und horizontal entsprechend des Mauszeigers mit, ohne durch die Halterung der Kanone zu clippen.
+                        → Solution: Limit the cannon's rotation: restrict the rotation of the lower plate the cannon is mounted on to the Z-axis only. The cannon itself was restricted to the Z and Y axes, allowing it to move vertically and horizontally with the mouse cursor without clipping through the cannon mount.
                     </li>
                     <li>
-                        Herausforderung: Outline-Shader hat teilweise sehr große schwarze Flächen erstellt (dort, wo der Winkel in dem auf die Objekte geschaut wird, zu schmal wird) und an einigen Stellen geflackert.
+                        Challenge: The outline shader sometimes created very large black areas (where the viewing angle to the objects became too narrow) and flickered in some places.
                     </li>
                     <li>
-                        ->Lösung: Viele Änderungen an den Variablen des Outline-Shaders, und zusätzliche Variablen erstellt, die sowohl das Flackern als auch die großen schwarzen Flächen reduziert haben. Sehr wenige Stellen flackern immer noch, dafür brauche ich noch weitere Lösungen.
+                        → Solution: I made many changes to the outline shader variables and added additional variables that reduced both the flickering and the large black areas. A few spots still flicker, so I still need further solutions.
                     </li>
                 </ul>
                 <h4></h4>
-
                 <div id="learnings" style="height:20px;"></div>
                 <h2>Learnings</h2>
                 <ul>
                     <li>
-                        Substance Painter ist sehr hilfreich um schnell schönere Texturen zu erstellen.
+                        Substance Painter is very helpful for quickly creating nicer textures.
                     </li>
                     <li>
-                        Shader-Basics verstanden.
+                        Understood the basics of shaders.
                     </li>
-
                 </ul>
-
-
                 <div id="kunst" style="height:20px;"></div>
                 <h4></h4>
-
-                <h2>Kunst</h2>
+                <h2>Art</h2>
                 <p>
-                    Dieses Asset wurde hauptsächlich zum Testen von Substance Painter genutzt. Die Texturen haben mir so sehr gefallen, dass ich
-                    die Idee dieses Gegners gerne weiter umgesetzt sehen wollte, weshalb ich die Animationen erstellt, und diesen Gegner samt seinen Animationen
-                    in den Fahrzeug-Prototyp eingebaut habe.
+                    This asset was mainly used to test Substance Painter. I liked the textures so much that I wanted to see this enemy concept developed further, which is why I created the animations and integrated this enemy, along with its animations, into the vehicle prototype.
                 </p>
-                <h2 class="section-title">- Bomber Enemy (Fahrzeug-Prototyp) -</h2>
+                <h2 class="section-title">- Bomber Enemy (Vehicle Prototype) -</h2>
                 <div class="pickups-grid">
                     <!-- Card 1 -->
                     <article class="pickup-card">
                         <div class="pickup-image">
-                            <img class="zoomable" src="images/entwürfe1.png" alt="Pickup: Mouse">
+                            <img alt="Pickup: Mouse" class="zoomable" src="images/entwürfe1.png" />
                         </div>
                         <div class="pickup-body">
-                            <h3 class="pickup-title">Ansicht: Vorne</h3>
+                            <h3 class="pickup-title">View: Front</h3>
                         </div>
                     </article>
-
                     <!-- Card 2 -->
                     <article class="pickup-card">
                         <div class="pickup-image">
-                            <img class="zoomable" src="images/entwürfe2.png" alt="Pickup: Cheese">
+                            <img alt="Pickup: Cheese" class="zoomable" src="images/entwürfe2.png" />
                         </div>
                         <div class="pickup-body">
-                            <h3 class="pickup-title">Ansicht: Seite</h3>
-
+                            <h3 class="pickup-title">View: Side</h3>
                         </div>
                     </article>
-
-
-
                     <!-- Card 1 -->
                     <article class="pickup-card">
                         <div class="pickup-image">
-                            <img class="zoomable" src="images/entwürfe3.png" alt="Pickup: Mouse">
+                            <img alt="Pickup: Mouse" class="zoomable" src="images/entwürfe3.png" />
                         </div>
                         <div class="pickup-body">
-                            <h3 class="pickup-title">Ansicht: Oben</h3>
+                            <h3 class="pickup-title">View: Top</h3>
                         </div>
                     </article>
-
-
-
-
-
-
                     <!-- weitere Cards... -->
                 </div>
-                </section>
 
                 <section class="pickups-section">
                     <h2 class="section-title">- Bomber Enemy: Animations -</h2>
-
                     <div class="pickups-grid">
                         <!-- Card 1 -->
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/entwürfeanim5.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/entwürfeanim5.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Animation: Patroullieren</h3>
+                                <h3 class="pickup-title">Animation: Patrolling</h3>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/entwürfeanim1.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/entwürfeanim1.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Animation: Spieler erkennen</h3>
+                                <h3 class="pickup-title">Animation: Spotting the Player</h3>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/entwürfeanim4.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/entwürfeanim4.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Animation: Lauf zum Spieler</h3>
+                                <h3 class="pickup-title">Animation: Running to the Player</h3>
                             </div>
                         </article>
-
                         <!-- Card 1 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/entwürfeanim2.png" alt="Pickup: Mouse">
+                                <img alt="Pickup: Mouse" class="zoomable" src="images/entwürfeanim2.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Animation: Sprung auf Spieler</h3>
+                                <h3 class="pickup-title">Animation: Jumping at the Player</h3>
                             </div>
                         </article>
-
                         <!-- Card 2 -->
                         <article class="pickup-card">
                             <div class="pickup-image">
-                                <img class="zoomable" src="images/entwürfeanim3.png" alt="Pickup: Cheese">
+                                <img alt="Pickup: Cheese" class="zoomable" src="images/entwürfeanim3.png" />
                             </div>
                             <div class="pickup-body">
-                                <h3 class="pickup-title">Animation: Angriff</h3>
+                                <h3 class="pickup-title">Animation: Attack</h3>
                             </div>
                         </article>
-
-
-
-
-
-
-
                         <!-- weitere Cards... -->
                     </div>
                 </section>
                 <h4></h4>
-
-
-
-                <a class="project-back" href="portfolio.html">← Zurück zum Portfolio</a>
+                <a class="project-back" href="index.html">← Back to Projects</a>
             </article>
         </main>
-
         <!-- COPY YOUR FOOTER HERE -->
         <!-- paste your existing footer markup -->
         <!-- <footer> ... </footer> -->
-
     </div>
-
-    <!-- Optional: dein app.js -->
-    <script src="app.js"></script>
-
-    <script>
+<!-- Optional: dein app.js -->
+<script src="app.js"></script>
+<script>
         (function () {
             // CONFIG
             const requireClass = true; // true = nur <img class="zoomable"> reagieren; false = auto-detect images in article
